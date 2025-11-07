@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>הכלכלן של הבית - דף נחיתה</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #0f172a;
+      color: #0f172a;
+      line-height: 1.6;
+      direction: rtl;
+    }
+    h1, h2, h3, h4 { margin-bottom: 1rem; }
+    p { margin-bottom: 0.8rem; color: #475569; }
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 1rem 1.5rem;
+    }
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand-title { font-weight: 700; font-size: 1.5rem; }
+    .brand-sub { font-size: 1rem; color: #cbd5e1; }
+    .top-links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+    }
+    .top-links a {
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      color: #e2e8f0;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      background: #f8fafc;
+    }
+
+    .section { margin-bottom: 2.5rem; }
+
+    .hero {
+      background: radial-gradient(circle at 20% 0%, rgba(56,189,248,0.25) 0%, rgba(15,23,42,1) 50%);
+      margin: -1.5rem -1.5rem 2.5rem -1.5rem;
+      padding: 3rem 1.5rem;
+      color: #e5f2ff;
+    }
+    .hero-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 800px) {
+      .hero-inner { grid-template-columns: 1fr; }
+    }
+    .hero-box {
+      background: rgba(15,23,42,0.8);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(148,163,184,0.6);
+      box-shadow: 0 20px 50px rgba(15,23,42,0.9);
+    }
+    .hero h1 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #e5f2ff;
+    }
+    .hero p { color: #cbd5e1; }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 18px rgba(15,23,42,0.18);
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+      color: #ffffff;
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-whatsapp {
+      background: #22c55e;
+    }
+
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (max-width: 800px) {
+      .two-cols { grid-template-columns: 1fr; }
+    }
+
+    .about-photo {
+      display: flex;
+      justify-content: center;
+    }
+    .about-photo img {
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 20px 60px rgba(15,23,42,0.7);
+      border: 4px solid #ffffff;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #0ea5e9;
+      margin-bottom: 0.3rem;
+    }
+
+    ul { margin: 0.5rem 0 0.8rem 0; padding-right: 1rem; }
+    li { margin-bottom: 0.35rem; color: #475569; }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+      color: #0f172a;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.7rem 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      margin-bottom: 0.7rem;
+      font-size: 0.95rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #e2e8f0;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .article-section {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e2e8f0;
+    }
+    .article-section h1 {
+      font-size: 1.5rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #0ea5e9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div style="display: flex; align-items: center; gap: 0.8rem;">
+        <img src="הכלכלן של הבית.png" alt="לוגו" style="height: 50px; width: auto;">
+        <div>
+          <div class="brand-title">הכלכלן של הבית</div>
+          <div class="brand-sub">הכלכלן של הבית — כאן תהפוך להיות הכתובת לכל שאלה כלכלית במשפחה</div>
+        </div>
+      </div>
+      <div class="top-links">
+        <a href="#blog">בלוג</a>
+        <a href="#contact">צור קשר</a>
+        <a href="https://wa.me/972544240213" target="_blank">ווטסאפ</a>
+        <a href="tel:0544240213">0544240213</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-box">
+        <h1>ברוכים הבאים לעמוד הבית לתוכנית הכלכלן של הבית</h1>
+        <p>אני אורי, ואני רוצה להפוך אותך לכלכלן של הבית שלך. זה שאתה לא מבין בכסף זה כי לא לימדו אותנו על זה בשום מקום וזה לא באשמתך.</p>
+        <p>המחירים עולים, רמת החיים נשחקת, והכסף יושב בעו"ש ומאבד ערך. אם לא נותנים לכסף לעבוד, הוא עובד נגדנו. ביחד נעשה סדר, נבין מה קורה עם הכסף שלך עכשיו, נסדר את התמונה, ונבנה דרך יציבה קדימה.</p>
+        <a class="btn" href="#contact">אני רוצה להתחיל את הדרך שלי</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/972544240213" target="_blank" style="margin-right:0.5rem;">שלחו לי הודעה בוואטסאפ</a>
+      </div>
+      <div class="hero-box">
+        <h2>שיחת היכרות קצרה</h2>
+        <p>השאר פרטים ואחזור אליך. אין התחייבות. המטרה היא להבין איפה אתה עומד ואיך אפשר לעזור.</p>
+        <form action="https://formspree.io/f/mdklkenp" method="POST">
+          <input type="hidden" name="_subject" value="ליד חדש מהאתר - הכלכלן של הבית">
+          <label>שם מלא</label>
+          <input name="name" required>
+          <label>טלפון</label>
+          <input name="phone" type="tel" required>
+          <label>מה הכי מטריד אותך בכסף כרגע</label>
+          <textarea name="message" rows="3"></textarea>
+          <button type="submit" class="btn">דברו איתי</button>
+        </form>
+        <p style="font-size:0.8rem;color:#cbd5e1;margin-top:0.4rem;">הפרטים נשמרים אצלנו. אין שיווק אגרסיבי.</p>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="two-cols">
+        <div class="card">
+          <h2>הסיפור שלי</h2>
+          <p>אני אורי, ואני רוצה להפוך אותך לכלכלן של הבית שלך.</p>
+          <p>בתיכון התחלתי להבין שמערכת החינוך לא באמת מכינה אותנו לדבר הכי בסיסי בחיים הבוגרים: איך מתנהלים עם כסף.</p>
+          <p>לא מלמדים אותנו על זכויות בעבודה, על פנסיה, משכנתא או השקעות – דברים שכל אחד צריך לדעת.</p>
+          <p>לקראת סוף השירות הצבאי ביקשתי מאבא שלי שיחבר אותי לעולם הזה. התחלתי ללמוד על שוק ההון, גיליתי את הכוח של השקעה פסיבית, וקראתי ספרים ותוכן שגרמו לי להבין מה באמת מחכה לנו כשנכנסים לעולם העבודה – הלוואות, ביטוחים, פנסיה וכל מה שביניהם.</p>
+          <p>במהלך הלמידה הבנתי שלגופים הגדולים יש אינטרסים אישיים, ומה שטוב להם לא תמיד טוב לנו.</p>
+          <p>הם מרוויחים מהחוסר ידע של הציבור, וזה גורם לנו לבצע פעולות שלא בהכרח מקדמות אותנו כלכלית.</p>
+          <p>מאז לא הפסקתי ללמוד וליישם.</p>
+          <p>פתחתי לעצמי תיק השקעות פאסיבי שאני ממשיך להפקיד אליו עד היום, עזרתי לבני משפחה וחברים לעשות סדר בכסף, והמשכתי לקורס בכלכלת המשפחה. היום אני בדרך להוציא רישיון ייעוץ השקעות וייעוץ פנסיוני.</p>
+          <p>אני עוזר לאנשים לבנות בסיס פיננסי אמיתי – להבין איך הכסף שלהם עובד, להרגיש שליטה, ולהפסיק לתת לבנקים ולגופים הגדולים לנהל להם את החיים בלי שהם שמים לב.</p>
+          <p>אפשר ללמוד לבד איך להתנהל נכון עם כסף, התוכן קיים בכל מקום – אבל אם אתה רוצה קיצור דרך וליווי אישי, השירות שלי בדיוק בשביל זה.</p>
+        </div>
+        <div class="about-photo">
+          <img src="WhatsApp Image 2025-11-05 at 10.24.36.jpeg" alt="אורי ניניו">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>מה יוצא לך מהתהליך איתי</h2>
+        <p>המטרה היא שתצא מהתהליך עם תחושת שליטה וביטחון. תבין לאן הכסף שלך הולך, תצא עם תוכנית פעולה ברורה שמתאימה לחיים שלך, ותדע איך לגרום לכסף לעבוד בשבילך ולא להפך.</p>
+        <ul>
+          <li>להרגיש סוף סוף שליטה ולא בלגן תמידי בכסף.</li>
+          <li>להבין מה לעשות עם הכסף שלך במקום שהוא ישב בעו"ש ויישחק.</li>
+          <li>תוכנית ברורה קדימה, צעד אחרי צעד, שמתאימה לקצב והמציאות שלך.</li>
+          <li>פחות פחד מגופים פיננסיים ויותר ביטחון לשאול, לבדוק ולהתמקח.</li>
+          <li>תחושת תקווה שעם התמדה אפשר לבנות חיים יציבים יותר ולהכין את הקרקע להתעשרות לטווח ארוך.</li>
+        </ul>
+        <p>אפשר ללמוד המון לבד מספרים, סרטונים ופודקאסטים. ואם אתה מרגיש שזה גדול עליך לבד ורוצה קיצור דרך וליווי אישי, כאן אני נכנס לתמונה.</p>
+        <h3>למה דווקא עכשיו</h3>
+        <p>הכסף שלך לא עומד במקום. הוא נשחק בשקט כשהמחירים עולים. עליית המחירים לא תמיד מסתדרת עם עליית המשכורת, וזה מה שפוגע ברמת החיים. כל תקופה שאתה לא פועל, אתה מוותר על זמן, וזה המשאב הכי יקר בעולם הפיננסי.</p>
+        <p>שינוי קטן עכשיו יכול ליצור הבדל גדול בעתיד. יותר שקט, יותר ביטחון ויותר חופש לבחור איך לחיות. זה הזמן להתחיל לבנות את הבסיס הכלכלי שלך בצעדים הנכונים.</p>
+      </div>
+    </section>
+
+    <section class="section" id="blog">
+      <div class="card">
+        <h2>בלוג</h2>
+        <p>כאן אני משתף תובנות, סיפורים וכלים שיעזרו לך להבין כסף בצורה פשוטה ולהרגיש שליטה אמיתית.</p>
+        <p><strong>אם אהבת משהו כאן, תשלח את זה לחבר או חברה שזה יכול לעזור להם. חינוך פיננסי מתפשט מאדם לאדם.</strong></p>
+
+        <div class="blog-grid">
+          <div class="card" style="cursor: pointer;">
+            <h3><a href="article-books.html" style="color: #0f172a; text-decoration: none; display: block;">5 ספרים שיעזרו לך להתחיל דרך פיננסית בריאה</a></h3>
+            <p>חמישה ספרים שיכולים לפתוח לך את הראש ולהכניס אותך לעולם הפיננסי בצורה פשוטה והגיונית.</p>
+            <a class="btn" href="article-books.html">לקריאת המאמר</a>
+          </div>
+
+          <div class="card" style="cursor: pointer;">
+            <h3><a href="article-organize.html" style="color: #0f172a; text-decoration: none; display: block;">איך עושים סדר בכסף בלי לאבד את הראש</a></h3>
+            <p>שלושה צעדים שיעזרו לך להבין את המצב שלך, ליצור תזרים חיובי ולבנות רשת ביטחון.</p>
+            <a class="btn" href="article-organize.html">לקריאת המאמר</a>
+          </div>
+
+          <div class="card" style="cursor: pointer;">
+            <h3><a href="article-fourways.html" style="color: #0f172a; text-decoration: none; display: block;">יש ארבע דרכים להרוויח כסף בעולם ואותנו לימדו רק על אחת</a></h3>
+            <p>עבודה היא רק דרך אחת להכניס כסף. יש עוד אפשרויות שכדאי להכיר.</p>
+            <a class="btn" href="article-fourways.html">לקריאת המאמר</a>
+          </div>
+
+          <div class="card" style="cursor: pointer;">
+            <h3><a href="article-myths.html" style="color: #0f172a; text-decoration: none; display: block;">5 מיתוסים פיננסיים שחייבים להישבר</a></h3>
+            <p>כמה מהמשפטים הכי נפוצים על כסף, ומה באמת עומד מאחוריהם.</p>
+            <a class="btn" href="article-myths.html">לקריאת המאמר</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section class="section" id="contact">
+      <div class="card">
+        <h2>צור קשר</h2>
+        <p>רוצה להתחיל לשנות את המצב הפיננסי שלך צעד אחרי צעד בוא נדבר.</p>
+        <p>אפשר להתחיל בקריאה של אחד המאמרים בבלוג, ואם תרצה שנקצר לך את הדרך ונבנה ביחד תוכנית שמתאימה לחיים שלך, תשאיר פרטים ואחזור אליך.</p>
+        <form action="https://formspree.io/f/mdklkenp" method="POST">
+          <input type="hidden" name="_subject" value="ליד חדש מהאתר - הכלכלן של הבית">
+          <label>שם מלא</label>
+          <input name="name" required>
+          <label>טלפון</label>
+          <input name="phone" type="tel" required>
+          <label>מה הכי מטריד אותך בכסף כרגע</label>
+          <textarea name="message" rows="3"></textarea>
+          <button type="submit" class="btn">דברו איתי</button>
+        </form>
+        <a class="btn btn-whatsapp" href="https://wa.me/972544240213" target="_blank" style="margin-top:0.8rem;">או כתבו לי בוואטסאפ</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © הכלכלן של הבית
+  </footer>
+</body>
+</html>
