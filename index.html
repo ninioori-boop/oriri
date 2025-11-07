@@ -385,15 +385,29 @@
         }
       });
     }, observerOptions);
+      // הוספת האנימציה לכל הקטעים
+      document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.section, .hero-box, .card');
+        sections.forEach(section => {
+          section.classList.add('fade-in');
+          observer.observe(section);
+        });
 
-    // הוספת האנימציה לכל הקטעים
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('.section, .hero-box, .card');
-      sections.forEach(section => {
-        section.classList.add('fade-in');
-        observer.observe(section);
+        // הפיכת כרטיסי הבלוג לקליקים בכל השטח
+        const blogCards = document.querySelectorAll('.blog-grid .card');
+        blogCards.forEach(card => {
+          const primaryLink = card.querySelector('a[href]');
+          if (!primaryLink) return;
+
+          card.addEventListener('click', event => {
+            // אם הקלקה כבר נעשתה על לינק או כפתור, לא משתלטים על האירוע
+            if (event.target.closest('a')) {
+              return;
+            }
+            window.location.href = primaryLink.getAttribute('href');
+          });
+        });
       });
-    });
   </script>
 </body>
 </html>
