@@ -9,12 +9,12 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       background: #0f172a;
-      color: #0f172a;
+      color: #e2e8f0;
       line-height: 1.6;
       direction: rtl;
     }
-    h1, h2, h3, h4 { margin-bottom: 1rem; }
-    p { margin-bottom: 0.8rem; color: #475569; }
+    h1, h2, h3, h4 { margin-bottom: 1rem; color: #e2e8f0; }
+    p { margin-bottom: 0.8rem; color: #cbd5e1; }
     a { text-decoration: none; color: inherit; }
 
     header {
@@ -49,14 +49,13 @@
       max-width: 1000px;
       margin: 0 auto;
       padding: 1.5rem;
-      background: #f8fafc;
+      background: transparent;
     }
 
     .section { margin-bottom: 2.5rem; }
 
     .hero {
       background: radial-gradient(circle at 20% 0%, rgba(56,189,248,0.25) 0%, rgba(15,23,42,1) 50%);
-      margin: -1.5rem -1.5rem 2.5rem -1.5rem;
       padding: 3rem 1.5rem;
       color: #e5f2ff;
     }
@@ -85,11 +84,19 @@
     .hero p { color: #cbd5e1; }
 
     .card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 18px rgba(15,23,42,0.18);
+      background: transparent;
+      border-radius: 0;
+      padding: 1.5rem 0;
+      box-shadow: none;
       margin-bottom: 1.5rem;
+    }
+    
+    .card h2, .card h3 {
+      color: #e2e8f0;
+    }
+    
+    .card p, .card li {
+      color: #cbd5e1;
     }
 
     .btn {
@@ -113,6 +120,7 @@
       grid-template-columns: 1.6fr 1fr;
       gap: 2rem;
       align-items: center;
+      padding: 2rem 0;
     }
     @media (max-width: 800px) {
       .two-cols { grid-template-columns: 1fr; }
@@ -127,8 +135,8 @@
       height: 230px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 20px 60px rgba(15,23,42,0.7);
-      border: 4px solid #ffffff;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      border: 4px solid rgba(148,163,184,0.3);
     }
 
     .price {
@@ -139,19 +147,21 @@
     }
 
     ul { margin: 0.5rem 0 0.8rem 0; padding-right: 1rem; }
-    li { margin-bottom: 0.35rem; color: #475569; }
+    li { margin-bottom: 0.35rem; color: #cbd5e1; }
 
     label {
       display: block;
       font-size: 0.9rem;
       margin-bottom: 0.3rem;
-      color: #0f172a;
+      color: #e2e8f0;
     }
     input, textarea {
       width: 100%;
       padding: 0.7rem 0.8rem;
       border-radius: 8px;
-      border: 1px solid #cbd5e1;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.5);
+      color: #e2e8f0;
       margin-bottom: 0.7rem;
       font-size: 0.95rem;
     }
@@ -160,6 +170,21 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
+    }
+    
+    .blog-grid .card {
+      background: rgba(15,23,42,0.6);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(148,163,184,0.3);
+    }
+    
+    .blog-grid .card h3 a {
+      color: #e5f2ff;
+    }
+    
+    .blog-grid .card p {
+      color: #cbd5e1;
     }
 
     footer {
@@ -184,6 +209,18 @@
       margin-top: 1rem;
       font-size: 0.9rem;
       color: #0ea5e9;
+    }
+
+    /* אנימציות גלילה */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -281,25 +318,25 @@
 
         <div class="blog-grid">
           <div class="card" style="cursor: pointer;">
-            <h3><a href="article-books.html" style="color: #0f172a; text-decoration: none; display: block;">5 ספרים שיעזרו לך להתחיל דרך פיננסית בריאה</a></h3>
+            <h3><a href="article-books.html" style="color: #e5f2ff; text-decoration: none; display: block;">5 ספרים שיעזרו לך להתחיל דרך פיננסית בריאה</a></h3>
             <p>חמישה ספרים שיכולים לפתוח לך את הראש ולהכניס אותך לעולם הפיננסי בצורה פשוטה והגיונית.</p>
             <a class="btn" href="article-books.html">לקריאת המאמר</a>
           </div>
 
           <div class="card" style="cursor: pointer;">
-            <h3><a href="article-organize.html" style="color: #0f172a; text-decoration: none; display: block;">איך עושים סדר בכסף בלי לאבד את הראש</a></h3>
+            <h3><a href="article-organize.html" style="color: #e5f2ff; text-decoration: none; display: block;">איך עושים סדר בכסף בלי לאבד את הראש</a></h3>
             <p>שלושה צעדים שיעזרו לך להבין את המצב שלך, ליצור תזרים חיובי ולבנות רשת ביטחון.</p>
             <a class="btn" href="article-organize.html">לקריאת המאמר</a>
           </div>
 
           <div class="card" style="cursor: pointer;">
-            <h3><a href="article-fourways.html" style="color: #0f172a; text-decoration: none; display: block;">יש ארבע דרכים להרוויח כסף בעולם ואותנו לימדו רק על אחת</a></h3>
+            <h3><a href="article-fourways.html" style="color: #e5f2ff; text-decoration: none; display: block;">יש ארבע דרכים להרוויח כסף בעולם ואותנו לימדו רק על אחת</a></h3>
             <p>עבודה היא רק דרך אחת להכניס כסף. יש עוד אפשרויות שכדאי להכיר.</p>
             <a class="btn" href="article-fourways.html">לקריאת המאמר</a>
           </div>
 
           <div class="card" style="cursor: pointer;">
-            <h3><a href="article-myths.html" style="color: #0f172a; text-decoration: none; display: block;">5 מיתוסים פיננסיים שחייבים להישבר</a></h3>
+            <h3><a href="article-myths.html" style="color: #e5f2ff; text-decoration: none; display: block;">5 מיתוסים פיננסיים שחייבים להישבר</a></h3>
             <p>כמה מהמשפטים הכי נפוצים על כסף, ומה באמת עומד מאחוריהם.</p>
             <a class="btn" href="article-myths.html">לקריאת המאמר</a>
           </div>
@@ -333,5 +370,30 @@
   <footer>
     © הכלכלן של הבית
   </footer>
+
+  <script>
+    // אנימציה בגלילה
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // הוספת האנימציה לכל הקטעים
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section, .hero-box, .card');
+      sections.forEach(section => {
+        section.classList.add('fade-in');
+        observer.observe(section);
+      });
+    });
+  </script>
 </body>
 </html>
