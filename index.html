@@ -51,18 +51,34 @@
     h1, h2, h3, h4 { 
       color: var(--black); 
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      line-height: 1.3;
     }
     
-    h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-    h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
-    h3 { font-size: clamp(1.35rem, 3vw, 1.75rem); }
+    h1 { 
+      font-size: clamp(2rem, 5vw, 3.5rem); 
+      margin: 0 0 1.5rem 0;
+    }
+    
+    h2 { 
+      font-size: clamp(1.75rem, 4vw, 2.5rem); 
+      margin: 4rem 0 2rem 0;
+    }
+    
+    h2:first-child {
+      margin-top: 0;
+    }
+    
+    h3 { 
+      font-size: clamp(1.35rem, 3vw, 1.75rem); 
+      margin: 3rem 0 1.5rem 0;
+    }
     
     p { 
       margin-bottom: 1.5rem; 
       color: var(--black); 
       font-weight: 400;
       font-size: 1.1rem;
+      line-height: 1.7;
     }
     
     a { text-decoration: none; color: inherit; }
@@ -74,64 +90,91 @@
       position: sticky;
       top: 0;
       z-index: 20;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     
     .header-inner {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem 2rem;
+      padding: 1.2rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 2rem;
     }
     
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
     .brand-title { 
       font-weight: 700; 
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: var(--black);
+      white-space: nowrap;
     }
     
-    .brand-sub { 
-      font-size: 0.95rem; 
-      color: #666;
-      font-weight: 400;
-    }
-    
-    .top-links {
+    .nav-links {
       display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: var(--black);
       font-size: 1rem;
-    }
-    
-    .top-links a {
-      padding: 0.6rem 1.2rem;
-      border: 1px solid var(--black);
-      transition: all 0.3s ease;
       font-weight: 500;
+      transition: color 0.3s ease;
+      white-space: nowrap;
     }
     
-    .top-links a:hover {
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+    
+    .btn-header {
       background: var(--gold);
       color: var(--white);
-      border-color: var(--gold);
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      border: 2px solid var(--gold);
+    }
+    
+    .btn-header:hover {
+      background: var(--black);
+      color: var(--gold);
+      border-color: var(--black);
+      transform: translateY(-2px);
     }
 
     /* Main */
     main {
-      max-width: 1200px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 0 2rem 6rem;
+      padding: 0 24px 6rem;
     }
 
     section { 
-      padding: 6rem 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 5rem 0;
+      margin-bottom: 3rem;
     }
     
     section:last-child {
-      border-bottom: none;
+      margin-bottom: 0;
+    }
+    
+    /* Container for content sections */
+    .card, .section {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 24px;
     }
 
     /* Buttons */
@@ -139,83 +182,148 @@
       display: inline-block;
       background: var(--gold);
       color: var(--white);
-      padding: 1rem 2.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border: none;
+      padding: 1.2rem 3rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: 2px solid var(--gold);
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-top: 1rem;
+      margin-top: 0;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
     }
     
     .btn:hover {
       background: var(--black);
       color: var(--gold);
+      border-color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      box-shadow: none;
+    }
+    
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
     }
 
     /* Hero */
     .hero {
-      background: var(--blue-dark);
-      padding: 8rem 2rem;
-      text-align: center;
+      background: linear-gradient(135deg, #FFFDF7 0%, #F8F6F1 50%, #F2F2F2 100%);
+      padding: 6rem 2rem;
       border-bottom: none;
     }
     
-    .hero-content {
-      max-width: 800px;
+    .hero-container {
+      max-width: 1200px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .hero-content {
+      text-align: right;
     }
     
     .hero-content h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      margin-bottom: 1rem;
-      color: var(--white);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: 1.5rem;
+      color: var(--black);
+      line-height: 1.2;
     }
     
     .hero-tagline {
-      font-size: clamp(1.3rem, 3vw, 1.8rem);
-      margin-bottom: 3rem;
-      color: rgba(255,255,255,0.9);
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      margin-bottom: 2.5rem;
+      color: #444;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .hero-visual svg {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
     }
     
     .btn-hero {
       font-size: 1.3rem;
-      padding: 1.2rem 3rem;
+      padding: 1.3rem 3.5rem;
     }
 
     /* Values Section */
     .values-section {
-      padding: 5rem 0;
+      padding: 4rem 0;
+      margin: 4rem 0;
     }
     
     .values-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-      max-width: 1000px;
+      gap: 2rem;
+      max-width: 900px;
       margin: 0 auto;
     }
     
     .value-box {
       background: var(--white);
-      padding: 3rem 2rem;
+      padding: 2.5rem 2rem;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .value-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     }
     
     .value-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+      display: inline-block;
     }
     
     .value-box h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      margin: 0 0 0.8rem 0;
+      line-height: 1.3;
+      color: var(--black);
     }
     
     .value-box p {
-      font-size: 1rem;
-      color: #444;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.5;
+      margin: 0;
     }
 
     /* Two Columns */
@@ -224,6 +332,8 @@
       grid-template-columns: 1.2fr 1fr;
       gap: 5rem;
       align-items: center;
+      margin: 5rem 0;
+      padding: 3rem 0;
     }
     
     .about-photo img {
@@ -238,10 +348,21 @@
     .card {
       background: transparent;
       padding: 0;
+      margin-bottom: 4rem;
     }
     
     .card h2 {
-      margin-bottom: 2rem;
+      margin: 4rem 0 2rem 0;
+      text-align: right;
+    }
+    
+    .card h2:first-child {
+      margin-top: 0;
+    }
+    
+    .card p {
+      text-align: right;
+      line-height: 1.7;
     }
     
     .card ul {
@@ -254,7 +375,8 @@
       padding: 1rem 0 1rem 1.5rem;
       position: relative;
       font-size: 1.1rem;
-      line-height: 1.8;
+      line-height: 1.7;
+      text-align: right;
     }
     
     .card ul li::before {
@@ -276,13 +398,17 @@
     
     .blog-grid .card {
       border: 1px solid rgba(0,0,0,0.1);
-      padding: 2rem;
+      padding: 2.5rem;
       background: var(--white);
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-radius: 12px;
+      margin-bottom: 0;
     }
     
     .blog-grid .card h3 {
-      margin-bottom: 1rem;
+      margin: 0 0 1.5rem 0;
+      line-height: 1.4;
+      text-align: right;
     }
     
     .blog-grid .card h3 a {
@@ -297,140 +423,175 @@
     .blog-grid .card p {
       font-size: 1rem;
       margin-bottom: 1.5rem;
-    }
-
-    /* Forms */
-    form {
-      max-width: 500px;
-      margin-top: 2rem;
-    }
-    
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      color: var(--black);
-    }
-    
-    input, textarea {
-      width: 100%;
-      padding: 0.9rem;
-      border: 1px solid rgba(0,0,0,0.2);
-      background: var(--white);
-      color: var(--black);
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-      font-family: 'Assistant', sans-serif;
-      transition: border 0.3s ease;
-    }
-    
-    input:focus, textarea:focus {
-      border-color: var(--gold);
-      outline: none;
-    }
-    
-    textarea {
-      resize: vertical;
-      min-height: 120px;
+      line-height: 1.6;
+      text-align: right;
     }
 
     /* Contact Section */
     .contact-section {
-      background: var(--blue-dark);
-      padding: 6rem 2rem !important;
-      margin: 0 -2rem;
-      border-bottom: none;
+      padding: 6rem 0 !important;
+      margin: 4rem 0;
     }
     
-    .contact-container {
-      max-width: 500px;
+    .contact-card {
+      max-width: 600px;
       margin: 0 auto;
+      background: var(--white);
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    
+    .contact-card h2 {
       text-align: center;
+      margin: 0 0 0.5rem 0;
+      color: var(--black);
     }
     
-    .contact-container h2 {
-      color: var(--white);
-      margin-bottom: 2.5rem;
+    /* Form Groups */
+    .form-group {
+      margin-bottom: 1.5rem;
     }
     
-    .contact-container label {
-      color: var(--white);
-      text-align: right;
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border: 2px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--black);
+      font-size: 1rem;
+      font-family: 'Assistant', sans-serif;
+      transition: all 0.3s ease;
+      direction: rtl;
     }
     
-    .contact-container input,
-    .contact-container textarea {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: var(--white);
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #999;
+      font-weight: 400;
     }
     
-    .contact-container input::placeholder,
-    .contact-container textarea::placeholder {
-      color: rgba(255,255,255,0.5);
-    }
-    
-    .contact-container input:focus,
-    .contact-container textarea:focus {
+    .form-group input:focus,
+    .form-group textarea:focus {
       border-color: var(--gold);
-      background: rgba(255,255,255,0.15);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
     }
     
-    .btn-contact {
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+      line-height: 1.6;
+    }
+    
+    /* Submit Button */
+    .btn-submit {
+      width: 100%;
+      padding: 1.2rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 700;
       background: var(--gold);
       color: var(--white);
-      width: 100%;
-      font-size: 1.2rem;
-      padding: 1.1rem;
-      font-weight: 700;
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 0.5rem;
+      min-height: 56px;
     }
     
-    .btn-contact:hover {
-      background: var(--white);
-      color: var(--blue-dark);
+    .btn-submit:hover {
+      background: var(--black);
+      color: var(--gold);
+      border-color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
 
     /* Footer */
     footer {
       background: var(--blue-dark);
       color: var(--white);
-      text-align: center;
-      padding: 3rem 2rem;
-      font-size: 0.9rem;
+      padding: 4rem 2rem 1rem;
+      margin-top: 6rem;
     }
     
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: right;
+    }
+    
+    .footer-section h3 {
+      font-size: 1.3rem;
+      margin: 0.5rem 0 1rem 0;
+      color: var(--white);
+    }
+    
+    .footer-section h4 {
+      font-size: 1.1rem;
+      margin: 0 0 1rem 0;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
     }
     
     .footer-logo {
-      height: 40px;
+      height: 45px;
       width: auto;
-      margin-bottom: 1rem;
     }
     
-    .footer-content p {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
+    .footer-tagline {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.8);
+      margin: 0;
     }
     
+    .footer-contact,
     .footer-links {
       display: flex;
-      gap: 2rem;
-      justify-content: center;
-      margin-top: 1rem;
+      flex-direction: column;
+      gap: 0.8rem;
     }
     
+    .footer-contact a,
     .footer-links a {
-      color: var(--gold);
-      font-weight: 500;
+      color: rgba(255,255,255,0.8);
       transition: color 0.3s ease;
+      font-size: 0.95rem;
     }
     
+    .footer-contact a:hover,
     .footer-links a:hover {
-      color: var(--white);
+      color: var(--gold);
+    }
+    
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0 0;
+      text-align: center;
+    }
+    
+    .footer-bottom p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin: 0;
     }
 
     /* Animations */
@@ -495,51 +656,72 @@
     .before-after-container {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
-      gap: 2rem;
-      align-items: center;
-      margin: 3rem 0;
-      padding: 3rem 2rem;
-      background: var(--white);
-      border-radius: 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      gap: 3rem;
+      align-items: stretch;
+      margin: 5rem 0;
+      padding: 0;
+      background: transparent;
     }
     
     .before-box, .after-box {
+      background: var(--white);
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
       text-align: center;
-      padding: 2rem;
+    }
+    
+    .before-box {
+      border: 2px solid #ffebee;
+    }
+    
+    .after-box {
+      border: 2px solid #e8f5e9;
     }
     
     .status-icon {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-    }
-    
-    .before-box h3, .after-box h3 {
-      font-size: 1.5rem;
+      font-size: 3.5rem;
       margin-bottom: 1.5rem;
+      display: block;
+    }
+    
+    .before-box h3 {
+      font-size: 1.6rem;
+      margin: 0 0 2rem 0;
       font-weight: 700;
+      color: #c62828;
     }
     
-    .chaos-bars, .order-bars {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 0.8rem;
-      height: 150px;
-      margin: 2rem 0;
+    .after-box h3 {
+      font-size: 1.6rem;
+      margin: 0 0 2rem 0;
+      font-weight: 700;
+      color: #2e7d32;
     }
     
-    .chaos-bars .bar, .order-bars .bar {
-      width: 40px;
-      border-radius: 8px 8px 0 0;
-      transition: all 0.5s ease;
+    .status-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: right;
     }
     
-    .status-text {
+    .status-list li {
+      padding: 0.8rem 0;
       font-size: 1rem;
-      line-height: 1.8;
+      line-height: 1.5;
       color: #555;
-      font-weight: 500;
+      position: relative;
+      padding-right: 1.8rem;
+    }
+    
+    .status-list li::before {
+      content: "•";
+      position: absolute;
+      right: 0;
+      color: var(--gold);
+      font-size: 1.3rem;
+      font-weight: bold;
     }
     
     .arrow-divider {
@@ -569,41 +751,61 @@
     /* What You Get Grid */
     .what-you-get-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
-      margin: 2.5rem 0;
+      margin: 3rem 0 5rem 0;
     }
     
     .get-box {
       background: var(--white);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      padding: 2rem 2.5rem;
+      text-align: right;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      border-radius: 16px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
     }
     
     .get-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.12);
     }
     
     .get-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+      border-radius: 50%;
+      margin: 0;
+      box-shadow: 0 3px 10px rgba(212, 175, 55, 0.25);
+    }
+    
+    .get-content {
+      flex: 1;
+      text-align: right;
     }
     
     .get-box h4 {
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.15rem;
+      margin: 0 0 0.6rem 0;
       color: var(--black);
       font-weight: 600;
+      line-height: 1.3;
     }
     
     .get-box p {
-      font-size: 1rem;
-      color: #555;
+      font-size: 0.95rem;
+      color: #666;
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     /* WhatsApp Floating Button */
@@ -699,20 +901,32 @@
     @media (max-width: 720px) {
       /* Header */
       .header-inner { 
-        flex-direction: column; 
-        align-items: flex-start;
-        padding: 1.2rem 1.2rem;
+        flex-wrap: wrap;
+        padding: 1rem 1.2rem;
+        gap: 1rem;
+      }
+      .brand-section {
+        gap: 0.8rem;
+      }
+      .brand-section img {
+        height: 40px !important;
       }
       .brand-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem !important;
       }
-      .brand-sub {
-        font-size: 0.8rem;
-        line-height: 1.4;
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-around;
+        gap: 1rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(0,0,0,0.08);
       }
-      .top-links { 
-        width: 100%; 
-        justify-content: flex-start;
+      .nav-links a {
+        font-size: 0.9rem;
+      }
+      .btn-header {
+        padding: 0.6rem 1.2rem;
         font-size: 0.9rem;
       }
       
@@ -735,13 +949,28 @@
       .hero {
         padding: 3rem 1.2rem;
       }
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .hero-visual {
+        order: -1;
+        padding: 2rem;
+      }
+      .hero-content {
+        text-align: center;
+      }
       .hero-tagline {
         font-size: 1.1rem;
         margin-bottom: 2rem;
       }
+      .hero-buttons {
+        justify-content: center;
+      }
       .btn-hero {
         font-size: 1.1rem;
         padding: 1rem 2rem;
+        width: 100%;
       }
       
       /* Main */
@@ -753,11 +982,15 @@
       }
       
       /* Values */
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
       .value-box {
-        padding: 2rem 1.2rem;
+        padding: 2rem 1.5rem;
       }
       .value-icon {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
       
       /* Images - תמונות קלות */
@@ -777,19 +1010,26 @@
       
       /* Contact - השארת פרטים פשוטה */
       .contact-section {
-        padding: 3rem 1.2rem !important;
+        padding: 3rem 0 !important;
+        margin: 3rem 0;
       }
-      .contact-container h2 {
-        font-size: 1.6rem;
-        margin-bottom: 2rem;
+      .contact-card {
+        padding: 2rem 1.5rem;
+        margin: 0 1.2rem;
       }
-      .contact-container input {
+      .contact-card h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+      .form-group input,
+      .form-group textarea {
         font-size: 1rem;
         padding: 1rem;
       }
-      .btn-contact {
+      .btn-submit {
         font-size: 1.1rem;
-        padding: 1.1rem;
+        padding: 1.2rem;
+        min-height: 54px;
       }
       
       /* Sticky Button */
@@ -813,26 +1053,37 @@
         height: 28px;
       }
       
+      /* Footer */
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+      .footer-brand {
+        justify-content: center;
+      }
+      .footer-contact,
+      .footer-links {
+        align-items: center;
+      }
+      
       /* Before/After on mobile */
       .before-after-container {
-        padding: 1.5rem 1rem;
-        margin: 2rem 0;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 3rem 0;
       }
       .before-box, .after-box {
-        padding: 1.5rem 1rem;
+        padding: 2rem 1.5rem;
       }
       .status-icon {
         font-size: 3rem;
       }
-      .chaos-bars, .order-bars {
-        height: 120px;
-        gap: 0.5rem;
+      .arrow-divider {
+        transform: rotate(90deg);
       }
-      .chaos-bars .bar, .order-bars .bar {
-        width: 30px;
-      }
-      .status-text {
-        font-size: 0.9rem;
+      .status-list li {
+        font-size: 0.95rem;
       }
       
       /* What You Get on mobile */
@@ -841,10 +1092,20 @@
         gap: 1.5rem;
       }
       .get-box {
-        padding: 1.5rem 1.2rem;
+        padding: 1.5rem 1.5rem;
+        flex-direction: row;
+        gap: 1.2rem;
       }
       .get-icon {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        width: 45px;
+        height: 45px;
+      }
+      .get-box h4 {
+        font-size: 1.05rem;
+      }
+      .get-box p {
+        font-size: 0.9rem;
       }
       .get-box h4 {
         font-size: 1.1rem;
@@ -863,31 +1124,81 @@
 <body>
   <header>
     <div class="header-inner">
-      <div style="display: flex; align-items: center; gap: 0.8rem;">
-        <img src="הכלכלן של הבית.png" alt="לוגו" style="height: 50px; width: auto;">
-        <div>
-          <div class="brand-title">הכלכלן של הבית</div>
-          <div class="brand-sub">הכלכלן של הבית — כאן תהפוך להיות הכתובת לכל שאלה כלכלית במשפחה</div>
-        </div>
+      <div class="brand-section">
+        <img src="הכלכלן של הבית.png" alt="הכלכלן של הבית" style="height: 50px; width: auto;">
+        <div class="brand-title">הכלכלן של הבית</div>
       </div>
-      <div class="top-links">
+      
+      <nav class="nav-links">
+        <a href="#about">עליי</a>
+        <a href="#process">התהליך</a>
         <a href="#blog">בלוג</a>
         <a href="#contact">צור קשר</a>
-      </div>
+      </nav>
+      
+      <a href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank" class="btn-header">דברו איתי</a>
     </div>
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1>הכלכלן של הבית</h1>
-      <p class="hero-tagline">ייעוץ כלכלי בגובה העיניים</p>
-      <a class="btn btn-hero" href="#contact">אני רוצה להתחיל</a>
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>הכלכלן של הבית</h1>
+        <p class="hero-tagline">כאן תהפוך להיות הכתובת לכל שאלה כלכלית במשפחה</p>
+        <p style="font-size: 1.15rem; color: #555; margin-bottom: 2.5rem;">זה שאתה לא מבין בכסף זה כי לא לימדו אותנו על זה בשום מקום וזה לא באשמתך.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-hero" href="#contact">אני רוצה להתחיל</a>
+          <a class="btn btn-outline btn-hero" href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank">שיחת היכרות</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <!-- תרשים צמיחה פיננסית -->
+          <defs>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.8" />
+              <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.3" />
+            </linearGradient>
+          </defs>
+          
+          <!-- רקע -->
+          <rect x="0" y="0" width="400" height="300" fill="#f8f9fa" rx="10"/>
+          
+          <!-- קווי רשת -->
+          <line x1="50" y1="50" x2="50" y2="250" stroke="#e0e0e0" stroke-width="2"/>
+          <line x1="50" y1="250" x2="350" y2="250" stroke="#e0e0e0" stroke-width="2"/>
+          
+          <!-- עמודות צמיחה -->
+          <rect x="80" y="200" width="40" height="50" fill="#d4af37" opacity="0.6" rx="4"/>
+          <rect x="140" y="170" width="40" height="80" fill="#d4af37" opacity="0.7" rx="4"/>
+          <rect x="200" y="130" width="40" height="120" fill="#d4af37" opacity="0.8" rx="4"/>
+          <rect x="260" y="90" width="40" height="160" fill="#d4af37" opacity="0.9" rx="4"/>
+          <rect x="320" y="60" width="40" height="190" fill="#d4af37" rx="4"/>
+          
+          <!-- קו מגמה -->
+          <polyline points="100,220 160,190 220,150 280,110 340,70" 
+                    fill="none" stroke="#1e3a5f" stroke-width="3" stroke-linecap="round"/>
+          
+          <!-- נקודות -->
+          <circle cx="100" cy="220" r="6" fill="#1e3a5f"/>
+          <circle cx="160" cy="190" r="6" fill="#1e3a5f"/>
+          <circle cx="220" cy="150" r="6" fill="#1e3a5f"/>
+          <circle cx="280" cy="110" r="6" fill="#1e3a5f"/>
+          <circle cx="340" cy="70" r="8" fill="#d4af37"/>
+          
+          <!-- אייקון כסף -->
+          <text x="340" y="45" font-size="24" text-anchor="middle">💰</text>
+          
+          <!-- חץ למעלה -->
+          <path d="M 365 100 L 375 90 L 385 100" fill="none" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
     </div>
   </section>
 
   <main>
     <!-- אזור ערך -->
-    <section class="section values-section">
+    <section class="section values-section" id="process">
       <div class="values-grid">
         <div class="value-box">
           <div class="value-icon">💰</div>
@@ -908,7 +1219,7 @@
     </section>
 
     <!-- סיפור אישי -->
-    <section class="section">
+    <section class="section" id="about">
       <div class="two-cols">
         <div class="card">
           <h2>הסיפור שלי</h2>
@@ -938,14 +1249,13 @@
           <div class="before-box">
             <div class="status-icon">😰</div>
             <h3>לפני</h3>
-            <div class="chaos-bars">
-              <div class="bar" style="height: 80%; background: #ff4444;"></div>
-              <div class="bar" style="height: 45%; background: #ff6b6b;"></div>
-              <div class="bar" style="height: 90%; background: #ff4444;"></div>
-              <div class="bar" style="height: 30%; background: #ff8787;"></div>
-              <div class="bar" style="height: 70%; background: #ff5555;"></div>
-            </div>
-            <p class="status-text">בלגן כלכלי<br>חוסר שליטה<br>לחץ מתמיד</p>
+            <ul class="status-list">
+              <li>הכסף נעלם ולא יודע לאן</li>
+              <li>חוסר שליטה על ההוצאות</li>
+              <li>לחץ כלכלי מתמיד</li>
+              <li>פחד מהעתיד</li>
+              <li>אין תוכנית ברורה</li>
+            </ul>
           </div>
           
           <div class="arrow-divider">
@@ -955,14 +1265,13 @@
           <div class="after-box">
             <div class="status-icon">😊</div>
             <h3>אחרי</h3>
-            <div class="order-bars">
-              <div class="bar" style="height: 60%; background: var(--gold);"></div>
-              <div class="bar" style="height: 70%; background: var(--gold);"></div>
-              <div class="bar" style="height: 80%; background: var(--gold);"></div>
-              <div class="bar" style="height: 85%; background: var(--gold);"></div>
-              <div class="bar" style="height: 90%; background: var(--gold);"></div>
-            </div>
-            <p class="status-text">סדר וביטחון<br>שליטה מלאה<br>ראש שקט</p>
+            <ul class="status-list">
+              <li>שליטה מלאה על הכסף</li>
+              <li>תוכנית ברורה לעתיד</li>
+              <li>ראש שקט וביטחון</li>
+              <li>חסכונות צומחים</li>
+              <li>החלטות כלכליות נכונות</li>
+            </ul>
           </div>
         </div>
         
@@ -975,44 +1284,58 @@
         <div class="what-you-get-grid">
           <div class="get-box">
             <div class="get-icon">🎯</div>
-            <h4>נבין איפה אתם עומדים</h4>
-            <p>תמונת מצב מלאה של המצב הכלכלי שלך היום</p>
+            <div class="get-content">
+              <h4>נבין איפה אתם עומדים</h4>
+              <p>תמונת מצב מלאה של המצב הכלכלי שלך היום</p>
+            </div>
           </div>
           
           <div class="get-box">
             <div class="get-icon">📊</div>
-            <h4>נעשה סדר בהוצאות</h4>
-            <p>נזהה לאן הכסף הולך ונבנה תקציב שעובד בשבילך</p>
+            <div class="get-content">
+              <h4>נעשה סדר בהוצאות</h4>
+              <p>נזהה לאן הכסף הולך ונבנה תקציב שעובד בשבילך</p>
+            </div>
           </div>
           
           <div class="get-box">
             <div class="get-icon">🛡️</div>
-            <h4>נבנה כרית ביטחון</h4>
-            <p>תהיו מוכנים לכל צרה לא צפויה בלי ללוות כסף</p>
+            <div class="get-content">
+              <h4>נבנה כרית ביטחון</h4>
+              <p>תהיו מוכנים לכל צרה לא צפויה בלי ללוות כסף</p>
+            </div>
           </div>
           
           <div class="get-box">
             <div class="get-icon">💎</div>
-            <h4>נבנה תוכנית חיסכון</h4>
-            <p>הכסף שלכם לא ישחק ויתחיל לעבוד בשבילכם</p>
+            <div class="get-content">
+              <h4>נבנה תוכנית חיסכון</h4>
+              <p>הכסף שלכם לא ישחק ויתחיל לעבוד בשבילכם</p>
+            </div>
           </div>
           
           <div class="get-box">
             <div class="get-icon">🏦</div>
-            <h4>נעשה סדר בקרן הפנסיה וההשתלמות</h4>
-            <p>נוודא שהכסף שלכם מושקע נכון לטווח הארוך</p>
+            <div class="get-content">
+              <h4>נעשה סדר בקרן הפנסיה וההשתלמות</h4>
+              <p>נוודא שהכסף שלכם מושקע נכון לטווח הארוך</p>
+            </div>
           </div>
           
           <div class="get-box">
             <div class="get-icon">📈</div>
-            <h4>נתחיל לבנות תיק השקעות רווחי ויעיל</h4>
-            <p>השקעות חכמות שיצמיחו את הכסף שלכם לאורך זמן</p>
+            <div class="get-content">
+              <h4>נתחיל לבנות תיק השקעות רווחי ויעיל</h4>
+              <p>השקעות חכמות שיצמיחו את הכסף שלכם לאורך זמן</p>
+            </div>
           </div>
           
           <div class="get-box">
             <div class="get-icon">🤝</div>
-            <h4>נהיה על הדברים ביחד</h4>
-            <p>עד שתרגישו מוכנים לצאת לדרך בעצמכם בביטחון מלא</p>
+            <div class="get-content">
+              <h4>נהיה על הדברים ביחד</h4>
+              <p>עד שתרגישו מוכנים לצאת לדרך בעצמכם בביטחון מלא</p>
+            </div>
           </div>
         </div>
         
@@ -1063,15 +1386,25 @@
     
 
     <section class="section contact-section" id="contact">
-      <div class="contact-container">
-        <h2>השאר פרטים ונחזור אליך</h2>
+      <div class="contact-card">
+        <h2>בוא נתחיל</h2>
+        <p style="font-size: 1rem; color: #666; margin-bottom: 2rem; text-align: center;">השאר פרטים ונחזור אליך תוך 24 שעות</p>
         <form action="https://formspree.io/f/mdklkenp" method="POST">
           <input type="hidden" name="_subject" value="ליד חדש מהאתר - הכלכלן של הבית">
-          <label>שם מלא</label>
-          <input name="name" required>
-          <label>טלפון</label>
-          <input name="phone" type="tel" required>
-          <button type="submit" class="btn btn-contact">דברו איתי עכשיו</button>
+          
+          <div class="form-group">
+            <input type="text" name="name" placeholder="שם מלא" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="tel" name="phone" placeholder="טלפון" required>
+          </div>
+          
+          <div class="form-group">
+            <textarea name="message" rows="4" placeholder="מה מטריד אותך בכסף כרגע? (אופציונלי)"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-submit">שלח פרטים</button>
         </form>
       </div>
     </section>
@@ -1092,12 +1425,36 @@
 
   <footer>
     <div class="footer-content">
-      <img src="הכלכלן של הבית.png" alt="לוגו" class="footer-logo" loading="lazy">
-      <p>© הכלכלן של הבית</p>
-      <div class="footer-links">
-        <a href="https://wa.me/972544240213" target="_blank">וואטסאפ</a>
-        <a href="https://instagram.com" target="_blank">אינסטגרם</a>
+      <div class="footer-section">
+        <div class="footer-brand">
+          <img src="הכלכלן של הבית.png" alt="הכלכלן של הבית" class="footer-logo" loading="lazy">
+          <h3>הכלכלן של הבית</h3>
+        </div>
+        <p class="footer-tagline">ייעוץ כלכלי אישי שעוזר לך לקחת שליטה על הכסף שלך ולבנות עתיד פיננסי בטוח</p>
       </div>
+      
+      <div class="footer-section">
+        <h4>צור קשר</h4>
+        <div class="footer-contact">
+          <a href="mailto:ori@example.com">📧 ori@example.com</a>
+          <a href="https://wa.me/972544240213" target="_blank">💬 וואטסאפ</a>
+          <a href="https://instagram.com" target="_blank">📸 אינסטגרם</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>תוכן</h4>
+        <div class="footer-links">
+          <a href="#about">עליי</a>
+          <a href="#process">התהליך</a>
+          <a href="#blog">בלוג</a>
+          <a href="#contact">צור קשר</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2025 הכלכלן של הבית. כל הזכויות שמורות.</p>
     </div>
   </footer>
 
