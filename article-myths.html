@@ -5,127 +5,207 @@
   <title>5 מיתוסים פיננסיים שחייבים להישבר - הכלכלן של הבית</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #d4af37;
+      --blue-bg: #F8FAFC;
+      --blue-dark: #1e3a5f;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: #0f172a;
-      color: #0f172a;
-      line-height: 1.6;
+      font-family: 'Assistant', sans-serif;
+      background: var(--blue-bg);
+      color: var(--black);
+      line-height: 1.8;
       direction: rtl;
     }
-    h1, h2, h3, h4 { margin-bottom: 1rem; }
-    p { margin-bottom: 0.8rem; color: #475569; }
-    a { text-decoration: none; color: inherit; }
 
     header {
-      background: #0f172a;
-      color: #fff;
-      padding: 1rem 1.5rem;
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
     }
+
     .header-inner {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-    }
-    .brand-title { font-weight: 700; font-size: 1.1rem; }
-    .brand-sub { font-size: 0.85rem; color: #cbd5e1; }
-    .top-links {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      font-size: 0.85rem;
-    }
-    .top-links a {
-      padding: 0.3rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.6);
-      color: #e2e8f0;
+      align-items: center;
     }
 
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1.5rem;
-      background: #f8fafc;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 18px rgba(15,23,42,0.18);
-      margin-bottom: 1.5rem;
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
     }
 
     .back-link {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 2rem;
+      color: var(--blue-dark);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--blue-dark);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: var(--blue-dark);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .highlight {
+      background: var(--white);
+      padding: 2rem;
+      border-right: 4px solid var(--gold);
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .myth-box {
+      background: var(--white);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .myth-box h3 {
+      color: var(--gold);
+      margin-top: 0;
+    }
+
+    .cta-box {
+      background: var(--gold);
+      color: var(--white);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--white);
+    }
+
+    .btn {
       display: inline-block;
+      background: var(--white);
+      color: var(--blue-dark);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
       margin-top: 1rem;
-      font-size: 0.9rem;
-      color: #0ea5e9;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: var(--blue-dark);
+      color: var(--gold);
     }
 
     footer {
-      background: #0f172a;
-      color: #e2e8f0;
+      background: var(--blue-dark);
+      color: var(--white);
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.85rem;
-      margin-top: 1.5rem;
+      padding: 2rem;
+      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <div>
-        <a href="index.html">
-          <div class="brand-title">הכלכלן של הבית</div>
-          <div class="brand-sub">ליווי פיננסי אישי לצעירים</div>
-        </a>
-      </div>
-      <div class="top-links">
-        <a href="index.html#blog">בלוג</a>
-        <a href="index.html#plans">מסלולים</a>
-        <a href="index.html#contact">צור קשר</a>
-        <a href="https://wa.me/972544240213" target="_blank">ווטסאפ</a>
-        <a href="tel:0544240213">0544240213</a>
-      </div>
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="index.html#blog" class="back-link">← חזרה לבלוג</a>
     </div>
   </header>
 
-  <main>
-    <div class="card">
-      <h1>5 מיתוסים פיננסיים שחייבים להישבר</h1>
-      <p>הרבה אנשים מפחדים להתעסק עם כסף כי הם חושבים שזה מסובך או שאין להם מספיק. האמת היא שזה פשוט הרבה יותר ממה שנדמה. כאן אני עובר על חמישה מיתוסים שמרחיקים אנשים מצמיחה כלכלית והאמת מאחוריהם.</p>
+  <article>
+    <h1>5 מיתוסים פיננסיים שחייבים להישבר</h1>
 
+    <p>הרבה אנשים מפחדים להתעסק עם כסף כי הם חושבים שזה מסובך או שאין להם מספיק. האמת היא שזה פשוט הרבה יותר ממה שנדמה. כאן אני עובר על חמישה מיתוסים שמרחיקים אנשים מצמיחה כלכלית והאמת מאחוריהם.</p>
+
+    <div class="myth-box">
       <h3>מיתוס 1: השקעות זה רק לעשירים או למי שכבר יש כסף</h3>
-      <p>אפשר להתחיל להשקיע גם ב 50 שקלים בחודש בלבד. הסכום לא קובע, ההתמדה כן. מי שמפקיד 500 שקלים בחודש ומשיג תשואה ממוצעת של 9 אחוז לשנה יכול להגיע לכ 300 אלף שקלים אחרי 20 שנה. מי שמתמיד עם 1,500 שקלים בחודש יכול לעבור את מיליון השקלים באותו פרק זמן. לא צריך להיות עשיר או גאון פיננסי בשביל להתחיל, רק להבין שהשלב הראשון הוא פשוט להתחיל.</p>
-
-      <h3>מיתוס 2: אני צעיר, יש זמן, נטפל בזה אחר כך</h3>
-      <p>זו אחת האשליות היקרות ביותר. הזמן הוא הכוח הכי חזק בשוק ההון. כל חודש שאנחנו דוחים את ההשקעה שלנו אנחנו מאבדים את קסם הריבית דריבית, הכוח שמאפשר לכסף לגדול על כסף. מי שמתחיל בגיל צעיר מרוויח יתרון שאי אפשר לקנות אחר כך, שנים של צמיחה כלכלית שמצטברת בשקט. הזמן הכי טוב להתחיל היה אתמול, והשני הכי טוב הוא היום.</p>
-
-      <h3>מיתוס 3: הבנק שלי דואג לי, אין לי מה לבדוק</h3>
-      <p>הבנקים והגופים הגדולים יודעים לנצל את חוסר הידע של הציבור לטובתם. זה לא מתוך רוע אלא כי האינטרס שלהם שונה משלך. בעוד שאתה רוצה שהכסף שלך יעבוד בשבילך, הם רוצים שהוא יישאר אצלם כמה שיותר זמן. בכמה צעדים פשוטים אפשר להבין איפה הכסף שלך נמצא, לבדוק עמלות ולהעביר אותו למקומות הרבה יותר רווחיים. ברגע שאתה לוקח אחריות ובודק אתה כבר עושה את הצעד הראשון קדימה למצב כלכלי טוב יותר.</p>
-
-      <h3>מיתוס 4: אם אני עובד קשה, אהיה מסודר כלכלית</h3>
-      <p>עבודה קשה היא ערך חשוב, אבל היא לא מבטיחה יציבות כלכלית. אפשר לעבוד מבוקר עד לילה ועדיין לראות את רמת החיים יורדת כי עליית המחירים לא משתווה לעליית המשכורות. מי שבונה את החיים הכלכליים שלו רק על עבודה מוותר על מקורות הכנסה נוספים. השקעה נכונה גורמת לכסף לשמור על ערכו ואף לגדול גם כשאנחנו ישנים. עבודה קשה מתחילה את הדרך אבל השקעה חכמה היא זו שממשיכה אותה.</p>
-
-      <h3>מיתוס 5: פנסיה זה מסובך, אני לא מבין בזה</h3>
-      <p>פנסיה זה לא מסובך בכלל, זה מנגנון פשוט וחשוב שכל אחד צריך להבין. הפנסיה שלך היא גם ההגנה שלך וגם הכסף שילווה אותך ביום שתפסיק לעבוד. בכמה דקות של למידה או בליווי קצר אפשר להבין בדיוק איך זה עובד ולגרום לכסף שלך לעבוד בשבילך. בסוף זה לא איזו קופה של המדינה, זה הכסף שלך, ואם לא תבין איך הוא מתנהל אחרים כבר ידאגו להרוויח ממנו במקומך.</p>
-
-      <h3>סיכום</h3>
-      <p>יש עוד הרבה מיתוסים לדבר עליהם אבל לא רציתי להעמיס. אני מקווה שהצלחתי לגרום לך לחשוב רגע ולהבין שהעולם הפיננסי הוא לא כזה מסובך. כל מה שצריך זה לחקור קצת, לא לפחד ולא להיות אדיש.</p>
-
-      <a class="back-link" href="index.html#blog">⬅ חזרה לבלוג</a>
+      <p>אפשר להתחיל להשקיע גם ב 50 שקלים בחודש בלבד. הסכום לא קובע, ההתמדה כן. מי שמפקיד 500 שקלים בחודש ומשיג תשואה ממוצעת של 9 אחוז לשנה יכול להגיע לכ 300 אלף שקלים אחרי 20 שנה. מי שמתמיד עם 1,500 שקלים בחודש יכול לעבור את מיליון השקלים באותו פרק זמן.</p>
+      <p><strong>לא צריך להיות עשיר או גאון פיננסי בשביל להתחיל, רק להבין שהשלב הראשון הוא פשוט להתחיל.</strong></p>
     </div>
-  </main>
+
+    <div class="myth-box">
+      <h3>מיתוס 2: אני צעיר, יש זמן, נטפל בזה אחר כך</h3>
+      <p>זו אחת האשליות היקרות ביותר. הזמן הוא הכוח הכי חזק בשוק ההון. כל חודש שאנחנו דוחים את ההשקעה שלנו אנחנו מאבדים את קסם הריבית דריבית, הכוח שמאפשר לכסף לגדול על כסף.</p>
+      <p><strong>מי שמתחיל בגיל צעיר מרוויח יתרון שאי אפשר לקנות אחר כך</strong>, שנים של צמיחה כלכלית שמצטברת בשקט. הזמן הכי טוב להתחיל היה אתמול, והשני הכי טוב הוא היום.</p>
+    </div>
+
+    <div class="myth-box">
+      <h3>מיתוס 3: הבנק שלי דואג לי, אין לי מה לבדוק</h3>
+      <p>הבנקים והגופים הגדולים יודעים לנצל את חוסר הידע של הציבור לטובתם. זה לא מתוך רוע אלא כי האינטרס שלהם שונה משלך. בעוד שאתה רוצה שהכסף שלך יעבוד בשבילך, הם רוצים שהוא יישאר אצלם כמה שיותר זמן.</p>
+      <p><strong>בכמה צעדים פשוטים אפשר להבין איפה הכסף שלך נמצא, לבדוק עמלות ולהעביר אותו למקומות הרבה יותר רווחיים.</strong> ברגע שאתה לוקח אחריות ובודק אתה כבר עושה את הצעד הראשון קדימה למצב כלכלי טוב יותר.</p>
+    </div>
+
+    <div class="myth-box">
+      <h3>מיתוס 4: אם אני עובד קשה, אהיה מסודר כלכלית</h3>
+      <p>עבודה קשה היא ערך חשוב, אבל היא לא מבטיחה יציבות כלכלית. אפשר לעבוד מבוקר עד לילה ועדיין לראות את רמת החיים יורדת כי עליית המחירים לא משתווה לעליית המשכורות.</p>
+      <p>מי שבונה את החיים הכלכליים שלו רק על עבודה מוותר על מקורות הכנסה נוספים. <strong>השקעה נכונה גורמת לכסף לשמור על ערכו ואף לגדול גם כשאנחנו ישנים.</strong> עבודה קשה מתחילה את הדרך אבל השקעה חכמה היא זו שממשיכה אותה.</p>
+    </div>
+
+    <div class="myth-box">
+      <h3>מיתוס 5: פנסיה זה מסובך, אני לא מבין בזה</h3>
+      <p>פנסיה זה לא מסובך בכלל, זה מנגנון פשוט וחשוב שכל אחד צריך להבין. הפנסיה שלך היא גם ההגנה שלך וגם הכסף שילווה אותך ביום שתפסיק לעבוד.</p>
+      <p>בכמה דקות של למידה או בליווי קצר אפשר להבין בדיוק איך זה עובד ולגרום לכסף שלך לעבוד בשבילך. <strong>בסוף זה לא איזו קופה של המדינה, זה הכסף שלך</strong>, ואם לא תבין איך הוא מתנהל אחרים כבר ידאגו להרוויח ממנו במקומך.</p>
+    </div>
+
+    <h2>סיכום</h2>
+
+    <div class="highlight">
+      <p>יש עוד הרבה מיתוסים לדבר עליהם אבל לא רציתי להעמיס. אני מקווה שהצלחתי לגרום לך לחשוב רגע ולהבין שהעולם הפיננסי הוא לא כזה מסובך. <strong>כל מה שצריך זה לחקור קצת, לא לפחד ולא להיות אדיש.</strong></p>
+    </div>
+
+    <div class="cta-box">
+      <h3>רוצה לשבור את המיתוסים?</h3>
+      <p>בוא נבנה ביחד תוכנית שמתאימה לך</p>
+      <a href="index.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+  </article>
 
   <footer>
-    © הכלכלן של הבית
+    <p>© הכלכלן של הבית</p>
   </footer>
 </body>
 </html>
-

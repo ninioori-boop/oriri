@@ -5,126 +5,200 @@
   <title>יש ארבע דרכים להרוויח כסף בעולם ואותנו לימדו רק על אחת - הכלכלן של הבית</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #d4af37;
+      --blue-bg: #F8FAFC;
+      --blue-dark: #1e3a5f;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: #0f172a;
-      color: #0f172a;
-      line-height: 1.6;
+      font-family: 'Assistant', sans-serif;
+      background: var(--blue-bg);
+      color: var(--black);
+      line-height: 1.8;
       direction: rtl;
     }
-    h1, h2, h3, h4 { margin-bottom: 1rem; }
-    p { margin-bottom: 0.8rem; color: #475569; }
-    a { text-decoration: none; color: inherit; }
 
     header {
-      background: #0f172a;
-      color: #fff;
-      padding: 1rem 1.5rem;
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
     }
+
     .header-inner {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-    }
-    .brand-title { font-weight: 700; font-size: 1.1rem; }
-    .brand-sub { font-size: 0.85rem; color: #cbd5e1; }
-    .top-links {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      font-size: 0.85rem;
-    }
-    .top-links a {
-      padding: 0.3rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.6);
-      color: #e2e8f0;
+      align-items: center;
     }
 
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1.5rem;
-      background: #f8fafc;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 18px rgba(15,23,42,0.18);
-      margin-bottom: 1.5rem;
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
     }
 
     .back-link {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 2rem;
+      color: var(--blue-dark);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--blue-dark);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: var(--blue-dark);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .highlight {
+      background: var(--white);
+      padding: 2rem;
+      border-right: 4px solid var(--gold);
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .way-box {
+      background: var(--white);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .way-box h3 {
+      color: var(--gold);
+      margin-top: 0;
+    }
+
+    .cta-box {
+      background: var(--gold);
+      color: var(--white);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--white);
+    }
+
+    .btn {
       display: inline-block;
+      background: var(--white);
+      color: var(--blue-dark);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
       margin-top: 1rem;
-      font-size: 0.9rem;
-      color: #0ea5e9;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: var(--blue-dark);
+      color: var(--gold);
     }
 
     footer {
-      background: #0f172a;
-      color: #e2e8f0;
+      background: var(--blue-dark);
+      color: var(--white);
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.85rem;
-      margin-top: 1.5rem;
+      padding: 2rem;
+      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <div>
-        <a href="index.html">
-          <div class="brand-title">הכלכלן של הבית</div>
-          <div class="brand-sub">ליווי פיננסי אישי לצעירים</div>
-        </a>
-      </div>
-      <div class="top-links">
-        <a href="index.html#blog">בלוג</a>
-        <a href="index.html#plans">מסלולים</a>
-        <a href="index.html#contact">צור קשר</a>
-        <a href="https://wa.me/972544240213" target="_blank">ווטסאפ</a>
-        <a href="tel:0544240213">0544240213</a>
-      </div>
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="index.html#blog" class="back-link">← חזרה לבלוג</a>
     </div>
   </header>
 
-  <main>
-    <div class="card">
-      <h1>יש ארבע דרכים להרוויח כסף בעולם ואותנו לימדו רק על אחת</h1>
-      <p>רובנו גדלנו על משפט אחד: לומדים, עובדים, מקבלים משכורת. עבודה היא חשובה, אבל היא לא הדרך היחידה להכניס כסף.</p>
+  <article>
+    <h1>יש ארבע דרכים להרוויח כסף בעולם ואותנו לימדו רק על אחת</h1>
 
+    <p>רובנו גדלנו על משפט אחד: לומדים, עובדים, מקבלים משכורת. עבודה היא חשובה, אבל היא לא הדרך היחידה להכניס כסף.</p>
+
+    <div class="way-box">
       <h3>1: עבודה</h3>
       <p>זו הדרך הבסיסית ביותר. משקיעים זמן ומקבלים שכר. זה יכול להיות כשכירים או כבעלי עסק. כולנו מתחילים כאן וזה בסדר גמור. העניין הוא לא להישאר רק כאן.</p>
+    </div>
 
+    <div class="way-box">
       <h3>2: חוב</h3>
       <p>אפשר להלוות כסף לגופים אחרים ולקבל עליו ריבית. זה יכול להיות דרך אגח, קרן כספית או פיקדון. ככל שהגוף לו אנו מלווים יציב ובטוח יותר, הריבית בדרך כלל נמוכה יותר אך בטוחה יותר, וככל שהוא מסוכן יותר הריבית גבוהה יותר אך הסיכון עולה.</p>
       <p>הרעיון הפשוט הוא כזה: אתה נותן כסף לגוף גדול, והוא משתמש בו כדי להרוויח. בתמורה הוא מחזיר לך את הכסף עם ריבית. ככה כסף יכול לעבוד בשבילך, ולא רק אתה עובד בשביל כסף.</p>
+    </div>
 
+    <div class="way-box">
       <h3>3: בעלות על עסקים של אחרים</h3>
       <p>דרך שוק ההון אפשר להיות בעלים של חלק מהחברות הגדולות בעולם, בלי לנהל אותן. קונים מניות או קרנות מדד, ונהנים מחלק מהרווחים שלהן בלי להשקיע בזה זמן יומיומי. אולי תשקיע בזה כמה דקות כשאתה קונה את הקרן, וזהו.</p>
+    </div>
 
+    <div class="way-box">
       <h3>4: קרקע ונדלן</h3>
       <p>בכל מקום שאנחנו נמצאים יש בעל נכס שמרוויח שכירות. בעל הדירה שאנחנו גרים בה, בעל הקניון שאנחנו קונים בו, בעל המשרדים שאנחנו עובדים בהם. נדלן מאפשר לקבל הכנסה בלי להיות נוכח פיזית כל הזמן.</p>
-
-      <h3>סיכום</h3>
-      <p>יש יותר מדרך אחת להרוויח כסף. זה לא תמיד פשוט, צריך ללמוד ולהבין מה עושים, אבל זה אפשרי. מי שפותח את הראש, קורא, שואל ומתחיל בקטן, מגלה עולם שלם שלא מדברים עליו בבית ספר.</p>
-      <p>אני ממליץ לחקור, לקרוא, לשמוע פודקאסטים ולשמור על ראש פתוח. לא חייבים להשתמש בכל הדרכים, אבל חשוב לדעת שהן קיימות.</p>
-
-      <a class="back-link" href="index.html#blog">⬅ חזרה לבלוג</a>
     </div>
-  </main>
+
+    <h2>סיכום</h2>
+
+    <div class="highlight">
+      <p><strong>יש יותר מדרך אחת להרוויח כסף.</strong> זה לא תמיד פשוט, צריך ללמוד ולהבין מה עושים, אבל זה אפשרי. מי שפותח את הראש, קורא, שואל ומתחיל בקטן, מגלה עולם שלם שלא מדברים עליו בבית ספר.</p>
+    </div>
+
+    <p>אני ממליץ לחקור, לקרוא, לשמוע פודקאסטים ולשמור על ראש פתוח. לא חייבים להשתמש בכל הדרכים, אבל חשוב לדעת שהן קיימות.</p>
+
+    <div class="cta-box">
+      <h3>רוצה ללמוד איך להתחיל?</h3>
+      <p>בוא נבנה ביחד תוכנית שמתאימה לך</p>
+      <a href="index.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+  </article>
 
   <footer>
-    © הכלכלן של הבית
+    <p>© הכלכלן של הבית</p>
   </footer>
 </body>
 </html>
-
