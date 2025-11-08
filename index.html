@@ -12,17 +12,40 @@
       --white: #ffffff;
       --black: #111111;
       --gold: #d4af37;
+      --blue-bg: #F8FAFC;
+      --blue-dark: #1e3a5f;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
       font-family: 'Assistant', sans-serif;
-      background: var(--white);
+      background: var(--blue-bg);
       color: var(--black);
       line-height: 1.8;
       direction: rtl;
       font-weight: 400;
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px);
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    body > * {
+      position: relative;
+      z-index: 2;
     }
     
     h1, h2, h3, h4 { 
@@ -132,7 +155,7 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(255,255,255,1));
+      background: var(--blue-dark);
       padding: 8rem 2rem;
       text-align: center;
       border-bottom: none;
@@ -146,12 +169,13 @@
     .hero-content h1 {
       font-size: clamp(2.5rem, 6vw, 4rem);
       margin-bottom: 1rem;
+      color: var(--white);
     }
     
     .hero-tagline {
       font-size: clamp(1.3rem, 3vw, 1.8rem);
       margin-bottom: 3rem;
-      color: #333;
+      color: rgba(255,255,255,0.9);
     }
     
     .btn-hero {
@@ -253,6 +277,8 @@
     .blog-grid .card {
       border: 1px solid rgba(0,0,0,0.1);
       padding: 2rem;
+      background: var(--white);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
     
     .blog-grid .card h3 {
@@ -310,7 +336,7 @@
 
     /* Contact Section */
     .contact-section {
-      background: var(--black);
+      background: var(--blue-dark);
       padding: 6rem 2rem !important;
       margin: 0 -2rem;
       border-bottom: none;
@@ -332,14 +358,22 @@
       text-align: right;
     }
     
-    .contact-container input {
+    .contact-container input,
+    .contact-container textarea {
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.3);
       color: var(--white);
     }
     
-    .contact-container input:focus {
+    .contact-container input::placeholder,
+    .contact-container textarea::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+    
+    .contact-container input:focus,
+    .contact-container textarea:focus {
       border-color: var(--gold);
+      background: rgba(255,255,255,0.15);
     }
     
     .btn-contact {
@@ -348,16 +382,17 @@
       width: 100%;
       font-size: 1.2rem;
       padding: 1.1rem;
+      font-weight: 700;
     }
     
     .btn-contact:hover {
-      background: var(--black);
-      color: var(--gold);
+      background: var(--white);
+      color: var(--blue-dark);
     }
 
     /* Footer */
     footer {
-      background: var(--black);
+      background: var(--blue-dark);
       color: var(--white);
       text-align: center;
       padding: 3rem 2rem;
@@ -401,11 +436,33 @@
     /* Animations */
     .fade-in {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      transform: translateX(100px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
     
     .fade-in.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in-up.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -442,8 +499,9 @@
       align-items: center;
       margin: 3rem 0;
       padding: 3rem 2rem;
-      background: rgba(0,0,0,0.02);
+      background: var(--white);
       border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     
     .before-box, .after-box {
@@ -970,6 +1028,12 @@
 
         <div class="blog-grid">
           <div class="card">
+            <h3><a href="article-inflation.html">למה אתם מסכנים את עצמכם כשאתם אדישים למצב הפיננסי שלכם</a></h3>
+            <p>רוב האנשים לא מבינים כמה יקר עולה להם לא לעשות כלום עם הכסף. האינפלציה לא מחכה לאף אחד.</p>
+            <a class="btn" href="article-inflation.html">קרא עכשיו</a>
+          </div>
+
+          <div class="card">
             <h3><a href="article-books.html">5 ספרים שיעזרו לך להתחיל דרך פיננסית בריאה</a></h3>
             <p>חמישה ספרים שיכולים לפתוח לך את הראש ולהכניס אותך לעולם הפיננסי בצורה פשוטה והגיונית.</p>
             <a class="btn" href="article-books.html">קרא עכשיו</a>
@@ -1038,7 +1102,7 @@
   </footer>
 
   <script>
-    // אנימציה בגלילה - fade-in עם slide-up
+    // אנימציה בגלילה - כניסה מצד ימין
     const observerOptions = {
       threshold: 0.15,
       rootMargin: '0px 0px -80px 0px'
@@ -1054,11 +1118,57 @@
 
     // הוספת האנימציה לכל האלמנטים
     document.addEventListener('DOMContentLoaded', () => {
-      const elements = document.querySelectorAll('.value-box, .two-cols, .card, .blog-grid .card');
-      elements.forEach(element => {
+      // כותרות וטקסטים - מצד ימין
+      const headings = document.querySelectorAll('h2, h3');
+      headings.forEach((element, index) => {
         element.classList.add('fade-in');
         observer.observe(element);
       });
+      
+      // תיבות ערך - מצד ימין בזה אחר זה
+      const valueBoxes = document.querySelectorAll('.value-box');
+      valueBoxes.forEach((element, index) => {
+        element.style.transitionDelay = `${index * 0.15}s`;
+        element.classList.add('fade-in');
+        observer.observe(element);
+      });
+      
+      // תיבות "מה תקבל" - מצד ימין בזה אחר זה
+      const getBoxes = document.querySelectorAll('.get-box');
+      getBoxes.forEach((element, index) => {
+        element.style.transitionDelay = `${index * 0.1}s`;
+        element.classList.add('fade-in');
+        observer.observe(element);
+      });
+      
+      // כרטיסי בלוג - מצד ימין בזה אחר זה
+      const blogCards = document.querySelectorAll('.blog-grid .card');
+      blogCards.forEach((element, index) => {
+        element.style.transitionDelay = `${index * 0.15}s`;
+        element.classList.add('fade-in');
+        observer.observe(element);
+      });
+      
+      // פסקאות - מצד ימין
+      const paragraphs = document.querySelectorAll('.card p');
+      paragraphs.forEach(element => {
+        element.classList.add('fade-in');
+        observer.observe(element);
+      });
+      
+      // ויזואל לפני/אחרי - מלמטה למעלה
+      const beforeAfter = document.querySelector('.before-after-container');
+      if (beforeAfter) {
+        beforeAfter.classList.add('fade-in-up');
+        observer.observe(beforeAfter);
+      }
+      
+      // תמונה - מצד שמאל
+      const aboutPhoto = document.querySelector('.about-photo');
+      if (aboutPhoto) {
+        aboutPhoto.classList.add('fade-in-left');
+        observer.observe(aboutPhoto);
+      }
     });
 
     // כפתור קבוע בתחתית - מופיע אחרי גלילה
