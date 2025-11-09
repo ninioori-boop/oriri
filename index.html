@@ -799,7 +799,8 @@
     }
     
     .status-list {
-      list-style: none;
+      list-style: none !important;
+      list-style-type: none !important;
       padding: 0;
       margin: 0;
       text-align: right;
@@ -810,17 +811,19 @@
       font-size: 1rem;
       line-height: 1.5;
       color: #555;
-      position: relative;
-      padding-right: 1.8rem;
+      text-align: right;
+      list-style: none !important;
+      list-style-type: none !important;
     }
     
     .status-list li::before {
-      content: "•";
-      position: absolute;
-      right: 0;
-      color: var(--gold);
-      font-size: 1.3rem;
-      font-weight: bold;
+      content: none !important;
+      display: none !important;
+    }
+    
+    .status-list li::marker {
+      content: none !important;
+      display: none !important;
     }
     
     .arrow-divider {
@@ -1499,6 +1502,12 @@
         <p><strong>אם אהבת משהו כאן, תשלח את זה לחבר או חברה שזה יכול לעזור להם. חינוך פיננסי מתפשט מאדם לאדם.</strong></p>
 
         <div class="blog-grid">
+          <div class="card">
+            <h3><a href="article-child-savings.html">שני ילדים, אותה תוכנית, אחד יקבל פי שניים כסף בגיל 21</a></h3>
+            <p>ההבדל בין מסלול "בטוח" למסלול מנייתי בחיסכון לכל ילד יכול להיות עשרות אלפי שקלים. זה לא קסם, זו מתמטיקה.</p>
+            <a class="btn" href="article-child-savings.html">קרא עכשיו</a>
+          </div>
+
           <div class="card">
             <h3><a href="article-inflation.html">למה אתם מסכנים את עצמכם כשאתם אדישים למצב הפיננסי שלכם</a></h3>
             <p>רוב האנשים לא מבינים כמה יקר עולה להם לא לעשות כלום עם הכסף. האינפלציה לא מחכה לאף אחד.</p>
