@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>שני ילדים, אותה תוכנית, אחד יקבל פי שניים כסף בגיל 21 - הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 2rem;
+      color: var(--black);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin: 2rem 0 1rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .highlight {
+      background: var(--white);
+      padding: 2rem;
+      border-right: 4px solid var(--gold);
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .comparison-box {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      color: var(--white);
+      padding: 2.5rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .comparison-box h3 {
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .comparison-item {
+      background: rgba(255,255,255,0.1);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .comparison-item h4 {
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .comparison-item .amount {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 1rem 0;
+    }
+
+    .action-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .action-box h3 {
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .action-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .action-box li {
+      padding: 1rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .action-box li:last-child {
+      border-bottom: none;
+    }
+
+    .action-box li strong {
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+    
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      article {
+        padding: 0 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="index.html#blog" class="back-link">חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>שני ילדים, אותה תוכנית, אחד יקבל פי שניים כסף בגיל 21</h1>
+
+    <p>לרובנו יש חיסכון שנפתח לנו בילדות, אבל מעטים בכלל יודעים איפה הוא מושקע ומה הוא עושה היום. תוכנית "חיסכון לכל ילד" היא יוזמה של משרד האוצר והמוסד לביטוח לאומי שמפקידה מדי חודש 57 ש"ח לכל ילד בישראל. ההורים יכולים להוסיף עוד 57 ש"ח מהקצבה וכך להכפיל את הסכום ל-114 ש"ח בכל חודש.</p>
+
+    <p>הכסף מושקע או בפיקדון בנקאי או בקופת גמל להשקעה לפי בחירת ההורים, ובתוך כל אפשרות כזו ניתן לבחור מסלול השקעה שונה: מסלול בטוח (פיקדון) או מסלול בסיכון מוגבר (מנייתי או עוקב מדד).</p>
+
+    <div class="highlight">
+      <p><strong>הבעיה:</strong> רוב האנשים, בעיקר כאלה שלא מתעסקים בהשקעות, שומעים את המילה "סיכון" ומיד בוחרים במסלול ה"בטוח". בפועל זו טעות שיכולה לעלות לילד שלהם בעשרות אלפי שקלים.</p>
+    </div>
+
+    <h2>הסיכון האמיתי הוא לא מה שחושבים</h2>
+
+    <p>הסיכון במסלול מנייתי הוא תנודתיות, לא הפסד. בטווח הקצר הערך של ההשקעה יכול לעלות ולרדת, אבל בטווח הארוך הנתונים ברורים: מחקר של IG Wealth Management המבוסס על נתוני Bank of America הראה שמעולם לא הייתה תקופה של 15 שנים שבה מדד S&P 500 סיים בתשואה שלילית.</p>
+
+    <p>כלומר מי שהשקיע לאורך זמן במדד רחב ומפוזר תמיד סיים עם רווח. חשוב כמובן לזכור שנתוני העבר לא מבטיחים את תוצאות העתיד, אבל הם כן מראים עד כמה כוח הזמן והשוק פועלים לטובת מי שחושב לטווח ארוך.</p>
+
+    <div class="comparison-box">
+      <h3>ההבדל במספרים</h3>
+      <p>21 שנים של חיסכון, אותו סכום חודשי, שתי תוצאות שונות לחלוטין:</p>
+      
+      <div class="comparison-grid">
+        <div class="comparison-item">
+          <h4>מסלול "בטוח" (פיקדון)</h4>
+          <p>תשואה ממוצעת: 3% לשנה</p>
+          <div class="amount">~40,000 ₪</div>
+          <p>בגיל 21</p>
+        </div>
+        
+        <div class="comparison-item">
+          <h4>מסלול מנייתי (מדד)</h4>
+          <p>תשואה ממוצעת: 9% לשנה</p>
+          <div class="amount">~75,000 ₪</div>
+          <p>בגיל 21</p>
+        </div>
+      </div>
+      
+      <p style="margin-top: 2rem; font-size: 1.2rem;"><strong>כמעט פי שניים יותר על אותו סכום חודשי בדיוק!</strong></p>
+    </div>
+
+    <h2>המדינה כבר הבינה</h2>
+
+    <p>בשנים האחרונות משרד האוצר והרשות לניירות ערך עשו צעד חכם כששינו את מסלול ברירת המחדל למסלול מנייתי בקופת גמל. זו החלטה שמבוססת על נתונים ונועדה להגדיל את הסיכוי של כל ילד בישראל להתחיל את חייו הבוגרים עם בסיס כלכלי חזק יותר.</p>
+
+    <div class="action-box">
+      <h3>אז מה עושים בפועל?</h3>
+      <ul>
+        <li><strong>אם אין לכם ילדים:</strong> זו הזדמנות מעולה להבין את ההבדלים בין פיקדון בנקאי להשקעה אמיתית לטווח ארוך.</li>
+        
+        <li><strong>אם נולד לכם ילד לאחרונה (מזל טוב!):</strong> תקבלו הודעה מביטוח לאומי עם קישור לבחירת המסלול.</li>
+        
+        <li><strong>אם בחרתם במסלול "בטוח":</strong> היכנסו לאתר של ביטוח לאומי ובקשו לעבור מהגוף שמנהל את הקופה שלכם למסלול המנייתי.</li>
+        
+        <li><strong>מומלץ:</strong> לבדוק אחת לשנה שהחיסכון שלכם מושקע במסלול שמתאים לכם ולמטרות שלכם.</li>
+      </ul>
+    </div>
+
+    <p>זה לא קסם, זו פשוט המתמטיקה של ריבית דריבית. ההחלטה הזו יכולה לעשות את ההבדל בין התחלה טובה לבין התחלה מעולה בחיים הבוגרים של הילד שלכם.</p>
+
+    <div class="cta-box">
+      <h3>רוצה לדעת איך לשמור על הכסף שלך?</h3>
+      <p>בוא נבנה ביחד תוכנית מתאימה לך</p>
+      <a href="index.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2025 הכלכלן של הבית. כל הזכויות שמורות.</p>
+  </footer>
+</body>
+</html>
+
