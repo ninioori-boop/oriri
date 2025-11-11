@@ -301,6 +301,10 @@
       .choice-icon {
         font-size: 3rem;
       }
+
+      section[style*="grid-template-columns: 1fr 1fr"] > div {
+        grid-template-columns: 1fr !important;
+      }
     }
   </style>
 </head>
@@ -348,6 +352,28 @@
         <div class="choice-btn">למד עוד</div>
       </a>
     </div>
+
+    <!-- סיפור אישי -->
+    <section style="max-width: 1000px; margin: 5rem auto; padding: 0 2rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+        <div style="background: var(--white); border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+          <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--black);">הסיפור שלי</h2>
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--gray-text);">אני אורי, ואני רוצה להפוך אותך לכלכלן של הבית שלך.</p>
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--gray-text);">בתיכון התחלתי להבין שמערכת החינוך לא באמת מכינה אותנו לדבר הכי בסיסי בחיים הבוגרים: איך מתנהלים עם כסף.</p>
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--gray-text);">לא מלמדים אותנו על זכויות בעבודה, על פנסיה, משכנתא או השקעות, דברים שכל אחד צריך לדעת.</p>
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--gray-text);">לקראת סוף השירות הצבאי ביקשתי מאבא שלי שיחבר אותי לעולם הזה. התחלתי ללמוד על שוק ההון, גיליתי את הכוח של השקעה פסיבית, וקראתי ספרים ותוכן שגרמו לי להבין מה באמת מחכה לנו כשנכנסים לעולם העבודה, הלוואות, ביטוחים, פנסיה וכל מה שביניהם.</p>
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--gray-text);">במהלך הלמידה הבנתי שלגופים הגדולים יש אינטרסים אישיים, ומה שטוב להם לא תמיד טוב לנו.</p>
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--gray-text);">הם מרוויחים מהחוסר ידע של הציבור, וזה גורם לנו לבצע פעולות שלא בהכרח מקדמות אותנו כלכלית.</p>
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--gray-text);">מאז לא הפסקתי ללמוד וליישם.</p>
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--gray-text);">פתחתי לעצמי תיק השקעות פאסיבי שאני ממשיך להפקיד אליו עד היום, עזרתי לבני משפחה וחברים לעשות סדר בכסף, והמשכתי לקורס בכלכלת המשפחה. היום אני בדרך להוציא רישיון ייעוץ השקעות וייעוץ פנסיוני.</p>
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--gray-text);">אני עוזר לאנשים לבנות בסיס פיננסי אמיתי, להבין איך הכסף שלהם עובד, להרגיש שליטה, ולהפסיק לתת לבנקים ולגופים הגדולים לנהל להם את החיים בלי שהם שמים לב.</p>
+          <p style="line-height: 1.8; color: var(--gray-text);">אפשר ללמוד לבד איך להתנהל נכון עם כסף, התוכן קיים בכל מקום, אבל אם אתה רוצה קיצור דרך וליווי אישי, השירות שלי בדיוק בשביל זה.</p>
+        </div>
+        <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+          <img src="ori-story.jpg" alt="אורי ניניו" style="width: 100%; height: auto; display: block;" loading="lazy">
+        </div>
+      </div>
+    </section>
 
     <p class="footer-note">© 2025 הכלכלן של הבית. כל הזכויות שמורות.</p>
   </div>
