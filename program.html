@@ -969,6 +969,26 @@
       }
     }
 
+    @keyframes slideInFromRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .mapping-card {
+      animation: slideInFromRight 0.6s ease-out forwards;
+    }
+
+    .mapping-card:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
+    .mapping-card:nth-child(2) { animation-delay: 0.2s; opacity: 0; }
+    .mapping-card:nth-child(3) { animation-delay: 0.3s; opacity: 0; }
+    .mapping-card:nth-child(4) { animation-delay: 0.4s; opacity: 0; }
+
     /* Responsive */
     @media (max-width: 980px) {
       .values-grid { 
@@ -1484,22 +1504,22 @@
           
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
             
-            <div style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
+            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
               <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">ניתוח תזרים מזומנים</h4>
               <p style="color: var(--gray-text); line-height: 1.6;">נבין בדיוק איפה הכסף נכנס, לאן הוא הולך, ואיפה אפשר לחסוך</p>
             </div>
 
-            <div style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
+            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
               <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">מיפוי נכסים</h4>
               <p style="color: var(--gray-text); line-height: 1.6;">נעבור על כל הנכסים שלך ונבין מה יש לך ואיך זה עובד בשבילך</p>
             </div>
 
-            <div style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
+            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
               <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">סדר בביטוחים ופנסיה</h4>
               <p style="color: var(--gray-text); line-height: 1.6;">נבדוק אילו ביטוחים ופנסיות יש לך, האם יש כפילויות או חוסרים</p>
             </div>
 
-            <div style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
+            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
               <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">גילוי כספים אבודים</h4>
               <p style="color: var(--gray-text); line-height: 1.6;">נחפש כספים שאולי לא ידעת שקיימים - פנסיות ישנות, פיקדונות נשכחים</p>
             </div>
@@ -1519,7 +1539,7 @@
 
           <p style="font-size: 1.2rem; color: var(--gray-text); margin-bottom: 2rem; text-align: center; line-height: 1.7;">הפגישה הזו לגמרי בחינם וללא התחייבות. גם אם תחליט שאתה לא רוצה להמשך לליווי מלא, תצא עם ערך אמיתי וכלים שיעזרו לך.</p>
 
-          <a href="#contact" style="display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--black); padding: 1.2rem 3.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); transition: all 0.3s;">קבע פגישת מיפוי עכשיו</a>
+          <a href="#contact" style="display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--black); padding: 1.2rem 3.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); transition: all 0.3s; max-width: 300px; text-align: center; line-height: 1.4;">קבע פגישת<br>מיפוי עכשיו</a>
         </div>
       </div>
     </section>
