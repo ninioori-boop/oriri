@@ -305,6 +305,23 @@
       section[style*="grid-template-columns: 1fr 1fr"] > div {
         grid-template-columns: 1fr !important;
       }
+
+      .story-section .story-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+
+      .story-section .story-text {
+        padding: 1.5rem !important;
+      }
+
+      .story-section h2 {
+        font-size: 1.5rem !important;
+      }
+
+      .story-section p {
+        font-size: 0.9rem !important;
+      }
     }
   </style>
 </head>
@@ -354,9 +371,9 @@
     </div>
 
     <!-- סיפור אישי -->
-    <section style="max-width: 1000px; margin: 2.5rem auto; padding: 0 1.5rem;">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
-        <div style="background: var(--white); border-radius: 16px; padding: 1.8rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+    <section class="story-section" style="max-width: 1000px; margin: 2.5rem auto; padding: 0 1.5rem;">
+      <div class="story-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+        <div class="story-text" style="background: var(--white); border-radius: 16px; padding: 1.8rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
           <h2 style="font-size: 1.7rem; margin-bottom: 1rem; color: var(--black);">הסיפור שלי</h2>
           <p style="margin-bottom: 0.7rem; line-height: 1.55; color: var(--gray-text); font-size: 0.95rem;">אני אורי, ואני רוצה להפוך אותך לכלכלן של הבית שלך.</p>
           <p style="margin-bottom: 0.7rem; line-height: 1.55; color: var(--gray-text); font-size: 0.95rem;">בתיכון התחלתי להבין שמערכת החינוך לא באמת מכינה אותנו לדבר הכי בסיסי בחיים הבוגרים: איך מתנהלים עם כסף.</p>
