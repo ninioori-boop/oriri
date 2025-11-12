@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק א - הכלכלן של הבית</title>
+  <style>
+    :root {
+      --gold: #B8860B;
+      --gold-light: #DAA520;
+      --gray-dark: #2C2C2C;
+      --gray-medium: #3A3A3A;
+      --gray-light: #F5F5F5;
+      --gray-text: #666;
+      --black: #1a1a1a;
+      --white: #FFFFFF;
+      --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(184, 134, 11, 0.4);
+    }
+
+    .article {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--black);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-right: 1rem;
+      border-right: 4px solid var(--gold);
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: var(--gray-text);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      color: var(--black);
+    }
+
+    .highlight-box h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--black);
+    }
+
+    .highlight-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .comparison-box {
+      background: var(--gray-light);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .comparison-box h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--black);
+      text-align: center;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .comparison-item {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .comparison-item h4 {
+      font-size: 1.2rem;
+      color: var(--black);
+      margin-bottom: 0.8rem;
+    }
+
+    .comparison-item .amount {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 0.5rem 0;
+    }
+
+    .comparison-item p {
+      font-size: 0.95rem;
+      color: var(--gray-text);
+    }
+
+    .info-list {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .info-list h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--white);
+    }
+
+    .info-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-list li {
+      padding: 0.8rem 0;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 1.05rem;
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .info-list li strong {
+      color: var(--gold);
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .cta-box h2 {
+      color: var(--black);
+      border: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+      color: var(--black);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .article {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-item .amount {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    
+    <article class="article">
+      <img src="pension.png" alt="המירוץ לפנסיה" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem;" loading="lazy">
+      
+      <h1>קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק א</h1>
+      
+      <p>רוב הצעירים לא נותנים לקרן הפנסיה יותר מדי מחשבה. זה מרגיש רחוק, אולי אפילו לא רלוונטי.</p>
+      
+      <p>אבל קרן הפנסיה היא אחת ההשקעות הכי גדולות שיש לנו בחיים, היא בעצם המשכורת שלנו לעתיד.</p>
+      
+      <p>בכל חודש המעסיק מפריש 12.5 אחוז מהשכר ואנחנו מוסיפים 6 אחוז נוספים.</p>
+      
+      <p>מי שרוצה יכול להגדיל את ההפקדה האישית ל-7 אחוז וכך לבנות קצבה גבוהה יותר לעתיד.</p>
+      
+      <p>אם אנחנו עצמאים, האחריות על ההפקדה היא שלנו בלבד, אנחנו אלה שמפרישים לקרן מדי חודש כדי להבטיח שגם לנו תהיה פנסיה מסודרת.</p>
+      
+      <p>את כל ההפרשות האלה מעבירים לקופה שנקראת קרן פנסיה והיא משקיעה את הכסף שלנו במסלולי השקעה לפי הבחירה שלנו: מנייתי, כללי, סולידי ועוד.</p>
+      
+      <p>בנוסף הקרן כוללת גם ביטוח שאירים (למקרה פטירה) וביטוח אובדן כושר עבודה, כך שהיא משלבת חיסכון והשקעה עם הגנה ביטוחית.</p>
+      
+      <p>המטרה של הקרן היא להגדיל את החיסכון לאורך השנים כך שברגע שנגיע לגיל פרישה נוכל לקבל ממנה קצבה חודשית קבועה.</p>
+
+      <h2>למה בכלל יש דבר כזה פנסיה</h2>
+      
+      <p>המדינה רוצה למנוע מצב שבו אנשים מבוגרים לא יכולים להתפרנס ונשארים תלויים בקצבאות.</p>
+      
+      <p>הפנסיה מחייבת אותנו לחסוך במהלך שנות העבודה כדי לשמור על רמת חיים גם אחרי שנפסיק לעבוד.</p>
+      
+      <p>אפשר לומר שזו שותפות, אנחנו דואגים לעצמנו והמדינה מוודאת שלא נישאר מאחור.</p>
+
+      <h2>דמי ניהול - אל תתעלמו מזה</h2>
+      
+      <p>קרן הפנסיה גובה מאיתנו שני סוגים של דמי ניהול:</p>
+      
+      <p>מההפקדות החודשיות ומהצבירה הכוללת (כלומר, מכל מה שכבר חסכנו).</p>
+      
+      <p>זה אולי נשמע קטן, אבל כל 0.1 אחוז לכאן או לשם שווה עשרות או מאות אלפי שקלים בפנסיה העתידית.</p>
+      
+      <p>ופה חשוב לדעת משהו קריטי:</p>
+      
+      <p>המדינה יצרה הסדר שנקרא פנסיית ברירת מחדל שבו נקבעו ארבע קרנות שמציעות דמי ניהול נמוכים במיוחד, גם בלי שתצטרכו להתמקח או להכיר מישהו מבפנים.</p>
+
+      <div class="info-list">
+        <h3>אלו הקרנות שנמצאות כיום בהסדר:</h3>
+        <ul>
+          <li><strong>אינפיניטי</strong></li>
+          <li><strong>אלטשולר שחם</strong></li>
+          <li><strong>מיטב</strong></li>
+          <li><strong>מור</strong></li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <h3>דמי ניהול מקסימליים בקרנות ברירת מחדל:</h3>
+        <p><strong>לא יותר מ-1% מההפקדה</strong></p>
+        <p><strong>לא יותר מ-0.22% מהצבירה</strong></p>
+      </div>
+      
+      <p>אם הקרן שלכם גובה יותר מזה, אתם יכולים בקלות לעבור לקרן פנסיית ברירת מחדל או פשוט להתמקח עם הקרן שלכם על דמי הניהול.</p>
+      
+      <p>זה מאוד חשוב כי לאורך עשרות שנים גם שינוי קטן בדמי הניהול יכול להיות ההבדל בין קצבה בסיסית לבין חיסכון של עשרות או מאות אלפי שקלים בטווח הארוך.</p>
+
+      <h2>מסלול ההשקעה - תראו כמה זה משמעותי</h2>
+      
+      <p>צעירים רבים משאירים את הפנסיה שלהם על מסלול תלוי גיל שהוא ברירת המחדל. במסלול הזה אחוז ההשקעה במניות יורד עם השנים כך שהחיסכון הופך להיות שמרני יותר, כלומר סיכון נמוך יותר אבל גם תשואה נמוכה בהרבה.</p>
+
+      <div class="comparison-box">
+        <h3>השוואה: הפרשה של 1,000 ₪ בחודש למשך 40 שנה</h3>
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <h4>מסלול תלוי גיל</h4>
+            <p>תשואה ממוצעת משוערת: ~6% בשנה</p>
+            <div class="amount">~₪2M</div>
+            <p>מסלול שמרני יותר שמתאים לגיל</p>
+          </div>
+          <div class="comparison-item">
+            <h4>מסלול מנייתי (S&P 500)</h4>
+            <p>תשואה ממוצעת משוערת: ~10% בשנה</p>
+            <div class="amount">~₪5.5M</div>
+            <p style="color: var(--gold); font-weight: 600;">פי כמעט 3 יותר כסף!</p>
+          </div>
+        </div>
+      </div>
+
+      <p><strong>כן, פי כמעט שלוש יותר כסף רק בגלל בחירה במסלול השקעה שונה.</strong></p>
+      
+      <p>חשוב להבין, מסלול מנייתי אכן תנודתי יותר, אבל כשאנחנו צעירים יש לנו עשרות שנים קדימה והזמן משחק לטובתנו.</p>
+      
+      <p>לכן כדאי להכיר את האפשרויות, להבין את הסיכונים ולבחור מסלול שמתאים לטווח הארוך ולמטרות שלכם.</p>
+
+      <h2>מה לעשות בפועל</h2>
+      
+      <p>כדי לגלות איפה נמצאת קרן הפנסיה שלכם, אתם יכולים להיכנס לאתר שנקרא <strong>"הר הכסף"</strong> של משרד האוצר.</p>
+      
+      <p>חשוב לוודא שכתובת האתר כוללת את הסיומת <strong>gov.il</strong> כדי שתדעו שאתם נמצאים באתר ממשלתי אמין.</p>
+      
+      <p>שם תוכלו לבדוק באיזו קרן אתם חוסכים, כמה כסף הצטבר ומה דמי הניהול שאתם משלמים.</p>
+      
+      <p>אחרי שמצאתם איזו קרן פנסיה יש לכם, אתם יכולים להיכנס לאיזור האישי באתר של החברה של הקרן ולהבין מה הם דמי הניהול ומסלולי ההשקעה שלכם.</p>
+
+      <h2>לסיכום</h2>
+      
+      <p>קרן הפנסיה אולי נשמעת מורכבת, אבל בפועל היא פשוטה להבנה, רק שיש בה הרבה פרטים חשובים שצריך להכיר.</p>
+      
+      <p><strong>בחלק ב</strong> נדבר על המקדם קצבה, איך מחליטים איזה קצבה תקבלו בפרישה, ועל המנגנון הביטוחי שנמצא בקרן.</p>
+      
+      <p>תודה שקראתם.</p>
+    </article>
+
+    <div class="cta-box">
+      <h2>בוא נבנה תוכנית מתאימה</h2>
+      <p>רוצה לעשות סדר בפנסיה ובכל התחום הפיננסי? בוא נדבר</p>
+      <a href="program.html#contact" class="btn">דברו איתי</a>
+    </div>
+  </div>
+</body>
+</html>
+
