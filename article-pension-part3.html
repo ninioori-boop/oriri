@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ג - הכלכלן של הבית</title>
+  <style>
+    :root {
+      --gold: #B8860B;
+      --gold-light: #DAA520;
+      --gray-dark: #2C2C2C;
+      --gray-medium: #3A3A3A;
+      --gray-light: #F5F5F5;
+      --gray-text: #666;
+      --black: #1a1a1a;
+      --white: #FFFFFF;
+      --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(184, 134, 11, 0.4);
+    }
+
+    .article {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 2rem;
+    }
+
+    .article-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 12px;
+      margin: 2rem auto;
+      display: block;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--black);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-right: 1rem;
+      border-right: 4px solid var(--gold);
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: var(--gray-text);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      color: var(--black);
+    }
+
+    .highlight-box h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--black);
+    }
+
+    .highlight-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .info-list {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .info-list h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--white);
+    }
+
+    .info-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-list li {
+      padding: 0.8rem 0;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 1.05rem;
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .info-list li strong {
+      color: var(--gold);
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .cta-box h2 {
+      color: var(--black);
+      border: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+      color: var(--black);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      margin: 0.5rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .article {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    
+    <article class="article">
+      <h1>קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ג</h1>
+      
+      <img src="pension.png" alt="קרן פנסיה" class="article-image">
+      
+      <p>בחלקים הקודמים דיברנו על איך קרן הפנסיה עובדת, דמי ניהול, מסלולי השקעה, מקדם קצבה והביטוחים שנמצאים בתוך הקרן.</p>
+      
+      <p>הפעם נדבר על ההבדל בין קרן פנסיה מקיפה לקרן פנסיה משלימה.</p>
+      
+      <h2>ההבדל בין קרן פנסיה מקיפה לקרן פנסיה משלימה</h2>
+      
+      <p>אחת השאלות שחוזרות אצל הרבה אנשים היא למה בכלל יש שתי קרנות פנסיה, מקיפה ומשלימה, ומה בעצם ההבדל ביניהן.</p>
+      
+      <p>האמת, ההבדל פשוט מאוד.</p>
+      
+      <h2>קרן פנסיה מקיפה</h2>
+      
+      <p>קרן הפנסיה המקיפה היא הקרן העיקרית של רוב העובדים בישראל.</p>
+      
+      <p>המדינה קבעה לה תקרה, כלומר יש סכום מקסימלי של שכר שעליו אפשר להפריש לקרן הזו. נכון לשנת 2025 מדובר בערך ב־26,600 שקל שכר חודשי מבוטח.</p>
+      
+      <p>עד הסכום הזה גם המעסיק וגם העובד מפרישים יחד לפנסיה בכל חודש.</p>
+      
+      <p>בקרן המקיפה יש גם ביטוחים מובנים: ביטוח שאירים למקרה מוות וביטוח אובדן כושר עבודה.</p>
+      
+      <p>היא משלבת חיסכון לגיל פרישה יחד עם ביטחון כלכלי במקרה של מוות או פגיעה בעבודה.</p>
+      
+      <p>בנוסף, כ־30 אחוז מהכסף בקרן מושקע במנגנון הבטחת תשואה של המדינה שמבטיחה תשואה ריאלית קבועה של 5.15%, כלומר תשואה שמצמידה את עצמה למדד המחירים לצרכן.</p>
+      
+      <p>זה אומר שגם אם תהיה אינפלציה, הערך האמיתי של הכסף נשמר לאורך זמן.</p>
+      
+      <p>החלק הזה הוא מה שהופך את הקרן המקיפה לפחות מסוכנת ויותר יציבה.</p>
+      
+      <p>המטרה של הקרן המקיפה היא להבטיח לנו קצבה חודשית יציבה אחרי שנפרוש, וגם להגן על המשפחה שלנו במקרה של מוות או נכות.</p>
+      
+      <h2>קרן פנסיה משלימה</h2>
+      
+      <p>קרן הפנסיה המשלימה נועדה למי שכבר הגיע לתקרה של הקרן המקיפה, או פשוט רוצה להפקיד יותר כסף לפנסיה.</p>
+      
+      <p>היא לא מוגבלת בתקרת שכר, וכל מה שמעל הקרן המקיפה יכול להיכנס אליה.</p>
+      
+      <p>בשונה מהקרן המקיפה, כאן אין ביטוחים מובנים כברירת מחדל.</p>
+      
+      <p>אפשר להוסיף אותם בנפרד, אבל זה לא חובה.</p>
+      
+      <p>כל הכסף בקרן הזו מושקע בשוק ההון, ואין בה מנגנון תשואה מובטחת.</p>
+      
+      <p>זה אומר שהתשואה הפוטנציאלית יכולה להיות גבוהה יותר, אבל גם התנודתיות והסיכון גדולים יותר.</p>
+      
+      <p>זו בעצם קרן שמאפשרת לנו להמשיך לחסוך מעבר לתקרת הפנסיה הרגילה, למי שמרוויח יותר או רוצה להגדיל את החיסכון הפנסיוני שלו.</p>
+      
+      <div class="highlight-box">
+        <h3>לסיכום</h3>
+        <p>אפשר לראות את זה ככה:</p>
+        <p><strong>הקרן המקיפה</strong> היא הבסיס, כוללת חיסכון, ביטוחים ותשואה ריאלית בטוחה של 5.15% הצמודה למדד.</p>
+        <p><strong>הקרן המשלימה</strong> היא התוספת, חיסכון בלבד, בלי ביטוחים ועם פוטנציאל תשואה גבוה יותר.</p>
+      </div>
+      
+      <p>בחלק ד נדבר על מה צריך לוודא אחרי שעוזבים את מקום העבודה שלנו.</p>
+      
+      <p><strong>תודה שקראתם</strong></p>
+    </article>
+
+    <div class="cta-box">
+      <h2>רוצה ללמוד עוד?</h2>
+      <p>קרא את החלקים הקודמים של סדרת המאמרים על קרן הפנסיה</p>
+      <a href="article-pension.html" class="btn">לחלק א</a>
+      <a href="article-pension-part2.html" class="btn">לחלק ב</a>
+    </div>
+  </div>
+</body>
+</html>
+
