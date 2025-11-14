@@ -353,9 +353,158 @@
     }
 
     /* Values Section */
+    /* Problem Section - הבעיה */
+    .problem-section {
+      background: var(--white);
+      color: var(--black);
+      padding: 5rem 2rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    .problem-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .problem-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--black);
+      font-weight: 700;
+    }
+
+    .problem-section p {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      color: var(--black);
+    }
+
+    .problem-section strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .problem-highlight {
+      background: linear-gradient(135deg, rgba(201, 163, 63, 0.08) 0%, rgba(212, 175, 84, 0.08) 100%);
+      border-right: 4px solid var(--gold);
+      padding: 2rem;
+      margin: 2.5rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .problem-highlight p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin: 0;
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.active,
+    .reveal-left.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
     .values-section {
       padding: 4rem 0;
       margin: 4rem 0;
+    }
+    
+    /* Problem Highlights Grid */
+    .problem-highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .problem-highlight-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border-right: 4px solid var(--gold);
+      transition: all 0.3s ease;
+    }
+
+    .problem-highlight-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .problem-highlight-box h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    .problem-highlight-box p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--gray-text);
+      margin: 0;
+    }
+
+    .problem-highlight-box:last-child {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(201, 163, 63, 0.1) 0%, rgba(212, 175, 84, 0.1) 100%);
+      border-right: 4px solid var(--gold);
+      text-align: center;
+    }
+
+    .problem-highlight-box:last-child h3 {
+      color: var(--gold);
+      font-size: 1.5rem;
+    }
+
+    .problem-highlight-box:last-child p {
+      color: var(--black);
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    .problem-highlight-box:last-child a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 163, 63, 0.4);
+    }
+
+    .problem-highlight-box:last-child a:first-of-type:hover {
+      background: var(--gold);
+      color: var(--white);
     }
     
     .values-grid {
@@ -1056,158 +1205,282 @@
     }
 
     @media (max-width: 720px) {
-      /* Header */
+      /* Header - מותאם למובייל */
       .header-inner { 
         flex-wrap: wrap;
-        padding: 1rem 1.2rem;
-        gap: 1rem;
+        padding: 1rem;
+        gap: 0.75rem;
       }
       .brand-section {
-        gap: 0.8rem;
+        gap: 0.75rem;
       }
       .brand-section img {
-        height: 40px !important;
+        height: 38px !important;
       }
       .brand-title {
-        font-size: 1.2rem !important;
+        font-size: 1.1rem !important;
       }
       .nav-links {
         order: 3;
         width: 100%;
         justify-content: space-around;
-        gap: 1rem;
+        gap: 0.75rem;
         padding-top: 0.5rem;
         border-top: 1px solid rgba(0,0,0,0.08);
       }
       .nav-links a {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem;
       }
       .btn-header {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
+        padding: 0.6rem 1.1rem;
+        font-size: 0.85rem;
+        min-height: 40px;
       }
       
-      /* Typography - כותרות קטנות יותר */
+      /* Typography - קריא ונוח למובייל */
       h1 { 
-        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+        font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
         line-height: 1.3;
+        margin-bottom: 1rem;
       }
       h2 { 
-        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+        font-size: clamp(1.4rem, 5.5vw, 1.85rem) !important;
+        line-height: 1.35;
+        margin-bottom: 0.85rem;
       }
       h3 { 
-        font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
+        font-size: clamp(1.15rem, 4.5vw, 1.4rem) !important;
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
       }
       p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.7;
       }
       
-      /* Hero */
+      /* Problem Section - מובייל */
+      .problem-section {
+        padding: 3rem 1.25rem;
+      }
+
+      .problem-section h2 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+      }
+
+      .problem-section p {
+        font-size: 1rem;
+        line-height: 1.75;
+        margin-bottom: 1.25rem;
+      }
+
+      .problem-highlight {
+        padding: 1.5rem 1.25rem;
+        margin: 2rem 0;
+      }
+
+      .problem-highlight p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      /* Hero - אוורירי יותר */
       .hero {
-        padding: 3rem 1.2rem;
+        padding: 2.5rem 1rem;
       }
       .hero-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.75rem;
       }
       .hero-visual {
         order: -1;
-        padding: 2rem;
+        padding: 1.5rem;
       }
       .hero-content {
         text-align: center;
       }
       .hero-tagline {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.75rem;
       }
       .hero-buttons {
         justify-content: center;
+        gap: 1rem;
       }
       .btn-hero {
-        font-size: 1.1rem;
-        padding: 1rem 2rem;
+        font-size: 1.05rem;
+        padding: 1rem 1.75rem;
         width: 100%;
+        min-height: 50px;
       }
       
-      /* Main */
+      /* Main - ריווח נוח */
       main { 
-        padding: 0 1.2rem 3rem; 
+        padding: 0 1rem 2.5rem; 
       }
       section { 
-        padding: 2.5rem 0; 
+        padding: 2rem 0; 
       }
       
-      /* Values */
-      .values-grid {
+      /* Problem Highlights - מובייל */
+      .problem-highlights-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding: 0 1rem;
+      }
+
+      .problem-highlight-box {
+        padding: 1.75rem 1.5rem;
+      }
+
+      .problem-highlight-box h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.65rem;
+      }
+
+      .problem-highlight-box p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .problem-highlight-box:last-child h3 {
+        font-size: 1.3rem;
+      }
+
+      .problem-highlight-box:last-child p {
+        font-size: 1rem;
+      }
+
+      .problem-highlight-box:last-child a {
+        width: 100%;
+        text-align: center;
+        padding: 0.85rem 1.5rem !important;
+        font-size: 0.95rem !important;
+      }
+
+      /* Values - כרטיסים קלים */
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
       }
       .value-box {
-        padding: 2rem 1.5rem;
+        padding: 1.75rem 1.25rem;
+      }
+      .value-box h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      .value-box p {
+        font-size: 0.9rem;
+        line-height: 1.6;
       }
       .value-icon {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
       }
       
-      /* Images - תמונות קלות */
+      /* Images - תמונות רספונסיביות */
       .about-photo img {
         max-width: 100%;
         height: auto;
+        border-radius: 12px;
       }
       
-      /* Blog */
+      /* Blog - כרטיסי מאמרים */
       .blog-grid { 
-        gap: 1.5rem;
+        gap: 1.25rem;
         grid-template-columns: 1fr;
       }
       .blog-grid .card {
         padding: 1.5rem;
       }
+      .blog-grid .card h3 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+      }
+      .blog-grid .card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+      .blog-grid .btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 0.85rem 1.5rem;
+      }
       
-      /* Contact - השארת פרטים פשוטה */
+      /* Contact - טופס נוח */
       .contact-section {
-        padding: 3rem 0 !important;
-        margin: 3rem 0;
+        padding: 2.5rem 0 !important;
+        margin: 2.5rem 0;
       }
       .contact-card {
-        padding: 2rem 1.5rem;
-        margin: 0 1.2rem;
+        padding: 1.75rem 1.25rem;
+        margin: 0 1rem;
       }
       .contact-card h2 {
-        font-size: 1.6rem !important;
-        margin-bottom: 0.5rem !important;
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+        margin-bottom: 0.75rem !important;
+      }
+      .contact-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      
+      /* Forms - טפסים touch-friendly */
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+      .form-group label {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
       }
       .form-group input,
       .form-group textarea {
         font-size: 1rem;
         padding: 1rem;
+        min-height: 50px;
+        border-radius: 8px;
+      }
+      .form-group textarea {
+        min-height: 120px;
       }
       .btn-submit {
-        font-size: 1.1rem;
-        padding: 1.2rem;
-        min-height: 54px;
+        font-size: 1.05rem;
+        padding: 1.1rem 2rem;
+        min-height: 52px;
+        width: 100%;
+        border-radius: 10px;
       }
       
-      /* Sticky Button */
+      /* Sticky Button - כפתור צף */
       .sticky-cta {
         bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        padding: 0.75rem;
       }
       .sticky-cta .btn {
         font-size: 1rem;
-        padding: 0.9rem 2rem;
+        padding: 0.9rem 1.75rem;
+        min-height: 48px;
+        width: 100%;
       }
       
-      /* WhatsApp Float */
+      /* WhatsApp Float - כפתור וואטסאפ */
       .whatsapp-float {
-        width: 55px;
-        height: 55px;
-        bottom: 1.5rem;
-        right: 1.5rem;
+        width: 56px;
+        height: 56px;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
       }
       .whatsapp-float svg {
-        width: 28px;
-        height: 28px;
+        width: 30px;
+        height: 30px;
       }
       
       /* Footer */
@@ -1354,43 +1627,88 @@
     </div>
   </section>
 
+  <!-- Problem Section - הבעיה -->
+  <section class="problem-section">
+    <div class="problem-content">
+      <h2 class="reveal-left">רוב האנשים שאני מלווה חוזרים לאותה נקודה</h2>
+      
+      <p class="reveal reveal-delay-1">רוב האנשים שאני מלווה הם <strong>סטודנטים, חיילים משוחררים או משפחות צעירות</strong>.</p>
+      
+      <p class="reveal-left reveal-delay-1">וכולם חוזרים לאותה נקודה:</p>
+      
+      <p class="reveal reveal-delay-2"><strong>אין להם באמת מושג מה קורה עם הכסף שלהם.</strong></p>
+      
+      <p class="reveal-left reveal-delay-2">מוכרים להם מוצרים פיננסיים שהם לא מבינים.<br>
+      מנהלים להם חסכונות בלי שהם יודעים מה קורה שם.<br>
+      הם מפסידים כסף רק בגלל חוסר ידע.</p>
+      
+      <p class="reveal reveal-delay-3">והכי גרוע: <strong>הם מרגישים שאי אפשר לעשות כלום כי הכל נראה מסובך.</strong></p>
+      
+      <div class="problem-highlight reveal-left reveal-delay-3">
+        <p>בפועל זה לא באמת מורכב כמו שזה נראה.</p>
+      </div>
+      
+      <p class="reveal reveal-delay-4">לגופים הפיננסיים יש אינטרס שזה ייראה מסובך כדי שלא תשאלו שאלות.</p>
+      
+      <p class="reveal-left">וזה גורם לאנשים להירתע, לא להתמודד, ולתת למישהו אחר לנהל את הכסף שלהם בלי להבין.</p>
+      
+      <p class="reveal"><strong>התוצאות חוזרות על עצמן:</strong></p>
+      
+      <p class="reveal-left">הם חיים מהיד לפה.<br>
+      לא חוסכים נכון לילדים.<br>
+      מפסידים כסף שהם בכלל לא יודעים עליו.<br>
+      לא מנצלים הזדמנויות.<br>
+      ונותנים למערכת להחליט בשבילם.</p>
+      
+      <div class="problem-highlight reveal">
+        <p>זה לא צריך להיות ככה.</p>
+      </div>
+      
+      <p class="reveal-left">אתם רק צריכים ללמוד או שמישהו יסביר לכם את זה בצורה פשוטה וברורה.</p>
+      
+      <p class="reveal"><strong>כדי שתהיו הכלכלנים של הבית שלכם</strong><br>
+      ולא להיות מנוהלים בלי להבין למה.</p>
+    </div>
+  </section>
+
   <main>
-    <!-- אזור ערך -->
+    <!-- הדגשות נוספות של הבעיה -->
     <section class="section values-section" id="process">
-      <div class="values-grid">
-        <div class="value-box">
-          <div class="value-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z" fill="currentColor"/>
-            </svg>
-          </div>
-          <h3>שליטה בכסף</h3>
-          <p>תדע בדיוק לאן הכסף שלך הולך ואיך לגרום לו לעבוד בשבילך</p>
+      <div class="problem-highlights-grid">
+        <div class="problem-highlight-box reveal">
+          <h3>❌ מוכרים לך מוצרים שלא מתאימים</h3>
+          <p>פנסיה עם דמי ניהול מופרזים, ביטוחים מיותרים, חסכונות שלא עובדים בשבילך</p>
         </div>
-        <div class="value-box">
-          <div class="value-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z" fill="currentColor"/>
-            </svg>
-          </div>
-          <h3>ראש שקט</h3>
-          <p>תפסיק לדאוג מהעתיד ותתחיל להרגיש ביטחון כלכלי אמיתי</p>
+        
+        <div class="problem-highlight-box reveal-left reveal-delay-1">
+          <h3>❌ אף אחד לא מסביר לך מה קורה</h3>
+          <p>הבנקים והיועצים מדברים בשפה מסובכת כדי שלא תבין ולא תשאל שאלות</p>
         </div>
-        <div class="value-box">
-          <div class="value-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        
+        <div class="problem-highlight-box reveal reveal-delay-2">
+          <h3>❌ אתה מפסיד כסף בלי לדעת</h3>
+          <p>דמי ניהול גבוהים, ריביות שאתה לא צריך, הטבות שלא ניצלת - זה מצטבר לעשרות אלפי שקלים</p>
+        </div>
+        
+        <div class="problem-highlight-box reveal-left reveal-delay-3">
+          <h3>❌ אין לך תוכנית לעתיד</h3>
+          <p>חי מהיד לפה, לא יודע איך לחסוך לילדים, לא מבין איך לבנות עתיד כלכלי יציב</p>
+        </div>
+        
+        <div class="problem-highlight-box reveal reveal-delay-4">
+          <h3>✅ זה לא חייב להיות ככה</h3>
+          <p style="margin-bottom: 1.5rem;">אם גם אתם מרגישים שאין לכם שליטה על כל מה שקשור לכסף שלכם, אתם מוזמנים להיכנס לבלוג ולהיצטרף לתוכנית הליווי</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="blog.html" style="display: inline-block; background: var(--white); color: var(--black); padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 2px solid var(--gold); transition: all 0.3s;">קראו את הבלוג</a>
+            <a href="#contact" style="display: inline-block; background: var(--gold); color: var(--white); padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 12px rgba(201, 163, 63, 0.3);">הצטרפו לתוכנית</a>
           </div>
-          <h3>צמיחה כלכלית</h3>
-          <p>תבנה בסיס חזק להתעשרות לטווח ארוך עם החלטות נכונות</p>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="card">
-        <h2>מה יוצא לך מהתהליך איתי</h2>
+        <h2>מה יוצא לך מהתהליך</h2>
         
         <!-- Before/After Visual -->
         <div class="before-after-container">
@@ -1427,7 +1745,7 @@
         <p>הכסף שלך לא עומד במקום. הוא נשחק בשקט כשהמחירים עולים. עליית המחירים לא תמיד מסתדרת עם עליית המשכורת, וזה מה שפוגע ברמת החיים. כל תקופה שאתה לא פועל, אתה מוותר על זמן, וזה המשאב הכי יקר בעולם הפיננסי.</p>
         <p>שינוי קטן עכשיו יכול ליצור הבדל גדול בעתיד. יותר שקט, יותר ביטחון ויותר חופש לבחור איך לחיות. זה הזמן להתחיל לבנות את הבסיס הכלכלי שלך בצעדים הנכונים.</p>
         
-        <h3 style="margin-top: 3rem;">מה תקבל ממני בפועל</h3>
+        <h3 style="margin-top: 3rem;">מה תקבל בפועל</h3>
         
         <div class="what-you-get-grid">
           <div class="get-box">
@@ -1735,12 +2053,19 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          entry.target.classList.add('active');
         }
       });
     }, observerOptions);
 
     // הוספת האנימציה לכל האלמנטים
     document.addEventListener('DOMContentLoaded', () => {
+      // אנימציות של Problem Section
+      const revealElements = document.querySelectorAll('.reveal, .reveal-left');
+      revealElements.forEach((element) => {
+        observer.observe(element);
+      });
+
       // כותרות וטקסטים - מצד ימין
       const headings = document.querySelectorAll('h2, h3');
       headings.forEach((element, index) => {
