@@ -369,6 +369,16 @@
         height: 180px;
         margin-bottom: 1rem;
       }
+
+      .category-filter {
+        padding: 0 1rem;
+        gap: 0.75rem;
+      }
+
+      .category-btn {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+      }
     }
 
     /* Animations */
@@ -381,6 +391,47 @@
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Category Filter */
+    .category-filter {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      padding: 0 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .category-btn {
+      padding: 0.8rem 1.8rem;
+      background: var(--white);
+      color: var(--black);
+      border: 2px solid var(--gold);
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: var(--gold);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.3);
+    }
+
+    .card[data-category] {
+      display: block;
+    }
+
+    .card.hidden {
+      display: none;
     }
   </style>
 </head>
@@ -410,78 +461,88 @@
       <p class="highlight">אם אהבת משהו כאן, תשלח את זה לחבר או חברה שזה יכול לעזור להם. חינוך פיננסי מתפשט מאדם לאדם.</p>
     </div>
 
+    <!-- Category Filter -->
+    <div class="category-filter">
+      <button class="category-btn active" data-category="all">הכל</button>
+      <button class="category-btn" data-category="pension">פנסיות וביטוחים</button>
+      <button class="category-btn" data-category="home">כלכלת הבית</button>
+      <button class="category-btn" data-category="principles">עקרונות</button>
+      <button class="category-btn" data-category="books">ספרים</button>
+      <button class="category-btn" data-category="investments">השקעות</button>
+    </div>
+
     <div class="blog-grid">
-      <div class="card fade-in">
+      <div class="card fade-in" data-category="pension">
         <img src="pension.png" alt="קרן פנסיה - המירוץ לפנסיה" class="article-image" loading="lazy">
         <h3><a href="article-pension-part3.html">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ג</a></h3>
         <p>ההבדל בין קרן פנסיה מקיפה למשלימה - למה יש שתי קרנות ומה באמת ההבדל ביניהן.</p>
         <a class="btn" href="article-pension-part3.html">קרא עכשיו</a>
       </div>
 
-      <div class="card fade-in">
+      <div class="card fade-in" data-category="pension">
         <img src="pension.png" alt="קרן פנסיה - המירוץ לפנסיה" class="article-image" loading="lazy">
         <h3><a href="article-pension-part2.html">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ב</a></h3>
         <p>המקדם קצבה והביטוחים בקרן - שני נושאים שכל חוסך צריך להכיר ושמשפיעים ישירות על הכסף שנקבל בפרישה.</p>
         <a class="btn" href="article-pension-part2.html">קרא עכשיו</a>
       </div>
 
-      <div class="card fade-in">
+      <div class="card fade-in" data-category="pension">
         <img src="pension.png" alt="קרן פנסיה - המירוץ לפנסיה" class="article-image" loading="lazy">
         <h3><a href="article-pension.html">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק א</a></h3>
         <p>רוב הצעירים לא נותנים לקרן הפנסיה יותר מדי מחשבה, אבל היא אחת ההשקעות הכי גדולות שיש לנו בחיים.</p>
         <a class="btn" href="article-pension.html">קרא עכשיו</a>
       </div>
 
-      <div class="card fade-in">
+      <div class="card fade-in" data-category="principles">
         <img src="bank-system.png" alt="מערכת פיננסית" class="article-image" loading="lazy">
         <h3><a href="article-system.html">המערכת הפיננסית משחקת על חוסר הידע שלנו הגיע הזמן להפסיק להיות פראיירים</a></h3>
         <p>הגופים הגדולים יודעים לנצל את חוסר הידע שלנו. הגיע הזמן להבין את המשחק ולהפסיק לשלם על זה.</p>
         <a class="btn" href="article-system.html">קרא עכשיו</a>
       </div>
 
-      <div class="card fade-in">
+      <div class="card fade-in" data-category="investments">
         <img src="stock-market.png" alt="שוק ההון" class="article-image" loading="lazy">
         <h3><a href="article-fama.html">שמעתם על המניה הבאה שתתפוצץ? תעצרו רגע</a></h3>
         <p>לפעמים נדמה שכולם מחפשים את ההשקעה שתעשה את המכה, אבל לפי כלכלן זוכה פרס נובל אולי אנחנו מחפשים במקום הלא נכון.</p>
         <a class="btn" href="article-fama.html">קרא עכשיו</a>
       </div>
 
-      <div class="card fade-in">
+      <div class="card fade-in" data-category="home">
         <img src="kids-savings.png" alt="חיסכון לילדים" class="article-image" loading="lazy">
         <h3><a href="article-child-savings.html">שני ילדים, אותה תוכנית, אחד יקבל פי שניים כסף בגיל 21</a></h3>
         <p>ההבדל בין מסלול "בטוח" למסלול מנייתי בחיסכון לכל ילד יכול להיות עשרות אלפי שקלים. זה לא קסם, זו מתמטיקה.</p>
         <a class="btn" href="article-child-savings.html">קרא עכשיו</a>
       </div>
 
-      <div class="card fade-in">
+      <div class="card fade-in" data-category="home">
         <img src="time-money.png" alt="זמן וכסף" class="article-image" loading="lazy">
         <h3><a href="article-inflation.html">למה אתם מסכנים את עצמכם כשאתם אדישים למצב הפיננסי שלכם</a></h3>
         <p>רוב האנשים לא מבינים כמה יקר עולה להם לא לעשות כלום עם הכסף. האינפלציה לא מחכה לאף אחד.</p>
         <a class="btn" href="article-inflation.html">קרא עכשיו</a>
       </div>
 
-      <div class="card fade-in">
+      <div class="card fade-in" data-category="books">
         <img src="books.png" alt="ספרים פיננסיים" class="article-image" loading="lazy">
         <h3><a href="article-books.html">6 ספרים שיעזרו לך להתחיל דרך פיננסית בריאה</a></h3>
         <p>שישה ספרים שיכולים לפתוח לך את הראש ולהכניס אותך לעולם הפיננסי בצורה פשוטה והגיונית.</p>
         <a class="btn" href="article-books.html">קרא עכשיו</a>
       </div>
 
-      <div class="card fade-in">
+      <div class="card fade-in" data-category="home">
         <img src="organize-money.png" alt="סדר בכסף" class="article-image" loading="lazy">
         <h3><a href="article-organize.html">איך עושים סדר בכסף בלי לאבד את הראש</a></h3>
         <p>שלושה צעדים שיעזרו לך להבין את המצב שלך, ליצור תזרים חיובי ולבנות רשת ביטחון.</p>
         <a class="btn" href="article-organize.html">קרא עכשיו</a>
       </div>
 
-      <div class="card fade-in">
+      <div class="card fade-in" data-category="principles">
         <img src="four-ways.png" alt="ארבע דרכים להרוויח כסף" class="article-image" loading="lazy">
         <h3><a href="article-fourways.html">יש ארבע דרכים להרוויח כסף בעולם ואותנו לימדו רק על אחת</a></h3>
         <p>עבודה היא רק דרך אחת להכניס כסף. יש עוד אפשרויות שכדאי להכיר.</p>
         <a class="btn" href="article-fourways.html">קרא עכשיו</a>
       </div>
 
-      <div class="card fade-in">
+      <div class="card fade-in" data-category="principles">
         <img src="myths.png" alt="מיתוסים פיננסיים" class="article-image" loading="lazy">
         <h3><a href="article-myths.html">5 מיתוסים פיננסיים שחייבים להישבר</a></h3>
         <p>כמה מהמשפטים הכי נפוצים על כסף, ומה באמת עומד מאחוריהם.</p>
@@ -545,6 +606,36 @@
       cards.forEach((element, index) => {
         element.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(element);
+      });
+
+      // סינון קטגוריות
+      const categoryButtons = document.querySelectorAll('.category-btn');
+      const blogCards = document.querySelectorAll('.card');
+
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // הסרת active מכל הכפתורים
+          categoryButtons.forEach(btn => btn.classList.remove('active'));
+          // הוספת active לכפתור שנלחץ
+          button.classList.add('active');
+
+          const selectedCategory = button.getAttribute('data-category');
+
+          blogCards.forEach(card => {
+            if (selectedCategory === 'all') {
+              // הצגת כל הכרטיסים
+              card.classList.remove('hidden');
+            } else {
+              // הצגת רק כרטיסים מהקטגוריה הנבחרת
+              const cardCategory = card.getAttribute('data-category');
+              if (cardCategory === selectedCategory) {
+                card.classList.remove('hidden');
+              } else {
+                card.classList.add('hidden');
+              }
+            }
+          });
+        });
       });
     });
   </script>
