@@ -1667,6 +1667,16 @@
       .what-you-get-benefits > div:last-child {
         border-bottom: none !important;
       }
+
+      /* What Happens in Mapping Mobile */
+      .mapping-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+
+      .mapping-cards-grid > div {
+        max-width: 100% !important;
+      }
     }
   </style>
 </head>
@@ -1784,27 +1794,27 @@
       <div class="scroll-reveal scroll-reveal-delay-1" style="background: var(--gray-light); border-radius: 16px; padding: 3rem 2rem; margin-bottom: 4rem;">
         <h3 style="font-size: 1.8rem; margin-bottom: 2rem; color: var(--black); font-weight: 700; text-align: center;">מה קורה בפגישת המיפוי?</h3>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        <div class="mapping-cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
           
-          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center;">
             <div style="width: 50px; height: 50px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; font-weight: 700;">₪</div>
             <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">ניתוח תזרים מזומנים</h4>
             <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נבין בדיוק איפה הכסף נכנס, לאן הוא הולך, ואיפה אפשר לחסוך</p>
           </div>
 
-          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center;">
             <div style="width: 50px; height: 50px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; font-weight: 700;">■</div>
             <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">מיפוי נכסים וחסכונות</h4>
             <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נעבור על כל הנכסים, החסכונות והפיקדונות שלך ונבין מה יש לך</p>
           </div>
 
-          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center;">
             <div style="width: 50px; height: 50px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; font-weight: 700;">◆</div>
             <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">סדר בביטוחים ופנסיה</h4>
             <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נבדוק אילו ביטוחים ופנסיות יש לך, האם יש כפילויות או חוסרים</p>
           </div>
 
-          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center;">
             <div style="width: 50px; height: 50px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; font-weight: 700;">+</div>
             <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">גילוי כספים אבודים</h4>
             <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נחפש כספים שאולי לא ידעת שקיימים - פנסיות ישנות, פיקדונות נשכחים</p>
