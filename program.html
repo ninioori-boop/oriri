@@ -2,9 +2,9 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>הכלכלן של הבית - דף נחיתה</title>
+  <title>תוכנית הליווי - הכלכלן של הבית</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="description" content="ייעוץ כלכלי בגובה העיניים - הכלכלן של הבית">
+  <meta name="description" content="תוכנית ליווי פיננסי אישית - הפוך להיות הכלכלן של הבית שלך">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
 
@@ -1651,6 +1651,22 @@
       .personal-story-grid img {
         max-width: 300px !important;
       }
+
+      /* What You Get Section Mobile */
+      .what-you-get-benefits {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+      }
+
+      .what-you-get-benefits > div {
+        border-right: none !important;
+        border-bottom: 3px solid var(--gold) !important;
+        padding-bottom: 1rem !important;
+      }
+
+      .what-you-get-benefits > div:last-child {
+        border-bottom: none !important;
+      }
     }
   </style>
 </head>
@@ -1673,6 +1689,14 @@
       <a href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank" class="btn-header">דברו איתי</a>
     </div>
   </header>
+
+  <!-- Main Title Section -->
+  <section style="background: var(--white); padding: 4rem 2rem 3rem; text-align: center; border-bottom: 3px solid var(--gold);">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <h1 class="scroll-reveal" style="font-size: clamp(2.5rem, 6vw, 4rem); color: var(--black); margin-bottom: 1.5rem; font-weight: 700; line-height: 1.2;">הכלכלן של הבית</h1>
+      <p class="scroll-reveal scroll-reveal-delay-1" style="font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--gold); font-weight: 600; margin: 0;">הדרך להיות הכתובת לכל שאלה כלכלית במשפחה</p>
+    </div>
+  </section>
 
   <!-- Problem Section - הבעיה -->
   <section class="problem-section">
@@ -1791,7 +1815,7 @@
         <!-- What You Get -->
         <div style="background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%); border-radius: 12px; padding: 2rem; margin-top: 2.5rem;">
           <h4 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--gold); font-weight: 700; text-align: center;">מה תקבל בסוף הפגישה?</h4>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+          <div class="what-you-get-benefits" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
             <div style="padding: 1rem; border-right: 3px solid var(--gold);">
               <p style="font-size: 1.05rem; color: var(--white); margin: 0; line-height: 1.7;">✓ הבנה ברורה של המצב הפיננסי שלך</p>
             </div>
