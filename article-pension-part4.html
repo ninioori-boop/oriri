@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>קרן פנסיה חלק 4: מה לעשות לפני שעוזבים עבודה - הכלכלן של הבית</title>
-  <meta name="description" content="איך לשמור על הפנסיה שלכם בזמן עזיבת עבודה - הסכם ריסק, רצף ביטוחי ושמירה על זכויות">
   <style>
     :root {
       --white: #ffffff;
@@ -25,59 +24,44 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--white);
+      background: var(--gray-light);
       color: var(--black);
       line-height: 1.8;
+      font-size: 1.05rem;
     }
 
-    header {
-      background: var(--black);
-      padding: 1.5rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .header-inner {
-      max-width: 1200px;
+    .container {
+      max-width: 900px;
       margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand {
-      color: var(--gold);
-      font-size: 1.5rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .brand:hover {
-      color: var(--gold-light);
+      padding: 2rem;
     }
 
     .back-link {
+      display: inline-block;
+      background: var(--black);
       color: var(--white);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
       text-decoration: none;
-      padding: 0.6rem 1.5rem;
-      border: 2px solid var(--gold);
-      border-radius: 8px;
-      transition: all 0.3s;
       font-weight: 600;
+      margin-bottom: 2rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .back-link:hover {
-      background: var(--gold);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
       color: var(--black);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(184, 134, 11, 0.4);
     }
 
-    article {
-      max-width: 800px;
-      margin: 3rem auto;
-      padding: 0 2rem;
+    .article {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
     }
 
     h1 {
@@ -85,49 +69,53 @@
       color: var(--black);
       margin-bottom: 1.5rem;
       line-height: 1.3;
-      border-bottom: 4px solid var(--gold);
-      padding-bottom: 1rem;
     }
 
     h2 {
       font-size: 1.8rem;
       color: var(--black);
-      margin: 2.5rem 0 1rem;
-      border-right: 5px solid var(--gold);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
       padding-right: 1rem;
+      border-right: 4px solid var(--gold);
     }
 
     h3 {
       font-size: 1.4rem;
-      color: var(--gray-dark);
-      margin: 2rem 0 1rem;
-      font-weight: 600;
+      color: var(--black);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
 
     p {
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-      color: var(--gray-dark);
+      margin-bottom: 1.2rem;
+      color: var(--gray-text);
     }
 
     strong {
       color: var(--black);
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .highlight-box {
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
       border-radius: 12px;
       padding: 2rem;
       margin: 2rem 0;
-      border-right: 6px solid var(--black);
+      color: var(--black);
+    }
+
+    .highlight-box h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--black);
+      margin-top: 0;
     }
 
     .highlight-box p {
       color: var(--black);
-      font-weight: 600;
+      font-weight: 500;
       margin: 0;
-      font-size: 1.15rem;
     }
 
     .warning-box {
@@ -140,8 +128,11 @@
 
     .warning-box p {
       color: var(--black);
-      margin: 0;
-      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .warning-box p:last-child {
+      margin-bottom: 0;
     }
 
     .info-box {
@@ -167,22 +158,32 @@
     }
 
     .info-list {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .info-list h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      margin-top: 0;
+      color: var(--white);
+    }
+
+    .info-list ul {
       list-style: none;
-      margin: 1.5rem 0;
       padding: 0;
     }
 
     .info-list li {
-      padding: 1rem;
-      margin-bottom: 1rem;
-      background: var(--gray-light);
-      border-radius: 8px;
-      border-right: 4px solid var(--gold);
+      padding: 0.8rem 0;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       font-size: 1.05rem;
     }
 
     .info-list li:last-child {
-      margin-bottom: 0;
       border-bottom: none;
     }
 
@@ -203,6 +204,7 @@
       border: none;
       padding: 0;
       margin-bottom: 1rem;
+      margin-top: 0;
     }
 
     .cta-box p {
@@ -216,42 +218,26 @@
       background: var(--black);
       color: var(--white);
       padding: 1rem 2.5rem;
+      border-radius: 50px;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      transition: all 0.3s;
-      border: 2px solid var(--black);
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      margin: 0.5rem;
     }
 
     .btn:hover {
-      background: var(--white);
-      color: var(--black);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    footer {
-      background: var(--black);
-      color: var(--white);
-      text-align: center;
-      padding: 2rem;
-      margin-top: 4rem;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
     }
 
     @media (max-width: 768px) {
-      header {
+      .container {
         padding: 1rem;
       }
 
-      .header-inner {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      article {
-        padding: 0 1.5rem;
-        margin: 2rem auto;
+      .article {
+        padding: 1.5rem;
       }
 
       h1 {
@@ -266,131 +252,125 @@
         font-size: 1.2rem;
       }
 
-      p, .info-list li {
-        font-size: 1rem;
-      }
-
-      .highlight-box, .warning-box, .info-box, .cta-box {
+      .highlight-box, .warning-box, .info-box, .info-list, .cta-box {
         padding: 1.5rem;
-      }
-
-      .back-link {
-        padding: 0.5rem 1rem;
-        font-size: 0.95rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-inner">
-      <a href="index.html" class="brand">הכלכלן של הבית</a>
-      <a href="program.html#contact" class="back-link">דברו איתי</a>
-    </div>
-  </header>
+  <div class="container">
+    <a href="index.html" class="back-link">← חזרה לדף הבית</a>
+    
+    <article class="article">
+      <h1>קרן פנסיה חלק 4: מה לעשות לפני שעוזבים עבודה ואיך לשמור על הפנסיה שלכם בחיים</h1>
 
-  <article>
-    <h1>קרן פנסיה חלק 4: מה לעשות לפני שעוזבים עבודה ואיך לשמור על הפנסיה שלכם בחיים</h1>
+      <div class="highlight-box">
+        <p>עזיבת עבודה היא רגע שבו הרבה אנשים לא שמים לב לפרטים שיכולים להשפיע להם על הפנסיה שנים קדימה. המטרה כאן היא לעשות סדר, להבין מה צריך לבדוק ומה חובה לעשות כדי לא לפספס כסף וזכויות שבניתם לאורך זמן.</p>
+      </div>
 
-    <div class="highlight-box">
-      <p>עזיבת עבודה היא רגע שבו הרבה אנשים לא שמים לב לפרטים שיכולים להשפיע להם על הפנסיה שנים קדימה. המטרה כאן היא לעשות סדר, להבין מה צריך לבדוק ומה חובה לעשות כדי לא לפספס כסף וזכויות שבניתם לאורך זמן.</p>
-    </div>
+      <h2>1. לבדוק שכל ההפקדות לפנסיה נכנסו כמו שצריך</h2>
 
-    <h2>1. לבדוק שכל ההפקדות לפנסיה נכנסו כמו שצריך</h2>
+      <p>לפני שעוזבים עבודה חשוב לוודא שהמעסיק הפקיד את כל מה שהוא חייב לקרן הפנסיה שלכם. ההפקדות האלו הן חלק מהשכר שלכם. <strong>אם משהו לא נכנס, זה כאילו שקיבלתם משכורת חסרה.</strong></p>
 
-    <p>לפני שעוזבים עבודה חשוב לוודא שהמעסיק הפקיד את כל מה שהוא חייב לקרן הפנסיה שלכם. ההפקדות האלו הן חלק מהשכר שלכם. <strong>אם משהו לא נכנס, זה כאילו שקיבלתם משכורת חסרה.</strong></p>
+      <h3>איך בודקים</h3>
 
-    <h3>איך בודקים</h3>
+      <div class="info-list">
+        <ul>
+          <li>נכנסים לתלוש השכר ובודקים את סעיף ההפרשות</li>
+          <li>נכנסים לאזור האישי באתר של קרן הפנסיה ורואים אם כל ההפקדות מופיעות שם</li>
+        </ul>
+      </div>
 
-    <ul class="info-list">
-      <li>נכנסים לתלוש השכר ובודקים את סעיף ההפרשות</li>
-      <li>נכנסים לאזור האישי באתר של קרן הפנסיה ורואים אם כל ההפקדות מופיעות שם</li>
-    </ul>
+      <h3>אם חסר כסף</h3>
 
-    <h3>אם חסר כסף</h3>
+      <div class="info-list">
+        <ul>
+          <li>פונים למעסיק ומבקשים תיקון</li>
+          <li>בודקים מול הקרן אם מדובר בעיכוב עדכון</li>
+          <li><strong>ואם המעסיק לא מתקן, אפשר לפעול משפטית. זה כסף שלכם.</strong></li>
+        </ul>
+      </div>
 
-    <ul class="info-list">
-      <li>פונים למעסיק ומבקשים תיקון</li>
-      <li>בודקים מול הקרן אם מדובר בעיכוב עדכון</li>
-      <li><strong>ואם המעסיק לא מתקן, אפשר לפעול משפטית. זה כסף שלכם.</strong></li>
-    </ul>
+      <h2>2. לשמור על רצף ביטוחי ולהגיע לעבודה חדשה עם קרן פעילה</h2>
 
-    <h2>2. לשמור על רצף ביטוחי ולהגיע לעבודה חדשה עם קרן פעילה</h2>
+      <p>מרגע שעוזבים עבודה ההפקדות לפנסיה מפסיקות. מכאן יש לכם <strong>חמישה חודשים</strong> עד שהקרן הופכת ללא פעילה.</p>
 
-    <p>מרגע שעוזבים עבודה ההפקדות לפנסיה מפסיקות. מכאן יש לכם <strong>חמישה חודשים</strong> עד שהקרן הופכת ללא פעילה.</p>
+      <div class="warning-box">
+        <p><strong>אם לא שומרים על רצף בתקופה הזו:</strong></p>
+        <p>• הביטוחים בקרן נפסקים ואין כיסוי לאובדן כושר עבודה ולמקרה מוות</p>
+        <p>• דמי הניהול קופצים למקסימום של 0.5% מהצבירה ו-6% מההפקדות העתידיות</p>
+        <p>• זה פוגע בחיסכון ובביטחון הכלכלי שלכם בלי שום סיבה טובה</p>
+      </div>
 
-    <div class="warning-box">
-      <p><strong>אם לא שומרים על רצף בתקופה הזו:</strong></p>
-      <p>• הביטוחים בקרן נפסקים ואין כיסוי לאובדן כושר עבודה ולמקרה מוות</p>
-      <p>• דמי הניהול קופצים למקסימום של 0.5% מהצבירה ו-6% מההפקדות העתידיות</p>
-      <p>• זה פוגע בחיסכון ובביטחון הכלכלי שלכם בלי שום סיבה טובה</p>
-    </div>
+      <h3>היתרון של קרן פעילה בעבודה החדשה</h3>
 
-    <h3>היתרון של קרן פעילה בעבודה החדשה</h3>
+      <div class="info-box">
+        <h3>אם הקרן פעילה:</h3>
+        <p>✓ המעסיק החדש חייב להתחיל להפריש לפנסיה אחרי <strong>שלושה חודשים בלבד</strong></p>
+        <p>✓ בסוף החודש השלישי הוא מחויב להשלים רטרואקטיבית את ההפקדות של החודשים שבהם עדיין לא הופרש כלום</p>
+        <p>✓ <strong>כלומר אתם מקבלים את כל הכסף מהרגע הראשון</strong></p>
+      </div>
 
-    <div class="info-box">
-      <h3>אם הקרן פעילה:</h3>
-      <p>✓ המעסיק החדש חייב להתחיל להפריש לפנסיה אחרי <strong>שלושה חודשים בלבד</strong></p>
-      <p>✓ בסוף החודש השלישי הוא מחויב להשלים רטרואקטיבית את ההפקדות של החודשים שבהם עדיין לא הופרש כלום</p>
-      <p>✓ <strong>כלומר אתם מקבלים את כל הכסף מהרגע הראשון</strong></p>
-    </div>
+      <div class="warning-box">
+        <p><strong>אם הקרן לא פעילה:</strong> המעסיק יתחיל להפריש רק אחרי חצי שנה וגם בלי השלמת חודשים ראשונים. וזה כסף שהולך לאיבוד רק כי לא שמרתם על רצף.</p>
+      </div>
 
-    <div class="warning-box">
-      <p><strong>אם הקרן לא פעילה:</strong> המעסיק יתחיל להפריש רק אחרי חצי שנה וגם בלי השלמת חודשים ראשונים. וזה כסף שהולך לאיבוד רק כי לא שמרתם על רצף.</p>
-    </div>
+      <h2>3. איך שומרים על הקרן פעילה</h2>
 
-    <h2>3. איך שומרים על הקרן פעילה</h2>
+      <p>יש שתי דרכים לעשות את זה. אחת מומלצת יותר.</p>
 
-    <p>יש שתי דרכים לעשות את זה. אחת מומלצת יותר.</p>
+      <h3>הסכם ריסק (מומלץ)</h3>
 
-    <h3>הסכם ריסק (מומלץ)</h3>
+      <p>הסכם ריסק שומר על הקרן פעילה גם כשאין הפקדות מהמעסיק. אין תשלום מיוחד. עלות הביטוח פשוט יורדת מהצבירה כמו בזמן שעבדתם.</p>
 
-    <p>הסכם ריסק שומר על הקרן פעילה גם כשאין הפקדות מהמעסיק. אין תשלום מיוחד. עלות הביטוח פשוט יורדת מהצבירה כמו בזמן שעבדתם.</p>
+      <div class="info-box">
+        <h3>מה הסכם ריסק נותן</h3>
+        <p>✓ שמירה על כיסוי ביטוחי לנכות ולמוות</p>
+        <p>✓ מניעת מעבר לדמי ניהול מקסימליים</p>
+        <p>✓ שמירה על השכר המבוטח המקורי</p>
+        <p><strong>חשוב:</strong> ניתן לשלם ריסק לתקופה שלא עולה על התקופה הרצופה שבה הייתם מבוטחים בקרן וגם לא יותר מ-24 חודשים בסך הכל.</p>
+      </div>
 
-    <div class="info-box">
-      <h3>מה הסכם ריסק נותן</h3>
-      <p>✓ שמירה על כיסוי ביטוחי לנכות ולמוות</p>
-      <p>✓ מניעת מעבר לדמי ניהול מקסימליים</p>
-      <p>✓ שמירה על השכר המבוטח המקורי</p>
-      <p><strong>חשוב:</strong> ניתן לשלם ריסק לתקופה שלא עולה על התקופה הרצופה שבה הייתם מבוטחים בקרן וגם לא יותר מ-24 חודשים בסך הכל.</p>
-    </div>
+      <h3>הפקדה עצמאית</h3>
 
-    <h3>הפקדה עצמאית</h3>
+      <div class="info-list">
+        <ul>
+          <li>אפשרות נוספת היא להפקיד לבד סכום קטן בכל חודש</li>
+          <li>זה משאיר את הקרן פעילה, אבל מוריד את השכר המבוטח ולכן מחליש את הכיסוי הביטוחי</li>
+          <li>פחות מומלץ, אבל עדיף מכלום למי שלא יכול או לא רוצה לעשות הסכם ריסק</li>
+        </ul>
+      </div>
 
-    <ul class="info-list">
-      <li>אפשרות נוספת היא להפקיד לבד סכום קטן בכל חודש</li>
-      <li>זה משאיר את הקרן פעילה, אבל מוריד את השכר המבוטח ולכן מחליש את הכיסוי הביטוחי</li>
-      <li>פחות מומלץ, אבל עדיף מכלום למי שלא יכול או לא רוצה לעשות הסכם ריסק</li>
-    </ul>
+      <h2>4. לא למשוך פיצויים</h2>
 
-    <h2>4. לא למשוך פיצויים</h2>
+      <div class="warning-box">
+        <p><strong>משיכת פיצויים אולי מרגישה כמו כסף מהיר, אבל זו אחת הטעויות היקרות ביותר.</strong></p>
+        <p>• זה מוריד את הפנסיה בערך בשליש</p>
+        <p>• פוגע בריבית דריבית</p>
+        <p>• מקטין את הטבות המס העתידיות</p>
+        <p><strong>זה אולי מרגיש טוב בטווח קצר, אבל זו פגיעה קשה בפנסיה לטווח ארוך.</strong></p>
+      </div>
 
-    <div class="warning-box">
-      <p><strong>משיכת פיצויים אולי מרגישה כמו כסף מהיר, אבל זו אחת הטעויות היקרות ביותר.</strong></p>
-      <p>• זה מוריד את הפנסיה בערך בשליש</p>
-      <p>• פוגע בריבית דריבית</p>
-      <p>• מקטין את הטבות המס העתידיות</p>
-      <p><strong>זה אולי מרגיש טוב בטווח קצר, אבל זו פגיעה קשה בפנסיה לטווח ארוך.</strong></p>
-    </div>
+      <h2>5. לבדוק את מסלול ההשקעה</h2>
 
-    <h2>5. לבדוק את מסלול ההשקעה</h2>
+      <p>פשוט לבדוק שהמסלול שבו אתם נמצאים מתאים לגיל שלכם ולרמת הסיכון.</p>
 
-    <p>פשוט לבדוק שהמסלול שבו אתם נמצאים מתאים לגיל שלכם ולרמת הסיכון.</p>
+      <p><strong>זו בדיקה קצרה שיכולה לחסוך הרבה טעויות.</strong></p>
 
-    <p><strong>זו בדיקה קצרה שיכולה לחסוך הרבה טעויות.</strong></p>
+      <h2>לסיכום</h2>
 
-    <h2>לסיכום</h2>
-
-    <div class="highlight-box">
-      <p>בסדרה הזאת ניסיתי לעשות לכם סדר בכל מה שצריך לדעת על קרן הפנסיה שלכם. זה נושא גדול ויש חלקים שלא נכנסו כאן. ההמלצה הכי טובה היא תמיד לבדוק, להבין ולהעמיק. ואם יש משהו שאתם לא בטוחים בו, תמיד אפשר לפנות ליועץ פנסיוני שיעשה לכם סדר ויחסוך טעויות מיותרות.</p>
-    </div>
+      <div class="highlight-box">
+        <p>בסדרה הזאת ניסיתי לעשות לכם סדר בכל מה שצריך לדעת על קרן הפנסיה שלכם. זה נושא גדול ויש חלקים שלא נכנסו כאן. ההמלצה הכי טובה היא תמיד לבדוק, להבין ולהעמיק. ואם יש משהו שאתם לא בטוחים בו, תמיד אפשר לפנות ליועץ פנסיוני שיעשה לכם סדר ויחסוך טעויות מיותרות.</p>
+      </div>
+    </article>
 
     <div class="cta-box">
       <h2>רוצה ללמוד עוד?</h2>
       <p>קרא את החלקים הקודמים בסדרת קרן הפנסיה</p>
-      <a href="article-pension.html" class="btn" style="margin: 0.5rem;">לחלק א</a>
-      <a href="article-pension-part2.html" class="btn" style="margin: 0.5rem;">לחלק ב</a>
-      <a href="article-pension-part3.html" class="btn" style="margin: 0.5rem;">לחלק ג</a>
+      <a href="article-pension.html" class="btn">לחלק א</a>
+      <a href="article-pension-part2.html" class="btn">לחלק ב</a>
+      <a href="article-pension-part3.html" class="btn">לחלק ג</a>
     </div>
 
     <div class="cta-box" style="margin-top: 2rem;">
@@ -398,11 +378,6 @@
       <p>בוא נדבר</p>
       <a href="program.html#contact" class="btn">דברו איתי</a>
     </div>
-  </article>
-
-  <footer>
-    <p>© הכלכלן של הבית</p>
-  </footer>
+  </div>
 </body>
 </html>
-
