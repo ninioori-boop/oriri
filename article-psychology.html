@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>חושבים שאתם יכולים לנצח את השוק? - הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px; 
+      margin: 0 auto; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 2rem;
+      color: var(--black);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .highlight {
+      background: var(--white);
+      padding: 2rem;
+      border-right: 4px solid var(--gold);
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .bias-section {
+      background: var(--white);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .example {
+      background: var(--gray-light);
+      padding: 1.5rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+    
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1.25rem 1rem;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .brand-title {
+        font-size: 1.2rem;
+      }
+
+      .back-link {
+        padding: 0.65rem 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      article {
+        padding: 0 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .bias-section, .highlight {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>חושבים שאתם יכולים לנצח את השוק? הכירו את הקשיים הפסיכולוגיים שתעברו בדרך</h1>
+
+    <h2>פתיחה</h2>
+
+    <p>המחקר על ההטיות הקוגניטיביות התחיל כבר בסוף שנות השבעים. שני החוקרים הישראלים דניאל כהנמן ועמוס טברסקי הראו לעולם שבני אדם לא מקבלים החלטות בצורה רציונלית. אנחנו מקבלים החלטות בצורה אנושית, מלאה בקיצורי דרך פסיכולוגיים שהמוח מייצר בלי שנשים לב.</p>
+
+    <p>עמוס טברסקי נפטר בשנת 1996 ולכן לא זכה לקבל את פרס נובל.</p>
+
+    <p>דניאל כהנמן קיבל את פרס נובל לכלכלה בשנת 2002 על המחקר המשותף שלהם ונפטר בשנת 2024.</p>
+
+    <div class="highlight">
+      <p><strong>העבודה שלהם הפכה לבסיס של כל הכלכלה ההתנהגותית.</strong> המחקר מסביר למה אנחנו עושים שוב ושוב אותן טעויות, איך המוח עובד נגדנו, ולמה השקעות זה לא רק מספרים. זה בעיקר פסיכולוגיה. והקשיים האלה משפיעים עלינו הרבה יותר כשאנחנו מנסים לנהל את הכסף שלנו בצורה נכונה.</p>
+    </div>
+
+    <h2>הקשיים הפסיכולוגיים שיכולים לפגוע לנו בהשקעות</h2>
+
+    <div class="bias-section">
+      <h3>הטיית הפסד</h3>
+      <p>אנחנו מרגישים הפסד הרבה יותר חזק מרווח. זה גורם למשקיעים להחזיק מניה מפסידה הרבה יותר מדי זמן רק כדי לא "לסגור הפסד", או לפחד למכור רווח כי אולי זה יעלה עוד.</p>
+      <div class="example">
+        <strong>דוגמה קצרה:</strong><br>
+        קניתם מניה ב-100 והיא ירדה ל-70. במקום למכור ולעבור להשקעה טובה יותר אתם אומרים "אני אחכה שהיא תחזור" בלי שום סיבה רציונלית לזה.
+      </div>
+    </div>
+
+    <div class="bias-section">
+      <h3>הטיית אישור</h3>
+      <p>ברגע שנדלקנו על השקעה מסוימת אנחנו מחפשים רק מידע שתומך במה שכבר החלטנו ומתעלמים ממידע שסותר.</p>
+      <p>זה מרגיש בטוח, אבל זו לא החלטה מבוססת, זו החלטה שנוחה לנו בראש.</p>
+      <div class="example">
+        <strong>דוגמה קצרה:</strong><br>
+        התלהבתם מקרן מסוימת. אתם קוראים רק כתבות חיוביות ומתעלמים מהבעיות. ההחלטה מרגישה נכונה אבל היא לא מאוזנת.
+      </div>
+    </div>
+
+    <div class="bias-section">
+      <h3>הטיית זמינות</h3>
+      <p>אנחנו נותנים משקל גדול מדי למה שקורה עכשיו. סרטון בטיקטוק, כתבה, חבר מהעבודה. האירוע האחרון מרגיש כאילו הוא מייצג את כל העתיד, למרות שאין לזה שום בסיס.</p>
+      <div class="example">
+        <strong>דוגמה קצרה:</strong><br>
+        שמעתם על מניה "שמתפוצצת". זה רק טרי בראש, לא בהכרח נכון. אבל המוח ישר דוחף לקנות.
+      </div>
+    </div>
+
+    <div class="bias-section">
+      <h3>אפקט העדר</h3>
+      <p>אנשים קונים מניות רק כי אחרים קונים. ברגע שכולם נכנסים להשקעה מסוימת זה מרגיש בטוח ופשוט. אבל כשאתם מצטרפים לעדר בלי להבין מה קניתם אתם משחקים משחק מסוכן.</p>
+      <div class="example">
+        <strong>דוגמה קצרה:</strong><br>
+        כולם נכנסים לקרן מסוימת, אז אתם מרגישים פראיירים ונכנסים גם. אבל אתם לא יודעים למה, לא יודעים מה יש בפנים ולא יודעים מתי לצאת.
+      </div>
+    </div>
+
+    <div class="bias-section">
+      <h3>הטיית עיגון</h3>
+      <p>אנחנו נתקעים על המספר הראשון ששמענו. מחירי קנייה, יעדים או הערכות שווי הופכים בראש לאמת, למרות שהמציאות משתנה כל הזמן. מי שנשאר מקובע על המספר הזה פועל על בסיס מידע לא עדכני.</p>
+      <div class="example">
+        <strong>דוגמה קצרה:</strong><br>
+        קניתם מניה ב-50 והיא ירדה ל-35. בראש שלכם היא עדיין "שווה" 50. אבל המציאות כבר אחרת לגמרי.
+      </div>
+    </div>
+
+    <h2>אז מה אפשר ללמוד מכל זה</h2>
+
+    <p>לפי המחקר הזה ברור שלמשקיעים יש המון קשיים פסיכולוגיים שיכולים לפגוע לנו בקבלת ההחלטות. המוח מושפע מפחדים, מהרגלים ומהטיות שאנחנו בכלל לא מודעים אליהן. בגלל זה אם אנחנו לא מתכוונים להיות קוראי דוחות מצטיינים או להבין גרפים ומגמות ברמה הכי גבוהה יש דרך הרבה יותר נכונה להשקיע.</p>
+
+    <div class="highlight">
+      <p><strong>הגישה הכי טובה למשקיע הממוצע היא להשקיע בצורה מתמדת בשוק ההון דרך קרנות סל מחקות מדדים לטווח הארוך ובפיזור רחב.</strong></p>
+      <p>בהשקעה כזאת אנחנו לא מנסים לתזמן את השוק ולא מנסים להיות חכמים יותר מכולם. אנחנו פשוט הופכים להיות השוק. משקיעים בחברות הגדולות והטובות בעולם, באמונה ובידיעה שהשוק העולמי צומח ומתפתח בטווח הארוך ושאנחנו רוצים להיות חלק מהצמיחה הזאת.</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>רוצה ללמוד איך להשקיע נכון?</h3>
+      <p>בוא נבנה ביחד אסטרטגיית השקעה שמתאימה לך</p>
+      <a href="index.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+</body>
+</html>
+
