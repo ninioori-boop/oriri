@@ -2,9 +2,9 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>תוכנית הליווי - הכלכלן של הבית</title>
+  <title>הכלכלן של הבית - דף נחיתה</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="description" content="תוכנית ליווי פיננסי אישית - הפוך להיות הכלכלן של הבית שלך">
+  <meta name="description" content="ייעוץ כלכלי בגובה העיניים - הכלכלן של הבית">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
 
@@ -353,158 +353,9 @@
     }
 
     /* Values Section */
-    /* Problem Section - הבעיה */
-    .problem-section {
-      background: var(--white);
-      color: var(--black);
-      padding: 5rem 2rem;
-      margin: 0;
-      text-align: center;
-    }
-
-    .problem-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .problem-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: var(--black);
-      font-weight: 700;
-    }
-
-    .problem-section p {
-      font-size: 1.2rem;
-      line-height: 1.9;
-      margin-bottom: 1.5rem;
-      color: var(--black);
-    }
-
-    .problem-section strong {
-      color: var(--gold);
-      font-weight: 600;
-    }
-
-    .problem-highlight {
-      background: linear-gradient(135deg, rgba(201, 163, 63, 0.08) 0%, rgba(212, 175, 84, 0.08) 100%);
-      border-right: 4px solid var(--gold);
-      padding: 2rem;
-      margin: 2.5rem 0;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .problem-highlight p {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--gold);
-      margin: 0;
-    }
-
-    /* Scroll Reveal Animations */
-    .reveal {
-      opacity: 0;
-      transform: translateX(50px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .reveal.active,
-    .reveal-left.active {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .reveal-delay-1 {
-      transition-delay: 0.1s;
-    }
-
-    .reveal-delay-2 {
-      transition-delay: 0.2s;
-    }
-
-    .reveal-delay-3 {
-      transition-delay: 0.3s;
-    }
-
-    .reveal-delay-4 {
-      transition-delay: 0.4s;
-    }
-
     .values-section {
       padding: 4rem 0;
       margin: 4rem 0;
-    }
-    
-    /* Problem Highlights Grid */
-    .problem-highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .problem-highlight-box {
-      background: var(--white);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      border-right: 4px solid var(--gold);
-      transition: all 0.3s ease;
-    }
-
-    .problem-highlight-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    .problem-highlight-box h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.75rem;
-      color: #dc2626;
-      font-weight: 600;
-    }
-
-    .problem-highlight-box p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--gray-text);
-      margin: 0;
-    }
-
-    .problem-highlight-box:last-child {
-      grid-column: 1 / -1;
-      background: linear-gradient(135deg, rgba(201, 163, 63, 0.1) 0%, rgba(212, 175, 84, 0.1) 100%);
-      border-right: 4px solid var(--gold);
-      text-align: center;
-    }
-
-    .problem-highlight-box:last-child h3 {
-      color: #16a34a;
-      font-size: 1.5rem;
-    }
-
-    .problem-highlight-box:last-child p {
-      color: var(--black);
-      font-size: 1.15rem;
-      font-weight: 500;
-    }
-
-    .problem-highlight-box:last-child a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(201, 163, 63, 0.4);
-    }
-
-    .problem-highlight-box:last-child a:first-of-type:hover {
-      background: var(--gold);
-      color: var(--white);
     }
     
     .values-grid {
@@ -876,7 +727,7 @@
       transform: translateY(0);
     }
     
-    /* Sticky CTA Button - כפתור צף משופר */
+    /* Sticky CTA Button */
     .sticky-cta {
       position: fixed;
       bottom: 2rem;
@@ -885,49 +736,19 @@
       z-index: 100;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 0.4s ease, visibility 0.4s ease;
     }
     
     .sticky-cta.show {
       opacity: 1;
       visibility: visible;
-      animation: bounceIn 0.6s ease;
     }
     
     .sticky-cta .btn {
       margin: 0;
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-      color: var(--white);
-      box-shadow: 0 8px 30px rgba(201, 163, 63, 0.5);
-      font-size: 1.2rem;
-      padding: 1.2rem 3rem;
-      font-weight: 700;
-      border: 2px solid var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-
-
-    .sticky-cta .btn:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 12px 40px rgba(201, 163, 63, 0.6);
-    }
-
-    @keyframes bounceIn {
-      0% {
-        transform: translateX(-50%) scale(0.3);
-        opacity: 0;
-      }
-      50% {
-        transform: translateX(-50%) scale(1.05);
-      }
-      70% {
-        transform: translateX(-50%) scale(0.9);
-      }
-      100% {
-        transform: translateX(-50%) scale(1);
-        opacity: 1;
-      }
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      font-size: 1.15rem;
+      padding: 1.1rem 2.8rem;
     }
     
     /* Before/After Visual */
@@ -1235,305 +1056,158 @@
     }
 
     @media (max-width: 720px) {
-      /* Header - מותאם למובייל */
+      /* Header */
       .header-inner { 
         flex-wrap: wrap;
-        padding: 1rem;
-        gap: 0.75rem;
+        padding: 1rem 1.2rem;
+        gap: 1rem;
       }
       .brand-section {
-        gap: 0.75rem;
+        gap: 0.8rem;
       }
       .brand-section img {
-        height: 38px !important;
+        height: 40px !important;
       }
       .brand-title {
-        font-size: 1.1rem !important;
+        font-size: 1.2rem !important;
       }
       .nav-links {
         order: 3;
         width: 100%;
         justify-content: space-around;
-        gap: 0.75rem;
+        gap: 1rem;
         padding-top: 0.5rem;
         border-top: 1px solid rgba(0,0,0,0.08);
       }
       .nav-links a {
-        font-size: 0.85rem;
-        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
       }
       .btn-header {
-        padding: 0.6rem 1.1rem;
-        font-size: 0.85rem;
-        min-height: 40px;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
       }
       
-      /* Typography - קריא ונוח למובייל */
+      /* Typography - כותרות קטנות יותר */
       h1 { 
-        font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
         line-height: 1.3;
-        margin-bottom: 1rem;
       }
       h2 { 
-        font-size: clamp(1.4rem, 5.5vw, 1.85rem) !important;
-        line-height: 1.35;
-        margin-bottom: 0.85rem;
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
       }
       h3 { 
-        font-size: clamp(1.15rem, 4.5vw, 1.4rem) !important;
-        line-height: 1.4;
-        margin-bottom: 0.75rem;
+        font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
       }
       p {
-        font-size: 0.95rem;
-        line-height: 1.7;
+        font-size: 1rem;
       }
       
-      /* Problem Section - מובייל */
-      .problem-section {
-        padding: 3rem 1.25rem;
-      }
-
-      .problem-section h2 {
-        font-size: 1.75rem;
-        line-height: 1.3;
-        margin-bottom: 1.5rem;
-      }
-
-      .problem-section p {
-        font-size: 1rem;
-        line-height: 1.75;
-        margin-bottom: 1.25rem;
-      }
-
-      .problem-highlight {
-        padding: 1.5rem 1.25rem;
-        margin: 2rem 0;
-      }
-
-      .problem-highlight p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
-
-      /* Hero - אוורירי יותר */
+      /* Hero */
       .hero {
-        padding: 2.5rem 1rem;
+        padding: 3rem 1.2rem;
       }
       .hero-container {
         grid-template-columns: 1fr;
-        gap: 1.75rem;
+        gap: 2rem;
       }
       .hero-visual {
         order: -1;
-        padding: 1.5rem;
+        padding: 2rem;
       }
       .hero-content {
         text-align: center;
       }
       .hero-tagline {
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 1.75rem;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
       }
       .hero-buttons {
         justify-content: center;
-        gap: 1rem;
       }
       .btn-hero {
-        font-size: 1.05rem;
-        padding: 1rem 1.75rem;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
         width: 100%;
-        min-height: 50px;
       }
       
-      /* Main - ריווח נוח */
+      /* Main */
       main { 
-        padding: 0 1rem 2.5rem; 
+        padding: 0 1.2rem 3rem; 
       }
       section { 
-        padding: 2rem 0; 
+        padding: 2.5rem 0; 
       }
       
-      /* Problem Highlights - מובייל */
-      .problem-highlights-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 1rem;
-      }
-
-      .problem-highlight-box {
-        padding: 1.75rem 1.5rem;
-      }
-
-      .problem-highlight-box h3 {
-        font-size: 1.15rem;
-        margin-bottom: 0.65rem;
-      }
-
-      .problem-highlight-box p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-
-      .problem-highlight-box:last-child h3 {
-        font-size: 1.3rem;
-      }
-
-      .problem-highlight-box:last-child p {
-        font-size: 1rem;
-      }
-
-      .problem-highlight-box:last-child a {
-        width: 100%;
-        text-align: center;
-        padding: 0.85rem 1.5rem !important;
-        font-size: 0.95rem !important;
-      }
-
-      /* Values - כרטיסים קלים */
+      /* Values */
       .values-grid {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: 1.5rem;
       }
       .value-box {
-        padding: 1.75rem 1.25rem;
-      }
-      .value-box h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-      }
-      .value-box p {
-        font-size: 0.9rem;
-        line-height: 1.6;
+        padding: 2rem 1.5rem;
       }
       .value-icon {
-        font-size: 2rem;
-        margin-bottom: 0.75rem;
+        font-size: 2.2rem;
       }
       
-      /* Images - תמונות רספונסיביות */
+      /* Images - תמונות קלות */
       .about-photo img {
         max-width: 100%;
         height: auto;
-        border-radius: 12px;
       }
       
-      /* Blog - כרטיסי מאמרים */
+      /* Blog */
       .blog-grid { 
-        gap: 1.25rem;
+        gap: 1.5rem;
         grid-template-columns: 1fr;
       }
       .blog-grid .card {
         padding: 1.5rem;
       }
-      .blog-grid .card h3 {
-        font-size: 1.2rem;
-        line-height: 1.4;
-      }
-      .blog-grid .card p {
-        font-size: 0.9rem;
-        line-height: 1.6;
-      }
-      .blog-grid .btn {
-        width: 100%;
-        min-height: 48px;
-        padding: 0.85rem 1.5rem;
-      }
       
-      /* Contact - טופס נוח */
+      /* Contact - השארת פרטים פשוטה */
       .contact-section {
-        padding: 2.5rem 0 !important;
-        margin: 2.5rem 0;
+        padding: 3rem 0 !important;
+        margin: 3rem 0;
       }
       .contact-card {
-        padding: 1.75rem 1.25rem;
-        margin: 0 1rem;
+        padding: 2rem 1.5rem;
+        margin: 0 1.2rem;
       }
       .contact-card h2 {
-        font-size: 1.5rem !important;
-        line-height: 1.3;
-        margin-bottom: 0.75rem !important;
-      }
-      .contact-card p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-      
-      /* Forms - טפסים touch-friendly */
-      .form-group {
-        margin-bottom: 1.25rem;
-      }
-      .form-group label {
-        font-size: 0.95rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.6rem !important;
+        margin-bottom: 0.5rem !important;
       }
       .form-group input,
       .form-group textarea {
         font-size: 1rem;
         padding: 1rem;
-        min-height: 50px;
-        border-radius: 8px;
-      }
-      .form-group textarea {
-        min-height: 120px;
       }
       .btn-submit {
-        font-size: 1.05rem;
-        padding: 1.1rem 2rem;
-        min-height: 52px;
-        width: 100%;
-        border-radius: 10px;
+        font-size: 1.1rem;
+        padding: 1.2rem;
+        min-height: 54px;
       }
       
-      /* Sticky Button - כפתור צף למובייל */
+      /* Sticky Button */
       .sticky-cta {
         bottom: 1rem;
-        left: 1rem;
-        right: 1rem;
-        transform: translateX(0);
-        padding: 0;
       }
-      
-      .sticky-cta.show {
-        animation: bounceInMobile 0.6s ease;
-      }
-
       .sticky-cta .btn {
-        font-size: 1.05rem;
-        padding: 1rem 2rem;
-        min-height: 52px;
-        width: 100%;
-      }
-
-      @keyframes bounceInMobile {
-        0% {
-          transform: scale(0.3);
-          opacity: 0;
-        }
-        50% {
-          transform: scale(1.05);
-        }
-        70% {
-          transform: scale(0.9);
-        }
-        100% {
-          transform: scale(1);
-          opacity: 1;
-        }
+        font-size: 1rem;
+        padding: 0.9rem 2rem;
       }
       
-      /* WhatsApp Float - כפתור וואטסאפ */
+      /* WhatsApp Float */
       .whatsapp-float {
-        width: 56px;
-        height: 56px;
-        bottom: 1.25rem;
-        right: 1.25rem;
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        width: 55px;
+        height: 55px;
+        bottom: 1.5rem;
+        right: 1.5rem;
       }
       .whatsapp-float svg {
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
       }
       
       /* Footer */
@@ -1602,82 +1276,6 @@
         height: 35px;
       }
     }
-
-    /* Scroll Reveal Animations */
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .scroll-reveal.reveal-right {
-      transform: translateX(50px);
-    }
-
-    .scroll-reveal.active {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .scroll-reveal-delay-1 {
-      transition-delay: 0.1s;
-    }
-
-    .scroll-reveal-delay-2 {
-      transition-delay: 0.2s;
-    }
-
-    .scroll-reveal-delay-3 {
-      transition-delay: 0.3s;
-    }
-
-    .scroll-reveal-delay-4 {
-      transition-delay: 0.4s;
-    }
-
-    /* Mapping CTA Button Hover */
-    .mapping-cta-btn:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 10px 35px rgba(201, 163, 63, 0.6);
-    }
-
-    /* Personal Story Mobile */
-    @media (max-width: 768px) {
-      .personal-story-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-      }
-      
-      .personal-story-grid img {
-        max-width: 300px !important;
-      }
-
-      /* What You Get Section Mobile */
-      .what-you-get-benefits {
-        grid-template-columns: 1fr !important;
-        gap: 1rem !important;
-      }
-
-      .what-you-get-benefits > div {
-        border-right: none !important;
-        border-bottom: 3px solid var(--gold) !important;
-        padding-bottom: 1rem !important;
-      }
-
-      .what-you-get-benefits > div:last-child {
-        border-bottom: none !important;
-      }
-
-      /* What Happens in Mapping Mobile */
-      .mapping-cards-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-
-      .mapping-cards-grid > div {
-        max-width: 100% !important;
-      }
-    }
   </style>
 </head>
 <body>
@@ -1700,209 +1298,282 @@
     </div>
   </header>
 
-  <!-- Main Title Section -->
-  <section style="background: var(--white); padding: 4rem 2rem 3rem; text-align: center; border-bottom: 3px solid var(--gold);">
-    <div style="max-width: 900px; margin: 0 auto;">
-      <h1 class="scroll-reveal" style="font-size: clamp(2.5rem, 6vw, 4rem); color: var(--black); margin-bottom: 1.5rem; font-weight: 700; line-height: 1.2;">הכלכלן של הבית</h1>
-      <p class="scroll-reveal scroll-reveal-delay-1" style="font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--gold); font-weight: 600; margin: 0;">הדרך להיות הכתובת לכל שאלה כלכלית במשפחה</p>
-    </div>
-  </section>
-
-  <!-- Problem Section - הבעיה -->
-  <section class="problem-section">
-    <div class="problem-content">
-      <p class="scroll-reveal" style="font-size: 1.2rem; line-height: 1.9; margin-bottom: 2rem;">רוב האנשים שאני מלווה הם סטודנטים, חיילים משוחררים ומשפחות צעירות, ומוכרים להם מוצרים פיננסיים שהם לא באמת מבינים. מנהלים להם חסכונות בלי שהם יודעים מה קורה שם, והם מפסידים כסף רק בגלל חוסר ידע. הכל נראה להם מסובך מדי, אבל בפועל זה הרבה יותר פשוט ממה שמספרים להם.</p>
-      
-      <p class="scroll-reveal reveal-right scroll-reveal-delay-1" style="font-size: 1.2rem; line-height: 1.9; margin-bottom: 2rem;">הגופים הפיננסיים יש להם אינטרס שזה ייראה מורכב כדי שלא תשאלו שאלות <a href="article-system.html" style="color: var(--gold); text-decoration: underline; font-weight: 600;" target="_blank">(קראו עוד על זה כאן)</a>, וזה גורם לאנשים להירתע, לא להתמודד, ולתת למערכת להחליט בשבילם.</p>
-      
-      <p class="scroll-reveal scroll-reveal-delay-2" style="font-size: 1.2rem; line-height: 1.9; margin-bottom: 2rem;">ואם את או אתה מרגישים שאין לכם באמת מושג מה קורה עם הכסף מאחורי הקלעים, שאין לכם שליטה עליו, שהוא לא עובד בשבילכם ונעלם בלי שאתם שמים לב, אתם מוזמנים <a href="blog.html" style="color: var(--gold); text-decoration: underline; font-weight: 600;">להיכנס לבלוג</a> ולהתחיל להבין את הדברים בצורה פשוטה.</p>
-      
-      <p class="scroll-reveal reveal-right scroll-reveal-delay-3" style="font-size: 1.2rem; line-height: 1.9; margin-bottom: 2rem;">ואם אתם צריכים ליווי אישי, אתם מוזמנים להצטרף לתוכנית הליווי שבה נשב יחד, יד ביד, נעבור על כל העניינים הפיננסיים שלכם, נשפר אותם ונעשה בהם סדר אמיתי.</p>
-    </div>
-  </section>
-
-  <!-- Personal Story Section -->
-  <section class="section" style="background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%); padding: 4rem 2rem;">
-    <div style="max-width: 1100px; margin: 0 auto;">
-      <h2 class="scroll-reveal" style="font-size: 2.2rem; margin-bottom: 3rem; color: var(--gold); font-weight: 700; text-align: center;">קצת עליי</h2>
-      
-      <div class="personal-story-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-        <!-- Photo -->
-        <div class="scroll-reveal" style="text-align: center;">
-          <img src="ori-photo.jpeg" alt="אורי - הכלכלן של הבית" loading="lazy" style="width: 100%; max-width: 400px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); border: 4px solid var(--gold);">
-        </div>
-        
-        <!-- Text -->
-        <div>
-          <p class="scroll-reveal reveal-right scroll-reveal-delay-1" style="font-size: 1.2rem; line-height: 1.9; color: var(--white); margin-bottom: 1.5rem;">אני אורי, בן 25 מתל אביב, יועץ פיננסי ולוחם מילואים פעיל שאוהב פשטות ושקט ולא מוותר על מה שחשוב לו.</p>
-          <p class="scroll-reveal scroll-reveal-delay-2" style="font-size: 1.2rem; line-height: 1.9; color: var(--white); margin-bottom: 1.5rem;">אני מלמד רק דברים שעברתי בעצמי ומה שנולד מהחוויות שלי, לא מוכר חלומות ולא מבטיח קסמים.</p>
-          <p class="scroll-reveal reveal-right scroll-reveal-delay-3" style="font-size: 1.2rem; line-height: 1.9; color: var(--white); margin-bottom: 1.5rem;">המטרה שלי היא להעביר לך את הידע שצברתי, לכוון אותך בדרך פשוטה וברורה, וללוות אותך ליצירת סדר פיננסי שיעשה יותר שקט בראש ובבית.</p>
-          <p class="scroll-reveal scroll-reveal-delay-4" style="font-size: 1.15rem; line-height: 1.9; color: var(--gold); font-weight: 600;">היום אני בדרך לרישיון ייעוץ פנסיוני וייעוץ השקעות.</p>
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>הכלכלן של <span class="highlight-word">הבית</span></h1>
+        <p class="hero-tagline">כאן תהפוך להיות הכתובת לכל שאלה כלכלית במשפחה</p>
+        <p style="font-size: 1.15rem; color: #555; margin-bottom: 2.5rem;">זה שאתה לא מבין בכסף זה כי לא לימדו אותנו על זה בשום מקום וזה לא באשמתך.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-hero" href="#contact">אני רוצה להתחיל</a>
+          <a class="btn btn-outline btn-hero" href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank">שיחת היכרות</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Process Section -->
-  <section class="section" id="process" style="background: var(--white); padding: 5rem 2rem;">
-    <div style="max-width: 1100px; margin: 0 auto;">
-      <h2 class="scroll-reveal" style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">איך התהליך עובד</h2>
-      <p class="scroll-reveal scroll-reveal-delay-1" style="text-align: center; font-size: 1.2rem; color: var(--gray-text); margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto;">צעד אחר צעד, נעבור יחד על כל העניינים הפיננסיים שלך</p>
-      
-      <!-- Quick Overview Blocks -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
-        
-        <div class="scroll-reveal" style="text-align: center; padding: 2rem;">
-          <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.8rem; font-weight: 700;">◉</div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">מיפוי מלא</h3>
-          <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נבין איפה אתה עומד היום - הכנסות, הוצאות, חסכונות ופנסיה</p>
-        </div>
-
-        <div class="scroll-reveal reveal-right scroll-reveal-delay-1" style="text-align: center; padding: 2rem;">
-          <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.8rem; font-weight: 700;">✓</div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">תוכנית אישית</h3>
-          <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נבנה תוכנית מותאמת בדיוק למצב שלך ולמה שחשוב לך</p>
-        </div>
-
-        <div class="scroll-reveal scroll-reveal-delay-2" style="text-align: center; padding: 2rem;">
-          <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.8rem; font-weight: 700;">⚙</div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">יישום ביחד</h3>
-          <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נעשה סדר בכל העניינים הפיננסיים - צעד אחר צעד</p>
-        </div>
-
-        <div class="scroll-reveal reveal-right scroll-reveal-delay-3" style="text-align: center; padding: 2rem;">
-          <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.8rem; font-weight: 700;">★</div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">ליווי שוטף</h3>
-          <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">אני איתך בדרך עד שתרגיש בטוח לנהל הכל לבד</p>
-        </div>
-
-        <div class="scroll-reveal scroll-reveal-delay-4" style="text-align: center; padding: 2rem;">
-          <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.8rem; font-weight: 700;">▲</div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">נתחיל להשקיע</h3>
-          <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נגרום לכסף לעבוד בשבילך ולצמוח לאורך זמן</p>
-        </div>
-
-      </div>
-      
-      <!-- Free Mapping Highlight -->
-      <div class="scroll-reveal" style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); border-radius: 16px; padding: 2.5rem; margin-bottom: 3rem; text-align: center; box-shadow: 0 8px 30px rgba(201, 163, 63, 0.3);">
-        <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">● פגישת מיפוי ראשונה - לגמרי בחינם!</h3>
-        <p style="font-size: 1.2rem; color: var(--black); line-height: 1.8; margin: 0;">נפגש, נכיר, נבין את המצב שלך ונראה איך אפשר לעזור - ללא עלות וללא התחייבות</p>
-      </div>
-
-      <!-- What Happens in Mapping -->
-      <div class="scroll-reveal scroll-reveal-delay-1" style="background: var(--gray-light); border-radius: 16px; padding: 3rem 2rem; margin-bottom: 4rem;">
-        <h3 style="font-size: 1.8rem; margin-bottom: 2rem; color: var(--black); font-weight: 700; text-align: center;">מה קורה בפגישת המיפוי?</h3>
-        
-        <div class="mapping-cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+      <div class="hero-visual">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <!-- תרשים צמיחה פיננסית -->
+          <defs>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.8" />
+              <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.3" />
+            </linearGradient>
+          </defs>
           
-          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center;">
-            <div style="width: 50px; height: 50px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; font-weight: 700;">₪</div>
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">ניתוח תזרים מזומנים</h4>
-            <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נבין בדיוק איפה הכסף נכנס, לאן הוא הולך, ואיפה אפשר לחסוך</p>
-          </div>
-
-          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center;">
-            <div style="width: 50px; height: 50px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; font-weight: 700;">■</div>
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">מיפוי נכסים וחסכונות</h4>
-            <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נעבור על כל הנכסים, החסכונות והפיקדונות שלך ונבין מה יש לך</p>
-          </div>
-
-          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center;">
-            <div style="width: 50px; height: 50px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; font-weight: 700;">◆</div>
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">סדר בביטוחים ופנסיה</h4>
-            <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נבדוק אילו ביטוחים ופנסיות יש לך, האם יש כפילויות או חוסרים</p>
-          </div>
-
-          <div style="background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center;">
-            <div style="width: 50px; height: 50px; margin: 0 auto 1rem; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; font-weight: 700;">+</div>
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--black); font-weight: 700;">גילוי כספים אבודים</h4>
-            <p style="font-size: 1rem; line-height: 1.7; color: var(--gray-text); margin: 0;">נחפש כספים שאולי לא ידעת שקיימים - פנסיות ישנות, פיקדונות נשכחים</p>
-          </div>
-
-        </div>
-
-        <!-- What You Get -->
-        <div style="background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%); border-radius: 12px; padding: 2rem; margin-top: 2.5rem;">
-          <h4 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--gold); font-weight: 700; text-align: center;">מה תקבל בסוף הפגישה?</h4>
-          <div class="what-you-get-benefits" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-            <div style="padding: 1rem; border-right: 3px solid var(--gold);">
-              <p style="font-size: 1.05rem; color: var(--white); margin: 0; line-height: 1.7;">✓ הבנה ברורה של המצב הפיננסי שלך</p>
-            </div>
-            <div style="padding: 1rem; border-right: 3px solid var(--gold);">
-              <p style="font-size: 1.05rem; color: var(--white); margin: 0; line-height: 1.7;">✓ כלים מעשיים לניהול תקציב וחיסכון</p>
-            </div>
-            <div style="padding: 1rem; border-right: 3px solid var(--gold);">
-              <p style="font-size: 1.05rem; color: var(--white); margin: 0; line-height: 1.7;">✓ זיהוי בעיות והזדמנויות שפספסת</p>
-            </div>
-            <div style="padding: 1rem; border-right: 3px solid var(--gold);">
-              <p style="font-size: 1.05rem; color: var(--white); margin: 0; line-height: 1.7;">✓ תוכנית פעולה ראשונית להמשך הדרך</p>
-            </div>
-          </div>
-          <p style="font-size: 1.1rem; color: var(--gold); margin-top: 1.5rem; text-align: center; font-weight: 600; margin-bottom: 0;">גם אם תחליט לא להמשיך - תצא עם ערך אמיתי!</p>
-        </div>
-
-        <!-- CTA Button -->
-        <div class="scroll-reveal" style="text-align: center; margin-top: 3rem;">
-          <a href="#contact" class="mapping-cta-btn" style="display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--white); padding: 1.3rem 3.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.3rem; box-shadow: 0 6px 25px rgba(201, 163, 63, 0.4); transition: all 0.3s; border: 3px solid var(--white);">קביעת פגישת מיפוי ראשונית</a>
-        </div>
-      </div>
-
-      <!-- Process Steps -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-        
-        <!-- Step 1 -->
-        <div style="background: var(--gray-light); border-radius: 12px; padding: 2.5rem; border-right: 4px solid var(--gold); transition: all 0.3s;">
-          <div style="background: var(--gold); color: var(--white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">1</div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">פגישת מיפוי (חינם!)</h3>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray-text); margin: 0;">נפגש להכרות, נעבור על המצב הפיננסי שלך - הכנסות, הוצאות, חסכונות, פנסיה וביטוחים. נבין איפה אתה עומד ומה חשוב לך. תקבל כלים מעשיים גם אם לא תמשיך.</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div style="background: var(--gray-light); border-radius: 12px; padding: 2.5rem; border-right: 4px solid var(--gold); transition: all 0.3s;">
-          <div style="background: var(--gold); color: var(--white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">2</div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">בניית תוכנית אישית</h3>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray-text); margin: 0;">נבנה יחד תוכנית מותאמת אישית - תקציב, יעדי חיסכון, כרית ביטחון, סדר בפנסיה וביטוחים. הכל בהתאם למצב שלך ולמה שחשוב לך.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div style="background: var(--gray-light); border-radius: 12px; padding: 2.5rem; border-right: 4px solid var(--gold); transition: all 0.3s;">
-          <div style="background: var(--gold); color: var(--white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">3</div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">יישום ומעקב</h3>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray-text); margin: 0;">נתחיל ליישם את התוכנית צעד אחר צעד. נעשה סדר בחשבונות, נפתח חסכונות, נשפר פנסיה. אני איתך בכל שלב.</p>
-        </div>
-
-        <!-- Step 4 -->
-        <div style="background: var(--gray-light); border-radius: 12px; padding: 2.5rem; border-right: 4px solid var(--gold); transition: all 0.3s;">
-          <div style="background: var(--gold); color: var(--white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">4</div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">אופטימיזציה והשקעות</h3>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray-text); margin: 0;">נשפר את דמי הניהול, נבדוק הטבות שלא ניצלת, ונתחיל לבנות תיק השקעות חכם שיצמיח את הכסף שלך לאורך זמן.</p>
-        </div>
-
-        <!-- Step 5 -->
-        <div style="background: var(--gray-light); border-radius: 12px; padding: 2.5rem; border-right: 4px solid var(--gold); transition: all 0.3s;">
-          <div style="background: var(--gold); color: var(--white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">5</div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">ליווי שוטף</h3>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray-text); margin: 0;">נישאר בקשר, נעדכן את התוכנית לפי שינויים בחיים, נענה על שאלות ונוודא שהכל עובד כמו שצריך. עד שתרגיש בטוח לצאת לדרך לבד.</p>
-        </div>
-
-        <!-- Step 6 -->
-        <div style="background: var(--gray-light); border-radius: 12px; padding: 2.5rem; border-right: 4px solid var(--gold); transition: all 0.3s;">
-          <div style="background: var(--gold); color: var(--white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">6</div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">עצמאות פיננסית</h3>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray-text); margin: 0;">המטרה היא שתהיה הכלכלן של הבית שלך. תדע לקבל החלטות נכונות, להבין מה קורה עם הכסף שלך, ולהרגיש בטוח בעתיד הפיננסי שלך.</p>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-      <div style="text-align: center; margin-top: 3rem;">
-        <a href="#contact" style="display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--white); padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; box-shadow: 0 6px 25px rgba(201, 163, 63, 0.4); transition: all 0.3s;">בוא נתחיל - קבע פגישת מיפוי חינם</a>
+          <!-- רקע -->
+          <rect x="0" y="0" width="400" height="300" fill="#f8f9fa" rx="10"/>
+          
+          <!-- קווי רשת -->
+          <line x1="50" y1="50" x2="50" y2="250" stroke="#e0e0e0" stroke-width="2"/>
+          <line x1="50" y1="250" x2="350" y2="250" stroke="#e0e0e0" stroke-width="2"/>
+          
+          <!-- עמודות צמיחה -->
+          <rect x="80" y="200" width="40" height="50" fill="#d4af37" opacity="0.6" rx="4"/>
+          <rect x="140" y="170" width="40" height="80" fill="#d4af37" opacity="0.7" rx="4"/>
+          <rect x="200" y="130" width="40" height="120" fill="#d4af37" opacity="0.8" rx="4"/>
+          <rect x="260" y="90" width="40" height="160" fill="#d4af37" opacity="0.9" rx="4"/>
+          <rect x="320" y="60" width="40" height="190" fill="#d4af37" rx="4"/>
+          
+          <!-- קו מגמה -->
+          <polyline points="100,220 160,190 220,150 280,110 340,70" 
+                    fill="none" stroke="#1e3a5f" stroke-width="3" stroke-linecap="round"/>
+          
+          <!-- נקודות -->
+          <circle cx="100" cy="220" r="6" fill="#1e3a5f"/>
+          <circle cx="160" cy="190" r="6" fill="#1e3a5f"/>
+          <circle cx="220" cy="150" r="6" fill="#1e3a5f"/>
+          <circle cx="280" cy="110" r="6" fill="#1e3a5f"/>
+          <circle cx="340" cy="70" r="8" fill="#d4af37"/>
+          
+          <!-- אייקון כסף -->
+          <text x="340" y="45" font-size="24" text-anchor="middle">💰</text>
+          
+          <!-- חץ למעלה -->
+          <path d="M 365 100 L 375 90 L 385 100" fill="none" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
+        </svg>
       </div>
     </div>
   </section>
 
   <main>
+    <!-- אזור ערך -->
+    <section class="section values-section" id="process">
+      <div class="values-grid">
+        <div class="value-box">
+          <div class="value-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>שליטה בכסף</h3>
+          <p>תדע בדיוק לאן הכסף שלך הולך ואיך לגרום לו לעבוד בשבילך</p>
+        </div>
+        <div class="value-box">
+          <div class="value-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>ראש שקט</h3>
+          <p>תפסיק לדאוג מהעתיד ותתחיל להרגיש ביטחון כלכלי אמיתי</p>
+        </div>
+        <div class="value-box">
+          <div class="value-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>צמיחה כלכלית</h3>
+          <p>תבנה בסיס חזק להתעשרות לטווח ארוך עם החלטות נכונות</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>מה יוצא לך מהתהליך איתי</h2>
+        
+        <!-- Before/After Visual -->
+        <div class="before-after-container">
+          <div class="before-box">
+            <div class="status-icon">😰</div>
+            <h3>לפני</h3>
+            <ul class="status-list">
+              <li>הכסף נעלם ולא יודע לאן</li>
+              <li>חוסר שליטה על ההוצאות</li>
+              <li>לחץ כלכלי מתמיד</li>
+              <li>פחד מהעתיד</li>
+              <li>אין תוכנית ברורה</li>
+            </ul>
+          </div>
+          
+          <div class="arrow-divider">
+            <div class="arrow">→</div>
+          </div>
+          
+          <div class="after-box">
+            <div class="status-icon">😊</div>
+            <h3>אחרי</h3>
+            <ul class="status-list">
+              <li>שליטה מלאה על הכסף</li>
+              <li>תוכנית ברורה לעתיד</li>
+              <li>ראש שקט וביטחון</li>
+              <li>חסכונות צומחים</li>
+              <li>החלטות כלכליות נכונות</li>
+            </ul>
+          </div>
+        </div>
+        
+        <h3>למה דווקא עכשיו</h3>
+        <p>הכסף שלך לא עומד במקום. הוא נשחק בשקט כשהמחירים עולים. עליית המחירים לא תמיד מסתדרת עם עליית המשכורת, וזה מה שפוגע ברמת החיים. כל תקופה שאתה לא פועל, אתה מוותר על זמן, וזה המשאב הכי יקר בעולם הפיננסי.</p>
+        <p>שינוי קטן עכשיו יכול ליצור הבדל גדול בעתיד. יותר שקט, יותר ביטחון ויותר חופש לבחור איך לחיות. זה הזמן להתחיל לבנות את הבסיס הכלכלי שלך בצעדים הנכונים.</p>
+        
+        <h3 style="margin-top: 3rem;">מה תקבל ממני בפועל</h3>
+        
+        <div class="what-you-get-grid">
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נבין איפה אתם עומדים</h4>
+              <p>תמונת מצב מלאה של המצב הכלכלי שלך היום</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 16l4-6 3 3 5-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נעשה סדר בהוצאות</h4>
+              <p>נזהה לאן הכסף הולך ונבנה תקציב שעובד בשבילך</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נבנה כרית ביטחון</h4>
+              <p>תהיו מוכנים לכל צרה לא צפויה בלי ללוות כסף</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" stroke="currentColor" stroke-width="2"/>
+                <path d="M7 10h4m-4 4h10m-10 4h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נבנה תוכנית חיסכון</h4>
+              <p>הכסף שלכם לא ישחק ויתחיל לעבוד בשבילכם</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="2"/>
+                <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נעשה סדר בקרן הפנסיה וההשתלמות</h4>
+              <p>נוודא שהכסף שלכם מושקע נכון לטווח הארוך</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נתחיל לבנות תיק השקעות רווחי ויעיל</h4>
+              <p>השקעות חכמות שיצמיחו את הכסף שלכם לאורך זמן</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/>
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נהיה על הדברים ביחד</h4>
+              <p>עד שתרגישו מוכנים לצאת לדרך בעצמכם בביטחון מלא</p>
+            </div>
+          </div>
+        </div>
+        
+        <p style="margin-top: 2rem;">אפשר ללמוד המון לבד מספרים, סרטונים ופודקאסטים. ואם אתה מרגיש שזה גדול עליך לבד ורוצה קיצור דרך וליווי אישי, כאן אני נכנס לתמונה.</p>
+      </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); padding: 5rem 2rem;">
+      <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem; color: var(--black); font-weight: 700;">פגישת מיפוי פיננסית - לגמרי בחינם!</h2>
+        <p style="font-size: 1.3rem; color: var(--black); margin-bottom: 3rem; line-height: 1.8;">פגישה ראשונה להכרות, הבנה מעמיקה של המצב הפיננסי שלך וקבלת כלים מעשיים - ללא עלות וללא התחייבות</p>
+        
+        <div class="mapping-container" style="text-align: right; overflow: hidden;">
+          <h3 style="font-size: 2rem; margin-bottom: 2rem; color: var(--black); text-align: center; font-weight: 700;">מה קורה בפגישת המיפוי?</h3>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+            
+            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
+              <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">ניתוח תזרים מזומנים</h4>
+              <p style="color: var(--gray-text); line-height: 1.6;">נבין בדיוק איפה הכסף נכנס, לאן הוא הולך, ואיפה אפשר לחסוך</p>
+            </div>
+
+            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
+              <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">מיפוי נכסים</h4>
+              <p style="color: var(--gray-text); line-height: 1.6;">נעבור על כל הנכסים שלך ונבין מה יש לך ואיך זה עובד בשבילך</p>
+            </div>
+
+            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
+              <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">סדר בביטוחים ופנסיה</h4>
+              <p style="color: var(--gray-text); line-height: 1.6;">נבדוק אילו ביטוחים ופנסיות יש לך, האם יש כפילויות או חוסרים</p>
+            </div>
+
+            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
+              <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">גילוי כספים אבודים</h4>
+              <p style="color: var(--gray-text); line-height: 1.6;">נחפש כספים שאולי לא ידעת שקיימים - פנסיות ישנות, פיקדונות נשכחים</p>
+            </div>
+
+          </div>
+
+          <div style="background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--white); text-align: center; font-weight: 700;">מה תקבל בסוף הפגישה?</h3>
+            <ul style="list-style: none; padding: 0; margin: 0; text-align: right;">
+              <li style="padding: 0.8rem 0; color: var(--white); font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ הבנה ברורה של המצב הפיננסי שלך</li>
+              <li style="padding: 0.8rem 0; color: var(--white); font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ כלים מעשיים לניהול תקציב וחיסכון</li>
+              <li style="padding: 0.8rem 0; color: var(--white); font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ פתרונות לבעיות שגילינו בדרך</li>
+              <li style="padding: 0.8rem 0; color: var(--white); font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ טיפים לסדר בביטוחים ובקרנות הפנסיה</li>
+              <li style="padding: 0.8rem 0; color: var(--white); font-size: 1.1rem;">✓ תוכנית פעולה ראשונית להמשך הדרך</li>
+            </ul>
+          </div>
+
+          <p style="font-size: 1.2rem; color: var(--gray-text); margin-bottom: 2rem; text-align: center; line-height: 1.7;">הפגישה הזו לגמרי בחינם וללא התחייבות. גם אם תחליט שאתה לא רוצה להמשך לליווי מלא, תצא עם ערך אמיתי וכלים שיעזרו לך.</p>
+
+          <a href="#contact" style="display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--black); padding: 1.2rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); transition: all 0.3s; min-width: 250px; text-align: center; line-height: 1.5;">קבע פגישת מיפוי<br>עכשיו</a>
+        </div>
+      </div>
+    </section>
 
     <section class="section" id="pricing" style="background: var(--gray-light); padding: 5rem 2rem;">
       <div style="max-width: 1200px; margin: 0 auto;">
@@ -1995,11 +1666,15 @@
             <input type="tel" name="phone" placeholder="טלפון" required>
           </div>
           
+          <div class="form-group" style="display: flex; align-items: flex-start; gap: 0.8rem; text-align: right;">
+            <input type="checkbox" id="privacy-consent" required style="margin-top: 0.3rem; width: 20px; height: 20px; cursor: pointer; accent-color: var(--gold);">
+            <label for="privacy-consent" style="font-size: 0.95rem; color: #333; cursor: pointer; line-height: 1.5;">
+              אני מאשר/ת את <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">מדיניות הפרטיות</a> ומסכים/ה לקבל יצירת קשר
+            </label>
+          </div>
+          
           <button type="submit" class="btn btn-submit">שלח פרטים</button>
         </form>
-        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray-text);">
-          בשליחת הטופס אתה מאשר את <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">מדיניות הפרטיות</a> שלנו
-        </p>
       </div>
     </section>
 
@@ -2064,19 +1739,12 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          entry.target.classList.add('active');
         }
       });
     }, observerOptions);
 
     // הוספת האנימציה לכל האלמנטים
     document.addEventListener('DOMContentLoaded', () => {
-      // אנימציות של Problem Section
-      const revealElements = document.querySelectorAll('.reveal, .reveal-left');
-      revealElements.forEach((element) => {
-        observer.observe(element);
-      });
-
       // כותרות וטקסטים - מצד ימין
       const headings = document.querySelectorAll('h2, h3');
       headings.forEach((element, index) => {
@@ -2143,30 +1811,6 @@
       } else {
         stickyBtn.classList.remove('show');
       }
-    });
-
-    // Scroll Reveal Animation
-    document.addEventListener('DOMContentLoaded', () => {
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      }, observerOptions);
-
-      // Observe all scroll-reveal elements
-      const scrollElements = document.querySelectorAll('.scroll-reveal');
-      console.log('Found scroll-reveal elements:', scrollElements.length);
-      
-      scrollElements.forEach(el => {
-        observer.observe(el);
-      });
     });
   </script>
 </body>
