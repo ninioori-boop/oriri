@@ -112,48 +112,26 @@
       background: var(--gold);
     }
 
-    /* Header */
-    header {
-      background: var(--gray-light);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      border-bottom: 1px solid var(--border-light);
-    }
-    
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    
-    /* Left side: Hamburger + Contact Button */
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    
-    /* Hamburger Menu Button */
+    /* Floating Hamburger Button - Left */
     .hamburger-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 8px;
+      padding: 10px;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
       z-index: 60;
     }
     
     .hamburger-btn span {
       display: block;
-      width: 25px;
+      width: 28px;
       height: 3px;
-      background: var(--text-main);
+      background: #FFFFFF;
       border-radius: 3px;
       transition: all 0.3s ease;
     }
@@ -163,7 +141,7 @@
     }
     
     .hamburger-btn.active span:nth-child(1) {
-      transform: rotate(45deg) translate(8px, 8px);
+      transform: rotate(45deg) translate(9px, 9px);
     }
     
     .hamburger-btn.active span:nth-child(2) {
@@ -171,51 +149,36 @@
     }
     
     .hamburger-btn.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
+      transform: rotate(-45deg) translate(8px, -8px);
     }
     
-    /* Logo in center */
-    .brand-section {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    
-    .brand-section img {
-      height: 40px;
-      width: auto;
-    }
-    
-    .brand-title { 
-      font-weight: 700; 
-      font-size: 1.4rem;
-      color: var(--text-main);
-      white-space: nowrap;
-    }
-    
-    /* Contact Button */
+    /* Floating Contact Button - Right */
     .btn-header {
+      position: fixed;
+      top: 20px;
+      right: 20px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       background: var(--gold);
       color: #FFFFFF;
-      padding: 10px 22px;
+      padding: 12px 24px;
       border-radius: 999px;
       font-weight: 600;
       font-size: 15px;
-      transition: opacity 0.3s ease;
+      transition: all 0.3s ease;
       white-space: nowrap;
       border: none;
       cursor: pointer;
       text-decoration: none;
+      z-index: 60;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
     
     .btn-header:hover {
       opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
     
     /* Mobile Menu Sidebar */
@@ -278,44 +241,35 @@
     
     /* Mobile Responsive */
     @media (max-width: 600px) {
-      .header-inner {
-        padding: 12px 15px;
-      }
-      
-      .brand-section img {
-        height: 35px;
-      }
-      
-      .brand-title {
-        font-size: 1.1rem;
-      }
-      
-      .btn-header {
-        padding: 8px 16px;
-        font-size: 13px;
-      }
-      
       .hamburger-btn {
-        padding: 6px;
+        top: 15px;
+        left: 15px;
+        padding: 8px;
       }
       
       .hamburger-btn span {
-        width: 22px;
+        width: 24px;
+      }
+      
+      .btn-header {
+        top: 15px;
+        right: 15px;
+        padding: 10px 18px;
+        font-size: 14px;
       }
     }
     
     @media (max-width: 450px) {
-      .brand-title {
-        display: none;
-      }
-      
-      .brand-section img {
-        height: 32px;
+      .hamburger-btn {
+        top: 12px;
+        left: 12px;
       }
       
       .btn-header {
-        padding: 7px 14px;
-        font-size: 12px;
+        top: 12px;
+        right: 12px;
+        padding: 8px 16px;
+        font-size: 13px;
       }
     }
 
@@ -1644,25 +1598,15 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-inner">
-      <!-- Left side: Hamburger + Contact Button -->
-      <div class="header-left">
-        <button class="hamburger-btn" aria-label="תפריט">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <a href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank" class="btn-header">דברו איתי</a>
-      </div>
-      
-      <!-- Center: Logo -->
-      <div class="brand-section">
-        <img src="WhatsApp Image 2025-11-08 at 15.05.11.jpeg" alt="הכלכלן של הבית">
-        <div class="brand-title">הכלכלן של הבית</div>
-      </div>
-    </div>
-  </header>
+  <!-- Floating Hamburger Button -->
+  <button class="hamburger-btn" aria-label="תפריט">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <!-- Floating Contact Button -->
+  <a href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank" class="btn-header">דברו איתי</a>
   
   <!-- Mobile Menu Sidebar -->
   <div class="mobile-menu">
