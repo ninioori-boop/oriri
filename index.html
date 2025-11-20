@@ -38,11 +38,91 @@
       direction: rtl;
       font-weight: 400;
       min-height: 100vh;
+      padding-top: 0;
+    }
+    
+    /* Header */
+    header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 1px 3px rgba(100, 116, 139, 0.06);
+    }
+    
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .brand-title { 
+      font-weight: 700; 
+      font-size: 1.4rem;
+      color: var(--black);
+      white-space: nowrap;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: var(--black);
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+    
+    .btn-header {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--white);
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+      border: none;
+      box-shadow: 0 2px 8px rgba(201, 163, 63, 0.25);
+      text-decoration: none;
+    }
+    
+    .btn-header:hover {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(201, 163, 63, 0.35);
+    }
+    
+    .main-content {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 2rem;
+      min-height: calc(100vh - 80px);
     }
 
     .welcome-container {
@@ -260,72 +340,91 @@
       }
     }
 
-    /* Responsive - Mobile First Optimization */
-    @media (max-width: 768px) {
-      body {
-        padding: 1.5rem 1rem;
+    /* Responsive */
+    @media (max-width: 720px) {
+      /* Header */
+      header {
+        font-size: 14px;
+        overflow-x: hidden;
       }
-
+      .header-inner { 
+        flex-wrap: wrap;
+        padding: 0.4rem 0.5rem;
+        gap: 0.3rem;
+        max-width: 100vw;
+        box-sizing: border-box;
+      }
+      .brand-section {
+        gap: 0.3rem;
+        flex-shrink: 0;
+      }
+      .brand-section img {
+        height: 24px !important;
+        width: auto;
+      }
+      .brand-title {
+        font-size: 0.8rem !important;
+        white-space: nowrap;
+      }
+      .nav-links {
+        order: 3;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.2rem;
+        padding-top: 0.3rem;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        box-sizing: border-box;
+      }
+      .nav-links a {
+        font-size: 0.68rem;
+        padding: 0.25rem 0.1rem;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .btn-header {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.68rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      
       .welcome-header {
         flex-direction: column;
         gap: 1.5rem;
       }
 
-      .logo {
-        width: 80px;
-        height: 80px;
-      }
-
       .welcome-photo {
-        width: 140px;
-        height: 140px;
+        width: 150px;
+        height: 150px;
       }
 
       h1 {
-        font-size: 1.75rem;
-        line-height: 1.3;
-        margin-bottom: 0.75rem;
+        font-size: 2rem;
       }
 
       .subtitle {
-        font-size: 1rem;
-        line-height: 1.6;
-        padding: 0 0.5rem;
+        font-size: 1.1rem;
       }
 
       .description {
-        font-size: 0.95rem;
-        line-height: 1.7;
-        margin-bottom: 2.5rem;
-        padding: 0 0.5rem;
+        font-size: 1rem;
+        margin-bottom: 3rem;
       }
 
       .choices-container {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2rem;
       }
 
       .choice-card {
-        padding: 2rem 1.5rem;
-        min-height: auto;
+        padding: 2.5rem 2rem;
       }
 
       .choice-card h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-      }
-
-      .choice-card p {
-        font-size: 0.95rem;
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-      }
-
-      .choice-btn {
-        padding: 1rem 2rem;
-        font-size: 1.05rem;
-        min-height: 50px;
-        width: 100%;
+        font-size: 1.6rem;
       }
 
       .choice-card p {
@@ -373,7 +472,25 @@
   </style>
 </head>
 <body>
-  <div class="welcome-container">
+  <header>
+    <div class="header-inner">
+      <div class="brand-section">
+        <img src="WhatsApp Image 2025-11-08 at 15.05.11.jpeg" alt="הכלכלן של הבית" style="height: 40px; width: auto;">
+        <h1 class="brand-title">הכלכלן של הבית</h1>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">דף הבית</a>
+        <a href="program.html#about">עליי</a>
+        <a href="program.html#process">התהליך</a>
+        <a href="blog.html">בלוג</a>
+        <a href="program.html#contact">צור קשר</a>
+      </nav>
+      <a href="program.html#contact" class="btn-header">דברו איתי</a>
+    </div>
+  </header>
+  
+  <div class="main-content">
+    <div class="welcome-container">
     <div class="logo-section">
       <img src="WhatsApp Image 2025-11-08 at 15.05.11.jpeg" alt="הכלכלן של הבית" class="logo">
       
@@ -381,9 +498,9 @@
         <img src="ori-welcome.jpeg" alt="אורי ניניו" class="welcome-photo">
         <div>
           <h1>הכלכלן של הבית</h1>
-          <h2 style="font-size: 1.8rem; color: var(--gold); margin-bottom: 1.5rem; font-weight: 700; line-height: 1.4;">הדרך להיות הכתובת לכל שאלה כלכלית במשפחה</h2>
-          <p class="subtitle" style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem;">ברוכים הבאים לאתר הכלכלן של הבית.</p>
-          <p class="description" style="font-size: 1.2rem; line-height: 1.9; font-weight: 400;">האתר הזה נועד למטרה אחת: <strong style="color: var(--gold);">לעזור לכם להיות אלה שמנהלים את הכסף בבית ולא נותנים לו לנהל אתכם.</strong> כאן תמצאו בלוג עם הסברים פשוטים, כלים פרקטיים ודוגמאות מהחיים שיעזרו לכם להבין איך הכסף באמת עובד. תמצאו גם מידע מלא על תוכנית הליווי שמובילה אתכם צעד אחר צעד עד שאתם הופכים לכלכלנים ולכלכלניות של הבית שלכם</p>
+          <h2 style="font-size: 1.5rem; color: var(--gold); margin-bottom: 1.5rem; font-weight: 600;">הדרך להפוך לכתובת לכל שאלה כלכלית במשפחה</h2>
+          <p class="subtitle">ברוכים הבאים לאתר הכלכלן של הבית, אני שמח שאתם פה!</p>
+          <p class="description">באתר זה תקבלו תוכן שיעזור לכם להפוך לכלכלנים או לכלכניות של הבית שלכם, ותקבלו מידע על תוכנית הליווי שלי</p>
         </div>
       </div>
     </div>
@@ -467,6 +584,7 @@
     </script>
 
     <p class="footer-note">© 2025 הכלכלן של הבית. כל הזכויות שמורות. | <a href="privacy.html" style="color: var(--gold); text-decoration: none;">מדיניות פרטיות</a></p>
+    </div>
   </div>
 </body>
 </html>
