@@ -293,28 +293,44 @@
     /* Hero */
     .hero {
       background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
-      padding: 6rem 2rem;
+      padding: 3rem 2rem;
       border-bottom: none;
     }
     
     .hero-container {
       max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      display: flex;
+      justify-content: center;
       align-items: center;
     }
     
     .hero-content {
-      text-align: right;
+      text-align: center;
+    }
+    
+    .hero-title-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 15px rgba(201, 163, 63, 0.4));
+      order: 2;
     }
     
     .hero-content h1 {
       font-size: clamp(2.5rem, 5vw, 3.5rem);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0;
       color: var(--white) !important;
       line-height: 1.2;
+      order: 1;
     }
     
     .hero-tagline {
@@ -328,6 +344,7 @@
     .hero-buttons {
       display: flex;
       gap: 1.5rem;
+      justify-content: center;
       flex-wrap: wrap;
     }
     
@@ -751,6 +768,188 @@
       padding: 1.1rem 2.8rem;
     }
     
+    /* General fade-in animation for all sections */
+    .section, .hero, .intro-section, .about-section, .promise-section, .process-section {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s ease;
+    }
+    
+    .section.visible, .hero.visible, .intro-section.visible, .about-section.visible, .promise-section.visible, .process-section.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Intro Section */
+    .intro-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    
+    .intro-content {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s ease;
+    }
+    
+    .intro-section.visible .intro-content {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .intro-content p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 1.8rem;
+    }
+    
+    .intro-content p strong {
+      color: var(--black);
+      font-weight: 700;
+    }
+    
+    .intro-cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    .btn-small {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+    
+    .btn-small:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 163, 63, 0.4);
+    }
+    
+    /* About Me Section */
+    .about-section {
+      max-width: 100%;
+      margin: 0;
+      padding: 5rem 0;
+      background: var(--black);
+    }
+    
+    .about-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .about-text {
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    
+    .about-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: var(--white);
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s ease;
+    }
+    
+    .about-text p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #e5e5e5;
+      margin-bottom: 0;
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s ease;
+      transition-delay: 0.2s;
+    }
+    
+    .about-image-wrapper {
+      position: relative;
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s ease;
+      transition-delay: 0.4s;
+    }
+    
+    .about-section.visible .about-text h2,
+    .about-section.visible .about-text p,
+    .about-section.visible .about-image-wrapper {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .about-image {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(201, 163, 63, 0.3);
+      border: 4px solid var(--gold);
+      display: block;
+    }
+    
+    /* Promise Section */
+    .promise-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 2rem 4rem;
+    }
+    
+    .promise-text {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border-right: 6px solid var(--gold);
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s ease;
+    }
+    
+    .promise-section.visible .promise-text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .promise-text p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+    
+    .promise-text p:last-child {
+      margin-bottom: 0;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    
+    /* Process Section Animation */
+    .process-section .card {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s ease;
+    }
+    
+    .process-section.visible .card {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
     /* Before/After Visual */
     .before-after-container {
       display: grid;
@@ -1104,7 +1303,7 @@
       
       /* Hero */
       .hero {
-        padding: 3rem 1.2rem;
+        padding: 2rem 1.2rem;
       }
       .hero-container {
         grid-template-columns: 1fr;
@@ -1116,6 +1315,15 @@
       }
       .hero-content {
         text-align: center;
+      }
+      .hero-title-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero-logo {
+        width: 80px;
+        height: 80px;
+        order: 0;
       }
       .hero-tagline {
         font-size: 1.1rem;
@@ -1224,6 +1432,37 @@
         align-items: center;
       }
       
+      /* About Section Mobile */
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      
+      .about-text {
+        padding: 2rem 1.5rem;
+      }
+      
+      .about-text h2 {
+        font-size: 1.7rem;
+      }
+      
+      .about-text p {
+        font-size: 1.05rem;
+      }
+      
+      /* Promise Section Mobile */
+      .promise-section {
+        padding: 0.5rem 1rem 3rem;
+      }
+      
+      .promise-text {
+        padding: 2rem 1.5rem;
+      }
+      
+      .promise-text p {
+        font-size: 1.05rem;
+      }
+      
       /* Before/After on mobile */
       .before-after-container {
         grid-template-columns: 1fr;
@@ -1288,7 +1527,7 @@
       
       <nav class="nav-links">
         <a href="index.html">דף הבית</a>
-        <a href="index.html#story">עליי</a>
+        <a href="#about">עליי</a>
         <a href="#process">התהליך</a>
         <a href="blog.html">בלוג</a>
         <a href="#contact">צור קשר</a>
@@ -1301,7 +1540,10 @@
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
-        <h1>הכלכלן של <span class="highlight-word">הבית</span></h1>
+        <div class="hero-title-wrapper">
+          <img src="logo.png" alt="הכלכלן של הבית לוגו" class="hero-logo">
+          <h1>הכלכלן של <span class="highlight-word">הבית</span></h1>
+        </div>
         <p class="hero-tagline">כאן תהפוך להיות הכתובת לכל שאלה כלכלית במשפחה</p>
         <p style="font-size: 1.15rem; color: #555; margin-bottom: 2.5rem;">זה שאתה לא מבין בכסף זה כי לא לימדו אותנו על זה בשום מקום וזה לא באשמתך.</p>
         <div class="hero-buttons">
@@ -1309,93 +1551,47 @@
           <a class="btn btn-outline btn-hero" href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank">שיחת היכרות</a>
         </div>
       </div>
-      <div class="hero-visual">
-        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-          <!-- תרשים צמיחה פיננסית -->
-          <defs>
-            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.8" />
-              <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.3" />
-            </linearGradient>
-          </defs>
-          
-          <!-- רקע -->
-          <rect x="0" y="0" width="400" height="300" fill="#f8f9fa" rx="10"/>
-          
-          <!-- קווי רשת -->
-          <line x1="50" y1="50" x2="50" y2="250" stroke="#e0e0e0" stroke-width="2"/>
-          <line x1="50" y1="250" x2="350" y2="250" stroke="#e0e0e0" stroke-width="2"/>
-          
-          <!-- עמודות צמיחה -->
-          <rect x="80" y="200" width="40" height="50" fill="#d4af37" opacity="0.6" rx="4"/>
-          <rect x="140" y="170" width="40" height="80" fill="#d4af37" opacity="0.7" rx="4"/>
-          <rect x="200" y="130" width="40" height="120" fill="#d4af37" opacity="0.8" rx="4"/>
-          <rect x="260" y="90" width="40" height="160" fill="#d4af37" opacity="0.9" rx="4"/>
-          <rect x="320" y="60" width="40" height="190" fill="#d4af37" rx="4"/>
-          
-          <!-- קו מגמה -->
-          <polyline points="100,220 160,190 220,150 280,110 340,70" 
-                    fill="none" stroke="#1e3a5f" stroke-width="3" stroke-linecap="round"/>
-          
-          <!-- נקודות -->
-          <circle cx="100" cy="220" r="6" fill="#1e3a5f"/>
-          <circle cx="160" cy="190" r="6" fill="#1e3a5f"/>
-          <circle cx="220" cy="150" r="6" fill="#1e3a5f"/>
-          <circle cx="280" cy="110" r="6" fill="#1e3a5f"/>
-          <circle cx="340" cy="70" r="8" fill="#d4af37"/>
-          
-          <!-- אייקון כסף -->
-          <text x="340" y="45" font-size="24" text-anchor="middle">💰</text>
-          
-          <!-- חץ למעלה -->
-          <path d="M 365 100 L 375 90 L 385 100" fill="none" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-      </div>
     </div>
   </section>
 
   <main>
-    <!-- אזור ערך -->
-    <section class="section values-section" id="process">
-      <div class="values-grid">
-        <div class="value-box">
-          <div class="value-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z" fill="currentColor"/>
-            </svg>
-          </div>
-          <h3>שליטה בכסף</h3>
-          <p>תדע בדיוק לאן הכסף שלך הולך ואיך לגרום לו לעבוד בשבילך</p>
-        </div>
-        <div class="value-box">
-          <div class="value-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z" fill="currentColor"/>
-            </svg>
-          </div>
-          <h3>ראש שקט</h3>
-          <p>תפסיק לדאוג מהעתיד ותתחיל להרגיש ביטחון כלכלי אמיתי</p>
-        </div>
-        <div class="value-box">
-          <div class="value-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>צמיחה כלכלית</h3>
-          <p>תבנה בסיס חזק להתעשרות לטווח ארוך עם החלטות נכונות</p>
+    <!-- Intro Section -->
+    <section class="intro-section">
+      <div class="intro-content">
+        <p>רוב האנשים שאני מלווה הם סטודנטים, חיילים משוחררים ומשפחות צעירות, ומוכרים להם מוצרים פיננסיים שהם לא באמת מבינים. מנהלים להם חסכונות בלי שהם יודעים מה קורה בהם, והם מפסידים כסף רק בגלל חוסר ידע. הכל נראה להם מסובך מדי, אבל בפועל זה הרבה יותר פשוט ממה שמספרים להם.</p>
+        
+        <p>לגופים הפיננסיים יש אינטרס שזה ייראה מורכב כדי שלא תשאלו שאלות, וזה גורם לאנשים להירתע, לא להתמודד, ולתת למערכת להחליט בשבילם. ויש לזה מחיר.</p>
+        
+        <p>חוסר הבנה פיננסית גורם לאנשים להפסיד כסף בעמלות מיותרות, לקנות מוצרים שלא באמת מתאימים להם ולהפסיד המון הזדמנויות. <strong>ואם את או אתה מרגישים שאין לכם באמת מושג</strong> מה קורה עם הכסף מאחורי הקלעים, שאין לכם שליטה עליו, שהוא לא עובד בשבילכם ונעלם בלי שאתם שמים לב, אתם מוזמנים להיכנס לבלוג ולהתחיל להבין את הדברים בצורה פשוטה.</p>
+        
+        <p><strong>ואם אתם צריכים ליווי אישי,</strong> אתם מוזמנים להצטרף לתוכנית הליווי שבה נשב יחד, יד ביד, נעבור על כל העניינים הפיננסיים שלכם, נעשה בהם סדר אמיתי ונצא יחד לדרך חדשה של שליטה, הבנה פיננסית וצמיחה לעתיד טוב יותר.</p>
+        
+        <div class="intro-cta">
+          <a href="#contact" class="btn-small">דברו איתי</a>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- About Me Section -->
+    <section class="about-section">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>קצת עליי</h2>
+          <p>אני אורי, בן 25 מתל אביב, יועץ פיננסי ולוחם מילואים פעיל שאוהב פשטות ושקט ולא מוותר על מה שחשוב לו. אני מלמד רק דברים שעברתי בעצמי ומה שנולד מהחוויות שלי, לא מוכר חלומות ולא מבטיח קסמים. המטרה שלי היא להעביר לכם את הידע שצברתי, לכוון אותכם בדרך פשוטה וברורה, וללוות אותכם ליצירת סדר פיננסי שיעשה יותר שקט בראש ובבית. היום אני בדרך לרישיון ייעוץ פנסיוני וייעוץ השקעות.</p>
+        </div>
+        <div class="about-image-wrapper">
+          <img src="ori-photo.jpeg" alt="אורי ניניו" class="about-image" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section">
       <div class="card">
         <h2>מה יוצא לך מהתהליך איתי</h2>
         
         <!-- Before/After Visual -->
         <div class="before-after-container">
           <div class="before-box">
-            <div class="status-icon">😰</div>
             <h3>לפני</h3>
             <ul class="status-list">
               <li>הכסף נעלם ולא יודע לאן</li>
@@ -1411,7 +1607,6 @@
           </div>
           
           <div class="after-box">
-            <div class="status-icon">😊</div>
             <h3>אחרי</h3>
             <ul class="status-list">
               <li>שליטה מלאה על הכסף</li>
@@ -1522,6 +1717,14 @@
         </div>
         
         <p style="margin-top: 2rem;">אפשר ללמוד המון לבד מספרים, סרטונים ופודקאסטים. ואם אתה מרגיש שזה גדול עליך לבד ורוצה קיצור דרך וליווי אישי, כאן אני נכנס לתמונה.</p>
+      </div>
+    </section>
+
+    <!-- Promise Section -->
+    <section class="promise-section">
+      <div class="promise-text">
+        <p>אני יכול להבטיח לכם שאחרי התהליך תרגישו הרבה יותר שליטה והבנה לגבי איך לנהל את הכסף שלכם. לא תרגישו יותר אבודים מול המערכות הפיננסיות, ותוכלו סוף סוף לאפשר לכסף שלכם לעבוד גם בזמן שאתם לא עושים כלום. המטרה שלי היא לעזור לכם, ללוות אתכם ולהביא אתכם לשלווה ורוגע מבחינה פיננסית באמצעות פעולות פשוטות וברורות שאפשר ליישם מיד.</p>
+        <p>בסוף התהליך אני לא נעלם. כל דבר שתרצו לדייק, להבין יותר טוב או לקבל עליו הכוונה נוספת, אני תמיד זמין בשבילכם.</p>
       </div>
     </section>
 
@@ -1666,15 +1869,11 @@
             <input type="tel" name="phone" placeholder="טלפון" required>
           </div>
           
-          <div class="form-group" style="display: flex; align-items: flex-start; gap: 0.8rem; text-align: right;">
-            <input type="checkbox" id="privacy-consent" required style="margin-top: 0.3rem; width: 20px; height: 20px; cursor: pointer; accent-color: var(--gold);">
-            <label for="privacy-consent" style="font-size: 0.95rem; color: #333; cursor: pointer; line-height: 1.5;">
-              אני מאשר/ת את <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">מדיניות הפרטיות</a> ומסכים/ה לקבל יצירת קשר
-            </label>
-          </div>
-          
           <button type="submit" class="btn btn-submit">שלח פרטים</button>
         </form>
+        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray-text);">
+          בשליחת הטופס אתה מאשר את <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">מדיניות הפרטיות</a> שלנו
+        </p>
       </div>
     </section>
 
@@ -1715,7 +1914,7 @@
         <h4>תוכן</h4>
         <div class="footer-links">
           <a href="index.html">דף הבית</a>
-          <a href="index.html#story">עליי</a>
+          <a href="#about">עליי</a>
           <a href="#process">התהליך</a>
           <a href="blog.html">בלוג</a>
           <a href="#contact">צור קשר</a>
@@ -1745,42 +1944,38 @@
 
     // הוספת האנימציה לכל האלמנטים
     document.addEventListener('DOMContentLoaded', () => {
-      // כותרות וטקסטים - מצד ימין
-      const headings = document.querySelectorAll('h2, h3');
-      headings.forEach((element, index) => {
-        element.classList.add('fade-in');
-        observer.observe(element);
+      // סקשן הסיפור - אנימציה מהצד
+      const aboutSection = document.querySelector('.about-section');
+      if (aboutSection) {
+        observer.observe(aboutSection);
+      }
+      
+      // סקשן ההבטחה - אנימציה מהצד
+      const promiseSection = document.querySelector('.promise-section');
+      if (promiseSection) {
+        observer.observe(promiseSection);
+      }
+      
+      // כל הסקשנים - אנימציה מהצד
+      const allSections = document.querySelectorAll('.section, .hero, .intro-section, .about-section, .promise-section, .process-section');
+      allSections.forEach((section) => {
+        observer.observe(section);
       });
       
-      // תיבות ערך - מצד ימין בזה אחר זה
-      const valueBoxes = document.querySelectorAll('.value-box');
-      valueBoxes.forEach((element, index) => {
-        element.style.transitionDelay = `${index * 0.15}s`;
-        element.classList.add('fade-in');
-        observer.observe(element);
+      // כל התיבות והקלפים
+      const allCards = document.querySelectorAll('.card, .value-box, .get-box, .mapping-card, .contact-card');
+      allCards.forEach((card) => {
+        card.classList.add('fade-in');
+        observer.observe(card);
       });
       
-      // תיבות "מה תקבל" - מצד ימין בזה אחר זה
-      const getBoxes = document.querySelectorAll('.get-box');
-      getBoxes.forEach((element, index) => {
-        element.style.transitionDelay = `${index * 0.1}s`;
-        element.classList.add('fade-in');
-        observer.observe(element);
-      });
-      
-      // כרטיסי בלוג - מצד ימין בזה אחר זה
-      const blogCards = document.querySelectorAll('.blog-grid .card');
-      blogCards.forEach((element, index) => {
-        element.style.transitionDelay = `${index * 0.15}s`;
-        element.classList.add('fade-in');
-        observer.observe(element);
-      });
-      
-      // פסקאות - מצד ימין
-      const paragraphs = document.querySelectorAll('.card p');
-      paragraphs.forEach(element => {
-        element.classList.add('fade-in');
-        observer.observe(element);
+      // כל הכותרות והפסקאות בתוך sections
+      const allContent = document.querySelectorAll('.section h2, .section h3, .section p, .hero-content, .intro-content');
+      allContent.forEach((element) => {
+        if (!element.closest('.card')) { // אל תוסיף אם כבר בתוך card
+          element.classList.add('fade-in');
+          observer.observe(element);
+        }
       });
       
       // ויזואל לפני/אחרי - מלמטה למעלה
