@@ -49,25 +49,26 @@
       position: fixed;
       top: 20px;
       left: 20px;
-      background: rgba(0, 0, 0, 0.8);
-      border: none;
+      background: rgba(0, 0, 0, 0.95);
+      border: 2px solid rgba(255, 255, 255, 0.3);
       cursor: pointer;
-      padding: 12px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
       gap: 6px;
       z-index: 60;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     }
     
     .hamburger-btn span {
       display: block;
-      width: 28px;
-      height: 3px;
+      width: 30px;
+      height: 4px;
       background: #FFFFFF;
       border-radius: 3px;
       transition: all 0.3s ease;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     }
     
     .hamburger-btn:hover span {
@@ -202,6 +203,74 @@
         right: 12px;
         padding: 7px 12px;
         font-size: 12px;
+      }
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 200;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+    }
+    
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+    
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #25D366;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+      .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
       }
     }
 
@@ -513,11 +582,19 @@
 </head>
 <body>
   <!-- Floating Hamburger Button -->
+  <!-- Floating Hamburger Button -->
   <button class="hamburger-btn" aria-label="תפריט">
     <span></span>
     <span></span>
     <span></span>
   </button>
+  
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.924 0-7.435 6.050-13.485 13.485-13.485s13.485 6.050 13.485 13.485c0 7.435-6.050 13.485-13.485 13.485zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/>
+    </svg>
+  </a>
   
   <div class="mobile-menu">
     <nav>
