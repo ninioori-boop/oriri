@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ב - הכלכלן של הבית</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
     :root {
-      --white: #ffffff;
-      --black: #111111;
       --gold: #C9A33F;
       --gold-light: #D4B054;
-      --gray-dark: #2a2a2a;
-      --gray-medium: #4a4a4a;
-      --gray-light: #f5f5f5;
+      --gray-dark: #2C2C2C;
+      --gray-medium: #3A3A3A;
+      --gray-light: #F5F5F5;
       --gray-text: #666;
+      --black: #111111;
+      --white: #FFFFFF;
+      --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
 
     * {
@@ -23,37 +26,53 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Assistant', sans-serif;
       background: var(--gray-light);
       color: var(--black);
       line-height: 1.8;
       font-size: 1.05rem;
     }
 
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px; 
+      margin: 0 auto; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 2rem;
-    }
-
-    .back-link {
-      display: inline-block;
-      background: var(--black);
-      color: var(--white);
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .back-link:hover {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-      color: var(--black);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 25px rgba(184, 134, 11, 0.4);
     }
 
     .article {
@@ -195,9 +214,14 @@
   </style>
 </head>
 <body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
   <div class="container">
-    <a href="blog.html" class="back-link">← חזרה לבלוג</a>
-    
     <article class="article">
       <h1>קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ב</h1>
       
@@ -279,10 +303,8 @@
 
     <div class="cta-box">
       <h2>רוצה ללמוד עוד?</h2>
-      <p>קרא את החלקים האחרים בסדרת קרן הפנסיה</p>
-      <a href="article-pension.html" class="btn" style="margin: 0.5rem;">לחלק א</a>
-      <a href="article-pension-part3.html" class="btn" style="margin: 0.5rem;">לחלק ג</a>
-      <a href="article-pension-part4.html" class="btn" style="margin: 0.5rem;">לחלק ד</a>
+      <p>קרא את חלק א של המאמר על קרן הפנסיה</p>
+      <a href="article-pension.html" class="btn">לחלק א</a>
     </div>
   </div>
 </body>
