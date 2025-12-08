@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>מדריך פשוט: איך קונים קרן כספית - הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="מדריך פשוט וברור לקניית קרן כספית - איך פותחים חשבון מסחר, איך בוחרים קרן ואיך קונים ומוכרים">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 2rem;
+      color: var(--black);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin: 2rem 0 1rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .highlight {
+      background: var(--white);
+      padding: 2rem;
+      border-right: 4px solid var(--gold);
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .step-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .step-box h3 {
+      color: var(--gold);
+      margin-top: 0;
+    }
+
+    .funds-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .funds-table th,
+    .funds-table td {
+      padding: 1.2rem 1rem;
+      text-align: right;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .funds-table th {
+      background: var(--gray-dark);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .funds-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .funds-table tr:hover td {
+      background: rgba(201, 163, 63, 0.05);
+    }
+
+    .funds-table td:first-child {
+      font-weight: 600;
+    }
+
+    .note-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border-right: 4px solid var(--gold);
+    }
+
+    .note-box p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+    
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background: var(--gray-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 600px) {
+      .funds-table {
+        font-size: 0.9rem;
+      }
+      
+      .funds-table th,
+      .funds-table td {
+        padding: 0.8rem 0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>מדריך פשוט: איך קונים קרן כספית</h1>
+
+    <div class="step-box">
+      <h3>שלב 1: פתיחת חשבון מסחר</h3>
+      <p>בשביל לקנות קרן כספית צריך קודם לפתוח חשבון מסחר דרך הבנק. לעומת קניית ניירות ערך רגילים, לבנק אסור לקחת עמלות על קרן כספית - ככה שרק במקרה הזה עדיף שנקנה דרך הבנק. זה מתבצע דרך אפליקציה נפרדת של שוק ההון.</p>
+      <p style="margin-bottom: 0;">לכל בנק יש את האפליקציה שלו. לדוגמא: פועלים טרייד בבנק הפועלים, לאומי טרייד בבנק לאומי, יהב שוק ההון בבנק יהב. נכנסים, פותחים חשבון מסחר וככה אפשר להתחיל לקנות קרנות.</p>
+    </div>
+
+    <div class="highlight">
+      <p style="font-size: 1.15rem; margin-bottom: 0;">פתיחת חשבון מסחר זה תהליך מאוד פשוט. בדרך כלל תצטרכו לאשר כמה דברים, לחתום איפה שצריך וזה נפתח תוך כמה דקות. ואם במקרה אתם מסתבכים, אפשר לדבר עם נציג של הבנק והוא פותר את זה איתכם במקום.</p>
+    </div>
+
+    <div class="step-box">
+      <h3>שלב 2: בחירת הקרן</h3>
+      <p>אחרי שהחשבון פתוח אתם צריכים לחפש את הקרן שאתם רוצים. אפשר לחפש באינטרנט או ברשימת קרנות כספיות שאני שם למטה. הקרנות שאני בחרתי הן רק חלק מהאפשרויות, יש הרבה אחרות. אם אתם רוצים לחפור יותר לעומק אפשר להסתכל באתר מאיה של רשות ניירות ערך או באתרים אחרים.</p>
+      <p style="margin-bottom: 0;"><strong>עקרונות בחירת הקרן די פשוטים:</strong> היא צריכה להיות שיקלית, לא מחלקת דיבידנדים ורצוי דמי ניהול נמוכים. זה לא קריטי כי זו השקעה קצרה עם תשואה נמוכה, אבל תמיד עדיף לשלם פחות.</p>
+    </div>
+
+    <div class="step-box">
+      <h3>שלב 3: קניית הקרן</h3>
+      <p>אחרי שבוחרים את הקרן חוזרים לחשבון המסחר ורושמים את שם הקרן או את מספר הנייר. היא תופיע, מוודאים שזו הקרן הנכונה ולוחצים עליה.</p>
+      <p style="margin-bottom: 0;">כשנלחץ על הקרן נקבל אפשרות לבחור כמה לקנות. אפשר לפי כמות יחידות ואפשר לפי סכום כסף. הכי פשוט זה לבחור סכום. כותבים כמה כסף רוצים להשקיע, המערכת מתרגמת את זה לכמה יחידות זה יוצא, לוחצים על קנייה ומאשרים. העסקה תתבצע בדרך כלל ביום העסקים הבא.</p>
+    </div>
+
+    <div class="step-box">
+      <h3>שלב 4: מכירת הקרן</h3>
+      <p style="margin-bottom: 0;">כשנרצה למכור נכנסים למערכת ולוחצים על תיק ניירות ערך. שם נראה את הקרן שלנו. לוחצים עליה, רושמים כמה אנחנו רוצים למכור, לוחצים על מכירה ומאשרים. ביום העסקים הבא הכסף אמור להופיע בחשבון.</p>
+    </div>
+
+    <h2>דוגמאות לקרנות כספיות נפוצות</h2>
+
+    <table class="funds-table">
+      <thead>
+        <tr>
+          <th>שם הקרן</th>
+          <th>מספר נייר</th>
+          <th>דמי ניהול</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>אנליסט כספית חיסכון</td>
+          <td>5140413</td>
+          <td>0.075%</td>
+        </tr>
+        <tr>
+          <td>אי בי אי כספית שקלית כשרה</td>
+          <td>5139522</td>
+          <td>0.095%</td>
+        </tr>
+        <tr>
+          <td>דולפין כספית</td>
+          <td>5138698</td>
+          <td>0.10%</td>
+        </tr>
+        <tr>
+          <td>מגדל כספית שקלית כשרה</td>
+          <td>5138094</td>
+          <td>0.10%</td>
+        </tr>
+        <tr>
+          <td>מור כספית ניהול נזילות</td>
+          <td>5139324</td>
+          <td>0.105%</td>
+        </tr>
+        <tr>
+          <td>הראל כספית שקלית כשרה</td>
+          <td>5137815</td>
+          <td>0.11%</td>
+        </tr>
+        <tr>
+          <td>מיטב כספית שקלית ללא קונצרני</td>
+          <td>5137690</td>
+          <td>0.13%</td>
+        </tr>
+        <tr>
+          <td>אזימוט כספית</td>
+          <td>5138706</td>
+          <td>0.15%</td>
+        </tr>
+        <tr>
+          <td>קסם אקטיב כספית שקלית</td>
+          <td>5137740</td>
+          <td>0.15%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      <p>במדריך הזה ניסיתי לפשט לכם את הקנייה של קרן כספית בצורה הכי פשוטה שיש. ואם אתם עדיין מרגישים שמשהו לא ברור אתם מוזמנים לפנות אלי ואני כמובן אעזור לכם.</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>צריכים עזרה בתהליך?</h3>
+      <p>אני כאן לענות על כל שאלה ולעזור לכם להתחיל</p>
+      <a href="program.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+</body>
+</html>
+
