@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>קרן השתלמות - המדריך המלא - הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="מה זה קרן השתלמות, למה היא מוצר ההשקעה הכי חזק בישראל, ואיך לנצל אותה נכון - מדריך לשכירים ועצמאים">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 2rem;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .intro {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--gray-medium);
+      margin-bottom: 2rem;
+    }
+
+    .highlight {
+      background: var(--white);
+      padding: 2rem;
+      border-right: 4px solid var(--gold);
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .section-box {
+      background: var(--white);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .info-list li {
+      padding: 0.5rem 0;
+      padding-right: 1.5rem;
+      position: relative;
+      font-size: 1.1rem;
+    }
+
+    .info-list li::before {
+      content: "•";
+      color: var(--gold);
+      font-weight: bold;
+      position: absolute;
+      right: 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+    
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .disclaimer {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      article {
+        padding: 0 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .section-box, .highlight {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>יש לכם קרן השתלמות ואתם לא יודעים מה זה? כדאי שתתעוררו, כי יש פה כסף על הרצפה</h1>
+
+    <p class="intro">קרן השתלמות היא אחת המתנות הכי גדולות שיש היום בעולם הפיננסי, והרבה אנשים פשוט לא מודעים לזה. יש כאלה שיש להם קרן ולא מבינים מה יש להם ביד, יש כאלה שלא דורשים אותה כחלק מהשכר, ויש עצמאים שלא פותחים אחת בכלל.</p>
+
+    <div class="highlight">
+      <p><strong>וזה פספוס, כי מדובר במוצר ההשקעה הכי חזק בישראל.</strong></p>
+    </div>
+
+    <div class="section-box">
+      <h2>מה זה בעצם קרן השתלמות</h2>
+      <p>קרן השתלמות היא מוצר השקעה שבו אנחנו מפקידים כסף, והכסף מושקע בשוק ההון דרך גוף מנהל. ההשקעה נעשית לפי רמת סיכון ומסלול שהחוסך בוחר, והקרן גובה דמי ניהול מהכסף שנצבר.</p>
+      <p>בשש השנים הראשונות הקרן סגורה ולא נזילה. אחרי שש שנים הקרן הופכת לנזילה ואפשר למשוך את הכסף.</p>
+      <p><strong>היתרון הגדול והחריג של קרן השתלמות הוא פשוט: משיכה אחרי שש שנים פטורה ממס רווחי הון של 25%. במקום לשלם רבע מהרווחים למדינה, כל הרווחים נשארים אצלכם.</strong></p>
+      <p>וזה מטורף. אין עוד מוצר השקעה בישראל שמאפשר להשקיע בשוק ההון, להרוויח, ולמשוך את הכסף בלי לשלם את המס הזה.</p>
+    </div>
+
+    <div class="section-box">
+      <h2>שכירים</h2>
+      <p>קרן השתלמות לשכיר יכולה להיפתח רק דרך מקום העבודה. שכיר לא יכול לפתוח קרן השתלמות לבד, רק המעסיק יכול לפתוח ולהפקיד.</p>
+      
+      <h3>מבנה ההפקדות המקובל:</h3>
+      <ul class="info-list">
+        <li>העובד מפקיד עד 2.5% מהשכר</li>
+        <li>המעסיק מפקיד עד 7.5%</li>
+        <li>סה"כ עד 10% מהשכר</li>
+      </ul>
+      
+      <p>תקרת ההפקדה המוטבת לשכירים בשנת 2025 עומדת על כ-1,571 ש"ח בחודש, כלומר כ-18,852 ש"ח בשנה. הפקדות עד התקרה נהנות מפטור ממס רווחי הון במשיכה לאחר שש שנים.</p>
+      <p><strong>נקודה חשובה:</strong> אי אפשר להעביר קרן השתלמות בין עבודות. אם מחליפים מקום עבודה, הקרן הקיימת נשארת על שמכם וממשיכה להתנהל, והמעסיק החדש יכול לפתוח קרן השתלמות חדשה.</p>
+    </div>
+
+    <div class="section-box">
+      <h2>עצמאים</h2>
+      <p>עצמאי יכול לפתוח קרן השתלמות בעצמו, בלי מעסיק ובלי תלות באף אחד.</p>
+      
+      <h3>לגבי הטבות המס:</h3>
+      <ul class="info-list">
+        <li>עד 4.5% מההכנסה החייבת נחשבים כהוצאה מוכרת לצורכי מס</li>
+        <li>ההכרה הזו מוגבלת לתקרה שנתית של 13,203 ש"ח</li>
+      </ul>
+      
+      <p>בנוסף, קיימת תקרת הפקדה לפטור ממס רווחי הון במשיכה, שעומדת על כ-20,566 ש"ח בשנה. גם אם חלק מההפקדה לא מוכר כהוצאה, עדיין שווה להפקיד עד התקרה כדי ליהנות מהפטור ממס רווחי הון בעת המשיכה.</p>
+    </div>
+
+    <div class="section-box">
+      <h2>דמי ניהול</h2>
+      <p>דמי הניהול בקרן השתלמות נגבים מהכסף שנצבר בקרן. ברוב המקרים דמי הניהול נעים בין כ-0.6% ל-1% בשנה.</p>
+      <p>זה נשמע קטן, אבל לאורך שנים זה הבדל גדול. ככל שדמי הניהול נמוכים יותר, יותר כסף נשאר אצלכם.</p>
+      <p>אם תגיעו לצבירה של מאות אלפי שקלים תוכלו להעביר את הקרן לקופה בניהול אישי IRA ולשלם דמי ניהול נמוכים יותר, אבל זה לפעם אחרת.</p>
+    </div>
+
+    <div class="highlight">
+      <h2>איפה רוב האנשים מפספסים</h2>
+      <p>ברוב המקרים זה קורה באחד מהמצבים הבאים:</p>
+      <ul class="info-list">
+        <li>אנשים לא מבינים מה זה קרן השתלמות ולא משתמשים בה</li>
+        <li>שכירים לא מבקשים שקרן השתלמות תהיה חלק מתנאי השכר</li>
+        <li>עצמאים לא פותחים קרן השתלמות לעצמם</li>
+        <li>אנשים מושכים את הקרן אחרי שש שנים בלי להבין את היתרון שבהמשך החיסכון</li>
+      </ul>
+      <p>בנוסף, הרבה אנשים לא יודעים באיזה מסלול הקרן שלהם נמצאת ולא בודקים דמי ניהול.</p>
+    </div>
+
+    <div class="section-box">
+      <h2>אז למה לא למשוך אחרי שש שנים ולתת לקרן לעבוד</h2>
+      <p>קרן השתלמות הופכת לנזילה אחרי שש שנים, אבל זה לא אומר שחייבים למשוך אותה. במקרים רבים עדיף לתת לה להמשיך לעבוד, במיוחד אם אין צורך מיידי בכסף.</p>
+      <p><strong>חשוב לדעת שגם בלי למשוך את הקרן, אפשר לקחת הלוואה על בסיס קרן ההשתלמות.</strong> בצורה כזאת אפשר לתת לריבית דריבית להמשיך לעבוד ולצבור יותר כסף לאורך זמן.</p>
+      <p>ברוב המקרים מדובר בהלוואה בתנאים טובים יחסית, עם ריבית נמוכה יותר ממה שמקובל בבנקים, כי הכסף כבר נמצא שם ומשמש כביטחון.</p>
+      <p>כך אפשר להשאיר את הקרן מושקעת (לרוב נצטרך להעביר למסלול בטוח יותר לתקופת ההלוואה), להמשיך ליהנות מהפטור ממס רווחי הון של 25%, ובמקביל לקבל נזילות כשצריך.</p>
+      <p><strong>בגלל זה קרן השתלמות יכולה להיות כלי מצוין להשקעה לטווח ארוך, ולא רק חיסכון זמני.</strong></p>
+    </div>
+
+    <div class="highlight">
+      <h2>לסיכום</h2>
+      <p>קרן השתלמות היא לא סתם עוד חיסכון. זה מוצר השקעה עם יתרון מס חריג, תנאים ברורים, ופוטנציאל אמיתי למי שמבין איך להשתמש בו.</p>
+      <p><strong>לא צריך להיות מומחה. צריך לדעת מה יש לנו בידיים ולנהל את זה בצורה מודעת.</strong></p>
+    </div>
+
+    <div class="disclaimer">
+      <p>הטקסט נועד לשיתוף ידע בלבד ואינו מהווה ייעוץ או המלצה לפעולה</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>רוצה להבין יותר איך לנהל את הכסף שלך?</h3>
+      <p>בוא נבנה ביחד תוכנית שמתאימה לך ולמטרות שלך</p>
+      <a href="index.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+</body>
+</html>
+
