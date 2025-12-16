@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>לא כל מי שלמעלה נשאר שם - הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="לא לעולם חסד. למה חשוב לבנות תוכנית כספית לימים רעים ולא להסתמך על המצב הנוכחי">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 2rem;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .intro {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--gray-medium);
+      margin-bottom: 2rem;
+    }
+
+    .highlight {
+      background: var(--white);
+      padding: 2rem;
+      border-right: 4px solid var(--gold);
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .section-box {
+      background: var(--white);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .related-articles {
+      background: var(--white);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border: 2px solid var(--gold);
+    }
+
+    .related-articles h3 {
+      margin-top: 0;
+      color: var(--gold);
+    }
+
+    .related-link {
+      display: block;
+      padding: 1rem;
+      margin: 1rem 0;
+      background: var(--gray-light);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--black);
+      transition: all 0.3s ease;
+    }
+
+    .related-link:hover {
+      background: var(--gold);
+      color: var(--white);
+      transform: translateX(-5px);
+    }
+
+    .related-link strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .related-link span {
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+    
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      article {
+        padding: 0 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .section-box, .highlight, .related-articles {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>לא כל מי שלמעלה נשאר שם</h1>
+
+    <p class="intro">כשגוללים היום ברשתות, מרגיש לפעמים שכולם פיצחו את השיטה. כולם יודעים איך לייצר חיים עם שפע, פאר וכסף. הכול נראה קל, ברור, עובד.</p>
+
+    <div class="section-box">
+      <p>וקל מאוד להיגרר לזה.</p>
+      <p>להשוות.</p>
+      <p>להרגיש שאנחנו מאחור.</p>
+      <p>במיוחד בימים שאנחנו, כמו כל בני אדם, לא בשיא.</p>
+      <p>לא תמיד שמחים, לא תמיד חדים, ולא תמיד במצב רוח טוב כשכל הזוהר הזה קופץ מול העיניים.</p>
+    </div>
+
+    <div class="highlight">
+      <p>אבל אחד הדברים החשובים ביותר שלמדתי בחיים הקצרים שלי הוא משפט פשוט:</p>
+      <p><strong>לא לעולם חסד.</strong></p>
+      <p>זה שעכשיו טוב, לא אומר שבהמשך לא יהיה פחות טוב.</p>
+      <p>וזה שעכשיו מצליחים, או מנסים להיראות מצליחים, לא אומר שמחר לא ניפול. ההפך גם נכון.</p>
+    </div>
+
+    <div class="section-box">
+      <p>החיים לא עובדים בקו ישר.</p>
+      <p>לא כלכלית, לא עסקית, ולא אישית.</p>
+      <p>הם מלאים בברבורים שחורים, באירועים לא צפויים, בדברים שלא תכננו ולא ביקשנו.</p>
+      <p><strong>והשאלה האמיתית היא לא אם זה יקרה, אלא אם נהיה מוכנים לזה.</strong></p>
+    </div>
+
+    <div class="section-box">
+      <h2>בואו נסתכל רגע בהיגיון</h2>
+      <p>מדינה שנהנית משגשוג אבל לא בונה תוכנית ליום שבו הכלכלה נחלשת, תתרסק הרבה יותר חזק ממדינה שנערכה מראש.</p>
+      <p>עסק שמוכר יפה, מרוויח טוב, אבל לא מבטח את עצמו ולא חושב מה קורה אם משהו משתבש, הסיכוי שלו לשרוד משבר נמוך משמעותית מעסק שכן נערך.</p>
+      <p>ובחיים האישיים זה אותו סיפור בדיוק.</p>
+      <p>אדם עם משכורת קבועה שמרגיש בטוח, אבל מבזבז את מה שהוא מכניס כמעט לגמרי ולא שם כסף בצד להשקעות וליום שחור, יכול להתרסק ברגע שיום כזה מגיע.</p>
+      <p>ולא, זה לא כי הוא עשה משהו "לא בסדר".</p>
+      <p><strong>זה כי הוא בנה את החיים שלו על הנחה אחת: שהמצב הנוכחי יישאר לעד.</strong></p>
+    </div>
+
+    <div class="highlight">
+      <p>כי כשיש לכם תוכנית ליום רע, היום הטוב מרגיש הרבה יותר בטוח.</p>
+      <p>אתם פועלים בשקט, לא מתוך לחץ או אדישות.</p>
+      <p><strong>אתם לא בונים חיים על חסד, אלא על אחריות.</strong></p>
+    </div>
+
+    <div class="section-box">
+      <h2>ההמלצה פשוטה וברורה</h2>
+      <p>בכל מה שאתם עושים, תבדקו אם יש לכם תוכנית כספית לימים רעים.</p>
+      <p><strong>קרן ביטחון.</strong></p>
+      <p>ותוודאו שאתם מבוטחים בתרחישים לא צפויים שיכולים לרסק אתכם כלכלית.</p>
+      <p>החיים לא צפויים, וזה לא הולך להשתנות.</p>
+      <p><strong>השאלה היחידה היא אם כשהם יפתיעו, אתם תעמדו על קרקע יציבה, או תגלו שבניתם הכול על מה שהיה נכון רק לרגע הנוכחי.</strong></p>
+    </div>
+
+    <div class="related-articles">
+      <h3>רוצים להעמיק בצורה פרקטית?</h3>
+      <p>אחרי שהבנו את החשיבות של להיות מוכנים, הנה שני מדריכים שיעזרו לכם ליישם:</p>
+      
+      <a href="article-money-fund.html" class="related-link">
+        <strong>פיקדון מול קרן כספית - איפה לשים את קרן החירום?</strong>
+        <span>השוואה בין האפשרויות לשמירת כסף לטווח קצר וליום שחור</span>
+      </a>
+      
+      <a href="article-insurance.html" class="related-link">
+        <strong>האם אתם מוכנים לכל תרחיש פיננסי?</strong>
+        <span>מדריך על שלושת הביטוחים שחשוב להכיר כדי להגן על עצמכם</span>
+      </a>
+    </div>
+
+    <div class="cta-box">
+      <h3>רוצה לבנות תוכנית כספית שתחזיק גם בימים קשים?</h3>
+      <p>בוא נבנה ביחד תוכנית שמתאימה לך ולמטרות שלך</p>
+      <a href="index.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+</body>
+</html>
+
