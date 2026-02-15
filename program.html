@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>הכלכלן של הבית - דף נחיתה</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="description" content="ייעוץ כלכלי בגובה העיניים - הכלכלן של הבית">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #6b7280;
+      --gold: #D4AF37;
+      --gold-light: #D4B054;
+      --shadow-soft: rgba(0, 0, 0, 0.08);
+      --text-main: #222222;
+      --border-light: #EAEAEA;
+      --bg-white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+      width: 100%;
+    }
+    
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--blue-bg);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+      font-weight: 400;
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px);
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    body > *:not(.hamburger-btn):not(.mobile-menu):not(.menu-overlay) {
+      position: relative;
+      z-index: 2;
+    }
+    
+    h1, h2, h3, h4 { 
+      color: var(--black); 
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    
+    h1 { 
+      font-size: clamp(2rem, 5vw, 3.5rem); 
+      margin: 0 0 1.5rem 0;
+    }
+    
+    h2 { 
+      font-size: clamp(1.75rem, 4vw, 2.5rem); 
+      margin: 4rem 0 2rem 0;
+    }
+    
+    h2:first-child {
+      margin-top: 0;
+    }
+    
+    h3 { 
+      font-size: clamp(1.35rem, 3vw, 1.75rem); 
+      margin: 3rem 0 1.5rem 0;
+    }
+    
+    p { 
+      margin-bottom: 2rem; 
+      color: var(--black); 
+      font-weight: 400;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    
+    a { text-decoration: none; color: inherit; }
+    
+    .highlight-gold {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    
+    .highlight-word {
+      color: var(--gold);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    
+    .highlight-word::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    /* Floating Hamburger Button - Left */
+    .hamburger-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.95);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 9999 !important;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+    
+    .hamburger-btn span {
+      display: block;
+      width: 30px;
+      height: 4px;
+      background: #FFFFFF;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    
+    .hamburger-btn:hover span {
+      background: var(--gold);
+    }
+    
+    .hamburger-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(9px, 9px);
+    }
+    
+    .hamburger-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+    }
+    
+    /* Floating Contact Button - Right */
+    .btn-header {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 60;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn-header:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Mobile Menu Sidebar */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 300px;
+      height: 100vh;
+      background: var(--gray-light);
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+      transition: left 0.3s ease;
+      z-index: 9998 !important;
+      padding: 80px 30px 30px;
+    }
+    
+    .mobile-menu.open {
+      left: 0;
+    }
+    
+    .mobile-menu nav {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .mobile-menu nav a {
+      color: var(--text-main);
+      font-size: 18px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-light);
+      transition: color 0.3s ease;
+    }
+    
+    .mobile-menu nav a:hover,
+    .mobile-menu nav a.active {
+      color: var(--gold);
+    }
+    
+    /* Overlay */
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 9997 !important;
+    }
+    
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      .hamburger-btn {
+        top: 15px;
+        left: 15px;
+        padding: 8px;
+      }
+      
+      .hamburger-btn span {
+        width: 24px;
+      }
+      
+      .btn-header {
+        top: 15px;
+        right: 15px;
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+    }
+    
+    @media (max-width: 450px) {
+      .hamburger-btn {
+        top: 12px;
+        left: 12px;
+      }
+      
+      .btn-header {
+        top: 12px;
+        right: 12px;
+        padding: 7px 12px;
+        font-size: 12px;
+      }
+    }
+
+    /* Main */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 6rem;
+    }
+
+    section { 
+      padding: 7rem 0;
+      margin-bottom: 5rem;
+    }
+    
+    section:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Container for content sections */
+    .card, .section {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 24px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--white);
+      padding: 1.2rem 3rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 0;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.3);
+    }
+    
+    .btn svg {
+      flex-shrink: 0;
+    }
+    
+    .btn:hover {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      color: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(201, 163, 63, 0.4);
+    }
+    
+    .btn:active {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(201, 163, 63, 0.25);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      box-shadow: 0 2px 8px rgba(201, 163, 63, 0.15);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(201, 163, 63, 0.3);
+    }
+    
+    .btn-secondary:active {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(201, 163, 63, 0.2);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--gold);
+      border-color: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    }
+    
+    .btn-outline:active {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      padding: 3rem 2rem;
+      border-bottom: none;
+    }
+    
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hero-content {
+      text-align: center;
+    }
+    
+    .hero-title-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 15px rgba(201, 163, 63, 0.4));
+      order: 2;
+    }
+    
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: 0;
+      color: var(--white) !important;
+      line-height: 1.2;
+      order: 1;
+    }
+    
+    .hero-tagline {
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      margin-bottom: 2.5rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .hero-visual svg {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+    }
+    
+    .btn-hero {
+      font-size: 1.3rem;
+      padding: 1.3rem 3.5rem;
+    }
+
+    /* Values Section */
+    .values-section {
+      padding: 4rem 0;
+      margin: 4rem 0;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .value-box {
+      background: var(--white);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(100, 116, 139, 0.08), 
+                  0 0 0 1px rgba(201, 163, 63, 0.15);
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .value-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(100, 116, 139, 0.12),
+                  0 0 0 1px rgba(201, 163, 63, 0.25);
+    }
+    
+    .value-icon {
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+    }
+    
+    .value-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke-width: 1.5;
+    }
+    
+    .value-box h3 {
+      font-size: 1.3rem;
+      margin: 0 0 0.8rem 0;
+      line-height: 1.3;
+      color: var(--black);
+    }
+    
+    .value-box p {
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Two Columns */
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin: 5rem 0;
+      padding: 3rem 0;
+    }
+    
+    .about-photo img {
+      width: 100%;
+      max-width: 400px;
+      object-fit: cover;
+      height: auto;
+      loading: lazy;
+    }
+
+    /* Card */
+    .card {
+      background: transparent;
+      padding: 0;
+      margin-bottom: 4rem;
+    }
+    
+    .card h2 {
+      margin: 4rem 0 2rem 0;
+      text-align: right;
+    }
+    
+    .card h2:first-child {
+      margin-top: 0;
+    }
+    
+    .card p {
+      text-align: right;
+      line-height: 1.7;
+    }
+    
+    .card ul {
+      list-style: none;
+      padding-right: 0;
+      margin: 2rem 0;
+    }
+    
+    .card ul li {
+      padding: 1rem 0 1rem 1.5rem;
+      position: relative;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      text-align: right;
+    }
+    
+    .card ul li::before {
+      content: "•";
+      position: absolute;
+      right: 0;
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* Blog Grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 4rem;
+      margin-top: 4rem;
+    }
+    
+    .blog-grid .card {
+      padding: 3rem 2.5rem;
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(100, 116, 139, 0.08);
+      border-radius: 12px;
+      margin-bottom: 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .blog-grid .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(100, 116, 139, 0.12);
+    }
+    
+    .blog-grid .card h3 {
+      margin: 0 0 1.5rem 0;
+      line-height: 1.4;
+      text-align: right;
+    }
+    
+    .blog-grid .card h3 a {
+      color: var(--black);
+      transition: color 0.3s ease;
+    }
+    
+    .blog-grid .card h3 a:hover {
+      color: var(--gold);
+    }
+    
+    .blog-grid .card p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      text-align: right;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: var(--gray-light);
+      padding: 6rem 2rem !important;
+      margin: 4rem 0;
+    }
+    
+    .contact-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 4rem 3.5rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(100, 116, 139, 0.1);
+      position: relative;
+    }
+    
+    .contact-card p {
+      color: #666;
+    }
+    
+    .contact-card h2 {
+      text-align: center;
+      margin: 0 0 0.5rem 0;
+      color: var(--black);
+    }
+    
+    /* Form Groups */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--black);
+      font-size: 1rem;
+      font-family: 'Assistant', sans-serif;
+      transition: all 0.3s ease;
+      direction: rtl;
+      box-shadow: 0 1px 3px rgba(100, 116, 139, 0.08);
+    }
+    
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #333;
+      font-weight: 400;
+    }
+    
+    .form-group input:focus,כ
+    .form-group textarea:focus {
+      outline: none;
+      box-shadow: 0 2px 8px rgba(100, 116, 139, 0.12),
+                  0 0 0 2px rgba(201, 163, 63, 0.15);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+      line-height: 1.6;
+    }
+    
+    /* Submit Button */
+    .btn-submit {
+      width: 100%;
+      padding: 1.3rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 0.5rem;
+      min-height: 56px;
+      box-shadow: 0 4px 16px rgba(201, 163, 63, 0.3);
+    }
+    
+    .btn-submit:hover {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      color: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(201, 163, 63, 0.4);
+    }
+    
+    .btn-submit:active {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 10px rgba(201, 163, 63, 0.25);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      color: var(--white);
+      padding: 4rem 2rem 1rem;
+      margin-top: 6rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: right;
+    }
+    
+    .footer-section h3 {
+      font-size: 1.3rem;
+      margin: 0.5rem 0 1rem 0;
+      color: var(--white);
+    }
+    
+    .footer-section h4 {
+      font-size: 1.1rem;
+      margin: 0 0 1rem 0;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-logo {
+      height: 45px;
+      width: auto;
+    }
+    
+    .footer-tagline {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.8);
+      margin: 0;
+    }
+    
+    .footer-contact,
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    
+    .footer-contact a,
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+    
+    .footer-contact a:hover,
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+    
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0 0;
+      text-align: center;
+    }
+    
+    .footer-bottom p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin: 0;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateX(100px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* General fade-in animation for all sections */
+    .section, .hero, .intro-section, .about-section, .promise-section, .process-section {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s ease;
+    }
+    
+    .section.visible, .hero.visible, .intro-section.visible, .about-section.visible, .promise-section.visible, .process-section.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Intro Section */
+    .intro-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    
+    .intro-content {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s ease;
+    }
+    
+    .intro-section.visible .intro-content {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .intro-content p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 1.8rem;
+    }
+    
+    .intro-content p strong {
+      color: var(--black);
+      font-weight: 700;
+    }
+    
+    .intro-cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    .btn-small {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+    
+    .btn-small:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 163, 63, 0.4);
+    }
+    
+    /* About Me Section */
+    .about-section {
+      max-width: 100%;
+      margin: 0;
+      padding: 5rem 0;
+      background: var(--black);
+    }
+    
+    .about-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .about-text {
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    
+    .about-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: var(--white);
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s ease;
+    }
+    
+    .about-text p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #e5e5e5;
+      margin-bottom: 0;
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s ease;
+      transition-delay: 0.2s;
+    }
+    
+    .about-image-wrapper {
+      position: relative;
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s ease;
+      transition-delay: 0.4s;
+    }
+    
+    .about-section.visible .about-text h2,
+    .about-section.visible .about-text p,
+    .about-section.visible .about-image-wrapper {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .about-image {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(201, 163, 63, 0.3);
+      border: 4px solid var(--gold);
+      display: block;
+    }
+    
+    /* Promise Section */
+    .promise-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 2rem 4rem;
+    }
+    
+    .promise-text {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border-right: 6px solid var(--gold);
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s ease;
+    }
+    
+    .promise-section.visible .promise-text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .promise-text p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+    
+    .promise-text p:last-child {
+      margin-bottom: 0;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    
+    /* Process Section Animation */
+    .process-section .card {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s ease;
+    }
+    
+    .process-section.visible .card {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Process Steps */
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 2.5rem 0 4rem 0;
+      padding: 0;
+    }
+    .process-step {
+      background: var(--white);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(100, 116, 139, 0.08);
+      border-right: 4px solid var(--gold);
+      text-align: right;
+    }
+    .process-step h4 {
+      font-size: 1.2rem;
+      margin: 0 0 0.5rem 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .process-step p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--gray-text);
+    }
+    @media (max-width: 768px) {
+      .process-step {
+        padding: 1.2rem 1.5rem;
+      }
+      .process-step h4 {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Before/After Visual */
+    .before-after-container {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 3rem;
+      align-items: stretch;
+      margin: 5rem 0;
+      padding: 0;
+      background: transparent;
+    }
+    
+    .before-box, .after-box {
+      background: var(--white);
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    
+    .before-box {
+      border: 2px solid #ffebee;
+    }
+    
+    .after-box {
+      border: 2px solid #e8f5e9;
+    }
+    
+    .status-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    
+    .before-box h3 {
+      font-size: 1.6rem;
+      margin: 0 0 2rem 0;
+      font-weight: 700;
+      color: #c62828;
+    }
+    
+    .after-box h3 {
+      font-size: 1.6rem;
+      margin: 0 0 2rem 0;
+      font-weight: 700;
+      color: #2e7d32;
+    }
+    
+    .status-list {
+      list-style: none !important;
+      list-style-type: none !important;
+      padding: 0;
+      margin: 0;
+      text-align: right;
+    }
+    
+    .status-list li {
+      padding: 0.8rem 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #555;
+      text-align: right;
+      list-style: none !important;
+      list-style-type: none !important;
+    }
+    
+    .status-list li::before {
+      content: none !important;
+      display: none !important;
+    }
+    
+    .status-list li::marker {
+      content: none !important;
+      display: none !important;
+    }
+    
+    .arrow-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .arrow {
+      font-size: 3rem;
+      color: var(--gold);
+      font-weight: bold;
+      animation: slideRight 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes slideRight {
+      0%, 100% {
+        transform: translateX(0);
+        opacity: 0.7;
+      }
+      50% {
+        transform: translateX(10px);
+        opacity: 1;
+      }
+    }
+    
+    /* What You Get Grid */
+    .what-you-get-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      margin: 4rem 0 6rem 0;
+    }
+    
+    .get-box {
+      background: var(--white);
+      padding: 2.5rem 3rem;
+      text-align: right;
+      box-shadow: 0 2px 8px rgba(100, 116, 139, 0.08),
+                  inset 3px 0 0 0 rgba(201, 163, 63, 0.2);
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+    
+    .get-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(100, 116, 139, 0.12),
+                  inset 3px 0 0 0 rgba(201, 163, 63, 0.35);
+    }
+    
+    .get-icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      margin-top: 0.2rem;
+    }
+    
+    .get-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2;
+    }
+    
+    .get-content {
+      flex: 1;
+      text-align: right;
+    }
+    
+    .get-box h4 {
+      font-size: 1.15rem;
+      margin: 0 0 0.6rem 0;
+      color: var(--black);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    
+    .get-box p {
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 200;
+      width: 45px;
+      height: 45px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+    }
+    
+    .whatsapp-float svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+    
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #25D366;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .values-grid { 
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+      }
+      .two-cols { 
+        grid-template-columns: 1fr; 
+        gap: 3rem; 
+      }
+      .about-photo img { 
+        margin: 0 auto; 
+        display: block; 
+      }
+      section { 
+        padding: 4rem 0; 
+      }
+      .hero {
+        padding: 6rem 2rem;
+      }
+      
+      /* Before/After on tablet */
+      .before-after-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+      }
+      .arrow-divider {
+        transform: rotate(90deg);
+      }
+      .arrow {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Typography - כותרות קטנות יותר */
+      h1 { 
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+        line-height: 1.3;
+      }
+      h2 { 
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+      }
+      h3 { 
+        font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
+      }
+      p {
+        font-size: 1rem;
+      }
+      
+      /* Hero */
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .hero-visual {
+        order: -1;
+        padding: 2rem;
+      }
+      .hero-content {
+        text-align: center;
+      }
+      .hero-title-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero-logo {
+        width: 80px;
+        height: 80px;
+        order: 0;
+      }
+      .hero-tagline {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .btn-hero {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+        width: 100%;
+      }
+      
+      /* Main */
+      main { 
+        padding: 0 1.2rem 3rem; 
+      }
+      section { 
+        padding: 2.5rem 0; 
+      }
+      main > section:first-child {
+        padding-top: 0.5rem;
+      }
+      
+      /* Values */
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .value-box {
+        padding: 2rem 1.5rem;
+      }
+      .value-icon {
+        font-size: 2.2rem;
+      }
+      
+      /* Images - תמונות קלות */
+      .about-photo img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Blog */
+      .blog-grid { 
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+      }
+      .blog-grid .card {
+        padding: 1.5rem;
+      }
+      
+      /* Contact - השארת פרטים פשוטה */
+      .contact-section {
+        padding: 3rem 0 !important;
+        margin: 3rem 0;
+      }
+      .contact-card {
+        padding: 2rem 1.5rem;
+        margin: 0 1.2rem;
+      }
+      .contact-card h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+      .form-group input,
+      .form-group textarea {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+      .btn-submit {
+        font-size: 1.1rem;
+        padding: 1.2rem;
+        min-height: 54px;
+      }
+      
+      /* Sticky Button */
+      .sticky-cta {
+        bottom: 1rem;
+      }
+      .sticky-cta .btn {
+        font-size: 1rem;
+        padding: 0.9rem 2rem;
+      }
+      
+      /* WhatsApp Float */
+      .whatsapp-float {
+        width: 40px;
+        height: 40px;
+        top: 10px;
+        right: 15px;
+      }
+      .whatsapp-float svg {
+        width: 20px;
+        height: 20px;
+      }
+      
+      /* Footer */
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+      .footer-brand {
+        justify-content: center;
+      }
+      .footer-contact,
+      .footer-links {
+        align-items: center;
+      }
+      
+      /* About Section Mobile */
+      .about-section {
+        padding: 3rem 1.5rem;
+      }
+      
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0;
+      }
+      
+      .about-text {
+        padding: 0;
+        text-align: center;
+      }
+      
+      .about-text h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--gold);
+      }
+      
+      .about-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #e5e5e5;
+      }
+      
+      .about-image {
+        border-radius: 15px;
+        border: 3px solid var(--gold);
+        box-shadow: 0 8px 30px rgba(201, 163, 63, 0.4);
+      }
+      
+      /* Intro Section Mobile */
+      .intro-section {
+        padding: 0.5rem 1rem 2rem;
+      }
+      
+      .intro-cta {
+        margin-top: 1.5rem;
+      }
+      
+      /* Promise Section Mobile */
+      .promise-section {
+        padding: 0.5rem 1rem 2rem;
+      }
+      
+      .promise-text {
+        padding: 1.5rem 1.2rem;
+      }
+      
+      .promise-text p {
+        font-size: 1.05rem;
+        margin-bottom: 1rem;
+      }
+      
+      /* Before/After on mobile */
+      .before-after-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 3rem 0;
+      }
+      .before-box, .after-box {
+        padding: 2rem 1.5rem;
+      }
+      .status-icon {
+        font-size: 3rem;
+      }
+      .arrow-divider {
+        transform: rotate(90deg);
+      }
+      .status-list li {
+        font-size: 0.95rem;
+      }
+      
+      /* What You Get on mobile */
+      .what-you-get-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .get-box {
+        padding: 1.5rem 1.5rem;
+        flex-direction: row;
+        gap: 1.2rem;
+      }
+      .get-icon {
+        font-size: 1.8rem;
+        width: 45px;
+        height: 45px;
+      }
+      .get-box h4 {
+        font-size: 1.05rem;
+      }
+      .get-box p {
+        font-size: 0.9rem;
+      }
+      .get-box h4 {
+        font-size: 1.1rem;
+      }
+      .get-box p {
+        font-size: 0.95rem;
+      }
+      
+      /* Footer */
+      .footer-logo {
+        height: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Hamburger Button -->
+  <button class="hamburger-btn" aria-label="תפריט">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <!-- Mobile Menu Sidebar -->
+  <div class="mobile-menu">
+    <nav>
+      <a href="index.html">דף הבית</a>
+      <a href="blog.html">בלוג</a>
+      <a href="program.html#about">תוכנית הליווי</a>
+      <a href="index.html#story">עליי</a>
+    </nav>
+  </div>
+  
+  <!-- Overlay -->
+  <div class="menu-overlay"></div>
+
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-title-wrapper">
+          <img src="logo.png" alt="הכלכלן של הבית לוגו" class="hero-logo">
+          <h1>הכלכלן של <span class="highlight-word">הבית</span></h1>
+        </div>
+        <p class="hero-tagline">כאן תהפכו להיות הכתובת לכל שאלה כלכלית במשפחה</p>
+        <p style="font-size: 1.15rem; color: #555; margin-bottom: 2.5rem;">זה שאתם לא מבינים בכסף זה כי לא לימדו אותנו על זה בשום מקום וזה לא באשמתכם.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-hero" href="#contact">אני רוצה להתחיל</a>
+          <a class="btn btn-outline btn-hero" href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank">שיחת היכרות</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Intro Section -->
+    <section class="intro-section">
+      <div class="intro-content">
+        <p>רוב האנשים שאני מלווה הם סטודנטים, חיילים משוחררים ומשפחות צעירות, ומוכרים להם מוצרים פיננסיים שהם לא באמת מבינים. מנהלים להם חסכונות בלי שהם יודעים מה קורה בהם, והם מפסידים כסף רק בגלל חוסר ידע. הכל נראה להם מסובך מדי, אבל בפועל זה הרבה יותר פשוט ממה שמספרים להם.</p>
+        
+        <p>לגופים הפיננסיים יש אינטרס שזה ייראה מורכב כדי שלא תשאלו שאלות, וזה גורם לאנשים להירתע, לא להתמודד, ולתת למערכת להחליט בשבילם. ויש לזה מחיר.</p>
+        
+        <p>חוסר הבנה פיננסית גורם לאנשים להפסיד כסף בעמלות מיותרות, לקנות מוצרים שלא באמת מתאימים להם ולהפסיד המון הזדמנויות. <strong style="color: #C9A33F;">אם את או אתה מרגישים שאין לכם באמת מושג</strong> מה קורה עם הכסף מאחורי הקלעים, שאין לכם שליטה עליו, שהוא לא עובד בשבילכם ונעלם בלי שאתם שמים לב, אתם מוזמנים להיכנס לבלוג ולהתחיל להבין את הדברים בצורה פשוטה.</p>
+        
+        <p><strong style="color: #C9A33F;">אם אתם צריכים ליווי אישי,</strong> אתם מוזמנים להצטרף לתוכנית הליווי שבה נשב יחד, יד ביד, נעבור על כל העניינים הפיננסיים שלכם, נעשה בהם סדר אמיתי ונצא יחד לדרך חדשה של שליטה, הבנה פיננסית וצמיחה לעתיד טוב יותר.</p>
+        
+        <div class="intro-cta">
+          <a href="#contact" class="btn-small">דברו איתי</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>קצת עליי</h2>
+          <p>אני אורי, בן 25 מתל אביב, יועץ פיננסי ולוחם מילואים פעיל שאוהב פשטות ושקט ולא מוותר על מה שחשוב לו. אני מלמד רק דברים שעברתי בעצמי ומה שנולד מהחוויות שלי, לא מוכר חלומות ולא מבטיח קסמים. המטרה שלי היא להעביר לכם את הידע שצברתי, לכוון אותכם בדרך פשוטה וברורה, וללוות אותכם ליצירת סדר פיננסי שיעשה יותר שקט בראש ובבית. היום אני בדרך לרישיון ייעוץ פנסיוני וייעוץ השקעות.</p>
+        </div>
+        <div class="about-image-wrapper">
+          <img src="ori-photo.jpeg" alt="אורי ניניו" class="about-image" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section">
+      <div class="card">
+        <h2>מה יוצא לכם מהתהליך איתי</h2>
+        
+        <p style="margin-bottom: 2.5rem;">בתהליך הליווי נעבור יחד כמה שלבים ברורים, כדי שתדעו בדיוק מה מחכה לכם ומתי:</p>
+        
+        <div class="process-steps">
+          <div class="process-step">
+            <h4>מיפוי</h4>
+            <p>נבין את המצב הכלכלי שלכם ונייצר תמונת מצב — כך נדע מאיפה מתחילים ולאן רוצים להגיע.</p>
+          </div>
+          <div class="process-step">
+            <h4>תקציב תואם</h4>
+            <p>נכיר את כל ההוצאות שלנו ונייצר תקציב שתואם לאורך החיים והמטרות שלנו.</p>
+          </div>
+          <div class="process-step">
+            <h4>מפגש תיאום ובקרה</h4>
+            <p>נבין מה עובד לנו בתקציב ומה אפשר לשפר — עד שהתמונה מתבהרת ונוחה לכם.</p>
+          </div>
+          <div class="process-step">
+            <h4>בניית תוכנית כלכלית</h4>
+            <p>בפגישה זו נייצר תוכנית כלכלית שתאפשר לכם להגיע למטרות שהצבתם לעצמכם בצורה הכי טובה שאפשר.</p>
+          </div>
+          <div class="process-step">
+            <h4>קשר רציף</h4>
+            <p>לאחר מכן נהיה בקשר תמיד — לכל מה שתצטרכו, לדייק, להבין או לקבל הכוונה נוספת.</p>
+          </div>
+        </div>
+        
+        <!-- Before/After Visual -->
+        <div class="before-after-container">
+          <div class="before-box">
+            <h3>לפני</h3>
+            <ul class="status-list">
+              <li>הכסף נעלם ולא יודע לאן</li>
+              <li>חוסר שליטה על ההוצאות</li>
+              <li>לחץ כלכלי מתמיד</li>
+              <li>פחד מהעתיד</li>
+              <li>אין תוכנית ברורה</li>
+            </ul>
+          </div>
+          
+          <div class="arrow-divider">
+            <div class="arrow">→</div>
+          </div>
+          
+          <div class="after-box">
+            <h3>אחרי</h3>
+            <ul class="status-list">
+              <li>שליטה מלאה על הכסף</li>
+              <li>תוכנית ברורה לעתיד</li>
+              <li>ראש שקט וביטחון</li>
+              <li>חסכונות צומחים</li>
+              <li>החלטות כלכליות נכונות</li>
+            </ul>
+          </div>
+        </div>
+        
+        <h3>למה דווקא עכשיו</h3>
+        <p>הכסף שלכם לא עומד במקום. הוא נשחק בשקט כשהמחירים עולים. עליית המחירים לא תמיד מסתדרת עם עליית המשכורת, וזה מה שפוגע ברמת החיים. כל תקופה שאתם לא פועלים, אתם מוותרים על זמן, וזה המשאב הכי יקר בעולם הפיננסי.</p>
+        <p>שינוי קטן עכשיו יכול ליצור הבדל גדול בעתיד. יותר שקט, יותר ביטחון ויותר חופש לבחור איך לחיות. זה הזמן להתחיל לבנות את הבסיס הכלכלי שלכם בצעדים הנכונים.</p>
+        
+        <h3 style="margin-top: 3rem;">מה תקבל ממני בפועל</h3>
+        
+        <div class="what-you-get-grid">
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נבין איפה אתם עומדים</h4>
+              <p>תמונת מצב מלאה של המצב הכלכלי שלך היום</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 16l4-6 3 3 5-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נעשה סדר בהוצאות</h4>
+              <p>נזהה לאן הכסף הולך ונבנה תקציב שעובד בשבילך</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נבנה כרית ביטחון</h4>
+              <p>תהיו מוכנים לכל צרה לא צפויה בלי ללוות כסף</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" stroke="currentColor" stroke-width="2"/>
+                <path d="M7 10h4m-4 4h10m-10 4h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נבנה תוכנית חיסכון</h4>
+              <p>הכסף שלכם לא ישחק ויתחיל לעבוד בשבילכם</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="2"/>
+                <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נעשה סדר בקרן הפנסיה וההשתלמות</h4>
+              <p>נוודא שהכסף שלכם מושקע נכון לטווח הארוך</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נתחיל לבנות תיק השקעות רווחי ויעיל</h4>
+              <p>השקעות חכמות שיצמיחו את הכסף שלכם לאורך זמן</p>
+            </div>
+          </div>
+          
+          <div class="get-box">
+            <div class="get-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/>
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="get-content">
+              <h4>נהיה על הדברים ביחד</h4>
+              <p>עד שתרגישו מוכנים לצאת לדרך בעצמכם בביטחון מלא</p>
+            </div>
+          </div>
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 1.35rem; line-height: 1.9; font-weight: 500;">אפשר ללמוד המון לבד מספרים, סרטונים ופודקאסטים. <strong style="color: #C9A33F;">ואם אתם מרגישים שזה גדול עליכם לבד ורוצים קיצור דרך וליווי אישי, כאן אני נכנס לתמונה.</strong></p>
+      </div>
+    </section>
+
+    <!-- Promise Section -->
+    <section class="promise-section">
+      <div class="promise-text">
+        <p>אני יכול להבטיח לכם שאחרי התהליך תרגישו הרבה יותר שליטה והבנה לגבי איך לנהל את הכסף שלכם. לא תרגישו יותר אבודים מול המערכות הפיננסיות, ותוכלו סוף סוף לאפשר לכסף שלכם לעבוד גם בזמן שאתם לא עושים כלום. המטרה שלי היא לעזור לכם, ללוות אתכם ולהביא אתכם לשלווה ורוגע מבחינה פיננסית באמצעות פעולות פשוטות וברורות שאפשר ליישם מיד.</p>
+        <p>בסוף התהליך אני לא נעלם. כל דבר שתרצו לדייק, להבין יותר טוב או לקבל עליו הכוונה נוספת, אני תמיד זמין בשבילכם.</p>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-card">
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.924 0-7.435 6.050-13.485 13.485-13.485s13.485 6.050 13.485 13.485c0 7.435-6.050 13.485-13.485 13.485zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/>
+          </svg>
+        </a>
+        
+        <h2>בוא נתחיל</h2>
+        <p style="font-size: 1rem; color: #666; margin-bottom: 2rem; text-align: center;">השאר פרטים ונחזור אליך תוך 24 שעות</p>
+        <form action="https://formspree.io/f/mdklkenp" method="POST">
+          <input type="hidden" name="_subject" value="ליד חדש מהאתר - הכלכלן של הבית">
+          
+          <div class="form-group">
+            <input type="text" name="name" placeholder="שם מלא" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="tel" name="phone" placeholder="טלפון" required>
+          </div>
+          
+          <button type="submit" class="btn btn-submit">שלח פרטים</button>
+        </form>
+        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray-text);">
+          בשליחת הטופס אתה מאשר את <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">מדיניות הפרטיות</a> שלנו
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <img src="WhatsApp Image 2025-11-08 at 15.05.11.jpeg" alt="הכלכלן של הבית" class="footer-logo" loading="lazy">
+          <h3>הכלכלן של הבית</h3>
+        </div>
+        <p class="footer-tagline">ייעוץ כלכלי אישי שעוזר לך לקחת שליטה על הכסף שלך ולבנות עתיד פיננסי בטוח</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>צור קשר</h4>
+        <div class="footer-contact">
+          <a href="mailto:ninioo@gmail.com">📧 ninioo@gmail.com</a>
+          <a href="https://wa.me/972544240213" target="_blank">💬 וואטסאפ</a>
+          <a href="https://instagram.com" target="_blank">📸 אינסטגרם</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>תוכן</h4>
+        <div class="footer-links">
+          <a href="index.html">דף הבית</a>
+          <a href="#about">עליי</a>
+          <a href="#process">התהליך</a>
+          <a href="blog.html">בלוג</a>
+          <a href="#contact">צור קשר</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2025 הכלכלן של הבית. כל הזכויות שמורות. | <a href="privacy.html" style="color: var(--gold); text-decoration: none;">מדיניות פרטיות</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // אנימציה בגלילה - כניסה מצד ימין
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -80px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // הוספת האנימציה לכל האלמנטים
+    document.addEventListener('DOMContentLoaded', () => {
+      // סקשן הסיפור - אנימציה מהצד
+      const aboutSection = document.querySelector('.about-section');
+      if (aboutSection) {
+        observer.observe(aboutSection);
+      }
+      
+      // סקשן ההבטחה - אנימציה מהצד
+      const promiseSection = document.querySelector('.promise-section');
+      if (promiseSection) {
+        observer.observe(promiseSection);
+      }
+      
+      // כל הסקשנים - אנימציה מהצד
+      const allSections = document.querySelectorAll('.section, .hero, .intro-section, .about-section, .promise-section, .process-section');
+      allSections.forEach((section) => {
+        observer.observe(section);
+      });
+      
+      // כל התיבות והקלפים
+      const allCards = document.querySelectorAll('.card, .value-box, .get-box, .contact-card');
+      allCards.forEach((card) => {
+        card.classList.add('fade-in');
+        observer.observe(card);
+      });
+      
+      // כל הכותרות והפסקאות בתוך sections
+      const allContent = document.querySelectorAll('.section h2, .section h3, .section p, .hero-content, .intro-content');
+      allContent.forEach((element) => {
+        if (!element.closest('.card')) { // אל תוסיף אם כבר בתוך card
+          element.classList.add('fade-in');
+          observer.observe(element);
+        }
+      });
+      
+      // ויזואל לפני/אחרי - מלמטה למעלה
+      const beforeAfter = document.querySelector('.before-after-container');
+      if (beforeAfter) {
+        beforeAfter.classList.add('fade-in-up');
+        observer.observe(beforeAfter);
+      }
+      
+      // תמונה - מצד שמאל
+      const aboutPhoto = document.querySelector('.about-photo');
+      if (aboutPhoto) {
+        aboutPhoto.classList.add('fade-in-left');
+        observer.observe(aboutPhoto);
+      }
+    });
+
+    // כפתור קבוע בתחתית - מופיע אחרי גלילה
+    const stickyBtn = document.querySelector('.sticky-cta');
+    const heroSection = document.querySelector('.hero');
+    
+    window.addEventListener('scroll', () => {
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      const scrollPosition = window.scrollY;
+      
+      if (scrollPosition > heroBottom) {
+        stickyBtn.classList.add('show');
+      } else {
+        stickyBtn.classList.remove('show');
+      }
+    });
+    
+    // Hamburger Menu Toggle
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu nav a');
+    
+    // Toggle menu
+    function toggleMenu() {
+      hamburgerBtn.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      menuOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    
+    // Open/Close menu on hamburger click
+    hamburgerBtn.addEventListener('click', toggleMenu);
+    
+    // Close menu on overlay click
+    menuOverlay.addEventListener('click', toggleMenu);
+    
+    // Close menu on link click
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('open')) {
+          toggleMenu();
+        }
+      });
+    });
+    
+    // Mark active page in mobile menu
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    mobileMenuLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && (href.includes(currentPage) || href.includes('program.html') && currentPage === 'program.html')) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
