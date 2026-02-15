@@ -1018,6 +1018,43 @@
       transform: translateX(0);
     }
     
+    /* Process Steps */
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 2.5rem 0 4rem 0;
+      padding: 0;
+    }
+    .process-step {
+      background: var(--white);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(100, 116, 139, 0.08);
+      border-right: 4px solid var(--gold);
+      text-align: right;
+    }
+    .process-step h4 {
+      font-size: 1.2rem;
+      margin: 0 0 0.5rem 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .process-step p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--gray-text);
+    }
+    @media (max-width: 768px) {
+      .process-step {
+        padding: 1.2rem 1.5rem;
+      }
+      .process-step h4 {
+        font-size: 1.1rem;
+      }
+    }
+
     /* Before/After Visual */
     .before-after-container {
       display: grid;
@@ -1615,6 +1652,33 @@
     <section class="section process-section">
       <div class="card">
         <h2>מה יוצא לכם מהתהליך איתי</h2>
+        
+        <p style="margin-bottom: 1rem;">בתהליך הליווי נעבור יחד כמה שלבים ברורים, כדי שתדעו בדיוק מה מחכה לכם ומתי:</p>
+        
+        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">רגע, מה קורה בפגישות?</h3>
+        
+        <div class="process-steps">
+          <div class="process-step">
+            <h4>פגישת מיפוי</h4>
+            <p>כאן אנחנו מבינים סוף סוף את המצב הכלכלי שלכם ויוצרים תמונת מצב מלאה — ממש כמו צילום רנטגן שמראה איפה אתם עומדים היום.</p>
+          </div>
+          <div class="process-step">
+            <h4>תקציב תואם</h4>
+            <p>לאחר מכן נייצר תקציב שתואם לאורך החיים שלכם — תקציב שייצר מודעות מוחלטת להתנהלות הכלכלית שלכם, ויעזור לכם לדעת בדיוק לאן הכסף הולך ולמה.</p>
+          </div>
+          <div class="process-step">
+            <h4>פגישת תיאום ובקרה</h4>
+            <p>נבין איפה התקציב עובד יותר ואיפה אפשר לשפר — נעמיק, נדייק ונוודא שהכל מסתדר עם אורח החיים והמטרות שלכם.</p>
+          </div>
+          <div class="process-step">
+            <h4>פגישת תוכנית כלכלית</h4>
+            <p>בפגישה הזו נייצר תוכנית כלכלית שתאפשר לכם לעמוד בכל המטרות שהצבתם לעצמכם — חיסכון, השקעות, ביטחון פיננסי ועוד.</p>
+          </div>
+          <div class="process-step">
+            <h4>זמינות מלאה</h4>
+            <p>כל התהליך מתבצע עם זמינות מלאה מצידי — וגם לאחר מכן תמיד אהיה זמין לכל שאלה, לדייק, להבין או לקבל הכוונה נוספת.</p>
+          </div>
+        </div>
         
         <!-- Before/After Visual -->
         <div class="before-after-container">
