@@ -1247,48 +1247,8 @@
       }
     }
 
-    .mapping-card {
-      animation: slideInFromRight 0.6s ease-out forwards;
-    }
-
-    .mapping-card:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
-    .mapping-card:nth-child(2) { animation-delay: 0.2s; opacity: 0; }
-    .mapping-card:nth-child(3) { animation-delay: 0.3s; opacity: 0; }
-    .mapping-card:nth-child(4) { animation-delay: 0.4s; opacity: 0; }
-
-    .mapping-container {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 3rem;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-      animation: slideInFromRight 0.8s ease-out forwards;
-      opacity: 0;
-    }
-
     /* Responsive */
     @media (max-width: 980px) {
-      .mapping-container {
-        padding: 2rem 1.5rem !important;
-        margin: 0 !important;
-      }
-
-      .mapping-container > div[style*="grid"] {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-        padding: 0 !important;
-      }
-
-      .mapping-card {
-        margin: 0 !important;
-        transform: translateX(0) !important;
-        width: 100% !important;
-      }
-
-      .mapping-container a[href="#contact"] {
-        min-width: 200px !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 1rem !important;
-      }
       .values-grid { 
         grid-template-columns: 1fr; 
         gap: 2rem;
@@ -1795,132 +1755,6 @@
       </div>
     </section>
 
-    <section class="section" style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); padding: 5rem 2rem;">
-      <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem; color: var(--black); font-weight: 700;">פגישת מיפוי פיננסית - לגמרי בחינם!</h2>
-        <p style="font-size: 1.3rem; color: var(--black); margin-bottom: 3rem; line-height: 1.8;">פגישה ראשונה להכרות, הבנה מעמיקה של המצב הפיננסי שלכם וקבלת כלים מעשיים - ללא עלות וללא התחייבות</p>
-        
-        <div class="mapping-container" style="text-align: right; overflow: hidden;">
-          <h3 style="font-size: 2rem; margin-bottom: 2rem; color: var(--black); text-align: center; font-weight: 700;">מה קורה בפגישת המיפוי?</h3>
-          
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
-            
-            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
-              <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">ניתוח תזרים מזומנים</h4>
-              <p style="color: var(--gray-text); line-height: 1.6;">נבין בדיוק איפה הכסף נכנס, לאן הוא הולך, ואיפה אפשר לחסוך</p>
-            </div>
-
-            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
-              <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">מיפוי נכסים</h4>
-              <p style="color: var(--gray-text); line-height: 1.6;">נעבור על כל הנכסים שלכם ונבין מה יש לכם ואיך זה עובד בשבילכם</p>
-            </div>
-
-            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
-              <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">סדר בביטוחים ופנסיה</h4>
-              <p style="color: var(--gray-text); line-height: 1.6;">נבדוק אילו ביטוחים ופנסיות יש לכם, האם יש כפילויות או חוסרים</p>
-            </div>
-
-            <div class="mapping-card" style="background: var(--gray-light); border-radius: 12px; padding: 2rem; text-align: center;">
-              <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--black); font-weight: 600;">גילוי כספים אבודים</h4>
-              <p style="color: var(--gray-text); line-height: 1.6;">נחפש כספים שאולי לא ידעתם שקיימים - פנסיות ישנות, פיקדונות נשכחים</p>
-            </div>
-
-          </div>
-
-          <div style="background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem;">
-            <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--white); text-align: center; font-weight: 700;">מה תקבל בסוף הפגישה?</h3>
-            <ul style="list-style: none; padding: 0; margin: 0; text-align: right;">
-              <li style="padding: 0.8rem 0; color: var(--white); font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ הבנה ברורה של המצב הפיננסי שלכם</li>
-              <li style="padding: 0.8rem 0; color: var(--white); font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ כלים מעשיים לניהול תקציב וחיסכון</li>
-              <li style="padding: 0.8rem 0; color: var(--white); font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ פתרונות לבעיות שגילינו בדרך</li>
-              <li style="padding: 0.8rem 0; color: var(--white); font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ טיפים לסדר בביטוחים ובקרנות הפנסיה</li>
-              <li style="padding: 0.8rem 0; color: var(--white); font-size: 1.1rem;">✓ תוכנית פעולה ראשונית להמשך הדרך</li>
-            </ul>
-          </div>
-
-          <p style="font-size: 1.2rem; color: var(--gray-text); margin-bottom: 2rem; text-align: center; line-height: 1.7;">הפגישה הזו לגמרי בחינם וללא התחייבות. גם אם תחליטו שאתם לא רוצים להמשיך לליווי מלא, תצאו עם ערך אמיתי וכלים שיעזרו לכם.</p>
-
-          <a href="#contact" style="display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--black); padding: 1.2rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); transition: all 0.3s; min-width: 250px; text-align: center; line-height: 1.5;">קבע פגישת מיפוי<br>עכשיו</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="pricing" style="background: var(--gray-light); padding: 5rem 2rem;">
-      <div style="max-width: 1200px; margin: 0 auto;">
-        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--black);">המסלולים שלי</h2>
-        <p style="text-align: center; font-size: 1.2rem; color: var(--gray-text); margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto;">בחר את המסלול המתאים לך - כולם כוללים ליווי אישי וכלים מעשיים</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem;">
-          
-          <!-- פגישת מיפוי חינמית -->
-          <div style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); border-radius: 16px; padding: 2.5rem; box-shadow: 0 8px 30px rgba(201, 163, 63, 0.4); position: relative;">
-            <div style="position: absolute; top: -15px; right: 20px; background: var(--black); color: var(--white); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.9rem;">בחינם!</div>
-            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">פגישת מיפוי</h3>
-            <div style="margin-bottom: 2rem;">
-              <span style="font-size: 3rem; font-weight: 700; color: var(--black);">₪0</span>
-            </div>
-            <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); font-size: 1.05rem; color: var(--black);">✓ הבנת המצב הפיננסי שלך</li>
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); font-size: 1.05rem; color: var(--black);">✓ ניתוח תזרים וחיסכון</li>
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); font-size: 1.05rem; color: var(--black);">✓ מיפוי נכסים וביטוחים</li>
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); font-size: 1.05rem; color: var(--black);">✓ גילוי כספים אבודים</li>
-              <li style="padding: 0.8rem 0; font-size: 1.05rem; color: var(--black);">✓ כלים מעשיים לקחת הביתה</li>
-            </ul>
-            <a href="#contact" style="display: block; background: var(--black); color: var(--white); text-align: center; padding: 1rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s;">קבע פגישה חינמית</a>
-          </div>
-          
-          <!-- מסלול ליווי מלא -->
-          <div style="background: var(--white); border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
-            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">ליווי פיננסי מלא</h3>
-            <div style="margin-bottom: 2rem;">
-              <span style="font-size: 3rem; font-weight: 700; color: var(--gold);">₪1,200</span>
-            </div>
-            <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--gray-light); font-size: 1.05rem;">✓ 3 פגישות ליווי + פגישת מיפוי חינמית</li>
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--gray-light); font-size: 1.05rem;">✓ בניית תוכנית פיננסית מותאמת אישית</li>
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--gray-light); font-size: 1.05rem;">✓ ניהול תזרים וחיסכון</li>
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--gray-light); font-size: 1.05rem;">✓ סדר בביטוחים ופנסיה</li>
-              <li style="padding: 0.8rem 0; font-size: 1.05rem;">✓ ליווי ותמיכה לאורך הדרך</li>
-            </ul>
-            <a href="#contact" style="display: block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--black); text-align: center; padding: 1rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s;">בוא נתחיל</a>
-          </div>
-
-          <!-- מסלול השקעות -->
-          <div style="background: var(--white); border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
-            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">מסלול השקעות</h3>
-            <div style="margin-bottom: 2rem;">
-              <span style="font-size: 3rem; font-weight: 700; color: var(--gold);">₪800</span>
-            </div>
-            <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--gray-light); font-size: 1.05rem;">✓ 2 פגישות מעמיקות</li>
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--gray-light); font-size: 1.05rem;">✓ הכרת עולם ההשקעות</li>
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--gray-light); font-size: 1.05rem;">✓ בניית אסטרטגיית השקעה</li>
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--gray-light); font-size: 1.05rem;">✓ פתיחת תיק השקעות</li>
-              <li style="padding: 0.8rem 0; font-size: 1.05rem;">✓ כלים למעקב ובקרה</li>
-            </ul>
-            <a href="#contact" style="display: block; background: var(--black); color: var(--white); text-align: center; padding: 1rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s;">בוא נתחיל</a>
-          </div>
-
-          <!-- מסלול משולב -->
-          <div style="background: var(--white); border-radius: 16px; padding: 2.5rem; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); border: 3px solid var(--gold); position: relative;">
-            <div style="position: absolute; top: -15px; right: 20px; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--black); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.9rem;">מומלץ</div>
-            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--black); font-weight: 700;">מסלול משולב</h3>
-            <div style="margin-bottom: 2rem;">
-              <span style="font-size: 3rem; font-weight: 700; color: var(--gold);">₪1,800</span>
-            </div>
-            <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--gray-light); font-size: 1.05rem;">✓ כל מה שכלול בליווי הפיננסי</li>
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--gray-light); font-size: 1.05rem;">✓ כל מה שכלול במסלול ההשקעות</li>
-              <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--gray-light); font-size: 1.05rem;">✓ פתרון מקיף ושלם</li>
-              <li style="padding: 0.8rem 0; font-size: 1.05rem;">✓ ליווי אישי מותאם</li>
-            </ul>
-            <a href="#contact" style="display: block; background: var(--black); color: var(--white); text-align: center; padding: 1rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s;">בוא נתחיל</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
     <section class="section contact-section" id="contact">
       <div class="contact-card">
         <!-- WhatsApp Floating Button -->
@@ -2025,7 +1859,7 @@
       });
       
       // כל התיבות והקלפים
-      const allCards = document.querySelectorAll('.card, .value-box, .get-box, .mapping-card, .contact-card');
+      const allCards = document.querySelectorAll('.card, .value-box, .get-box, .contact-card');
       allCards.forEach((card) => {
         card.classList.add('fade-in');
         observer.observe(card);
