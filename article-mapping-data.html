@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>נתונים נדרשים למיפוי - הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="מדריך מלא לאיסוף הנתונים הנדרשים ליצירת מיפוי פיננסי - מה זה מיפוי, למה צריך אותו ואיזה מסמכים להכין">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 2rem;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .intro {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--gray-medium);
+      margin-bottom: 2rem;
+    }
+
+    .highlight {
+      background: var(--white);
+      padding: 2rem;
+      border-right: 4px solid var(--gold);
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .section-box {
+      background: var(--white);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .section-box h3 {
+      color: var(--gold);
+      margin-top: 0;
+    }
+
+    /* Data guide sections - like client-tasks */
+    .data-section {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-number {
+      width: 45px;
+      height: 45px;
+      min-width: 45px;
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .checklist {
+      list-style: none;
+    }
+
+    .checklist li {
+      padding: 0.7rem 0;
+      font-size: 1.1rem;
+      color: var(--gray-medium);
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    .sub-list {
+      list-style: none;
+      margin-top: 0.5rem;
+      margin-right: 1.5rem;
+      padding-right: 1rem;
+      border-right: 3px solid var(--gold);
+    }
+
+    .sub-list li {
+      padding: 0.4rem 0;
+      font-size: 1rem;
+      color: var(--gray-text);
+      border-bottom: none;
+    }
+
+    .external-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      padding: 0.6rem 1.2rem;
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .external-link:hover {
+      background: var(--gold);
+      color: var(--black);
+      transform: translateY(-2px);
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+    
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    .disclaimer {
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      margin-top: 2rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      article {
+        padding: 0 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .section-box, .highlight, .data-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>נתונים נדרשים למיפוי</h1>
+
+    <p class="intro">לפני שמתחילים בתכנון פיננסי, ייעוץ השקעות או כל תהליך שמטרתו לקחת שליטה על הכסף – צריך קודם לאסוף ולסדר את הנתונים. זה נקרא מיפוי. ריכזתי כאן מה זה מיפוי, למה הוא נחוץ ואיזה נתונים כדאי להכין.</p>
+
+    <h2>מה זה מיפוי ולמה צריך אותו?</h2>
+    
+    <div class="section-box">
+      <h3>מה זה מיפוי פיננסי?</h3>
+      <p>מיפוי פיננסי הוא תהליך של איסוף וסיכום כל המידע הכלכלי הרלוונטי שלכם – הכנסות, הוצאות, נכסים, חובות, ביטוחים, חסכונות ומוצרים פנסיוניים. בעצם מדובר בתמונה מלאה ומסודרת של המצב הכלכלי שלכם בנקודת זמן נתונה.</p>
+    </div>
+
+    <div class="section-box">
+      <h3>למה צריך מיפוי?</h3>
+      <p>בלי מיפוי אי אפשר לתכנן. אי אפשר לדעת אם אתם חוסכים מספיק, אם הביטוחים מכסים אתכם, אם דמי הניהול בקרנות פנסיה גבוהים מדי, או לאן בדיוק הולך הכסף. מיפוי טוב מאפשר ליועץ, ולכם, לראות את התמונה המלאה ולקבל החלטות מושכלות. גם אם אתם רוצים לעשות את זה לבד – אין תחליף לאיסוף מסודר של הנתונים.</p>
+    </div>
+
+    <h2>מדריך: איזה נתונים נדרשים למיפוי</h2>
+    <p>הנה רשימת הנתונים שכדאי לאסוף לפני שמתחילים. מומלץ לצרף מסמכים רלוונטיים ולשמור על טווח זמן של 3 חודשים אחורה כבסיס להבנת המצב הנוכחי.</p>
+
+    <!-- Section 1 -->
+    <div class="data-section">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div class="section-title">נתוני הכנסות</div>
+      </div>
+      <ul class="checklist">
+        <li>לצרף תלושי שכר עדכניים</li>
+        <li><strong>טווח זמנים:</strong> 3 חודשים אחורה מהמועד שנבחר</li>
+      </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="data-section">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div class="section-title">חשבון עו"ש</div>
+      </div>
+      <ul class="checklist">
+        <li>להיכנס לאזור האישי של חשבון הבנק</li>
+        <li>להוריד את תעודת הזהות הבנקאית</li>
+        <li><strong>טווח זמנים:</strong> 3 חודשים אחורה ממועד הבדיקה שנבחר</li>
+      </ul>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="data-section">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <div class="section-title">כרטיסי אשראי</div>
+      </div>
+      <ul class="checklist">
+        <li>להיכנס לאזור האישי של חברת האשראי</li>
+        <li>להיכנס לדוח הוצאות חודשי</li>
+        <li>להוריד את הדוח בפורמט אקסל</li>
+        <li>לבצע זאת עבור כל כרטיס אשראי פעיל</li>
+        <li><strong>טווח זמנים:</strong> 3 חודשים אחורה מהמועד שנבחר</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="data-section">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <div class="section-title">הלוואות וחובות</div>
+      </div>
+      <ul class="checklist">
+        <li>לרשום את כל ההלוואות הקיימות</li>
+        <li>ליצור קשר עם כל גוף שממנו נלקחה הלוואה</li>
+        <li>לבקש לוח סילוקין מלא ועדכני לכל הלוואה</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="data-section">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <div class="section-title">הוצאות קבועות והוראות קבע</div>
+      </div>
+      <ul class="checklist">
+        <li>לרשום הוצאות קבועות והוראות קבע שאתה מודע אליהן:
+          <ul class="sub-list">
+            <li>אינטרנט, סלולר, טלוויזיה, מנויים, ביטוחים וכו'</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="data-section">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <div class="section-title">חסכונות ונכסים פיננסיים</div>
+      </div>
+      <ul class="checklist">
+        <li>להיכנס להר הכסף (פנסיה וחסכונות)
+          <br><a href="https://www.gov.il/he/service/pension_savings_search" target="_blank" class="external-link">כניסה להר הכסף</a>
+        </li>
+        <li>לבדוק אם קיימים כספים, חסכונות או קופות על שמך</li>
+        <li>במקרה שנמצא כסף:
+          <ul class="sub-list">
+            <li>להיכנס לאזור האישי של החברה המנהלת</li>
+            <li>להוריד דוחות רלוונטיים</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="data-section">
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <div class="section-title">ביטוחים ומוצרים פנסיוניים</div>
+      </div>
+      <ul class="checklist">
+        <li>להיכנס להר הביטוח
+          <br><a href="https://harb.cma.gov.il/" target="_blank" class="external-link">כניסה להר הביטוח</a>
+        </li>
+        <li>לבדוק אילו ביטוחים קיימים</li>
+        <li>לשים לב האם יש כפל ביטוחים או חוסרים</li>
+        <li>לבדוק בהר הכסף אילו קרנות פנסיה וקרנות השתלמות קיימות
+          <br><a href="https://www.gov.il/he/service/pension_savings_search" target="_blank" class="external-link">כניסה להר הכסף</a>
+        </li>
+        <li>להיכנס לאזור האישי של כל גוף מנהל</li>
+        <li>לבדוק ולרשום:
+          <ul class="sub-list">
+            <li>דמי ניהול מהפקדה</li>
+            <li>דמי ניהול מצבירה</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="data-section">
+      <div class="section-header">
+        <div class="section-number">8</div>
+        <div class="section-title">תיקי השקעות ונכסים</div>
+      </div>
+      <ul class="checklist">
+        <li>לצרף דוחות מחשבון מסחר עצמאי אם קיים</li>
+        <li>לציין אם קיימת דירה בבעלות</li>
+      </ul>
+    </div>
+
+    <!-- Section 9 -->
+    <div class="data-section">
+      <div class="section-header">
+        <div class="section-number">9</div>
+        <div class="section-title">דירוג אשראי</div>
+      </div>
+      <ul class="checklist">
+        <li>להיכנס לאתר קפטן קרדיט
+          <br><a href="https://www.captaincredit.co.il/" target="_blank" class="external-link">כניסה לקפטן קרדיט</a>
+        </li>
+        <li>להוציא דוח דירוג אשראי אישי</li>
+        <li>לשמור את הדוח כקובץ PDF</li>
+      </ul>
+    </div>
+
+    <div class="highlight">
+      <p>הכנת הנתונים מראש חוסכת זמן ומאפשרת עבודה יעילה יותר – גם אם אתם עושים את המיפוי לבד, וגם אם אתם מגיעים לפגישה עם יועץ. ככל שהמידע מלא ומסודר יותר, התוצאה תהיה טובה יותר.</p>
+    </div>
+
+    <p class="disclaimer">הכתוב אינו מהווה ייעוץ השקעות או תחליף לייעוץ כזה.</p>
+
+    <div class="cta-box">
+      <h3>רוצה עזרה במיפוי ובתכנון הפיננסי?</h3>
+      <p>בוא נסדר ביחד את התמונה המלאה ונבנה תכנית שמתאימה לך</p>
+      <a href="index.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+</body>
+</html>
