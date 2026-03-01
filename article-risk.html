@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>4 נקודות על סיכון - הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="איך בוחרים את הסיכון הנכון בהשקעות? מניות מול אג\"ח, המדד הפסיכולוגי, המציאות בשטח והצרכים שלנו">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 2rem;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .intro {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--gray-medium);
+      margin-bottom: 2rem;
+    }
+
+    .section-box {
+      background: var(--white);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .section-box h3 {
+      color: var(--gold);
+      margin-top: 0;
+    }
+
+    .highlight {
+      background: var(--white);
+      padding: 2rem;
+      border-right: 4px solid var(--gold);
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+    
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    .disclaimer {
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      margin-top: 2rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      article {
+        padding: 0 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .section-box, .highlight {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>4 נקודות על סיכון</h1>
+
+    <p class="intro">כשמדברים עם אנשים על המילה סיכון בהשקעות, לרוב הם ישר נכנסים ללחץ וחושבים שזה לא בשבילם. הפחד הזה מכניס אותם לרוב ל־2 אופציות: הם נופלים להונאה בגלל איזה מומחה שהבטיח להם שהם יכולים לעשות תשואה מטורפת בלי סיכון בכלל, או שהם לא משקיעים בכלל – ואז הכסף שלהם נשחק עם האינפלציה ובסופו של דבר רמת החיים שלהם כנראה יורדת, או לא מממשת את הפוטנציאל שלה בגלל חוסר ניצול היתרון האדיר של הזמן בהשקעות. חשוב להבין שטווח ארוך בהשקעות הוא בדרך כלל תקופה של 10 שנים ומעלה. כשמבינים מה זה סיכון בהשקעות הרבה יותר קל לגשת אליו וגם בסופו של דבר להרוויח ממנו. אז איך אנחנו בוחרים את הסיכון הנכון לנו? אלו הנקודות שלדעתי כדאי להכיר:</p>
+
+    <div class="section-box">
+      <h3>1. מניות מול אג"ח</h3>
+      <p>בהתחלה אנחנו צריכים להבין את ההבדל בקצרה בין אג"ח ממשלתי או קונצרני בדירוג גבוה לבין מניות. כשאני כותב מניות, אני מתכוון להשקעה במדדים רחבים בפיזור גלובלי ולא השקעה במניה בודדת. אנחנו צריכים להבין שהשקעה במניות היא השקעה תנודתית עם פוטנציאל תשואה גבוה יותר, ואג"ח זו השקעה בטוחה עם פוטנציאל תשואה נמוך יותר. אם אנחנו מאמינים שבטווח הארוך השוק העולמי צומח כמו שקרה עד עכשיו, אז כדי להגדיל את התיק שלנו ואת התשואה שלנו כדאי להשקיע במניות. האיזון אמור להיות בין אג"ח למניות: ככל שנרצה סיכון גבוה יותר, נתח גדול יותר מהתיק יושקע במניות, וככל שנרצה סיכון נמוך יותר, נאזן או נשקיע יותר באג"חים.</p>
+    </div>
+
+    <div class="section-box">
+      <h3>2. המדד הפסיכולוגי</h3>
+      <p>איך אני אצליח להתמודד עם תנודתיות בשוק ואיך אני אוכל לישון בלילה עם התיק שבניתי. אם התיק שבניתי יגרום לי לא ליהנות מהזמן שלי ולהיות בלחץ כל הזמן, זה לא שווה את זה.</p>
+    </div>
+
+    <div class="section-box">
+      <h3>3. המדד של המציאות בשטח</h3>
+      <p>איך אני מגיב לזה שהשוק יורד, האם אני יכול להחזיק? האם זה גורם לי לחץ? האם זה גורם לי למכור את המניות שלי בפאניקה? יכול להיות שאנחנו פותחים את התיק ואנחנו מקצים 100% מניות בהתחלה, כי פסיכולוגית אנחנו חושבים שנוכל להתמודד ולהוריד את הרגש מקריסה בשוק, ואז כשמגיעה הנפילה אנחנו נכנסים ללחץ ומכירים את עצמנו מחדש.</p>
+      <p>ועוד עניין בנושא זה: מתי אני צריך את הכסף? אם אני אצטרך אותו בטווח הקצר, כנראה לא יהיה חכם להשקיע רק במניות או בכלל במניות כי אין לנו שליטה מתי השוק יקרוס. אבל אם אני אצטרך אותו לטווח הארוך ואני מאמין שהשוק העולמי צומח, בטווח הארוך יהיה חכם יותר להשקיע במניות כי הזמן מוריד את ה"סיכון".</p>
+    </div>
+
+    <div class="section-box">
+      <h3>4. הצרכים שלנו</h3>
+      <p>לכל אחד יש צרכים שונים וזה ברור. אדם צעיר שרוצה לגרום לכסף שלו לצמוח באגרסיביות יצטרך לסכן את הכסף שלו יותר מאדם אמיד שרוצה שהכסף שלו יצמח, נגיד, ב־5% בשביל להרוויח עוד כמה אלפים.</p>
+    </div>
+
+    <div class="highlight">
+      <p>חשוב לזכור תמיד: בשוק ההון לא באמת הפסדתם או הרווחתם עד שלא מכרתם ומימשתם את ההשקעה. בנוסף, כשאתם לא משקיעים אתם מסתכנים בכך שהכסף שלכם יישחק. כשאנחנו משקיעים במניות אנחנו נחשפים לתנודתיות שבאה לידי ביטוי בעיקר בטווח הקצר. ככל שאתם מאריכים את זמן ההשקעה שלכם, ככה רמת הסיכון בגדול יורדת.</p>
+    </div>
+
+    <p class="disclaimer">הכתוב אינו מהווה המלצה להשקעה. מטרת הפוסט היא לשתף בידע ולהניע ללמידה עצמאית.</p>
+
+    <div class="cta-box">
+      <h3>רוצה ללמוד איך לבחור את הסיכון הנכון לך?</h3>
+      <p>בוא נבנה ביחד אסטרטגיית השקעה שמתאימה לך</p>
+      <a href="index.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+</body>
+</html>
