@@ -33,14 +33,14 @@
     
     body {
       font-family: 'Assistant', sans-serif;
-      background: var(--blue-bg);
+      background: var(--white);
       color: var(--black);
       line-height: 1.8;
       direction: rtl;
       font-weight: 400;
       position: relative;
     }
-    
+
     body::before {
       content: '';
       position: fixed;
@@ -48,10 +48,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: 
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px),
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px);
-      opacity: 0.3;
+      background-image: radial-gradient(circle, rgba(212,175,55,0.025) 1px, transparent 1px);
+      background-size: 32px 32px;
       pointer-events: none;
       z-index: 1;
     }
@@ -383,9 +381,16 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      background-color: #111111;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.032) 1px, transparent 1px),
+        radial-gradient(ellipse 85% 70% at 5% 10%, rgba(212, 175, 55, 0.16) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 55% at 95% 85%, rgba(212, 175, 55, 0.10) 0%, transparent 50%),
+        radial-gradient(ellipse 55% 45% at 50% 50%, rgba(35,35,35,0.7) 0%, transparent 70%),
+        linear-gradient(150deg, #0e0e0e 0%, #202020 45%, #161616 100%);
+      background-size: 28px 28px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
       padding: 3rem 2rem;
-      border-bottom: none;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
     }
     
     .hero-container {
@@ -422,6 +427,7 @@
       color: var(--white) !important;
       line-height: 1.2;
       order: 1;
+      text-shadow: 0 0 70px rgba(212, 175, 55, 0.18);
     }
     
     .hero-tagline {

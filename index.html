@@ -35,7 +35,15 @@
     
     body {
       font-family: 'Assistant', sans-serif;
-      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      background-color: #141414;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.032) 1px, transparent 1px),
+        radial-gradient(ellipse 90% 65% at 8% 10%, rgba(212, 175, 55, 0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 65% 55% at 93% 90%, rgba(212, 175, 55, 0.09) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(40,40,40,0.6) 0%, transparent 70%),
+        linear-gradient(150deg, #111111 0%, #232323 45%, #181818 100%);
+      background-size: 28px 28px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+      background-attachment: fixed;
       color: var(--white);
       line-height: 1.8;
       direction: rtl;
@@ -330,6 +338,7 @@
       font-weight: 700;
       margin-bottom: 1rem;
       color: var(--white);
+      text-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
       animation: fadeInDown 0.8s ease 0.2s both;
     }
 
