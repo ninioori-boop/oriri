@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>כסף וזוגיות - הפיל שבחדר | הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="חוסר שיתוף פעולה כלכלי בזוגיות הוא אחד הגורמים הגדולים ביותר לתסכול ולריבים. בואו נדבר על הפיל שבחדר.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+      display: block;
+      border-radius: 16px;
+      object-fit: cover;
+      max-height: 420px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 2rem;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .intro {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--gray-medium);
+      margin-bottom: 2rem;
+    }
+
+    .section-box {
+      background: var(--white);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .section-box h3 {
+      color: var(--gold);
+      margin-top: 0;
+    }
+
+    .highlight {
+      background: var(--white);
+      padding: 2rem;
+      border-right: 4px solid var(--gold);
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    .disclaimer {
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      margin-top: 2rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      article {
+        padding: 0 1.5rem;
+      }
+
+      .hero-image {
+        border-radius: 0;
+        margin-top: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .section-box, .highlight {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <img src="couples-money.jpeg" alt="זוג יושב על ספה עם פיל שקוף מלא בכסף ביניהם — הפיל שבחדר" class="hero-image" loading="lazy">
+
+  <article>
+    <h1>כסף וזוגיות — בואו נדבר על הפיל שבחדר</h1>
+
+    <p class="intro">אחד הדברים המרכזיים שגורמים לנו לא לצמוח מבחינה כלכלית ולתסכול רב הוא חוסר שיתוף פעולה כלכלי בזוגיות. החוסר שיתוף פעולה הזה גורם לתסכול, ריבים, חוסר מימוש של הפוטנציאל הכלכלי — והכי גרוע, יכול לגרום להיפרדות בסופו של דבר.</p>
+
+    <p>הנה כמה נקודות על דברים שגורמים לתסכול כלכלי בזוגיות:</p>
+
+    <div class="section-box">
+      <h3>1. חוסר תיאום ושליטה בין בני הזוג וחוסר תיאום ציפיות</h3>
+      <p>כשקורה מצב שבן זוג אחד מבזבז המון והשני לא מבין על מה ולמה — זה גורם לתסכול במערכת היחסים ופוגע באמון. בלי שיחה כנה על כסף, כל הוצאה לא מוסברת הופכת לנושא מתוח שמצטבר עם הזמן.</p>
+    </div>
+
+    <div class="section-box">
+      <h3>2. אופי ודפוסים כלכליים שונים מהבית</h3>
+      <p>בני הזוג מגיעים מבתים שההתנהלות והדפוסים בהם שונים, והם מגלים את זה לעומק רק כשהם מתחילים לגור ביחד. לדוגמה: בן זוג חסכן ובחורה שבאה מתרבות של שפע ואוהבת לבזבז כמה שהיא יכולה. מקרה כזה גורם לבית להיכנס לסוג של אירוע שכל רגע יכול להתפוצץ — כי אין על זה דו-שיח בבית, מה שגורם לצדדים להיות מתוסכלים אחד על השנייה.</p>
+    </div>
+
+    <div class="section-box">
+      <h3>3. חוסר שקיפות וחשבונות נפרדים</h3>
+      <p>התנהלות נפרדת שגורמת לבית לא להבין מאיפה מגיעות ההוצאות שלו. החוסר בשקיפות גורם לחוסר אמון ולאגו — מה שיכול להוביל לפיצוץ ותסכול בבית, כי צד אחד שוב לא מבין מה גורם לצד השני להוציא כמויות כאלה של כסף.</p>
+    </div>
+
+    <div class="section-box">
+      <h3>4. שליטה בלעדית של גורם אחד בבית</h3>
+      <p>יש גורם אחד ששולט בכסף והצד השני רק מבקש אישורים. זה עוד מצב שיכול לגרום לתיסכול שקט, סכסוכים, עצבים ותחושת נחיתות של אחד הצדדים. הכסף הופך לכלי כוח במקום לכלי שיתוף.</p>
+    </div>
+
+    <div class="section-box">
+      <h3>5. פחד משינוי סטטוס ואיבוד שליטה</h3>
+      <p>זוגות שפוחדים ששיתוף פעולה ביניהם יגרום להם לאבד את הרכוש שהיה שלהם לפני הזוגיות, או שהם יאבדו את השליטה על הדרך ועל העצמאות שלהם בתוך הבית. הפחד הזה מונע שיחה כנה, ומשאיר כל צד עם המגנה שלו במקום לבנות ביחד.</p>
+    </div>
+
+    <div class="section-box">
+      <h3>6. אשליית האינסטגרם והשוואות</h3>
+      <p>לראות זוגות אחרים נהנים מהחיים, יוצאים לטיולים וחיים חיי פאר בזמן שאנחנו נאבקים בחיי היומיום — זה מייצר תסכול עמוק ותחושת חוסר הצלחה שמשליכה על הקשר הזוגי. ההשוואה הזאת היא מסוכנת, כי היא לא אמיתית — ורוב הזוגות שנראים מושלמים בחוץ נאבקים באותן בעיות בדיוק.</p>
+    </div>
+
+    <div class="highlight">
+      <p><strong>מה שיכול לפתור את כל הבעיות האלה הוא שקיפות.</strong> אם נדע ליצור דו-שיח ונבין אחד את השנייה — כבר יהיה לנו קל יותר. אחרי זה נוכל לייצר תוכנית ומטרות משותפות שיוכלו לגרום לנו לעבוד ביחד לפי תוכנית שיצרנו. ובסוף — והכי חשוב — הבנה פיננסית והבנה של ההשלכות של ההתנהלות שלנו. כי אם נבין מה אנחנו מפספסים כשאנחנו מתנהלים בצורה בזבזנית ובלי בקרה, אז יהיה לנו יותר קל להתחיל לייצר פתרונות.</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>רוצים לעשות סדר ביחד?</h3>
+      <p>שיחת היכרות קצרה — נבין יחד איפה אתם עומדים ואיך מתקדמים</p>
+      <a href="https://wa.me/972544240213?text=היי%20אורי%2C%20קראתי%20את%20הכתבה%20על%20כסף%20וזוגיות%20ואשמח%20לשיחת%20היכרות%20👋" target="_blank" class="btn">דברו איתי בוואטסאפ</a>
+    </div>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+</body>
+</html>
