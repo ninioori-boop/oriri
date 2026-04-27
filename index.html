@@ -361,106 +361,174 @@
 
     .choices-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
       max-width: 900px;
       margin: 0 auto;
     }
 
+    @media (min-width: 720px) {
+      .choices-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
     .choice-card {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 3rem 2.5rem;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 0.4s ease,
+                  box-shadow 0.4s ease;
       text-decoration: none;
-      color: var(--black);
+      color: var(--white);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      position: relative;
+      align-items: flex-start;
+      text-align: right;
       overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
     }
 
     .choice-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.6) 0%, rgba(212, 175, 55, 0) 50%, rgba(212, 175, 55, 0.4) 100%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
     }
 
-    .choice-card:hover::before {
-      transform: scaleX(1);
+    .choice-card::after {
+      content: '';
+      position: absolute;
+      top: -60%;
+      right: -40%;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, transparent 65%);
+      filter: blur(20px);
+      opacity: 0.7;
+      transition: opacity 0.4s ease, transform 0.5s ease;
+      pointer-events: none;
     }
 
     .choice-card:hover {
-      transform: translateY(-15px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      transform: translateY(-8px);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.3);
     }
 
-    .choice-card:nth-child(1) {
-      animation: fadeInRight 0.8s ease 0.8s both;
-    }
+    .choice-card:hover::before { opacity: 1; }
+    .choice-card:hover::after { opacity: 1; transform: scale(1.15); }
 
-    .choice-card:nth-child(2) {
-      animation: fadeInLeft 0.8s ease 0.8s both;
-    }
+    .choice-card:nth-child(1) { animation: fadeInRight 0.8s ease 0.8s both; }
+    .choice-card:nth-child(2) { animation: fadeInLeft 0.8s ease 0.8s both; }
 
-    .choice-card:nth-child(3) {
-      animation: fadeIn 0.8s ease 0.8s both;
+    .choice-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212, 175, 55, 0.1);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      margin-bottom: 1.25rem;
     }
 
     .choice-icon {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
+      width: 56px;
+      height: 56px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(212, 175, 55, 0.05) 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      transition: transform 0.4s ease;
+    }
+
+    .choice-card:hover .choice-icon {
+      transform: scale(1.06) rotate(-3deg);
     }
 
     .choice-icon svg {
-      transition: transform 0.3s ease;
-    }
-
-    .choice-card:hover .choice-icon svg {
-      transform: scale(1.1);
+      width: 30px;
+      height: 30px;
     }
 
     .choice-card h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--black);
+      font-size: clamp(1.6rem, 4vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 0.7rem;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
     }
 
     .choice-card p {
-      font-size: 1.1rem;
-      color: var(--gray-text);
-      margin-bottom: 2rem;
-      line-height: 1.7;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 1.8rem;
+      line-height: 1.65;
     }
 
     .choice-btn {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-      color: var(--black);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--gold);
+      padding: 0.7rem 0;
+      font-weight: 700;
+      font-size: 1.02rem;
+      transition: all 0.3s ease;
       border: none;
       cursor: pointer;
       margin-top: auto;
+      position: relative;
     }
 
-    .choice-card:hover .choice-btn {
-      transform: scale(1.05);
-      box-shadow: 0 6px 25px rgba(201, 163, 63, 0.5);
+    .choice-btn .arrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .choice-card:hover .choice-btn .arrow {
+      transform: translateX(-6px);
+    }
+
+    .choice-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0.4rem;
+      right: 0;
+      width: 100%;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+      transform: scaleX(0.4);
+      transform-origin: right;
+      transition: transform 0.4s ease;
+    }
+
+    .choice-card:hover .choice-btn::after {
+      transform: scaleX(1);
     }
 
     .footer-note {
@@ -639,8 +707,9 @@
 
     <div class="choices-container">
       <a href="blog.html" class="choice-card">
+        <span class="choice-tag">קריאה חופשית</span>
         <div class="choice-icon">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#C9A33F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M7 7H17" stroke="#C9A33F" stroke-width="2" stroke-linecap="round"/>
             <path d="M7 11H17" stroke="#C9A33F" stroke-width="2" stroke-linecap="round"/>
@@ -648,21 +717,22 @@
           </svg>
         </div>
         <h2>הבלוג שלי</h2>
-        <p>תובנות וכלים שיעזרו לך להבין כסף בצורה פשוטה ולהרגיש שליטה אמיתית</p>
-        <div class="choice-btn">כנס לבלוג</div>
+        <p>תובנות וכלים שיעזרו לך להבין כסף בצורה פשוטה ולהרגיש שליטה אמיתית.</p>
+        <span class="choice-btn">כנסו לבלוג <span class="arrow">←</span></span>
       </a>
 
       <a href="program.html" class="choice-card">
+        <span class="choice-tag">ליווי אישי</span>
         <div class="choice-icon">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="#C9A33F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21" stroke="#C9A33F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="12" cy="13" r="2" fill="#C9A33F"/>
           </svg>
         </div>
         <h2>תוכנית הליווי</h2>
-        <p>פרטים מלאים על התוכנית שלי "הכלכלן של הבית" ואיך אני יכול לעזור לך לבנות בסיס פיננסי חזק</p>
-        <div class="choice-btn">למד עוד</div>
+        <p>פרטים מלאים על התוכנית "הכלכלן של הבית" ואיך אני יכול לעזור לכם לבנות בסיס פיננסי חזק.</p>
+        <span class="choice-btn">קראו עוד <span class="arrow">←</span></span>
       </a>
     </div>
 
