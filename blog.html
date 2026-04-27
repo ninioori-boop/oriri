@@ -6,330 +6,541 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <meta name="description" content="מאמרים כלכליים שיעזרו לך להבין כסף בצורה פשוטה ולהרגיש שליטה אמיתית">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
 
     :root {
       --white: #ffffff;
-      --black: #111111;
+      --black: #0a0a0a;
+      --ink: #161616;
       --gray-dark: #2a2a2a;
       --gray-medium: #4a4a4a;
-      --gray-light: #f5f5f5;
+      --gray-light: #fafafa;
       --gray-text: #6b7280;
-      --gold: #D4AF37;
-      --gold-light: #D4B054;
-      --shadow-soft: rgba(0, 0, 0, 0.08);
-      --text-main: #222222;
-      --border-light: #EAEAEA;
-      --bg-white: #FFFFFF;
+      --gold: #C9A33F;
+      --gold-light: #E0C065;
+      --gold-deep: #A8842A;
+      --shadow-soft: rgba(0, 0, 0, 0.06);
+      --shadow-mid: rgba(0, 0, 0, 0.10);
+      --shadow-deep: rgba(0, 0, 0, 0.18);
+      --border-light: #ECECEC;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Assistant', sans-serif;
+      font-family: 'Heebo', sans-serif;
       background: var(--white);
-      color: var(--black);
-      line-height: 1.8;
+      color: var(--ink);
+      line-height: 1.7;
       direction: rtl;
       font-weight: 400;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Floating Hamburger Button - Left */
+    /* Soft gradient mesh background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(at 80% 0%, rgba(201, 163, 63, 0.08) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(201, 163, 63, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 80%, rgba(201, 163, 63, 0.04) 0px, transparent 40%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body > *:not(.hamburger-btn):not(.mobile-menu):not(.menu-overlay):not(.scroll-progress) {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Reading progress bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold-light), var(--gold));
+      z-index: 100;
+      transition: width 0.1s linear;
+    }
+
+    /* Hamburger */
     .hamburger-btn {
       position: fixed;
-      top: 20px;
-      left: 20px;
-      background: rgba(0, 0, 0, 0.95);
-      border: 2px solid rgba(255, 255, 255, 0.3);
+      top: 16px;
+      left: 16px;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       cursor: pointer;
-      padding: 14px;
+      padding: 12px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
       z-index: 60;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.25s ease;
     }
-    
+
+    .hamburger-btn:active {
+      transform: scale(0.94);
+    }
+
     .hamburger-btn span {
       display: block;
-      width: 30px;
-      height: 4px;
-      background: #FFFFFF;
+      width: 24px;
+      height: 2.5px;
+      background: var(--white);
       border-radius: 3px;
       transition: all 0.3s ease;
-      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     }
-    
-    .hamburger-btn:hover span {
-      background: var(--gold);
-    }
-    
+
     .hamburger-btn.active span:nth-child(1) {
-      transform: rotate(45deg) translate(9px, 9px);
+      transform: rotate(45deg) translate(6px, 6px);
     }
-    
+
     .hamburger-btn.active span:nth-child(2) {
       opacity: 0;
     }
-    
+
     .hamburger-btn.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(8px, -8px);
+      transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Floating Contact Button - Right */
+    /* Talk button */
     .talk-btn {
       position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--gold);
-      color: #FFFFFF;
-      padding: 10px 20px;
+      top: 16px;
+      right: 16px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--ink);
+      padding: 10px 18px;
       border-radius: 999px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 14px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
       white-space: nowrap;
       border: none;
       cursor: pointer;
       z-index: 60;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 18px rgba(201, 163, 63, 0.35);
     }
 
-    .talk-btn:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    .talk-btn:active {
+      transform: scale(0.95);
     }
-    
+
+    /* Mobile menu */
     .mobile-menu {
       position: fixed;
       top: 0;
-      left: -300px;
+      left: -320px;
       width: 300px;
+      max-width: 85vw;
       height: 100vh;
-      background: var(--gray-light);
-      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-      transition: left 0.3s ease;
+      background: var(--white);
+      box-shadow: 4px 0 30px rgba(0,0,0,0.15);
+      transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 55;
-      padding: 80px 30px 30px;
+      padding: 90px 28px 30px;
     }
-    
-    .mobile-menu.open {
-      left: 0;
-    }
-    
+
+    .mobile-menu.open { left: 0; }
+
     .mobile-menu nav {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 4px;
     }
-    
+
     .mobile-menu nav a {
-      color: var(--text-main);
-      font-size: 18px;
+      color: var(--ink);
+      font-size: 17px;
       font-weight: 500;
       text-decoration: none;
-      padding: 12px 0;
+      padding: 16px 4px;
       border-bottom: 1px solid var(--border-light);
-      transition: color 0.3s ease;
+      transition: color 0.25s ease, padding-right 0.25s ease;
     }
-    
-    .mobile-menu nav a:hover,
+
+    .mobile-menu nav a:active,
     .mobile-menu nav a.active {
       color: var(--gold);
+      padding-right: 8px;
     }
-    
+
     .menu-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease;
       z-index: 54;
     }
-    
+
     .menu-overlay.active {
       opacity: 1;
       visibility: visible;
     }
-    
-    /* Mobile Responsive */
-    @media (max-width: 600px) {
-      .hamburger-btn {
-        top: 15px;
-        left: 15px;
-        padding: 8px;
-      }
-      
-      .hamburger-btn span {
-        width: 24px;
-      }
-      
-      .talk-btn {
-        top: 15px;
-        right: 15px;
-        padding: 8px 14px;
-        font-size: 13px;
-      }
-    }
-    
-    @media (max-width: 450px) {
-      .hamburger-btn {
-        top: 12px;
-        left: 12px;
-      }
-      
-      .talk-btn {
-        top: 12px;
-        right: 12px;
-        padding: 7px 12px;
-        font-size: 12px;
-      }
-    }
 
-    /* Main Content */
+    /* Main */
     main {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 4rem 2rem;
+      padding: 5rem 1.25rem 2rem;
     }
 
     .blog-header {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .blog-header .eyebrow {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold-deep);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
     }
 
     .blog-header h1 {
-      font-size: 3rem;
+      font-size: clamp(2.2rem, 8vw, 3.5rem);
       color: var(--black);
       margin-bottom: 1rem;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .blog-header h1 .accent {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .blog-header p {
-      font-size: 1.2rem;
-      color: var(--gray-text);
-      max-width: 700px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.8;
+      font-size: 1.05rem;
+      color: var(--gray-medium);
+      max-width: 640px;
+      margin: 0 auto 1rem;
+      line-height: 1.7;
     }
 
     .blog-header .highlight {
       font-weight: 600;
-      color: var(--black);
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    /* Search */
+    .search-section {
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      padding: 0 0.25rem;
+      position: relative;
+    }
+
+    .search-container { position: relative; }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.4rem 1rem 3.2rem;
+      font-size: 1rem;
+      font-family: 'Heebo', sans-serif;
+      border: 1.5px solid var(--border-light);
+      border-radius: 16px;
+      background: var(--white);
+      color: var(--ink);
+      transition: all 0.25s ease;
+      direction: rtl;
+      box-shadow: 0 2px 12px var(--shadow-soft);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 6px 22px rgba(201, 163, 63, 0.18);
+    }
+
+    .search-input::placeholder { color: #9aa0a6; }
+
+    .search-icon {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9aa0a6;
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+
+    .autocomplete-dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border: 1.5px solid var(--border-light);
+      border-radius: 14px;
+      max-height: 320px;
+      overflow-y: auto;
+      z-index: 50;
+      display: none;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .autocomplete-dropdown.active { display: block; }
+
+    .autocomplete-item {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      border-bottom: 1px solid var(--border-light);
+      text-decoration: none;
+      display: block;
+      color: var(--ink);
+    }
+
+    .autocomplete-item:last-child { border-bottom: none; }
+    .autocomplete-item:active { background: var(--gray-light); }
+    .autocomplete-title { font-weight: 600; font-size: 0.97rem; margin-bottom: 0.25rem; }
+    .autocomplete-desc {
+      font-size: 0.82rem;
+      color: var(--gray-text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .no-results { padding: 1.2rem; text-align: center; color: var(--gray-text); }
+
+    /* Categories - mobile-first horizontal scroll */
+    .category-section {
+      max-width: 1000px;
+      margin: 0 auto 2.5rem;
+      padding: 0 0.25rem;
+    }
+
+    .category-filter {
+      display: flex;
+      gap: 0.6rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 0.4rem 0.1rem;
+      scroll-padding: 0 1rem;
+    }
+
+    .category-filter::-webkit-scrollbar { display: none; }
+
+    .category-btn {
+      flex: 0 0 auto;
+      padding: 0.7rem 1.3rem;
+      background: var(--white);
+      color: var(--ink);
+      border: 1.5px solid var(--border-light);
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      box-shadow: 0 1px 4px var(--shadow-soft);
+    }
+
+    .category-btn:active { transform: scale(0.96); }
+
+    .category-btn.active {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+      color: var(--white);
+      border-color: transparent;
+      box-shadow: 0 6px 18px rgba(201, 163, 63, 0.35);
     }
 
     /* Blog Grid */
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 2.5rem;
-      margin-top: 2rem;
-      clear: both;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
     }
 
     .card {
       background: var(--white);
-      border-radius: 16px;
-      padding: 2.5rem;
+      border-radius: 20px;
+      overflow: hidden;
       box-shadow: 0 4px 20px var(--shadow-soft);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+      border: 1px solid var(--border-light);
       display: flex;
       flex-direction: column;
+      position: relative;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    .card:active {
+      transform: scale(0.99);
+    }
+
+    .card-image-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--gray-light);
+      position: relative;
     }
 
     .article-image {
       width: 100%;
-      height: 250px;
+      height: 100%;
       object-fit: cover;
       object-position: center 48%;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-      background: var(--gray-light);
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      display: block;
+    }
+
+    .card:hover .article-image {
+      transform: scale(1.06);
     }
 
     .article-image.mapping-card-image {
       object-position: 80% 55%;
     }
 
+    .card-body {
+      padding: 1.5rem 1.4rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
     .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      line-height: 1.4;
-      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+      line-height: 1.35;
+      font-weight: 700;
+      letter-spacing: -0.01em;
     }
 
     .card h3 a {
-      color: var(--black);
+      color: var(--ink);
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color 0.25s ease;
     }
 
-    .card h3 a:hover {
-      color: var(--gold);
-    }
+    .card h3 a:active { color: var(--gold); }
 
     .card p {
       color: var(--gray-text);
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
-      line-height: 1.7;
+      margin-bottom: 1.3rem;
+      font-size: 0.97rem;
+      line-height: 1.65;
+      flex: 1;
     }
 
     .btn {
-      display: block;
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-      color: var(--black);
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      background: var(--ink);
+      color: var(--white);
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(201, 163, 63, 0.25);
+      font-family: inherit;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
       border: none;
       cursor: pointer;
       font-size: 0.95rem;
       width: fit-content;
-      margin: 0 auto;
-      text-align: center;
+      align-self: flex-start;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.35);
+    .btn::after {
+      content: '←';
+      transition: transform 0.25s ease;
+      font-weight: 400;
     }
 
     .btn:active {
-      transform: translateY(-1px);
+      transform: scale(0.96);
+    }
+
+    .card:hover .btn::after {
+      transform: translateX(-4px);
+    }
+
+    /* Tablet */
+    @media (min-width: 640px) {
+      main { padding: 5rem 1.75rem 3rem; }
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+      }
+      .blog-header { margin-bottom: 3rem; }
+      .blog-header p { font-size: 1.1rem; }
+      .card-body { padding: 1.7rem 1.6rem 1.8rem; }
+      .card h3 { font-size: 1.3rem; }
+    }
+
+    /* Desktop */
+    @media (min-width: 980px) {
+      main { padding: 6rem 2rem 4rem; }
+      .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
+      }
+      .hamburger-btn { top: 22px; left: 22px; padding: 14px; }
+      .hamburger-btn span { width: 28px; }
+      .talk-btn { top: 22px; right: 22px; padding: 12px 22px; font-size: 15px; }
+      .blog-header h1 { font-size: 3.4rem; }
+      .blog-header p { font-size: 1.15rem; }
     }
 
     /* Footer */
     footer {
-      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray-medium) 100%);
+      background: linear-gradient(135deg, var(--gray-dark) 0%, var(--ink) 100%);
       color: var(--white);
-      padding: 3rem 2rem 1.5rem;
-      margin-top: 6rem;
+      padding: 3rem 1.5rem 1.5rem;
+      margin-top: 4rem;
     }
 
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
+      grid-template-columns: 1fr;
+      gap: 2rem;
       margin-bottom: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2.5rem;
+      }
     }
 
     .footer-brand {
@@ -346,78 +557,53 @@
       object-fit: cover;
     }
 
-    .footer-brand h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
+    .footer-brand h3 { font-size: 1.25rem; font-weight: 700; }
 
     .footer-tagline {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.75);
       font-size: 0.95rem;
       line-height: 1.6;
     }
 
     .footer-section h4 {
       margin-bottom: 1rem;
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-size: 1.05rem;
+      font-weight: 700;
     }
 
     .footer-contact,
     .footer-links {
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 0.7rem;
     }
 
     .footer-contact a,
     .footer-links a {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.75);
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color 0.25s ease;
       font-size: 0.95rem;
     }
 
-    .footer-contact a:hover,
-    .footer-links a:hover {
-      color: var(--gold);
-    }
+    .footer-contact a:active,
+    .footer-links a:active { color: var(--gold); }
 
     .footer-bottom {
       max-width: 1200px;
       margin: 0 auto;
-      padding-top: 2rem;
+      padding-top: 1.5rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       text-align: center;
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.9rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .blog-header h1 {
-        font-size: 2rem;
-      }
-
-      .blog-header p {
-        font-size: 1rem;
-      }
-
-      .blog-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .card {
-        padding: 2rem;
-      }
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.85rem;
     }
 
     /* Animations */
     .fade-in {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .fade-in.visible {
@@ -425,204 +611,27 @@
       transform: translateY(0);
     }
 
-    /* Category Filter */
-    .category-section {
-      max-width: 1000px;
-      margin: 0 auto 3rem;
-      padding: 0 2rem;
-    }
+    .card.hidden { display: none; }
 
-    .category-filter {
-      background: #ffffff;
-      border: 2px solid #e5e5e5;
-      border-radius: 10px;
-      padding: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .category-btn {
-      flex: 1;
-      padding: 1rem;
-      background: #f5f5f5;
-      color: #111111;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-align: center;
-    }
-
-    .category-btn:hover {
-      background: #ebebeb;
-    }
-
-    .category-btn.active {
-      background: #C9A33F;
-      color: #ffffff;
-    }
-
-    .card.hidden {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .category-section {
-        padding: 0 1rem;
-        margin-bottom: 2rem;
-      }
-
-      .category-filter {
-        flex-direction: column;
-        padding: 1rem;
-        gap: 0.8rem;
-      }
-
-      .category-btn {
-        width: 100%;
-        padding: 0.9rem;
-        font-size: 0.95rem;
-      }
-    }
-
-    /* Search Box Styles */
-    .search-section {
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      padding: 0 2rem;
-      position: relative;
-    }
-
-    .search-container {
-      position: relative;
-    }
-
-    .search-input {
-      width: 100%;
-      padding: 1rem 1.5rem 1rem 3rem;
-      font-size: 1.1rem;
-      font-family: 'Assistant', sans-serif;
-      border: 2px solid #e5e5e5;
-      border-radius: 50px;
-      background: #ffffff;
-      color: #111111;
-      transition: all 0.3s ease;
-      direction: rtl;
-    }
-
-    .search-input:focus {
-      outline: none;
-      border-color: #C9A33F;
-      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.2);
-    }
-
-    .search-input::placeholder {
-      color: #999;
-    }
-
-    .search-icon {
-      position: absolute;
-      left: 1.2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #999;
-      font-size: 1.2rem;
-      pointer-events: none;
-    }
-
-    /* Autocomplete Dropdown */
-    .autocomplete-dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: #ffffff;
-      border: 2px solid #e5e5e5;
-      border-top: none;
-      border-radius: 0 0 20px 20px;
-      max-height: 300px;
-      overflow-y: auto;
-      z-index: 100;
-      display: none;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .autocomplete-dropdown.active {
-      display: block;
-    }
-
-    .autocomplete-item {
-      padding: 1rem 1.5rem;
-      cursor: pointer;
-      transition: background 0.2s ease;
-      border-bottom: 1px solid #f0f0f0;
-      text-decoration: none;
-      display: block;
-      color: #111111;
-    }
-
-    .autocomplete-item:last-child {
-      border-bottom: none;
-    }
-
-    .autocomplete-item:hover {
-      background: #f5f5f5;
-    }
-
-    .autocomplete-item:hover .autocomplete-title {
-      color: #C9A33F;
-    }
-
-    .autocomplete-title {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-      transition: color 0.2s ease;
-    }
-
-    .autocomplete-desc {
-      font-size: 0.85rem;
-      color: #666;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .no-results {
-      padding: 1.5rem;
-      text-align: center;
-      color: #666;
-    }
-
-    @media (max-width: 768px) {
-      .search-section {
-        padding: 0 1rem;
-      }
-
-      .search-input {
-        padding: 0.9rem 1.2rem 0.9rem 2.5rem;
-        font-size: 1rem;
-      }
-
-      .search-icon {
-        left: 1rem;
-        font-size: 1rem;
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Floating Hamburger Button -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <button class="hamburger-btn" aria-label="תפריט">
     <span></span>
     <span></span>
     <span></span>
   </button>
-  
+
+  <a href="https://wa.me/972544240213" target="_blank" class="talk-btn">דברו איתי</a>
+
   <div class="mobile-menu">
     <nav>
       <a href="index.html">דף הבית</a>
@@ -631,14 +640,15 @@
       <a href="index.html#story">עליי</a>
     </nav>
   </div>
-  
+
   <div class="menu-overlay"></div>
 
   <main>
     <div class="blog-header">
-      <h1>בלוג</h1>
-      <p>קטעים ותובנות מהדרך שיעזרו לכם להתנהל פיננסית טוב יותר</p>
-      <p class="highlight">אם אהבת משהו כאן, תשלח את זה לחבר או חברה שזה יכול לעזור להם. חינוך פיננסי מתפשט מאדם לאדם.</p>
+      <span class="eyebrow">הבלוג</span>
+      <h1>תובנות שעוזרות לך <span class="accent">לקחת שליטה</span> על הכסף</h1>
+      <p>קטעים ותובנות מהדרך שיעזרו לכם להתנהל פיננסית טוב יותר.</p>
+      <p class="highlight">אם אהבת משהו כאן, שלח לחבר או חברה — חינוך פיננסי מתפשט מאדם לאדם.</p>
     </div>
 
     <div class="search-section">
@@ -660,234 +670,366 @@
 
     <div class="blog-grid">
       <div class="card fade-in" data-category="investments pension">
-        <img src="rearview_mirror_investing.png" alt="השקעה לפי המראה האחורית — לא כדאי לבחור מסלול לפי תשואת השנה האחרונה" class="article-image" loading="lazy">
-        <h3><a href="article-agent-call.html">הסוכן התקשר והציע לכם לעבור למסלול מניות? תחשבו רגע לפני</a></h3>
-        <p>למה לא משנים מסלול בקרן פנסיה או השתלמות בגלל תשואה של שנה אחת. ארבע נקודות שחשוב לחשוב עליהן לפני שמקבלים החלטה פזיזה.</p>
-        <a class="btn" href="article-agent-call.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="rearview_mirror_investing.png" alt="השקעה לפי המראה האחורית — לא כדאי לבחור מסלול לפי תשואת השנה האחרונה" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-agent-call.html">הסוכן התקשר והציע לכם לעבור למסלול מניות? תחשבו רגע לפני</a></h3>
+          <p>למה לא משנים מסלול בקרן פנסיה או השתלמות בגלל תשואה של שנה אחת. ארבע נקודות שחשוב לחשוב עליהן לפני שמקבלים החלטה פזיזה.</p>
+          <a class="btn" href="article-agent-call.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="power couple.png" alt="זוג יושב על ספה עם פיל שקוף מלא בכסף ביניהם — הפיל שבחדר" class="article-image" loading="lazy">
-        <h3><a href="article-couples-money.html">כסף וזוגיות: בואו נדבר על הפיל שבחדר</a></h3>
-        <p>חוסר שיתוף פעולה כלכלי בזוגיות הוא אחד הגורמים הגדולים ביותר לתסכול ולריבים. 6 דברים שגורמים לתסכול כלכלי בזוגיות ומה עוזר.</p>
-        <a class="btn" href="article-couples-money.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="power couple.png" alt="זוג יושב על ספה עם פיל שקוף מלא בכסף ביניהם — הפיל שבחדר" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-couples-money.html">כסף וזוגיות: בואו נדבר על הפיל שבחדר</a></h3>
+          <p>חוסר שיתוף פעולה כלכלי בזוגיות הוא אחד הגורמים הגדולים ביותר לתסכול ולריבים. 6 דברים שגורמים לתסכול כלכלי בזוגיות ומה עוזר.</p>
+          <a class="btn" href="article-couples-money.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="investments">
-        <img src="passive-investment-quotes.png" alt="כללי השקעה פסיביים — שולחן עבודה עם עט, מטבעות וספרים" class="article-image" loading="lazy">
-        <h3><a href="article-investment-mantras.html">4 משפטים שמלווים אותי בדרך הפיננסית האישית שלי</a></h3>
-        <p>מה אני לוקח מכל משפט — מ"האיש העשיר בבבל" ועד ג'ון בוגל.</p>
-        <a class="btn" href="article-investment-mantras.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="passive-investment-quotes.png" alt="כללי השקעה פסיביים — שולחן עבודה עם עט, מטבעות וספרים" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-investment-mantras.html">4 משפטים שמלווים אותי בדרך הפיננסית האישית שלי</a></h3>
+          <p>מה אני לוקח מכל משפט — מ"האיש העשיר בבבל" ועד ג'ון בוגל.</p>
+          <a class="btn" href="article-investment-mantras.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="investments">
-        <img src="risk-4-points.png" alt="4 נקודות על סיכון - ניווט בין תנודתיות להזדמנות" class="article-image" loading="lazy">
-        <h3><a href="article-risk.html">4 נקודות על סיכון</a></h3>
-        <p>איך בוחרים את הסיכון הנכון בהשקעות? מניות מול אג"ח, המדד הפסיכולוגי, המציאות בשטח והצרכים שלנו – ארבע נקודות שיעזרו לגשת לסיכון בצורה נכונה.</p>
-        <a class="btn" href="article-risk.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="risk-4-points.png" alt="4 נקודות על סיכון - ניווט בין תנודתיות להזדמנות" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-risk.html">4 נקודות על סיכון</a></h3>
+          <p>איך בוחרים את הסיכון הנכון בהשקעות? מניות מול אג"ח, המדד הפסיכולוגי, המציאות בשטח והצרכים שלנו – ארבע נקודות שיעזרו לגשת לסיכון בצורה נכונה.</p>
+          <a class="btn" href="article-risk.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="investments">
-        <img src="investment-tips.png" alt="6 נקודות לפני שמתחילים להשקיע - השקעה אקטיבית מול פסיבית" class="article-image" loading="lazy">
-        <h3><a href="article-investment-tips.html">6 נקודות שחשוב לחשוב עליהן לפני שאנחנו מתחילים להשקיע</a></h3>
-        <p>לפעמים השקעות נראות מפחידות ולא ברורות. כמה נקודות קצרות שחשוב לדעת לפני שנכנסים לשוק ההון – מזמן בשוק מול תזמון השוק ועד למה השקעה במדדים רחבים מתאימה לרוב האנשים.</p>
-        <a class="btn" href="article-investment-tips.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="investment-tips.png" alt="6 נקודות לפני שמתחילים להשקיע - השקעה אקטיבית מול פסיבית" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-investment-tips.html">6 נקודות שחשוב לחשוב עליהן לפני שאנחנו מתחילים להשקיע</a></h3>
+          <p>לפעמים השקעות נראות מפחידות ולא ברורות. כמה נקודות קצרות שחשוב לדעת לפני שנכנסים לשוק ההון – מזמן בשוק מול תזמון השוק ועד למה השקעה במדדים רחבים מתאימה לרוב האנשים.</p>
+          <a class="btn" href="article-investment-tips.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="article-10-mistakes.png" alt="10 טעויות פיננסיות בסיסיות - הדרך הנכונה והלא נכונה" class="article-image" loading="lazy">
-        <h3><a href="article-10-mistakes.html">10 טעויות פיננסיות בסיסיות שאנחנו עושים</a></h3>
-        <p>עשר טעויות שמונעות מאנשים להגיע לשקט כלכלי – מתוך תובנות של בן פליקס והדרך שלנו. מה הן ולמה כדאי להימנע מהן.</p>
-        <a class="btn" href="article-10-mistakes.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="article-10-mistakes.png" alt="10 טעויות פיננסיות בסיסיות - הדרך הנכונה והלא נכונה" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-10-mistakes.html">10 טעויות פיננסיות בסיסיות שאנחנו עושים</a></h3>
+          <p>עשר טעויות שמונעות מאנשים להגיע לשקט כלכלי – מתוך תובנות של בן פליקס והדרך שלנו. מה הן ולמה כדאי להימנע מהן.</p>
+          <a class="btn" href="article-10-mistakes.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="mapping-data.png" alt="מיפוי פיננסי - נתונים נדרשים" class="article-image mapping-card-image" loading="lazy">
-        <h3><a href="article-mapping-data.html">נתונים נדרשים למיפוי</a></h3>
-        <p>מה זה מיפוי פיננסי ולמה צריך אותו? מדריך מלא לאיסוף הנתונים – מתלושי שכר וכרטיסי אשראי עד ביטוחים, פנסיה ודירוג אשראי.</p>
-        <a class="btn" href="article-mapping-data.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="mapping-data.png" alt="מיפוי פיננסי - נתונים נדרשים" class="article-image mapping-card-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-mapping-data.html">נתונים נדרשים למיפוי</a></h3>
+          <p>מה זה מיפוי פיננסי ולמה צריך אותו? מדריך מלא לאיסוף הנתונים – מתלושי שכר וכרטיסי אשראי עד ביטוחים, פנסיה ודירוג אשראי.</p>
+          <a class="btn" href="article-mapping-data.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="investments">
-        <img src="magic-methods.png" alt="שוק ההון ודיאטות פלא" class="article-image" loading="lazy">
-        <h3><a href="article-magic-methods.html">שוק ההון, דיאטות פלא והאשליה של התעשרות מהירה</a></h3>
-        <p>למה אין קיצורי דרך בשוק ההון? אם הייתה הזדמנות בטוחה להרוויח, היא כבר הייתה נעלמת. סיכום מהספר "כלכלה עירומה".</p>
-        <a class="btn" href="article-magic-methods.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="magic-methods.png" alt="שוק ההון ודיאטות פלא" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-magic-methods.html">שוק ההון, דיאטות פלא והאשליה של התעשרות מהירה</a></h3>
+          <p>למה אין קיצורי דרך בשוק ההון? אם הייתה הזדמנות בטוחה להרוויח, היא כבר הייתה נעלמת. סיכום מהספר "כלכלה עירומה".</p>
+          <a class="btn" href="article-magic-methods.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="human-capital.jpeg" alt="מה הופך מדינה לעשירה" class="article-image" loading="lazy">
-        <h3><a href="article-human-capital.html">מה באמת הופך מדינה לעשירה ולמה זה חשוב במיוחד לנו</a></h3>
-        <p>רוב המדינות לא מתעשרות בגלל מה שיש להן באדמה, אלא בגלל מה שיש לאנשים שלהן בראש. הון אנושי הוא המפתח.</p>
-        <a class="btn" href="article-human-capital.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="human-capital.jpeg" alt="מה הופך מדינה לעשירה" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-human-capital.html">מה באמת הופך מדינה לעשירה ולמה זה חשוב במיוחד לנו</a></h3>
+          <p>רוב המדינות לא מתעשרות בגלל מה שיש להן באדמה, אלא בגלל מה שיש לאנשים שלהן בראש. הון אנושי הוא המפתח.</p>
+          <a class="btn" href="article-human-capital.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="not-forever.jpeg" alt="לא כל מי שלמעלה נשאר שם" class="article-image" loading="lazy">
-        <h3><a href="article-not-forever.html">לא כל מי שלמעלה נשאר שם</a></h3>
-        <p>לא לעולם חסד. זה שעכשיו טוב לא אומר שבהמשך לא יהיה פחות טוב. השאלה היא אם נהיה מוכנים לזה.</p>
-        <a class="btn" href="article-not-forever.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="not-forever.jpeg" alt="לא כל מי שלמעלה נשאר שם" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-not-forever.html">לא כל מי שלמעלה נשאר שם</a></h3>
+          <p>לא לעולם חסד. זה שעכשיו טוב לא אומר שבהמשך לא יהיה פחות טוב. השאלה היא אם נהיה מוכנים לזה.</p>
+          <a class="btn" href="article-not-forever.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="pension">
-        <img src="keren-hishtalmut.png" alt="קרן השתלמות" class="article-image" loading="lazy">
-        <h3><a href="article-keren-hishtalmut.html">יש לכם קרן השתלמות ואתם לא יודעים מה זה? כדאי שתתעוררו</a></h3>
-        <p>קרן השתלמות היא מוצר ההשקעה הכי חזק בישראל. פטור ממס רווחי הון של 25% - מתנה שהרבה אנשים לא מנצלים.</p>
-        <a class="btn" href="article-keren-hishtalmut.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="keren-hishtalmut.png" alt="קרן השתלמות" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-keren-hishtalmut.html">יש לכם קרן השתלמות ואתם לא יודעים מה זה? כדאי שתתעוררו</a></h3>
+          <p>קרן השתלמות היא מוצר ההשקעה הכי חזק בישראל. פטור ממס רווחי הון של 25% - מתנה שהרבה אנשים לא מנצלים.</p>
+          <a class="btn" href="article-keren-hishtalmut.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="government.png" alt="התערבות ממשלתית בכלכלה" class="article-image" loading="lazy">
-        <h3><a href="article-government.html">מתי התערבות ממשלתית מתקנת את השוק ומתי היא הורסת אותו</a></h3>
-        <p>המדינה נחוצה כשיש כשל שוק אמיתי, אבל היא הופכת לבעיה כשהיא מחליפה את מנגנון השוק במקום לתקן אותו.</p>
-        <a class="btn" href="article-government.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="government.png" alt="התערבות ממשלתית בכלכלה" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-government.html">מתי התערבות ממשלתית מתקנת את השוק ומתי היא הורסת אותו</a></h3>
+          <p>המדינה נחוצה כשיש כשל שוק אמיתי, אבל היא הופכת לבעיה כשהיא מחליפה את מנגנון השוק במקום לתקן אותו.</p>
+          <a class="btn" href="article-government.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="parking.png" alt="תמריצים וחוק החניות" class="article-image" loading="lazy">
-        <h3><a href="article-incentives.html">חשבתם פעם למה אתם פועלים כמו שאתם פועלים ולמה שנשלם על חניה כל כך הרבה</a></h3>
-        <p>תמריץ הוא כוח שמשפיע על ההתנהגות שלנו. חוק החניות החדש הוא דוגמה מצוינת לאיך תמריצים שגויים יוצרים תוצאות הפוכות מהכוונה.</p>
-        <a class="btn" href="article-incentives.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="parking.png" alt="תמריצים וחוק החניות" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-incentives.html">חשבתם פעם למה אתם פועלים כמו שאתם פועלים ולמה שנשלם על חניה כל כך הרבה</a></h3>
+          <p>תמריץ הוא כוח שמשפיע על ההתנהגות שלנו. חוק החניות החדש הוא דוגמה מצוינת לאיך תמריצים שגויים יוצרים תוצאות הפוכות מהכוונה.</p>
+          <a class="btn" href="article-incentives.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="investments">
-        <img src="investment-courses.png" alt="קורסי השקעות - מסחר מול השקעה" class="article-image" loading="lazy">
-        <h3><a href="article-investment-courses.html">למה בעיני אנשים עושים טעות כשהם קונים קורס השקעות בעשרות אלפי שקלים</a></h3>
-        <p>הטעות המרכזית היא שאנשים מתבלבלים בין מסחר בשוק ההון לבין השקעה. זאת טעות שיוצרת ציפיות לא נכונות.</p>
-        <a class="btn" href="article-investment-courses.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="investment-courses.png" alt="קורסי השקעות - מסחר מול השקעה" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-investment-courses.html">למה בעיני אנשים עושים טעות כשהם קונים קורס השקעות בעשרות אלפי שקלים</a></h3>
+          <p>הטעות המרכזית היא שאנשים מתבלבלים בין מסחר בשוק ההון לבין השקעה. זאת טעות שיוצרת ציפיות לא נכונות.</p>
+          <a class="btn" href="article-investment-courses.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="investments">
-        <img src="money-fund-guide.jpeg" alt="מדריך קרן כספית - איך קונים" class="article-image" loading="lazy">
-        <h3><a href="article-money-fund-guide.html">מדריך פשוט: איך קונים קרן כספית</a></h3>
-        <p>מדריך קצר וברור לקניית קרן כספית - איך פותחים חשבון מסחר, איך בוחרים קרן ואיך קונים ומוכרים בפועל.</p>
-        <a class="btn" href="article-money-fund-guide.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="money-fund-guide.jpeg" alt="מדריך קרן כספית - איך קונים" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-money-fund-guide.html">מדריך פשוט: איך קונים קרן כספית</a></h3>
+          <p>מדריך קצר וברור לקניית קרן כספית - איך פותחים חשבון מסחר, איך בוחרים קרן ואיך קונים ומוכרים בפועל.</p>
+          <a class="btn" href="article-money-fund-guide.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="investments">
-        <img src="money-fund-boxing.jpeg" alt="קרן כספית מול פיקדון - השוואה" class="article-image" loading="lazy">
-        <h3><a href="article-money-fund.html">הבנק דוחף פיקדון, כולם מדברים על קרן כספית - אז בואו נשווה</a></h3>
-        <p>כשאנחנו רוצים לשמור כסף לטווח הקצר או לחירום, מה באמת עדיף? השוואה בין קרן כספית לפיקדון בנקאי.</p>
-        <a class="btn" href="article-money-fund.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="money-fund-boxing.jpeg" alt="קרן כספית מול פיקדון - השוואה" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-money-fund.html">הבנק דוחף פיקדון, כולם מדברים על קרן כספית - אז בואו נשווה</a></h3>
+          <p>כשאנחנו רוצים לשמור כסף לטווח הקצר או לחירום, מה באמת עדיף? השוואה בין קרן כספית לפיקדון בנקאי.</p>
+          <a class="btn" href="article-money-fund.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="messi-factory.jpeg" alt="מסי מול עובדי מפעל - היצע וביקוש" class="article-image" loading="lazy">
-        <h3><a href="article-messi-economics.html">איך זה שמסי מרוויח מאות מיליונים ועובד בנייקי רק 8 דולר ליום?</a></h3>
-        <p>שתי התופעות האלה נראות כאילו הגיעו מעולמות שונים לגמרי, אבל בפועל הן נשענות על אותו עיקרון פשוט שמנהל את כל השוק.</p>
-        <a class="btn" href="article-messi-economics.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="messi-factory.jpeg" alt="מסי מול עובדי מפעל - היצע וביקוש" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-messi-economics.html">איך זה שמסי מרוויח מאות מיליונים ועובד בנייקי רק 8 דולר ליום?</a></h3>
+          <p>שתי התופעות האלה נראות כאילו הגיעו מעולמות שונים לגמרי, אבל בפועל הן נשענות על אותו עיקרון פשוט שמנהל את כל השוק.</p>
+          <a class="btn" href="article-messi-economics.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="investments">
-        <img src="kiyosaki-warning.jpg" alt="תחזיות שוק - רוברט קיוסאקי" class="article-image" loading="lazy">
-        <h3><a href="article-market-predictions.html">כולם צועקים שהשוק קורס. כנראה שהשוק שוב לא שמע אותם</a></h3>
-        <p>אחד הדברים הקשים בהשקעות לטווח ארוך זה להתמודד עם נבואות זעם. כותרות הפחדה צצות בלי סוף, אבל מה באמת קרה אחרי כל התחזיות האלה?</p>
-        <a class="btn" href="article-market-predictions.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="kiyosaki-warning.jpg" alt="תחזיות שוק - רוברט קיוסאקי" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-market-predictions.html">כולם צועקים שהשוק קורס. כנראה שהשוק שוב לא שמע אותם</a></h3>
+          <p>אחד הדברים הקשים בהשקעות לטווח ארוך זה להתמודד עם נבואות זעם. כותרות הפחדה צצות בלי סוף, אבל מה באמת קרה אחרי כל התחזיות האלה?</p>
+          <a class="btn" href="article-market-predictions.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="pension">
-        <img src="insurance-protection.png" alt="הגנה פיננסית - ביטוחי בריאות" class="article-image" loading="lazy">
-        <h3><a href="article-insurance.html">חשבתם פעם האם אתם מוכנים לכל תרחיש פיננסי שיכול לקרות?</a></h3>
-        <p>לפני שמתחילים בתהליך של התקדמות כלכלית חשוב מאוד לוודא שאנחנו מוגנים מכל תרחיש שיכול להרוס אותנו כלכלית. שלושה ביטוחי בריאות שכדאי להכיר.</p>
-        <a class="btn" href="article-insurance.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="insurance-protection.png" alt="הגנה פיננסית - ביטוחי בריאות" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-insurance.html">חשבתם פעם האם אתם מוכנים לכל תרחיש פיננסי שיכול לקרות?</a></h3>
+          <p>לפני שמתחילים בתהליך של התקדמות כלכלית חשוב מאוד לוודא שאנחנו מוגנים מכל תרחיש שיכול להרוס אותנו כלכלית. שלושה ביטוחי בריאות שכדאי להכיר.</p>
+          <a class="btn" href="article-insurance.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="ferrari-status.jpg" alt="המיליונר מהדלת ממול" class="article-image" loading="lazy">
-        <h3><a href="article-millionaire.html">אתם רואים מישהו עם פרארי וחולמים להיות כמוהו? אולי אתם טועים</a></h3>
-        <p>המחקר מאחורי הספר המיליונר מהדלת ממול מגלה שהעשירים האמיתיים חיים בצניעות, חוסכים ומשקיעים בחכמה. הם לא מחפשים להראות עשירים כלפי חוץ.</p>
-        <a class="btn" href="article-millionaire.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="ferrari-status.jpg" alt="המיליונר מהדלת ממול" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-millionaire.html">אתם רואים מישהו עם פרארי וחולמים להיות כמוהו? אולי אתם טועים</a></h3>
+          <p>המחקר מאחורי הספר המיליונר מהדלת ממול מגלה שהעשירים האמיתיים חיים בצניעות, חוסכים ומשקיעים בחכמה. הם לא מחפשים להראות עשירים כלפי חוץ.</p>
+          <a class="btn" href="article-millionaire.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="investments">
-        <img src="psychology-path.png" alt="פסיכולוגיה של השקעות" class="article-image" loading="lazy">
-        <h3><a href="article-psychology.html">חושבים שאתם יכולים לנצח את השוק? הכירו את הקשיים הפסיכולוגיים שתעברו בדרך</a></h3>
-        <p>המחקר של כהנמן וטברסקי על ההטיות הקוגניטיביות מסביר למה קשה לנו כל כך לקבל החלטות נכונות בהשקעות.</p>
-        <a class="btn" href="article-psychology.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="psychology-path.png" alt="פסיכולוגיה של השקעות" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-psychology.html">חושבים שאתם יכולים לנצח את השוק? הכירו את הקשיים הפסיכולוגיים שתעברו בדרך</a></h3>
+          <p>המחקר של כהנמן וטברסקי על ההטיות הקוגניטיביות מסביר למה קשה לנו כל כך לקבל החלטות נכונות בהשקעות.</p>
+          <a class="btn" href="article-psychology.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="pension">
-        <img src="pension.png" alt="קרן פנסיה - המירוץ לפנסיה" class="article-image" loading="lazy">
-        <h3><a href="article-pension-part4.html">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ד</a></h3>
-        <p>מה לעשות לפני שעוזבים עבודה - טיפים חשובים שיכולים לחסוך לכם כסף והתעסקות מיותרת.</p>
-        <a class="btn" href="article-pension-part4.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="pension.png" alt="קרן פנסיה - המירוץ לפנסיה" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-pension-part4.html">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ד</a></h3>
+          <p>מה לעשות לפני שעוזבים עבודה - טיפים חשובים שיכולים לחסוך לכם כסף והתעסקות מיותרת.</p>
+          <a class="btn" href="article-pension-part4.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="pension">
-        <img src="pension.png" alt="קרן פנסיה - המירוץ לפנסיה" class="article-image" loading="lazy">
-        <h3><a href="article-pension-part3.html">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ג</a></h3>
-        <p>ההבדל בין קרן פנסיה מקיפה למשלימה - למה יש שתי קרנות ומה באמת שונה בהם.</p>
-        <a class="btn" href="article-pension-part3.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="pension.png" alt="קרן פנסיה - המירוץ לפנסיה" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-pension-part3.html">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ג</a></h3>
+          <p>ההבדל בין קרן פנסיה מקיפה למשלימה - למה יש שתי קרנות ומה באמת שונה בהם.</p>
+          <a class="btn" href="article-pension-part3.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="pension">
-        <img src="pension.png" alt="קרן פנסיה - המירוץ לפנסיה" class="article-image" loading="lazy">
-        <h3><a href="article-pension-part2.html">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ב</a></h3>
-        <p>המקדם קצבה והביטוחים בקרן - שני נושאים שכל חוסך צריך להכיר ושמשפיעים ישירות על הכסף שנקבל בפרישה.</p>
-        <a class="btn" href="article-pension-part2.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="pension.png" alt="קרן פנסיה - המירוץ לפנסיה" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-pension-part2.html">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק ב</a></h3>
+          <p>המקדם קצבה והביטוחים בקרן - שני נושאים שכל חוסך צריך להכיר ושמשפיעים ישירות על הכסף שנקבל בפרישה.</p>
+          <a class="btn" href="article-pension-part2.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="pension">
-        <img src="pension.png" alt="קרן פנסיה - המירוץ לפנסיה" class="article-image" loading="lazy">
-        <h3><a href="article-pension.html">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק א</a></h3>
-        <p>רוב הצעירים לא נותנים לקרן הפנסיה יותר מדי מחשבה, אבל היא אחת ההשקעות הכי גדולות שיש לנו בחיים.</p>
-        <a class="btn" href="article-pension.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="pension.png" alt="קרן פנסיה - המירוץ לפנסיה" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-pension.html">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה - חלק א</a></h3>
+          <p>רוב הצעירים לא נותנים לקרן הפנסיה יותר מדי מחשבה, אבל היא אחת ההשקעות הכי גדולות שיש לנו בחיים.</p>
+          <a class="btn" href="article-pension.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="pension investments">
-        <img src="kids-savings.png" alt="חיסכון לילדים" class="article-image" loading="lazy">
-        <h3><a href="article-child-savings.html">שני ילדים, אותה תוכנית, אחד יקבל פי שניים כסף בגיל 21</a></h3>
-        <p>ההבדל בין מסלול "בטוח" למסלול מנייתי בחיסכון לכל ילד יכול להיות עשרות אלפי שקלים. זה לא קסם, זו מתמטיקה.</p>
-        <a class="btn" href="article-child-savings.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="kids-savings.png" alt="חיסכון לילדים" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-child-savings.html">שני ילדים, אותה תוכנית, אחד יקבל פי שניים כסף בגיל 21</a></h3>
+          <p>ההבדל בין מסלול "בטוח" למסלול מנייתי בחיסכון לכל ילד יכול להיות עשרות אלפי שקלים. זה לא קסם, זו מתמטיקה.</p>
+          <a class="btn" href="article-child-savings.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="investments">
-        <img src="stock-market.png" alt="שוק ההון" class="article-image" loading="lazy">
-        <h3><a href="article-fama.html">שמעתם על המניה הבאה שתתפוצץ? תעצרו רגע</a></h3>
-        <p>לפעמים נדמה שכולם מחפשים את ההשקעה שתעשה את המכה, אבל לפי כלכלן זוכה פרס נובל אולי אנחנו מחפשים במקום הלא נכון.</p>
-        <a class="btn" href="article-fama.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="stock-market.png" alt="שוק ההון" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-fama.html">שמעתם על המניה הבאה שתתפוצץ? תעצרו רגע</a></h3>
+          <p>לפעמים נדמה שכולם מחפשים את ההשקעה שתעשה את המכה, אבל לפי כלכלן זוכה פרס נובל אולי אנחנו מחפשים במקום הלא נכון.</p>
+          <a class="btn" href="article-fama.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="investments">
-        <img src="time-money.png" alt="זמן וכסף" class="article-image" loading="lazy">
-        <h3><a href="article-inflation.html">למה אתם מסכנים את עצמכם כשאתם אדישים למצב הפיננסי שלכם</a></h3>
-        <p>רוב האנשים לא מבינים כמה עולה להם לא לעשות כלום עם הכסף שלהם. האינפלציה לא מחכה לאף אחד.</p>
-        <a class="btn" href="article-inflation.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="time-money.png" alt="זמן וכסף" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-inflation.html">למה אתם מסכנים את עצמכם כשאתם אדישים למצב הפיננסי שלכם</a></h3>
+          <p>רוב האנשים לא מבינים כמה עולה להם לא לעשות כלום עם הכסף שלהם. האינפלציה לא מחכה לאף אחד.</p>
+          <a class="btn" href="article-inflation.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="bank-system.png" alt="מערכת פיננסית" class="article-image" loading="lazy">
-        <h3><a href="article-system.html">המערכת הפיננסית משחקת על חוסר הידע שלנו הגיע הזמן להפסיק להיות פראיירים</a></h3>
-        <p>הגופים הגדולים יודעים לנצל את חוסר הידע שלנו. הגיע הזמן להבין את המשחק ולהפסיק לשלם על זה.</p>
-        <a class="btn" href="article-system.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="bank-system.png" alt="מערכת פיננסית" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-system.html">המערכת הפיננסית משחקת על חוסר הידע שלנו הגיע הזמן להפסיק להיות פראיירים</a></h3>
+          <p>הגופים הגדולים יודעים לנצל את חוסר הידע שלנו. הגיע הזמן להבין את המשחק ולהפסיק לשלם על זה.</p>
+          <a class="btn" href="article-system.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="books.png" alt="ספרים פיננסיים" class="article-image" loading="lazy">
-        <h3><a href="article-books.html">6 ספרים שיעזרו לך להתחיל דרך פיננסית בריאה</a></h3>
-        <p>שישה ספרים שיכולים לפתוח לכם את הראש.</p>
-        <a class="btn" href="article-books.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="books.png" alt="ספרים פיננסיים" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-books.html">6 ספרים שיעזרו לך להתחיל דרך פיננסית בריאה</a></h3>
+          <p>שישה ספרים שיכולים לפתוח לכם את הראש.</p>
+          <a class="btn" href="article-books.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="organize-money.png" alt="סדר בכסף" class="article-image" loading="lazy">
-        <h3><a href="article-organize.html">איך עושים סדר בכסף בלי לאבד את הראש</a></h3>
-        <p>שלושה צעדים שיעזרו לך להבין את המצב שלך, ליצור תזרים חיובי ולבנות רשת ביטחון.</p>
-        <a class="btn" href="article-organize.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="organize-money.png" alt="סדר בכסף" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-organize.html">איך עושים סדר בכסף בלי לאבד את הראש</a></h3>
+          <p>שלושה צעדים שיעזרו לך להבין את המצב שלך, ליצור תזרים חיובי ולבנות רשת ביטחון.</p>
+          <a class="btn" href="article-organize.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="four-ways.png" alt="ארבע דרכים להרוויח כסף" class="article-image" loading="lazy">
-        <h3><a href="article-fourways.html">יש ארבע דרכים להרוויח כסף בעולם ואותנו לימדו רק על אחת</a></h3>
-        <p>עבודה היא רק דרך אחת להכניס כסף. יש עוד אפשרויות שכדאי להכיר.</p>
-        <a class="btn" href="article-fourways.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="four-ways.png" alt="ארבע דרכים להרוויח כסף" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-fourways.html">יש ארבע דרכים להרוויח כסף בעולם ואותנו לימדו רק על אחת</a></h3>
+          <p>עבודה היא רק דרך אחת להכניס כסף. יש עוד אפשרויות שכדאי להכיר.</p>
+          <a class="btn" href="article-fourways.html">קרא עכשיו</a>
+        </div>
       </div>
 
       <div class="card fade-in" data-category="general">
-        <img src="myths.png" alt="מיתוסים פיננסיים" class="article-image" loading="lazy">
-        <h3><a href="article-myths.html">5 מיתוסים פיננסיים שחייבים להישבר</a></h3>
-        <p>כמה מהמשפטים הכי נפוצים על כסף, ומה באמת עומד מאחוריהם.</p>
-        <a class="btn" href="article-myths.html">קרא עכשיו</a>
+        <div class="card-image-wrap">
+          <img src="myths.png" alt="מיתוסים פיננסיים" class="article-image" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3><a href="article-myths.html">5 מיתוסים פיננסיים שחייבים להישבר</a></h3>
+          <p>כמה מהמשפטים הכי נפוצים על כסף, ומה באמת עומד מאחוריהם.</p>
+          <a class="btn" href="article-myths.html">קרא עכשיו</a>
+        </div>
       </div>
     </div>
   </main>
@@ -901,7 +1043,7 @@
         </div>
         <p class="footer-tagline">ייעוץ כלכלי אישי שעוזר לך לקחת שליטה על הכסף שלך ולבנות עתיד פיננסי בטוח</p>
       </div>
-      
+
       <div class="footer-section">
         <h4>צור קשר</h4>
         <div class="footer-contact">
@@ -910,7 +1052,7 @@
           <a href="https://instagram.com" target="_blank">📸 אינסטגרם</a>
         </div>
       </div>
-      
+
       <div class="footer-section">
         <h4>תוכן</h4>
         <div class="footer-links">
@@ -921,68 +1063,55 @@
         </div>
       </div>
     </div>
-    
+
     <div class="footer-bottom">
       <p>© 2025 הכלכלן של הבית. כל הזכויות שמורות. | <a href="privacy.html" style="color: var(--gold); text-decoration: none;">מדיניות פרטיות</a></p>
     </div>
   </footer>
 
   <script>
-    // אנימציה בגלילה
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: '0px 0px -80px 0px'
-    };
+    // Reading progress
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = max > 0 ? (scrolled / max) * 100 : 0;
+      progressBar.style.width = percent + '%';
+    }, { passive: true });
 
+    // Fade-in observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
-    }, observerOptions);
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
     document.addEventListener('DOMContentLoaded', () => {
       const cards = document.querySelectorAll('.card');
-      cards.forEach((element, index) => {
-        element.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(element);
+      cards.forEach((el, i) => {
+        el.style.transitionDelay = `${Math.min(i * 0.06, 0.4)}s`;
+        observer.observe(el);
       });
 
-      // סינון קטגוריות
+      // Categories
       const categoryButtons = document.querySelectorAll('.category-btn');
-      
       categoryButtons.forEach(button => {
         button.addEventListener('click', () => {
           const selectedCategory = button.dataset.category;
-          
-          // עדכון כפתור פעיל
           categoryButtons.forEach(btn => btn.classList.remove('active'));
           button.classList.add('active');
-          
-          // סינון כרטיסים
-          cards.forEach(card => {
-            const cardCategories = card.dataset.category;
-            
-            if (selectedCategory === 'all' || (cardCategories && cardCategories.includes(selectedCategory))) {
-              card.classList.remove('hidden');
-              card.style.display = 'flex';
-            } else {
-              card.classList.add('hidden');
-              card.style.display = 'none';
-            }
-          });
-
-          // גלילה חלקה למעלה
-          window.scrollTo({ top: 400, behavior: 'smooth' });
+          performSearch(searchInput.value);
+          window.scrollTo({ top: document.querySelector('.blog-grid').offsetTop - 100, behavior: 'smooth' });
         });
       });
 
-      // Search & Autocomplete
+      // Search
       const searchInput = document.getElementById('searchInput');
       const autocompleteDropdown = document.getElementById('autocompleteDropdown');
-      
-      // Build articles data from cards
+
       const articlesData = [];
       cards.forEach(card => {
         const titleElement = card.querySelector('h3 a');
@@ -991,25 +1120,20 @@
           articlesData.push({
             title: titleElement.textContent,
             desc: descElement ? descElement.textContent : '',
-            url: titleElement.getAttribute('href'),
-            card: card
+            url: titleElement.getAttribute('href')
           });
         }
       });
 
-      // Search and filter function
       function performSearch(searchTerm) {
-        const term = searchTerm.trim().toLowerCase();
+        const term = (searchTerm || '').trim().toLowerCase();
         const activeCategory = document.querySelector('.category-btn.active').dataset.category;
-        
         cards.forEach(card => {
           const cardCategories = card.dataset.category || '';
           const title = card.querySelector('h3 a')?.textContent.toLowerCase() || '';
           const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
-          
           const matchesSearch = term === '' || title.includes(term) || desc.includes(term);
           const matchesCategory = activeCategory === 'all' || cardCategories.includes(activeCategory);
-          
           if (matchesSearch && matchesCategory) {
             card.classList.remove('hidden');
             card.style.display = 'flex';
@@ -1020,19 +1144,16 @@
         });
       }
 
-      // Autocomplete function
       function showAutocomplete(searchTerm) {
-        const term = searchTerm.trim().toLowerCase();
-        
+        const term = (searchTerm || '').trim().toLowerCase();
         if (term.length === 0) {
           autocompleteDropdown.classList.remove('active');
           return;
         }
-
-        const matches = articlesData.filter(article => 
-          article.title.toLowerCase().includes(term) || 
-          article.desc.toLowerCase().includes(term)
-        ).slice(0, 5); // Limit to 5 results
+        const matches = articlesData.filter(a =>
+          a.title.toLowerCase().includes(term) ||
+          a.desc.toLowerCase().includes(term)
+        ).slice(0, 5);
 
         if (matches.length === 0) {
           autocompleteDropdown.innerHTML = '<div class="no-results">לא נמצאו תוצאות</div>';
@@ -1040,78 +1161,64 @@
           return;
         }
 
-        autocompleteDropdown.innerHTML = matches.map(article => `
-          <a href="${article.url}" class="autocomplete-item">
-            <div class="autocomplete-title">${article.title}</div>
-            <div class="autocomplete-desc">${article.desc}</div>
+        autocompleteDropdown.innerHTML = matches.map(a => `
+          <a href="${a.url}" class="autocomplete-item">
+            <div class="autocomplete-title">${a.title}</div>
+            <div class="autocomplete-desc">${a.desc}</div>
           </a>
         `).join('');
-        
         autocompleteDropdown.classList.add('active');
       }
 
-      // Event listeners for search
-      searchInput.addEventListener('input', (e) => {
-        const term = e.target.value;
-        performSearch(term);
-        showAutocomplete(term);
+      searchInput.addEventListener('input', e => {
+        performSearch(e.target.value);
+        showAutocomplete(e.target.value);
       });
 
       searchInput.addEventListener('focus', () => {
-        if (searchInput.value.trim().length > 0) {
-          showAutocomplete(searchInput.value);
-        }
+        if (searchInput.value.trim().length > 0) showAutocomplete(searchInput.value);
       });
 
-      // Close autocomplete when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('.search-container')) {
-          autocompleteDropdown.classList.remove('active');
-        }
+      document.addEventListener('click', e => {
+        if (!e.target.closest('.search-container')) autocompleteDropdown.classList.remove('active');
       });
 
-      // Clear search on Escape
-      searchInput.addEventListener('keydown', (e) => {
+      searchInput.addEventListener('keydown', e => {
         if (e.key === 'Escape') {
           searchInput.value = '';
           performSearch('');
           autocompleteDropdown.classList.remove('active');
         }
       });
-      
-      // Hamburger Menu Toggle
+
+      // Hamburger
       const hamburgerBtn = document.querySelector('.hamburger-btn');
       const mobileMenu = document.querySelector('.mobile-menu');
       const menuOverlay = document.querySelector('.menu-overlay');
       const mobileMenuLinks = document.querySelectorAll('.mobile-menu nav a');
-      
+
       function toggleMenu() {
         hamburgerBtn.classList.toggle('active');
         mobileMenu.classList.toggle('open');
         menuOverlay.classList.toggle('active');
         document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
       }
-      
+
       hamburgerBtn.addEventListener('click', toggleMenu);
       menuOverlay.addEventListener('click', toggleMenu);
-      
+
       mobileMenuLinks.forEach(link => {
         link.addEventListener('click', () => {
-          if (mobileMenu.classList.contains('open')) {
-            toggleMenu();
-          }
+          if (mobileMenu.classList.contains('open')) toggleMenu();
         });
       });
-      
+
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
       mobileMenuLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href && (href.includes(currentPage) || (href === 'blog.html' && currentPage === 'blog.html'))) {
-          link.classList.add('active');
-        }
+        if (href && href.includes(currentPage)) link.classList.add('active');
       });
     });
   </script>
 </body>
 </html>
-
