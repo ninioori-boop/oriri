@@ -207,44 +207,34 @@
       margin-bottom: 2.5rem;
     }
 
-    .blog-header .eyebrow {
-      display: inline-block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--gold-deep);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
-    }
-
-    .blog-header h1 {
-      font-size: clamp(2.2rem, 8vw, 3.5rem);
+    .blog-header .blog-title {
+      font-size: clamp(3.5rem, 14vw, 6.5rem);
       color: var(--black);
       margin-bottom: 1rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-    }
-
-    .blog-header h1 .accent {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--ink) 0%, var(--gold-deep) 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .blog-header p {
-      font-size: 1.05rem;
+    .blog-header .blog-subtitle {
+      font-size: clamp(1.15rem, 4.5vw, 1.5rem);
       color: var(--gray-medium);
       max-width: 640px;
-      margin: 0 auto 1rem;
-      line-height: 1.7;
+      margin: 0 auto 1.4rem;
+      line-height: 1.5;
+      font-weight: 500;
     }
 
     .blog-header .highlight {
       font-weight: 600;
       color: var(--ink);
       font-size: 0.95rem;
+      max-width: 640px;
+      margin: 0 auto;
     }
 
     /* Search */
@@ -496,7 +486,6 @@
         gap: 1.75rem;
       }
       .blog-header { margin-bottom: 3rem; }
-      .blog-header p { font-size: 1.1rem; }
       .card-body { padding: 1.7rem 1.6rem 1.8rem; }
       .card h3 { font-size: 1.3rem; }
     }
@@ -515,8 +504,6 @@
       .hamburger-btn { top: 22px; left: 22px; padding: 14px; }
       .hamburger-btn span { width: 28px; }
       .talk-btn { top: 22px; right: 22px; padding: 12px 22px; font-size: 15px; }
-      .blog-header h1 { font-size: 3.4rem; }
-      .blog-header p { font-size: 1.15rem; }
     }
 
     /* Footer */
@@ -645,10 +632,9 @@
 
   <main>
     <div class="blog-header">
-      <span class="eyebrow">הבלוג</span>
-      <h1>תובנות שעוזרות לך <span class="accent">לקחת שליטה</span> על הכסף</h1>
-      <p>קטעים ותובנות מהדרך שיעזרו לכם להתנהל פיננסית טוב יותר.</p>
-      <p class="highlight">אם אהבת משהו כאן, שלח לחבר או חברה — חינוך פיננסי מתפשט מאדם לאדם.</p>
+      <h1 class="blog-title">הבלוג</h1>
+      <p class="blog-subtitle">תובנות מהדרך שיעזרו לכם לקחת שליטה על הכסף שלכם</p>
+      <p class="highlight">אם אהבתם, שלחו לחבר או חברה.</p>
     </div>
 
     <div class="search-section">
