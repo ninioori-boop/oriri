@@ -1879,8 +1879,9 @@
       <div class="contact-card">
         <h2>בואו נתחיל</h2>
         <p style="font-size: 1rem; color: #666; margin-bottom: 2rem; text-align: center;">השאירו פרטים ונחזור אליכם תוך 24 שעות</p>
-        <form action="https://formspree.io/f/mdklkenp" method="POST">
+        <form action="https://formspree.io/f/mdklkenp" method="POST" id="lead-form">
           <input type="hidden" name="_subject" value="ליד חדש מהאתר - הכלכלן של הבית">
+          <input type="hidden" name="_next" id="lead-next" value="https://or-ni.com/thank-you.html">
 
           <div class="form-group">
             <input type="text" name="name" placeholder="שם מלא" required>
@@ -1897,6 +1898,20 @@
 
           <button type="submit" class="btn btn-submit">שלחו פרטים</button>
         </form>
+        <script>
+          (function () {
+            var form = document.getElementById('lead-form');
+            if (!form) return;
+            form.addEventListener('submit', function () {
+              var nameInput = form.querySelector('input[name="name"]');
+              var nextInput = document.getElementById('lead-next');
+              if (nameInput && nextInput) {
+                var clean = (nameInput.value || '').trim();
+                nextInput.value = 'https://or-ni.com/thank-you.html?name=' + encodeURIComponent(clean);
+              }
+            });
+          })();
+        </script>
         <p style="text-align: right; margin-top: 1.5rem; font-size: 0.85rem; color: var(--gray-text); line-height: 1.6;">
           <strong>הודעת פרטיות:</strong> מסירת הפרטים אינה חובה חוקית והיא נעשית מרצונך החופשי. הפרטים יישמרו במאגר המידע של "הכלכלן של הבית" וישמשו אך ורק ליצירת קשר ולמתן השירות. עומדות לך זכויות עיון, תיקון ומחיקה לפי חוק הגנת הפרטיות, התשמ"א-1981 (לרבות תיקון 13). לפרטים מלאים ראו <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">מדיניות הפרטיות</a>.
         </p>
