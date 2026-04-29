@@ -1890,10 +1890,15 @@
             <input type="tel" name="phone" placeholder="טלפון" required>
           </div>
 
+          <label style="display: flex; align-items: flex-start; gap: 0.6rem; margin: 0.5rem 0 1rem 0; text-align: right; font-size: 0.9rem; color: var(--gray-text); line-height: 1.5; cursor: pointer;">
+            <input type="checkbox" name="marketing_consent" value="yes" style="margin-top: 0.3rem; flex-shrink: 0;">
+            <span>אני מאשר/ת קבלת תכנים, עדכונים ודיוור פרסומי בדוא"ל ו/או ב-SMS (לא חובה — ניתן להסיר בכל עת).</span>
+          </label>
+
           <button type="submit" class="btn btn-submit">שלחו פרטים</button>
         </form>
-        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray-text);">
-          בשליחת הטופס אתם מאשרים את <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">מדיניות הפרטיות</a> שלנו
+        <p style="text-align: right; margin-top: 1.5rem; font-size: 0.85rem; color: var(--gray-text); line-height: 1.6;">
+          <strong>הודעת פרטיות:</strong> מסירת הפרטים אינה חובה חוקית והיא נעשית מרצונך החופשי. הפרטים יישמרו במאגר המידע של "הכלכלן של הבית" וישמשו אך ורק ליצירת קשר ולמתן השירות. עומדות לך זכויות עיון, תיקון ומחיקה לפי חוק הגנת הפרטיות, התשמ"א-1981 (לרבות תיקון 13). לפרטים מלאים ראו <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">מדיניות הפרטיות</a>.
         </p>
       </div>
     </section>
@@ -2074,5 +2079,6 @@
       }
     });
   </script>
+  <script src="cookie-consent.js" defer></script>
 </body>
 </html>
