@@ -1,6 +1,13 @@
 (function () {
   var STORAGE_KEY = 'hkb_cookie_consent_v1';
-  if (localStorage.getItem(STORAGE_KEY)) return;
+  var stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) {
+    var parts = stored.split('|');
+    var consentDate = parts[1] ? new Date(parts[1]) : null;
+    var oneYear = 365 * 24 * 60 * 60 * 1000;
+    if (consentDate && (Date.now() - consentDate.getTime()) < oneYear) return;
+    localStorage.removeItem(STORAGE_KEY);
+  }
 
   var style = document.createElement('style');
   style.textContent =

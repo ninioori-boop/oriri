@@ -190,7 +190,13 @@
 
         if (name && name.length > 0 && name.length < 40) {
           var greeting = document.getElementById('greeting');
-          greeting.innerHTML = 'תודה רבה, <span class="name-highlight">' + escapeHtml(name) + '</span>! שמחים שהשארת פרטים';
+          greeting.textContent = '';
+          greeting.appendChild(document.createTextNode('תודה רבה, '));
+          var span = document.createElement('span');
+          span.className = 'name-highlight';
+          span.textContent = name;
+          greeting.appendChild(span);
+          greeting.appendChild(document.createTextNode('! שמחים שהשארת פרטים'));
 
           var waText = 'היי אורי, השארתי פרטים באתר. השם שלי ' + name + ' ואשמח להתקדם 🙂';
           var waLink = document.getElementById('wa-link');

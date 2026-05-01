@@ -1175,12 +1175,21 @@
           return;
         }
 
-        autocompleteDropdown.innerHTML = matches.map(a => `
-          <a href="${a.url}" class="autocomplete-item">
-            <div class="autocomplete-title">${a.title}</div>
-            <div class="autocomplete-desc">${a.desc}</div>
-          </a>
-        `).join('');
+        autocompleteDropdown.innerHTML = '';
+        matches.forEach(a => {
+          var link = document.createElement('a');
+          link.href = a.url;
+          link.className = 'autocomplete-item';
+          var titleDiv = document.createElement('div');
+          titleDiv.className = 'autocomplete-title';
+          titleDiv.textContent = a.title;
+          var descDiv = document.createElement('div');
+          descDiv.className = 'autocomplete-desc';
+          descDiv.textContent = a.desc;
+          link.appendChild(titleDiv);
+          link.appendChild(descDiv);
+          autocompleteDropdown.appendChild(link);
+        });
         autocompleteDropdown.classList.add('active');
       }
 
