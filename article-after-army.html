@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>מה עושים עם הכסף אחרי הצבא - הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="כשמשתחררים מהצבא נכנסים לארץ ההחלטות הבלתי מוגבלות. 10 דברים שכדאי לדעת ולעשות כדי לא להתחרט בהמשך.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      display: block;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1rem;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      color: var(--gray-medium);
+      margin-bottom: 2.5rem;
+      line-height: 1.85;
+      border-right: 4px solid var(--gold);
+      padding-right: 1.2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .tip-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .tip-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 50%;
+      margin-left: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .tip-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .tip-header h3 {
+      font-size: 1.3rem;
+      color: var(--black);
+      margin: 0;
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      color: var(--gray-medium);
+    }
+
+    .tip-box .read-more {
+      display: inline-block;
+      margin-top: 0.9rem;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .tip-box .read-more:hover {
+      border-bottom-color: var(--gold);
+    }
+
+    .note-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 2.5rem 0;
+      border-right: 4px solid var(--gold);
+    }
+
+    .note-box p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .disclaimer {
+      font-size: 0.88rem;
+      color: var(--gray-text);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    footer {
+      background: var(--gray-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 600px) {
+      .tip-header h3 { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <img src="after-army-decisions.png" alt="זוג צעיר יושב על ספה עם פיל שקוף מלא בכסף ביניהם - ארץ ההחלטות הבלתי מוגבלות" class="hero-image">
+
+    <h1>כשאנחנו מגיעים לארץ ההחלטות הבלתי מוגבלות — מה עושים עם הכסף אחרי הצבא</h1>
+
+    <p class="intro">כשמשתחררים יש לנו רגע קצר של חסד. אבל מהר מאוד אנחנו חוטפים כאפה של מה זה החיים האמיתיים. פתאום נכנסנו לארץ ההחלטות הבלתי מוגבלות ועכשיו אנחנו צריכים להחליט לאיזה כיוון אנחנו הולכים.</p>
+
+    <p>אז הנה 10 דברים שכדאי לדעת וללמוד כשמשתחררים מהצבא:</p>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">1</span>
+        <h3>עדכון ביטוח לאומי</h3>
+      </div>
+      <p>יש לכם פטור מביטוח לאומי רק בחודש השחרור ובחודש שאחריו. מהחודש השלישי תתחילו לשלם. אם תטוסו לטיול הגדול ולא תסדרו את זה, תחזרו לארץ עם חוב שיכול להגיע לאלפי שקלים.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">2</span>
+        <h3>אל תבזבזו את מענק השחרור על אוטומט</h3>
+      </div>
+      <p>דווקא כשמקבלים כמות גדולה של כסף זה הזמן לתכנן ולחשוב על מטרות שישרתו אתכם בעתיד.</p>
+      <a href="article-10-mistakes.html" class="read-more">10 טעויות פיננסיות שכדאי להכיר ←</a>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">3</span>
+        <h3>נקודות זיכוי במס הכנסה</h3>
+      </div>
+      <p>בטופס 101 ציינו שאתם חיילים משוחררים. רוב החיילים המשוחררים זכאים לשתי נקודות זיכוי למשך שלוש שנים ששוות <strong>5,808 שקל בשנה</strong>. אל תפספסו את זה.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">4</span>
+        <h3>תתחילו ללמוד להשקיע</h3>
+      </div>
+      <p>כמה פעולות פשוטות יכולות להיות שוות לכם מיליונים בטווח הארוך. כוח הריבית דריבית הוא הנכס הכי גדול שלכם עכשיו — וכל שנה שמחכים היא שנה שנאבדת.</p>
+      <a href="article-investment-tips.html" class="read-more">6 נקודות לפני שמתחילים להשקיע ←</a>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">5</span>
+        <h3>תתחילו ללמוד על המוצרים הפיננסיים שלכם</h3>
+      </div>
+      <p>כשתתחילו לעבוד לאחר 6 חודשים יפתחו לכם קרן פנסיה ואולי גם קרן השתלמות. אם לא תתנהלו איתם נכון אתם יכולים גם להפסיד הרבה כסף וגם הגופים הפיננסיים יכולים לנצל את זה ולגרום לכם לשלם כסף מיותר בדמי ניהול. חבל — זה הכסף שלכם.</p>
+      <a href="article-pension.html" class="read-more">קרן הפנסיה שלכם — חלק א ←</a>
+      &nbsp;&nbsp;
+      <a href="article-keren-hishtalmut.html" class="read-more">קרן השתלמות — כל מה שצריך לדעת ←</a>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">6</span>
+        <h3>קרן חירום</h3>
+      </div>
+      <p>אנחנו לא יודעים מה יהיה בעתיד. חיסכון קטן של כמה מאות שקלים בחודש יכול לייצר לכם רשת ביטחון שתשמור עליכם ביום שלא תוכלו לעבוד ולייצר הכנסה, או שתיפול עליכם הוצאה מפתיעה ודחופה. ככל שתתחילו מוקדם יותר — ככה יהיה לכם יותר קל לחסוך לקרן כזאת.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">7</span>
+        <h3>ביטוח בריאות פרטי</h3>
+      </div>
+      <p>אל תשחקו עם זה. שלושה ביטוחים קריטיים: תרופות מחוץ לסל, ניתוחים בחו"ל והשתלות. זה רק כמה עשרות שקלים בחודש ויכול להציל אתכם מקטסטרופה כלכלית.</p>
+      <a href="article-insurance.html" class="read-more">האם אתם מוכנים לכל תרחיש פיננסי? ←</a>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">8</span>
+        <h3>אל תיקחו הלוואות מיותרות</h3>
+      </div>
+      <p>כל הלוואה שאתם לוקחים לרכב או חופשה — זה כסף שאתם לוקחים מהעתיד שלכם.</p>
+      <a href="article-10-mistakes.html" class="read-more">10 טעויות פיננסיות שכדאי להכיר ←</a>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">9</span>
+        <h3>היו ספקניים</h3>
+      </div>
+      <p>הרשת מפוצצת באנשים שמוכרים חלומות על התעשרות מהירה. אל תקבלו החלטה כלכלית בלי בדיקה מעמיקה.</p>
+      <a href="article-magic-methods.html" class="read-more">האשליה של התעשרות מהירה ←</a>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">10</span>
+        <h3>תכינו תוכנית</h3>
+      </div>
+      <p>כשמבינים את כוח הזמן בהשקעות ובונים תוכנית — זה נותן סדר בראש ותחושה שאתם מתקדמים ויודעים מה אתם עושים.</p>
+      <a href="article-mapping-data.html" class="read-more">נתונים נדרשים למיפוי פיננסי ←</a>
+    </div>
+
+    <div class="note-box">
+      <p>אם קראתם הכל — זה הזמן שלכם ללכת לחקור. הרשת מפוצצת במידע, אתם רק צריכים להתחיל. מוזמנים להיכנס לבלוג שלי שבו אני מדבר על כל הנושאים האלה ועוד בהרחבה ובצורה פשוטה.</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>רוצים שנעשה את זה ביחד?</h3>
+      <p>ליווי אישי שיעזור לכם לבנות תוכנית פיננסית מסודרת מההתחלה</p>
+      <a href="program.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+
+    <p class="disclaimer">הכתוב אינו מהווה ייעוץ פנסיוני, ייעוץ השקעות ואינו תחליף לייעוץ אישי. שיתוף ידע ודעה בלבד.</p>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+
+  <script src="cookie-consent.js" defer></script>
+</body>
+</html>
