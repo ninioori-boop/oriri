@@ -153,6 +153,62 @@
       font-weight: 600;
     }
 
+    .info-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .info-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      flex-shrink: 0;
+      position: relative;
+      line-height: 1;
+    }
+
+    .info-btn:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    .info-tooltip {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 8px);
+      right: 0;
+      background: var(--gray-dark);
+      color: var(--white);
+      font-size: 0.88rem;
+      font-weight: 400;
+      line-height: 1.55;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      z-index: 10;
+      text-align: right;
+      white-space: normal;
+    }
+
+    .info-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      right: 4px;
+      border: 6px solid transparent;
+      border-top-color: var(--gray-dark);
+    }
+
+    .info-btn.open .info-tooltip { display: block; }
+
     .note-box {
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       padding: 1.5rem;
@@ -280,7 +336,14 @@
       </thead>
       <tbody>
         <tr>
-          <td>ברק כספית</td>
+          <td>
+            <span class="info-wrap">
+              ברק כספית
+              <button class="info-btn" aria-label="הסבר על דמי ניהול ברק כספית" onclick="this.classList.toggle('open')">i
+                <span class="info-tooltip">דמי הניהול הם 0% כרגע, אך בדרך כלל עולים לאחר שנה. בנוסף יש דמי נאמנות ושיעור הוספה של 0.1% בשנה.</span>
+              </button>
+            </span>
+          </td>
           <td>5141692</td>
           <td>0%</td>
         </tr>
@@ -346,6 +409,14 @@
   <footer>
     <p>© הכלכלן של הבית</p>
   </footer>
+
+  <script>
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.info-btn')) {
+        document.querySelectorAll('.info-btn.open').forEach(function(b) { b.classList.remove('open'); });
+      }
+    });
+  </script>
 </body>
 </html>
 
