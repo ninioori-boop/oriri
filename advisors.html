@@ -48,17 +48,16 @@
     /* TOP NAV */
     .topnav {
       position: fixed;
-      top: 26px;
+      top: 22px;
       left: 50%;
       transform: translateX(-50%);
       width: fit-content;
-      max-width: 94%;
-      gap: 28px;
+      max-width: 96%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      padding: 11px 14px 11px 11px;
+      gap: 18px;
+      padding: 10px 12px;
       background: rgba(15, 15, 18, 0.55);
       backdrop-filter: blur(22px) saturate(180%);
       -webkit-backdrop-filter: blur(22px) saturate(180%);
@@ -67,7 +66,7 @@
       z-index: 80;
       box-shadow: 0 14px 50px rgba(0, 0, 0, 0.45);
     }
-    .topnav .brand { display: flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; padding: 2px 4px 2px 12px; }
+    .topnav .brand { display: flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; padding: 0 8px; }
     .topnav .brand img {
       width: 44px; height: 44px;
       object-fit: cover; border-radius: 50%;
@@ -825,10 +824,10 @@
     @media (max-width: 900px) {
       .topnav-links { display: none; }
       .menu-toggle { display: flex; }
-      .topnav { top: 14px; padding: 6px 6px 6px 6px; width: 92%; }
+      .topnav { top: 14px; padding: 6px; max-width: 92%; }
       .topnav .brand img { width: 40px; height: 40px; }
       .topnav .brand-name { font-size: 0.95rem; }
-      .topnav .brand { padding: 0 4px 0 8px; gap: 10px; }
+      .topnav .brand { padding: 0 6px; gap: 10px; }
 
       .hero { padding: 130px 18px 70px; }
       .before-after { grid-template-columns: 1fr; }
@@ -860,9 +859,10 @@
       .price-card { padding: 28px 22px; }
       .final-cta { padding: 56px 24px; }
 
-      .topnav { top: 10px; width: 94%; padding: 5px 5px 5px 5px; }
+      .topnav { top: 10px; max-width: 94%; padding: 5px; }
       .topnav .brand img { width: 36px; height: 36px; }
       .topnav .brand-name { font-size: 0.92rem; }
+      .topnav .brand { padding: 0 4px; gap: 9px; }
       .menu-toggle { width: 40px; height: 40px; }
     }
   </style>
