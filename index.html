@@ -125,6 +125,38 @@
       background: var(--gold);
       border-radius: 2px;
     }
+    .topnav-links a.nav-pro {
+      color: var(--gold-bright);
+      background: linear-gradient(135deg, rgba(212,175,55,0.16), rgba(212,175,55,0.05));
+      border: 1px solid rgba(212,175,55,0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+    .topnav-links a.nav-pro:hover {
+      color: #fff;
+      background: linear-gradient(135deg, rgba(212,175,55,0.28), rgba(212,175,55,0.10));
+    }
+    .nav-badge {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #1a1306;
+      text-transform: uppercase;
+    }
+    .mobile-menu nav a.nav-pro {
+      background: linear-gradient(135deg, rgba(212,175,55,0.14), rgba(212,175,55,0.04));
+      border-color: rgba(212,175,55,0.32);
+      color: var(--gold-bright);
+    }
+    .mobile-menu nav a.nav-pro .nav-badge {
+      margin-right: auto;
+      margin-left: 8px;
+    }
 
     /* Hamburger toggle (mobile only) */
     .menu-toggle {
@@ -752,6 +784,7 @@
       <a href="index.html" class="active">דף הבית</a>
       <a href="blog.html">בלוג</a>
       <a href="program.html">תוכנית הליווי</a>
+      <a href="advisors.html" class="nav-pro">ליועצים<span class="nav-badge">חדש</span></a>
       <a href="#story">עליי</a>
     </nav>
     <button class="menu-toggle" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="mobile-menu">
@@ -765,6 +798,7 @@
       <a href="index.html" class="active">דף הבית</a>
       <a href="blog.html">בלוג</a>
       <a href="program.html">תוכנית הליווי</a>
+      <a href="advisors.html" class="nav-pro">ליועצים<span class="nav-badge">חדש</span></a>
       <a href="#story">עליי</a>
     </nav>
     <a href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank" rel="noopener" class="menu-cta">
