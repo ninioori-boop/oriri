@@ -146,6 +146,80 @@
       font-size: 1.05rem;
     }
 
+    .funds-table-wrap {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      overflow-x: auto;
+    }
+
+    .funds-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+      text-align: right;
+    }
+
+    .funds-table thead th {
+      background: var(--black);
+      color: var(--white);
+      padding: 0.9rem 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-align: right;
+    }
+
+    .funds-table thead th:first-child {
+      border-radius: 0 8px 8px 0;
+    }
+
+    .funds-table thead th:last-child {
+      border-radius: 8px 0 0 8px;
+    }
+
+    .funds-table tbody td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      color: var(--gray-dark);
+    }
+
+    .funds-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .funds-table tbody tr:hover {
+      background: var(--gray-light);
+    }
+
+    .funds-table .fund-name {
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    .funds-table .fund-name a {
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--gold);
+      transition: color 0.2s;
+    }
+
+    .funds-table .fund-name a:hover {
+      color: var(--gold);
+    }
+
+    .funds-table .fee {
+      font-variant-numeric: tabular-nums;
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .funds-table { font-size: 0.9rem; }
+      .funds-table thead th,
+      .funds-table tbody td { padding: 0.7rem 0.6rem; }
+    }
+
     .infographic-wrap {
       margin: 3rem 0 2rem;
       text-align: center;
@@ -278,6 +352,74 @@
 
     <div class="note-box">
       <p>אז למי שמחזיק דולרים ורוצה להגן עליהם מהאינפלציה בלי להתחייב לחשיפה לשער החליפין, קרן כספית נקובה בדולר היא אחד הפתרונות הפשוטים והנגישים ביותר.</p>
+    </div>
+
+    <h2>רשימת קרנות כספיות נקובות בדולר</h2>
+
+    <p>הרשימה ממוינת לפי דמי הניהול מהנמוך לגבוה. שם הקרן מקושר לעמוד הקרן באתר מאיה של הבורסה, שם תוכלו לראות פרטים מלאים, תשואות והרכב.</p>
+
+    <div class="funds-table-wrap">
+      <table class="funds-table">
+        <thead>
+          <tr>
+            <th>שם הקרן</th>
+            <th>מספר נייר</th>
+            <th>דמי ניהול</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fund-name"><a href="https://maya.tase.co.il/fund/5137906" target="_blank" rel="noopener">אי.בי.אי. (0D) כספית דולרית, נקובה $</a></td>
+            <td>5137906</td>
+            <td class="fee">0.09%</td>
+          </tr>
+          <tr>
+            <td class="fund-name"><a href="https://maya.tase.co.il/fund/5136890" target="_blank" rel="noopener">מגדל כספית דולרית, נקובה $</a></td>
+            <td>5136890</td>
+            <td class="fee">0.09%</td>
+          </tr>
+          <tr>
+            <td class="fund-name"><a href="https://maya.tase.co.il/fund/5136742" target="_blank" rel="noopener">אלטשולר שחם כספית נקובת דולר</a></td>
+            <td>5136742</td>
+            <td class="fee">0.10%</td>
+          </tr>
+          <tr>
+            <td class="fund-name"><a href="https://maya.tase.co.il/fund/5139076" target="_blank" rel="noopener">איילון (0D) כספית דולרית, נקובה דולר</a></td>
+            <td>5139076</td>
+            <td class="fee">0.11%</td>
+          </tr>
+          <tr>
+            <td class="fund-name"><a href="https://maya.tase.co.il/fund/5138839" target="_blank" rel="noopener">אנליסט כספית דולר נקובה</a></td>
+            <td>5138839</td>
+            <td class="fee">0.14%</td>
+          </tr>
+          <tr>
+            <td class="fund-name"><a href="https://maya.tase.co.il/fund/5138326" target="_blank" rel="noopener">מיטב (0D) כספית דולרית, נקובה $</a></td>
+            <td>5138326</td>
+            <td class="fee">0.16%</td>
+          </tr>
+          <tr>
+            <td class="fund-name"><a href="https://maya.tase.co.il/fund/5129523" target="_blank" rel="noopener">הראל כספית דולרית, נקובה $</a></td>
+            <td>5129523</td>
+            <td class="fee">0.17%</td>
+          </tr>
+          <tr>
+            <td class="fund-name"><a href="https://maya.tase.co.il/fund/5115001" target="_blank" rel="noopener">מגדל (0D) כספית נקובה בדולר $</a></td>
+            <td>5115001</td>
+            <td class="fee">0.195%</td>
+          </tr>
+          <tr>
+            <td class="fund-name"><a href="https://maya.tase.co.il/fund/5117429" target="_blank" rel="noopener">אי.בי.אי (0D) כספית נקובה בדולר</a></td>
+            <td>5117429</td>
+            <td class="fee">0.25%</td>
+          </tr>
+          <tr>
+            <td class="fund-name"><a href="https://maya.tase.co.il/fund/5130091" target="_blank" rel="noopener">קסם אקטיב כספית דולרית נקובה</a></td>
+            <td>5130091</td>
+            <td class="fee">0.26%</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="infographic-wrap">
