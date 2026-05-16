@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>קרן כספית נקובה בדולר | הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ניצלתם את הדולר הנמוך ופתחתם חשבון דולרי? קרן כספית נקובה בדולר היא דרך לשמור על הדולרים שלכם מהאינפלציה, בלי חשיפה לתנודות שער החליפין.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1rem;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      color: var(--gray-medium);
+      margin-bottom: 2.5rem;
+      line-height: 1.85;
+      border-right: 4px solid var(--gold);
+      padding-right: 1.2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .compare-grid {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .compare-card {
+      padding: 1.2rem 1.5rem;
+      border-radius: 8px;
+      border-right: 4px solid var(--gold);
+    }
+
+    .compare-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--black);
+    }
+
+    .compare-card p {
+      font-size: 1rem;
+      color: var(--gray-medium);
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+
+    .note-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 2.5rem 0;
+      border-right: 4px solid var(--gold);
+    }
+
+    .note-box p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+    }
+
+    .infographic-wrap {
+      margin: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .infographic-wrap img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    }
+
+    .infographic-caption {
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      margin-top: 0.8rem;
+      font-style: italic;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .disclaimer {
+      font-size: 0.88rem;
+      color: var(--gray-text);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    footer {
+      background: var(--gray-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>ניצלתם את הדולר הנמוך ופתחתם חשבון דולרי? למה לתת לדולרים להישחק</h1>
+
+    <p class="intro">אם יש לכם דולרים בחשבון ואתם לא רוצים להמיר אותם לשקלים כי הדולר חלש, יש לכם אופציה נחמדה שתגרום לדולרים שלכם לא להישחק מהאינפלציה. האופציה היא לקנות קרן כספית נקובה בדולר.</p>
+
+    <h2>מה ההבדל בין קרן כספית דולרית לקרן כספית נקובה בדולר</h2>
+
+    <p>חשוב להבין את ההבדל הפשוט בין שתי הקרנות. את הקרן הכספית הדולרית קונים בשקלים ורק מצמידים אותם לדולר, וכשתמכרו תקבלו בחזרה שקלים. במקרה הזה אתם חשופים לתנודתיות של המט"ח. קרן כספית נקובה זו קרן שקונים בדולר עצמו, וכשתמכרו תקבלו את הדולרים שלכם בחזרה.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h3>קרן כספית דולרית</h3>
+        <p>קונים בשקלים, מקבלים בחזרה שקלים. חשופים לתנודות שער הדולר מול השקל.</p>
+      </div>
+      <div class="compare-card">
+        <h3>קרן כספית נקובה בדולר</h3>
+        <p>קונים בדולרים, מקבלים בחזרה דולרים. שומרים על הדולרים במקום בטוח.</p>
+      </div>
+    </div>
+
+    <p>שתי הקרנות שואפות לתת תשואה של ריבית הפד, הבנק המרכזי בארצות הברית, ככה שזה פתרון יחסית בטוח למי שרוצה לשמור על הדולרים שלו במקום בטוח ולא לתת להם להישחק מהאינפלציה.</p>
+
+    <h2>עמלות בבנק</h2>
+
+    <p>לקרן כספית דולרית ולקרן כספית נקובה יש את אותם תנאים בבנק כמו בקרן כספית שקלית, ככה שלא יקחו לכם עמלות אם תקנו אותן דרך חשבון המסחר שלכם בבנק.</p>
+
+    <h2>הבדל מהותי במיסוי</h2>
+
+    <p>המיסוי על שתי הקרנות הוא 25% על הרווח הריאלי, אבל יש פה הבדל חשוב.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h3>בקרן כספית דולרית רגילה</h3>
+        <p>תשלמו מס גם על הרווח מהתשואה וגם על עליית שער הדולר מול השקל.</p>
+      </div>
+      <div class="compare-card">
+        <h3>בקרן כספית נקובה בדולר</h3>
+        <p>תשלמו מס רק על התשואה של הקרן, ולא תשלמו מס על עצם עליית שער הדולר.</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <p>אז למי שמחזיק דולרים ורוצה להגן עליהם מהאינפלציה בלי להתחייב לחשיפה לשער החליפין, קרן כספית נקובה בדולר היא אחד הפתרונות הפשוטים והנגישים ביותר.</p>
+    </div>
+
+    <div class="infographic-wrap">
+      <img src="dollar-fund-infographic.jpeg" alt="אינפוגרפיקה משווה בין קרן כספית דולרית לקרן כספית נקובה בדולר" loading="lazy">
+      <p class="infographic-caption">תרשים השוואה: קרן כספית דולרית מול קרן כספית נקובה בדולר</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>רוצים לבנות תיק חכם לדולרים שלכם?</h3>
+      <p>ליווי אישי שיעזור לכם לבחור את הכלים הנכונים לפי המצב והמטרות שלכם</p>
+      <a href="program.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+
+    <p class="disclaimer">אין באמור המלצה או ייעוץ השקעות. שיתוף ידע ודעה בלבד.</p>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+
+  <script src="cookie-consent.js" defer></script>
+</body>
+</html>
