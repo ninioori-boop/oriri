@@ -770,6 +770,80 @@
       line-height: 1.7;
     }
 
+    /* LEAD FORM */
+    .lead {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 44px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(165deg, rgba(212,175,55,0.08), rgba(255,255,255,0.01));
+      border: 1px solid var(--border-strong);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+    .lead::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -15%;
+      width: 55%; height: 100%;
+      background: radial-gradient(circle, var(--gold-glow), transparent 60%);
+      filter: blur(70px); pointer-events: none;
+    }
+    .lead > * { position: relative; }
+    .lead .lead-head { text-align: center; margin-bottom: 30px; }
+    .lead .label {
+      display: inline-block;
+      font-size: 0.78rem; letter-spacing: 0.36em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .lead h2 {
+      font-family: 'Heebo', sans-serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+      font-weight: 800; letter-spacing: -0.02em;
+      line-height: 1.12; margin-bottom: 12px;
+    }
+    .lead .lead-head p { color: var(--text-muted); font-size: 1.04rem; }
+    .lead-form { display: flex; flex-direction: column; gap: 14px; }
+    .lead-form .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .lead-form input[type="text"],
+    .lead-form input[type="tel"],
+    .lead-form input[type="email"] {
+      width: 100%;
+      padding: 15px 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(0,0,0,0.35);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+    }
+    .lead-form input::placeholder { color: var(--text-faint); }
+    .lead-form input:focus {
+      outline: none;
+      border-color: var(--border-strong);
+      background: rgba(0,0,0,0.5);
+    }
+    .lead-form .consent {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin: 4px 0 6px;
+      font-size: 0.88rem; color: var(--text-muted);
+      line-height: 1.5; cursor: pointer;
+    }
+    .lead-form .consent input { margin-top: 4px; flex-shrink: 0; accent-color: var(--gold); }
+    .lead-form .btn-primary { width: 100%; justify-content: center; }
+    .lead .privacy-note {
+      margin-top: 18px;
+      font-size: 0.82rem;
+      color: var(--text-faint);
+      line-height: 1.65;
+      text-align: right;
+    }
+    .lead .privacy-note a { color: var(--gold); text-decoration: none; font-weight: 600; }
+    .lead .privacy-note strong { color: var(--text-muted); }
+
     /* FINAL CTA */
     .final-cta {
       position: relative;
@@ -859,6 +933,8 @@
       .value { grid-template-columns: 1fr 1fr; }
       .price-card { padding: 28px 22px; }
       .final-cta { padding: 56px 24px; }
+      .lead { padding: 36px 22px; }
+      .lead-form .field-row { grid-template-columns: 1fr; }
 
       .topnav { top: 10px; max-width: 94%; padding: 5px; }
       .topnav .brand img { width: 36px; height: 36px; }
@@ -1125,13 +1201,85 @@
       </div>
     </section>
 
+    <!-- LEAD FORM -->
+    <section class="section" id="lead">
+      <div class="lead reveal">
+        <div class="lead-head">
+          <span class="label">מעוניינים? השאירו פרטים</span>
+          <h2>לא בא לכם להתחיל לבד? השאירו פרטים ואחזור אליכם.</h2>
+          <p>המערכת פתוחה לכולם וחינמית בבטא. אם בא לכם שאלווה אתכם בהתחלה, אשמח לחזור אליכם ולעבור על זה יחד.</p>
+        </div>
+
+        <form action="https://formspree.io/f/mdklkenp" method="POST" id="advisor-lead-form" class="lead-form">
+          <input type="hidden" name="_subject" value="ליד יועץ חדש - מערכת היועצים">
+          <input type="hidden" name="source" value="advisors">
+          <input type="hidden" name="_next" id="advisor-lead-next" value="https://or-ni.com/thank-you.html">
+
+          <div class="field-row">
+            <input type="text" name="name" placeholder="שם מלא" required>
+            <input type="tel" name="phone" placeholder="טלפון" required>
+          </div>
+          <input type="email" name="email" placeholder="אימייל (לא חובה)">
+
+          <label class="consent">
+            <input type="checkbox" name="marketing_consent" value="yes">
+            <span>אני מאשר/ת קבלת תכנים, עדכונים ודיוור פרסומי בדוא"ל ו/או ב-SMS (לא חובה — ניתן להסיר בכל עת).</span>
+          </label>
+
+          <button type="submit" class="btn-primary">שלחו פרטים ואחזור אליכם</button>
+        </form>
+
+        <script>
+          (function () {
+            var SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbyI7RJqGq8sPR9UKbrYS7FybcR4iOgydC1qxgIo6blNflcNwxT8qwft2VjDIMRn_w8lng/exec';
+            var form = document.getElementById('advisor-lead-form');
+            if (!form) return;
+            form.addEventListener('submit', function () {
+              var name = (form.querySelector('input[name="name"]').value || '').trim();
+              var phone = (form.querySelector('input[name="phone"]').value || '').trim();
+              var emailInput = form.querySelector('input[name="email"]');
+              var email = (emailInput && emailInput.value || '').trim();
+              var consentInput = form.querySelector('input[name="marketing_consent"]');
+              var consent = consentInput && consentInput.checked ? 'yes' : 'no';
+              var nextInput = document.getElementById('advisor-lead-next');
+
+              if (nextInput) {
+                nextInput.value = 'https://or-ni.com/thank-you.html?name=' + encodeURIComponent(name);
+              }
+
+              try {
+                var payload = JSON.stringify({
+                  name: name,
+                  phone: phone,
+                  email: email,
+                  marketing_consent: consent,
+                  source: 'advisors'
+                });
+                fetch(SHEET_WEBHOOK, {
+                  method: 'POST',
+                  mode: 'no-cors',
+                  headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                  body: payload,
+                  keepalive: true
+                });
+              } catch (err) { /* fail silently — Formspree still gets the lead */ }
+            });
+          })();
+        </script>
+
+        <p class="privacy-note">
+          <strong>הודעת פרטיות:</strong> מסירת הפרטים אינה חובה והיא נעשית מרצונך החופשי. הפרטים יישמרו במאגר המידע של "הכלכלן של הבית" וישמשו אך ורק ליצירת קשר ולמתן השירות. עומדות לך זכויות עיון, תיקון ומחיקה לפי חוק הגנת הפרטיות, התשמ"א-1981. לפרטים ראו <a href="privacy.html">מדיניות הפרטיות</a>.
+        </p>
+      </div>
+    </section>
+
     <!-- FINAL CTA -->
     <section class="final-cta reveal">
       <h2>תפסיקו לבזבז שעות על אקסלים.</h2>
       <p>פתחו חשבון, העלו את האקסל של הלקוח הבא שלכם, ותראו את ההבדל. אם זה לא מתאים לכם, סגרו והמשיכו הלאה. אם כן, נעלתם את המחיר הכי נמוך שיהיה למערכת הזו אי פעם.</p>
       <div class="hero-actions">
         <a href="https://app.orimipuy.com/auth" target="_blank" rel="noopener" class="btn-primary">פתחו חשבון בחינם</a>
-        <a href="https://wa.me/972544240213?text=היי%20אורי%2C%20יש%20לי%20שאלה%20על%20המערכת%20ליועצים" target="_blank" rel="noopener" class="btn-ghost">דברו איתי קודם</a>
+        <a href="#lead" class="btn-ghost">או השאירו פרטים ואחזור אליכם</a>
       </div>
     </section>
 
