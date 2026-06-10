@@ -770,6 +770,164 @@
       line-height: 1.7;
     }
 
+    /* LAMP — gold light beam header (ported from framer-motion lamp to pure CSS) */
+    .lamp {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      width: 100%;
+      min-height: 60vh;
+      isolation: isolate;
+      z-index: 0;
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+    }
+    .lamp-stage {
+      position: relative;
+      display: flex;
+      width: 100%;
+      flex: 1;
+      transform: scaleY(1.25);
+      align-items: center;
+      justify-content: center;
+      isolation: isolate;
+      z-index: 0;
+    }
+    .lamp-beam-l, .lamp-beam-r {
+      position: absolute;
+      inset: auto;
+      height: 14rem;
+      width: 15rem;
+      opacity: 0.55;
+      transition: width 0.9s var(--ease) 0.2s, opacity 0.9s var(--ease) 0.2s;
+    }
+    .lamp-beam-l {
+      right: 50%;
+      background-image: conic-gradient(from 70deg at center top, var(--gold), transparent, transparent);
+    }
+    .lamp-beam-r {
+      left: 50%;
+      background-image: conic-gradient(from 290deg at center top, transparent, transparent, var(--gold));
+    }
+    .lamp.in .lamp-beam-l, .lamp.in .lamp-beam-r { width: 30rem; opacity: 1; }
+    .lamp-beam-l .m1 { position: absolute; width: 100%; left: 0; bottom: 0; height: 10rem; background: var(--bg); z-index: 20; -webkit-mask-image: linear-gradient(to top, white, transparent); mask-image: linear-gradient(to top, white, transparent); }
+    .lamp-beam-l .m2 { position: absolute; width: 10rem; height: 100%; left: 0; bottom: 0; background: var(--bg); z-index: 20; -webkit-mask-image: linear-gradient(to right, white, transparent); mask-image: linear-gradient(to right, white, transparent); }
+    .lamp-beam-r .m1 { position: absolute; width: 10rem; height: 100%; right: 0; bottom: 0; background: var(--bg); z-index: 20; -webkit-mask-image: linear-gradient(to left, white, transparent); mask-image: linear-gradient(to left, white, transparent); }
+    .lamp-beam-r .m2 { position: absolute; width: 100%; right: 0; bottom: 0; height: 10rem; background: var(--bg); z-index: 20; -webkit-mask-image: linear-gradient(to top, white, transparent); mask-image: linear-gradient(to top, white, transparent); }
+
+    .lamp-floor { position: absolute; top: 50%; height: 12rem; width: 100%; transform: translateY(3rem) scaleX(1.5); background: var(--bg); filter: blur(40px); z-index: 0; }
+    .lamp-haze { position: absolute; top: 50%; z-index: 50; height: 12rem; width: 100%; background: transparent; opacity: 0.1; backdrop-filter: blur(12px); }
+    .lamp-spot { position: absolute; inset: auto; z-index: 50; height: 9rem; width: 28rem; transform: translateY(-50%); border-radius: 9999px; background: var(--gold); opacity: 0.5; filter: blur(64px); }
+    .lamp-spot2 { position: absolute; inset: auto; z-index: 30; height: 9rem; width: 8rem; transform: translateY(-6rem); border-radius: 9999px; background: var(--gold-bright); filter: blur(40px); transition: width 0.9s var(--ease) 0.2s; }
+    .lamp.in .lamp-spot2 { width: 16rem; }
+    .lamp-line { position: absolute; inset: auto; z-index: 50; height: 2px; width: 15rem; transform: translateY(-7rem); background: var(--gold-bright); box-shadow: 0 0 24px 2px var(--gold-glow); transition: width 0.9s var(--ease) 0.2s; }
+    .lamp.in .lamp-line { width: 30rem; }
+    .lamp-topmask { position: absolute; inset: auto; z-index: 40; height: 11rem; width: 100%; transform: translateY(-12.5rem); background: var(--bg); }
+
+    .lamp-content {
+      position: relative;
+      z-index: 50;
+      transform: translateY(-13rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 22px;
+      text-align: center;
+    }
+    .lamp-content .label {
+      font-size: 0.78rem; letter-spacing: 0.36em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 16px;
+      opacity: 0; transform: translateY(50px);
+      transition: opacity 0.8s var(--ease) 0.3s, transform 0.8s var(--ease) 0.3s;
+    }
+    .lamp-content h2 {
+      font-family: 'Heebo', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 800; letter-spacing: -0.025em;
+      line-height: 1.08;
+      background: linear-gradient(180deg, #fff 0%, var(--gold-soft) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      opacity: 0; transform: translateY(60px);
+      transition: opacity 0.8s var(--ease) 0.4s, transform 0.8s var(--ease) 0.4s;
+    }
+    .lamp-content p {
+      margin-top: 16px;
+      max-width: 540px;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      opacity: 0; transform: translateY(60px);
+      transition: opacity 0.8s var(--ease) 0.5s, transform 0.8s var(--ease) 0.5s;
+    }
+    .lamp.in .lamp-content .label,
+    .lamp.in .lamp-content h2,
+    .lamp.in .lamp-content p { opacity: 1; transform: none; }
+
+    /* PRODUCT TOUR — flowing screenshots, no frames */
+    .tour {
+      margin-top: -9rem;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 110px;
+    }
+    .tour-row {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 52px;
+      align-items: center;
+    }
+    .tour-row:nth-child(even) .tour-text { order: 2; }
+    .tour-row:nth-child(even) .tour-shot { order: 1; }
+    .tour-text .tag {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold-bright);
+      padding: 5px 14px; border-radius: 999px;
+      background: rgba(212,175,55,0.10);
+      border: 1px solid rgba(212,175,55,0.28);
+      margin-bottom: 18px;
+    }
+    .tour-text h3 {
+      font-family: 'Heebo', sans-serif;
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+      font-weight: 800; letter-spacing: -0.02em;
+      line-height: 1.15; margin-bottom: 14px;
+    }
+    .tour-text p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.75; }
+    .tour-shot { position: relative; }
+    .tour-shot::before {
+      content: '';
+      position: absolute; inset: -14%;
+      background: radial-gradient(circle at 50% 42%, var(--gold-glow), transparent 62%);
+      filter: blur(60px);
+      opacity: 0.55;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .tour-shot .frame {
+      position: relative;
+      z-index: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 28px 70px rgba(0,0,0,0.6);
+      background: #0c0c0f;
+      min-height: 170px;
+    }
+    .tour-shot img { display: block; width: 100%; height: auto; position: relative; z-index: 1; }
+    .tour-shot .ph {
+      position: absolute; inset: 0;
+      display: grid; place-items: center;
+      color: var(--text-faint); font-size: 0.9rem;
+      text-align: center; padding: 30px;
+      background: linear-gradient(165deg, rgba(212,175,55,0.05), rgba(255,255,255,0.015));
+    }
+
     /* LEAD FORM */
     .lead {
       position: relative;
@@ -919,6 +1077,13 @@
       .scene { padding: 32px 24px; }
       .scene p { font-size: 1rem; }
       .stays { grid-template-columns: 1fr; padding: 40px 28px; gap: 28px; }
+
+      .tour { margin-top: -5rem; gap: 64px; }
+      .tour-row { grid-template-columns: 1fr; gap: 24px; }
+      .tour-row:nth-child(even) .tour-text { order: 1; }
+      .tour-row:nth-child(even) .tour-shot { order: 2; }
+      .lamp { min-height: 52vh; }
+      .lamp-content { transform: translateY(-11rem); }
     }
 
     @media (max-width: 560px) {
@@ -935,6 +1100,15 @@
       .final-cta { padding: 56px 24px; }
       .lead { padding: 36px 22px; }
       .lead-form .field-row { grid-template-columns: 1fr; }
+
+      .lamp { min-height: 46vh; }
+      .lamp-beam-l, .lamp-beam-r { height: 11rem; }
+      .lamp.in .lamp-beam-l, .lamp.in .lamp-beam-r { width: 19rem; }
+      .lamp.in .lamp-line { width: 19rem; }
+      .lamp-spot { width: 18rem; }
+      .lamp-content { transform: translateY(-10rem); }
+      .lamp-content p { font-size: 1rem; }
+      .tour { margin-top: -4rem; }
 
       .topnav { top: 10px; max-width: 94%; padding: 5px; }
       .topnav .brand img { width: 36px; height: 36px; }
@@ -1133,6 +1307,141 @@
       </div>
     </section>
 
+
+    <!-- PRODUCT TOUR (lamp header + flowing screenshots) -->
+    <section class="section" id="tour">
+      <div class="lamp reveal">
+        <div class="lamp-stage">
+          <div class="lamp-beam-l"><div class="m1"></div><div class="m2"></div></div>
+          <div class="lamp-beam-r"><div class="m1"></div><div class="m2"></div></div>
+          <div class="lamp-floor"></div>
+          <div class="lamp-haze"></div>
+          <div class="lamp-spot"></div>
+          <div class="lamp-spot2"></div>
+          <div class="lamp-line"></div>
+          <div class="lamp-topmask"></div>
+        </div>
+        <div class="lamp-content">
+          <span class="label">סיור במערכת</span>
+          <h2>ככה זה נראה מבפנים.</h2>
+          <p>כל טאב שאתם והלקוח עובדים איתו, בדיוק כמו שהוא על המסך.</p>
+        </div>
+      </div>
+
+      <div class="tour">
+        <div class="tour-row reveal">
+          <div class="tour-text">
+            <span class="tag">טאב מיפוי</span>
+            <h3>כל הכסף שלו, מסודר לבד</h3>
+            <p>מעלים את דוחות האשראי והעו"ש, והמערכת מפזרת כל עסקה לקטגוריה. במקום שעה באקסל, יש לכם תמונה כלכלית מלאה של הלקוח תוך דקות, עם פירוט הוצאות לפי קטגוריה והכנסות שנכנסו.</p>
+          </div>
+          <div class="tour-shot">
+            <div class="frame">
+              <div class="ph">צילום: מיפוי הוצאות לפי קטגוריה<br>(screenshots/mapping-categories.png)</div>
+              <img src="screenshots/mapping-categories.png" alt="טאב מיפוי - הוצאות לפי קטגוריה" loading="lazy" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-row reveal">
+          <div class="tour-text">
+            <span class="tag">תזרים חודשי</span>
+            <h3>תזרים נטו, מתעדכן חי</h3>
+            <p>הכנסות מול הוצאות בכל רגע, עם תזרים חודשי נטו שמתעדכן לבד ככל שמזינים נתונים. הלקוח רואה בדיוק כמה נשאר לו ביד בסוף החודש, בלי לחשב כלום.</p>
+          </div>
+          <div class="tour-shot">
+            <div class="frame">
+              <div class="ph">צילום: תזרים חודשי נטו<br>(screenshots/cashflow.png)</div>
+              <img src="screenshots/cashflow.png" alt="תזרים חודשי נטו - עדכון חי" loading="lazy" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-row reveal">
+          <div class="tour-text">
+            <span class="tag">תקציב חודשי</span>
+            <h3>תכנון מול ביצוע, חודש בחודשו</h3>
+            <p>בונים תקציב לחודש, מייבאים את דוח האשראי של אותו חודש, ורואים בדיוק איפה הלקוח עמד בתכנון ואיפה חרג. הכל מסונכרן, בלי לעבוד פעמיים.</p>
+          </div>
+          <div class="tour-shot">
+            <div class="frame">
+              <div class="ph">צילום: תקציב חודשי תכנון מול ביצוע<br>(screenshots/monthly-budget.png)</div>
+              <img src="screenshots/monthly-budget.png" alt="תקציב חודשי - תכנון מול ביצוע" loading="lazy" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-row reveal">
+          <div class="tour-text">
+            <span class="tag">מגמות</span>
+            <h3>לאן הלקוח הולך, לא רק איפה הוא</h3>
+            <p>ניתוח שנתי של הכנסות מול הוצאות לאורך החודשים, עם סך הכל YTD ושיעור החיסכון. כאן רואים אם הלקוח באמת שומר על יציבות, ועל מה כדאי לעצור בפגישה הבאה.</p>
+          </div>
+          <div class="tour-shot">
+            <div class="frame">
+              <div class="ph">צילום: מגמות, ניתוח שנתי<br>(screenshots/trends.png)</div>
+              <img src="screenshots/trends.png" alt="מגמות - ניתוח שנתי" loading="lazy" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-row reveal">
+          <div class="tour-text">
+            <span class="tag">תיעוד הוצאות</span>
+            <h3>יומן הוצאות מהיר, בלי תלות בייבוא</h3>
+            <p>רושמים כל הוצאה ברגע שהיא קורית ומשייכים לקטגוריה. יומן עצמאי שלא מתחבר לדוחות או לתקציב החודשי, מושלם למעקב יומיומי בין הפגישות.</p>
+          </div>
+          <div class="tour-shot">
+            <div class="frame">
+              <div class="ph">צילום: תיעוד הוצאות<br>(screenshots/expense-log.png)</div>
+              <img src="screenshots/expense-log.png" alt="תיעוד הוצאות" loading="lazy" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-row reveal">
+          <div class="tour-text">
+            <span class="tag">התנהלות עו"ש</span>
+            <h3>כמה באמת נשאר בעו"ש</h3>
+            <p>המספרים מחושבים אוטומטית מהמיפוי. בוחרים כמה מהעודף נשאר בעו"ש, והשאר עובר ליעדים. הלקוח רואה את העודף החודשי והשנתי שחור על גבי לבן.</p>
+          </div>
+          <div class="tour-shot">
+            <div class="frame">
+              <div class="ph">צילום: התנהלות עו"ש<br>(screenshots/checking.png)</div>
+              <img src="screenshots/checking.png" alt="התנהלות עו&quot;ש - עודף חודשי" loading="lazy" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-row reveal">
+          <div class="tour-text">
+            <span class="tag">יעדים</span>
+            <h3>יעד עם תאריך, סכום ומוצר</h3>
+            <p>לא "נחסוך משהו" אלא יעד עם נדרש, נוכחי, תאריך יעד ומוצר השקעה. המערכת מחשבת כמה צריך להפריש כל חודש כדי להגיע, ומראה כמה כבר הושג.</p>
+          </div>
+          <div class="tour-shot">
+            <div class="frame">
+              <div class="ph">צילום: יעדים פיננסיים<br>(screenshots/goals.png)</div>
+              <img src="screenshots/goals.png" alt="יעדים פיננסיים" loading="lazy" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-row reveal">
+          <div class="tour-text">
+            <span class="tag">מחשבון הלוואות</span>
+            <h3>לוח סילוקין מלא בכמה שניות</h3>
+            <p>משכנתא חדשה או איחוד הלוואות? מזינים סכום, ריבית ותקופה ומקבלים תשלום חודשי, סך ריבית ולוח סילוקין מלא. מציגים תרחישים מול הלקוח ומחליטים יחד.</p>
+          </div>
+          <div class="tour-shot">
+            <div class="frame">
+              <div class="ph">צילום: מחשבון הלוואות<br>(screenshots/loans.png)</div>
+              <img src="screenshots/loans.png" alt="מחשבון הלוואות" loading="lazy" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- PRICING -->
     <section class="section">
