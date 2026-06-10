@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>האם נכון לתת מקום עודף בתיק לסקטור הטכנולוגיה? | הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="חברות הטכנולוגיה עשו תשואות פנומנליות בשני העשורים האחרונים. האם נכון לתת לסקטור המוביל משקל יתר בתיק ההשקעות, ומה ההיסטוריה מלמדת אותנו?">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      display: block;
+      margin: 0 auto 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1rem;
+      color: var(--black);
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      color: var(--gray-medium);
+      margin-bottom: 2rem;
+      line-height: 1.85;
+      border-right: 4px solid var(--gold);
+      padding-right: 1.2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .tip-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .tip-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .tip-header h3 {
+      font-size: 1.3rem;
+      color: var(--black);
+      margin: 0;
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      color: var(--gray-medium);
+    }
+
+    .sectors-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .sectors-table td {
+      padding: 0.7rem 0.5rem;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .sectors-table td:first-child {
+      font-weight: 700;
+      color: var(--gold);
+      width: 80px;
+    }
+
+    .note-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 2.5rem 0;
+      border-right: 4px solid var(--gold);
+    }
+
+    .note-box p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .disclaimer {
+      font-size: 0.88rem;
+      color: var(--gray-text);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    footer {
+      background: var(--gray-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>האם נכון לתת מקום עודף בתיק לסקטור הטכנולוגיה?</h1>
+
+    <img src="tech-sector.png" alt="אדם בצומת דרכים בין עיר טכנולוגיה עתידנית לתעשייה מסורתית, על איזה סקטור להמר" class="hero-image">
+
+    <p class="intro">חברות הטכנולוגיה עשו תשואות פנומנליות בכמעט שני העשורים האחרונים, והשאלה שנשאלת מכך היא האם זה נכון לתת להן מקום עודף בתיק ההשקעות שלנו.</p>
+
+    <h2>התעשייה שמובילה היום היא לא בהכרח התעשייה שתוביל בעשור הבא</h2>
+
+    <p>אם נסתכל אחורה, נראה שהסקטור המוביל מתחלף כל הזמן:</p>
+
+    <div class="tip-box">
+      <table class="sectors-table">
+        <tr><td>1954</td><td>הסקטור המוביל היה מטוסים</td></tr>
+        <tr><td>1974</td><td>הסקטור המוביל היה זהב</td></tr>
+        <tr><td>2004</td><td>הסקטור המוביל היה פחם</td></tr>
+      </table>
+    </div>
+
+    <p>בכל אחד מהעשורים האלו הסקטורים האלה הניבו תשואה שגבוהה מ-25%. אבל ההיסטוריה מראה שסקטור שמנצח בעשור מסוים נוטה לעשות תשואת חסר מול השוק, בערך בממוצע של 2.6% בעשור שאחריו.</p>
+
+    <h2>למה זה קורה?</h2>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <h3>המחיר כבר מגלם את הציפיות</h3>
+      </div>
+      <p>כשסקטור מסוים נראה כמו "הדבר הבא", לרוב המחיר של המניות שלו כבר גבוה מאוד. כדי שהמשקיע ירוויח מההשקעה הזאת מעבר לממוצע, החברות צריכות להצליח אפילו יותר מהציפיות הגבוהות שכבר קיימות בשוק.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <h3>צמיחה של תעשייה היא לא תמיד צמיחה ברווח</h3>
+      </div>
+      <p>תעשיות צומחות מושכות המון תחרות ומאלצות חברות לגייס עוד ועוד הון, מה שיכול לדלל את הרווח שנשאר לכל מניה. בסופו של דבר, מה שחשוב למשקיע זה הרווח למניה ולא רק כמה התעשייה גדלה באופן כללי.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <h3>המרדף אחרי הטרנד</h3>
+      </div>
+      <p>כשהשקעה הופכת לטרנד, הרוב המוחלט של האנשים נכנסים מאוחר מדי. זה גורם לכולם להיכנס כשהמחיר כבר יקר, ואז הם חווים לרוב את הירידות שבאות אחרי השיא.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <h3>סיכון ספציפי</h3>
+      </div>
+      <p>מתן משקל יתר לסקטור חושף את התיק לסיכון ספציפי לתעשייה (כמו רגולציה או שיבוש טכנולוגי) שאינו מפוצה בתשואה עודפת צפויה. יש הטוענים שאם רוצים להגדיל את צפי התשואה, עדיף להטות את התיק לעבר מניות "זולות" (Value) בתוך כל התעשיות, במקום להמר על סקטור אחד.</p>
+    </div>
+
+    <h2>מצד שני...</h2>
+
+    <p>ב-15 השנים האחרונות מדד הנאסד"ק (שעוקב ברובו המוחלט אחרי חברות טכנולוגיה) עשה תשואה ממוצעת של 20% בשנה, ולא נראה שחברות הטכנולוגיה הולכות לעצור או להפסיק להרוויח ולצמוח. אני בטוח שיש עוד המון נתונים וניתוחים שאפשר לעשות לכאן או לכאן.</p>
+
+    <div class="note-box">
+      <p>אני אישית כן נותן מקום בתיק שלי למדד הנאסד"ק, וככה אני קצת חורג מהגישה של השקעה פאסיבית מוחלטת, אבל שומר על זה שהבסיס הרחב של התיק נמצא במדד עולמי רחב שחושף אותי כמה שיותר לכלכלה העולמית.</p>
+    </div>
+
+    <p>אני אשמח לשמוע את דעתכם בנושא, והאם אתם מאמינים ששווה לתת לסקטור מוביל משקל יתר בתיק?</p>
+
+    <div class="cta-box">
+      <h3>רוצים לבנות תיק שמתאים לכם?</h3>
+      <p>ליווי אישי שיעזור לכם להבין סיכון, פיזור ובניית תיק לטווח ארוך</p>
+      <a href="program.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+
+    <p class="disclaimer">מה שנכתב לעיל הוא לטובת שיתוף דעה וידע בלבד והוא לא המלצה או ייעוץ השקעות.</p>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+
+  <script src="cookie-consent.js" defer></script>
+</body>
+</html>
