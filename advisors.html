@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>הכלכלן של הבית | מערכת ליווי פיננסי למלווים ויועצים</title>
+<meta name="description" content="מערכת שהופכת דפי אשראי לתמונה פיננסית מלאה בדקות, ומראה לך את כל הלקוחות שלך במסך אחד, גם בין הפגישות. נבנתה על ידי מלווה פיננסי פעיל.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0F0F0F;
+    --surface2: #1A1A1A;
+    --surface3: #242424;
+    --line: #2A2A2A;
+    --gold: #C9A86C;
+    --gold-light: #E0C896;
+    --gold-dark: #A88844;
+    --txt: #F0EDEA;
+    --muted: #A99F93;
+    --income: #4ADE80;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--txt);
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: rgba(15, 15, 15, 0.92);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+  }
+  .header-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: baseline; gap: 12px; text-decoration: none; color: inherit; }
+  .brand .he { font-size: 22px; font-weight: 700; }
+  .brand .en { font-size: 11px; letter-spacing: 0.3em; color: var(--gold); font-weight: 500; }
+  .site-links { display: flex; align-items: center; gap: 2px; }
+  .site-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 30px;
+    white-space: nowrap;
+    transition: color 0.2s, background 0.2s;
+  }
+  .site-links a:hover { color: var(--txt); background: var(--surface2); }
+  .header-cta {
+    background: var(--gold);
+    color: #141310;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 10px 22px;
+    border-radius: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .header-cta:hover { background: var(--gold-light); }
+
+  /* Hero */
+  .hero {
+    padding: 96px 0 80px;
+    text-align: center;
+    background: radial-gradient(900px 500px at 50% -10%, #1D1810 0%, var(--bg) 70%);
+  }
+  .kicker {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    border: 1px solid var(--line);
+    background: var(--surface2);
+    border-radius: 40px;
+    padding: 8px 22px;
+    margin-bottom: 34px;
+  }
+  h1 {
+    font-size: clamp(34px, 6vw, 58px);
+    font-weight: 900;
+    line-height: 1.25;
+    max-width: 800px;
+    margin: 0 auto 26px;
+    text-wrap: balance;
+  }
+  h1 .gold { color: var(--gold); }
+  .hero .sub {
+    font-size: clamp(17px, 2.5vw, 21px);
+    color: var(--muted);
+    max-width: 680px;
+    margin: 0 auto 44px;
+    text-wrap: balance;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: #141310;
+    font-size: 20px;
+    font-weight: 800;
+    padding: 18px 52px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 16px 50px rgba(201, 168, 108, 0.25);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .cta-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .cta-note { margin-top: 18px; font-size: 15px; color: var(--muted); }
+  .proof {
+    margin-top: 40px;
+    font-size: 15px;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  /* Sections */
+  section { padding: 84px 0; }
+  section.alt { background: var(--surface2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  h2 {
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 14px;
+    text-wrap: balance;
+  }
+  .section-sub {
+    text-align: center;
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 640px;
+    margin: 0 auto 56px;
+    text-wrap: balance;
+  }
+
+  /* Pain cards */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card {
+    background: var(--surface2);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 34px 28px;
+  }
+  section.alt .card { background: var(--surface3); }
+  .card .icon { margin-bottom: 18px; color: var(--gold); }
+  .card .icon svg { width: 38px; height: 38px; stroke: var(--gold); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .card h3 { font-size: 21px; font-weight: 700; margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: 16px; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: step; }
+  .step {
+    background: var(--surface3);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 34px 28px;
+    position: relative;
+  }
+  .step .n {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #141310;
+    font-weight: 800;
+    font-size: 22px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+  }
+  .step h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+  .step p { color: var(--muted); font-size: 16px; }
+
+  /* Features */
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .feature {
+    background: var(--surface2);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px 24px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .feature .dot {
+    flex-shrink: 0;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 8px;
+  }
+  .feature h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .feature p { color: var(--muted); font-size: 15px; }
+
+  /* Founder */
+  .founder {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--surface2);
+    border: 1px solid var(--line);
+    border-right: 4px solid var(--gold);
+    border-radius: 18px;
+    padding: 44px 40px;
+  }
+  .founder p { font-size: 18px; color: var(--txt); margin-bottom: 16px; }
+  .founder p:last-child { margin-bottom: 0; }
+  .founder .muted { color: var(--muted); font-size: 16px; }
+
+  /* FAQ */
+  .faq { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+  .faq details {
+    background: var(--surface3);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 24px;
+  }
+  .faq summary {
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .faq summary::after { content: "+"; color: var(--gold); font-size: 24px; font-weight: 400; }
+  .faq details[open] summary::after { content: "–"; }
+  .faq details p { color: var(--muted); margin-top: 12px; font-size: 16px; }
+
+  /* Final CTA */
+  .final { text-align: center; padding: 96px 0; background: radial-gradient(700px 400px at 50% 110%, #1D1810 0%, var(--bg) 70%); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 30px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer .en { letter-spacing: 0.25em; color: var(--gold); font-size: 12px; margin-top: 6px; }
+  .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; margin-bottom: 16px; }
+  .footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  @media (max-width: 820px) {
+    .cards, .steps, .features { grid-template-columns: 1fr; }
+    .hero { padding: 64px 0 56px; }
+    section { padding: 60px 0; }
+    .header-cta { font-size: 13px; padding: 9px 16px; }
+    .brand .en { display: none; }
+    .site-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="index.html">
+      <span class="he">הכלכלן של הבית</span>
+      <span class="en">THE HOME ECONOMIST</span>
+    </a>
+    <nav class="site-links">
+      <a href="index.html">דף הבית</a>
+      <a href="blog.html">בלוג</a>
+      <a href="program.html">תוכנית הליווי</a>
+    </nav>
+    <a class="header-cta" href="#demo">לתיאום הדגמה</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">מערכת ליווי פיננסי · למלווים וליועצים</div>
+    <h1>תפסיקו לבנות תיקים באקסל.<br><span class="gold">תתחילו ללוות.</span></h1>
+    <p class="sub">הכלכלן של הבית הופך דפי אשראי לתמונה פיננסית מלאה בדקות, ומראה לך את כל הלקוחות שלך במסך אחד. גם בין הפגישות.</p>
+    <a class="cta-btn" href="#demo">לתיאום הדגמה חיה</a>
+    <div class="cta-note">חצי שעה על מסך חי. בלי עלות ובלי התחייבות.</div>
+    <div class="proof">נבנתה על ידי מלווה פיננסי פעיל · 20 משתמשים פעילים במערכת</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>מכירים את זה?</h2>
+    <p class="section-sub">שלושת הדברים שגוזלים הכי הרבה מכל מלווה פיננסי:</p>
+    <div class="cards">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>יותר משעה על כל תיק</h3>
+        <p>דפי אשראי, העתקה לאקסל, סידור קטגוריות, תיקון שורות שהתפרקו. עבודה טכנית שאף אחד לא משלם עליה.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><circle cx="12" cy="12" r="2.5"/><path d="M4 20L20 4"/></svg></div>
+        <h3>חושך בין הפגישות</h3>
+        <p>אין לדעת אם הלקוח מתעד, אם התקציב חי או נזנח. הכל מתגלה רק בפגישה הבאה, כשכבר איבדתם שבועיים.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 21H5a1 1 0 01-1-1V4a1 1 0 011-1h9"/><path d="M18 15l3-3-3-3"/><path d="M21 12h-9"/></svg></div>
+        <h3>נטישה שקטה</h3>
+        <p>לקוחות שמאבדים מומנטום בין פגישות פשוט נעלמים. פחות הכנסה, פחות סיפורי הצלחה, יותר התחלות מאפס.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>איך זה עובד</h2>
+    <p class="section-sub">שלושה צעדים, ואתה חוזר לעשות את מה שאתה באמת טוב בו:</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>הלקוח מעלה קובץ</h3>
+        <p>דוח אשראי או בנק נכנס למערכת, והיא מפענחת ומקטלגת אוטומטית: מנוע זיהוי, מאגר של אלפי בתי עסק ובינה מלאכותית.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>התיעוד רץ לבד</h3>
+        <p>הלקוח מתעד מהטלפון ביומיום, כולל קליטה אוטומטית של תשלומים בנייד. מינימום הקלדות, מקסימום עקביות.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>אתה רואה הכל</h3>
+        <p>דשבורד אחד עם כל הלקוחות: מי בתנועה, מי נתקע ומי צריך אותך עכשיו. ודוח שבועי אוטומטי במייל, אליך ואל הלקוח.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>מה יש בפנים</h2>
+    <p class="section-sub">כלי עבודה שלם לליווי, לא עוד אפליקציית תקציב:</p>
+    <div class="features">
+      <div class="feature"><div class="dot"></div><div><h3>דשבורד מלווה</h3><p>כל הלקוחות במסך אחד, עם סטטוס תיעוד ופעילות בזמן אמת.</p></div></div>
+      <div class="feature"><div class="dot"></div><div><h3>צפייה ועריכה בתיק הלקוח</h3><p>בהסכמה מפורשת של הלקוח, כולל עבודה משותפת על התקציב.</p></div></div>
+      <div class="feature"><div class="dot"></div><div><h3>תקציב חודשי חי</h3><p>תכנון מול ביצוע, תשלומים, הלוואות וחסכונות במקום אחד.</p></div></div>
+      <div class="feature"><div class="dot"></div><div><h3>קטלוג אוטומטי</h3><p>מנוע זיהוי עם מאגר אלפי בתי עסק ישראליים ובינה מלאכותית.</p></div></div>
+      <div class="feature"><div class="dot"></div><div><h3>גרפים ומגמות</h3><p>תמונה שנתית, מגמות הוצאה והכנסה, ותכנון שנתי קדימה.</p></div></div>
+      <div class="feature"><div class="dot"></div><div><h3>דוח שבועי אוטומטי</h3><p>סיכום במייל למלווה וללקוח, כולל התרעה כשהתיעוד נעצר.</p></div></div>
+      <div class="feature"><div class="dot"></div><div><h3>וואטסאפ ללקוח</h3><p>הלקוח יכול לתעד ולשאול שאלות ישירות מהוואטסאפ.</p></div></div>
+      <div class="feature"><div class="dot"></div><div><h3>המערכת במיתוג שלך</h3><p>ווייט לייבל מלא. הלקוחות נכנסים לשם, ללוגו ולצבעים של העסק שלך.</p></div></div>
+      <div class="feature"><div class="dot"></div><div><h3>פרטיות ואבטחה</h3><p>כניסה בהזמנה אישית בלבד, והלקוח יכול למחוק את חשבונו ואת נתוניו בכל רגע.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2 style="margin-bottom: 46px;">נבנתה מתוך הליווי, לא במעבדה</h2>
+    <div class="founder">
+      <p>אני אורי, מלווה פיננסי. במשך שנים כל תיק חדש התחיל אצלי ביותר משעה של הקלדות לאקסל, ובין הפגישות לא ידעתי מה קורה אצל הלקוח.</p>
+      <p>אז בניתי לעצמי כלי. היום כל הליווי שלי רץ עליו, עם 20 משתמשים פעילים, ואני פותח אותו גם למלווים ויועצים נוספים.</p>
+      <p class="muted">כל פיצ'ר במערכת נולד מצורך אמיתי בחדר הליווי. לא ממצגת.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 style="margin-bottom: 46px;">שאלות שבטח יש לך</h2>
+    <div class="faq">
+      <details>
+        <summary>הלקוחות שלי לא אנשים של אפליקציות</summary>
+        <p>בדיוק בשביל זה רוב התיעוד קורה לבד: קליטה אוטומטית של תשלומים מהנייד, העלאת קובץ פעם בחודש, ווואטסאפ למי שמעדיף לכתוב הודעה. הלקוח לא צריך "להתמיד באפליקציה", המערכת עובדת בשבילו.</p>
+      </details>
+      <details>
+        <summary>מה עם פרטיות ואבטחה?</summary>
+        <p>הכניסה למערכת בהזמנה אישית בלבד. אתה רואה תיק של לקוח רק אחרי שהוא אישר זאת במפורש, והלקוח יכול למחוק את החשבון ואת כל הנתונים שלו בכל רגע, לצמיתות.</p>
+      </details>
+      <details>
+        <summary>הלקוחות שלי יראו מערכת של מישהו אחר?</summary>
+        <p>לא. המערכת עובדת בווייט לייבל, כלומר כל יועץ מקבל אותה במיתוג שלו: השם שלך, הלוגו שלך והצבעים שלך. הלקוח נכנס למשהו שנראה כמו חלק מהעסק שלך, כי הוא באמת חלק ממנו.</p>
+      </details>
+      <details>
+        <summary>כמה זה עולה?</summary>
+        <p>התמחור פשוט ולפי מספר הלקוחות שלך, בלי הפתעות. נעבור עליו יחד בסוף ההדגמה, אחרי שתראה מה המערכת עושה.</p>
+      </details>
+      <details>
+        <summary>כמה זמן לוקח להתחיל?</summary>
+        <p>באותו יום. מקבלים גישה, מזמינים לקוח ראשון, מעלים קובץ אחד ורואים תיק חי. בלי התקנות ובלי הטמעה.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="demo">
+  <div class="wrap">
+    <h2>רוצה לראות את זה על מסך חי?</h2>
+    <p class="section-sub">חצי שעה, אחד על אחד, על המערכת האמיתית. בלי עלות ובלי התחייבות.</p>
+    <a class="cta-btn" href="https://wa.me/972544240213?text=%D7%94%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%94%D7%93%D7%92%D7%9E%D7%94%20%D7%A9%D7%9C%20%D7%94%D7%9B%D7%9C%D7%9B%D7%9C%D7%9F%20%D7%A9%D7%9C%20%D7%94%D7%91%D7%99%D7%AA" target="_blank" rel="noopener">לתיאום הדגמה בוואטסאפ</a>
+    <div class="cta-note">או במייל: <a href="mailto:ninioori@gmail.com" style="color: var(--gold);">ninioori@gmail.com</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav class="footer-links">
+      <a href="index.html">דף הבית</a>
+      <a href="blog.html">בלוג</a>
+      <a href="program.html">תוכנית הליווי</a>
+      <a href="privacy.html">מדיניות פרטיות</a>
+    </nav>
+    <div>הכלכלן של הבית · מערכת ליווי פיננסי למלווים וליועצים</div>
+    <div class="en">THE HOME ECONOMIST</div>
+  </div>
+</footer>
+
+</body>
+</html>
