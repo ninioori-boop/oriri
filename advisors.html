@@ -180,6 +180,33 @@
   }
   .step h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
   .step p { color: var(--muted); font-size: 16px; }
+  .shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 22px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+  }
+
+  /* Screenshot gallery */
+  .gallery-title {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin: 58px 0 26px;
+  }
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .shot-card {
+    background: var(--surface3);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 14px;
+    margin: 0;
+  }
+  .shot-card img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
+  .shot-card figcaption { color: var(--muted); font-size: 14px; text-align: center; margin-top: 12px; }
 
   /* Features */
   .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -256,7 +283,7 @@
   .footer-links a:hover { color: var(--gold); }
 
   @media (max-width: 820px) {
-    .cards, .steps, .features { grid-template-columns: 1fr; }
+    .cards, .steps, .features, .gallery { grid-template-columns: 1fr; }
     .hero { padding: 64px 0 56px; }
     section { padding: 60px 0; }
     .header-cta { font-size: 13px; padding: 9px 16px; }
@@ -326,17 +353,44 @@
         <div class="n">1</div>
         <h3>הלקוח מעלה קובץ</h3>
         <p>דוח אשראי או בנק נכנס למערכת, והיא מפענחת ומקטלגת אוטומטית: מנוע זיהוי, מאגר של אלפי בתי עסק ובינה מלאכותית.</p>
+        <img class="shot" src="screenshots/mapping-categories.png" alt="מסך מיפוי הוצאות לפי קטגוריה, אחרי קטלוג אוטומטי" width="1701" height="872" loading="lazy">
       </div>
       <div class="step">
         <div class="n">2</div>
         <h3>התיעוד רץ לבד</h3>
         <p>הלקוח מתעד מהטלפון ביומיום, כולל קליטה אוטומטית של תשלומים בנייד. מינימום הקלדות, מקסימום עקביות.</p>
+        <img class="shot" src="screenshots/expense-log.png" alt="מסך תיעוד הוצאות, יומן ההוצאות של הלקוח" width="1646" height="895" loading="lazy">
       </div>
       <div class="step">
         <div class="n">3</div>
         <h3>אתה רואה הכל</h3>
         <p>דשבורד אחד עם כל הלקוחות: מי בתנועה, מי נתקע ומי צריך אותך עכשיו. ודוח שבועי אוטומטי במייל, אליך ואל הלקוח.</p>
+        <img class="shot" src="screenshots/cashflow.png" alt="מסך תזרים חודשי נטו בעדכון חי" width="1693" height="844" loading="lazy">
       </div>
+    </div>
+
+    <h3 class="gallery-title">עוד מסכים מתוך המערכת</h3>
+    <div class="gallery">
+      <figure class="shot-card">
+        <img src="screenshots/monthly-budget.png" alt="מסך תקציב חודשי, תכנון מול ביצוע" width="1671" height="844" loading="lazy">
+        <figcaption>תקציב חודשי, תכנון מול ביצוע</figcaption>
+      </figure>
+      <figure class="shot-card">
+        <img src="screenshots/trends.png" alt="מסך מגמות עם ניתוח שנתי וגרף הכנסות מול הוצאות" width="1586" height="845" loading="lazy">
+        <figcaption>מגמות וניתוח שנתי</figcaption>
+      </figure>
+      <figure class="shot-card">
+        <img src="screenshots/checking.png" alt="מסך התנהלות עובר ושב עם העודף החודשי" width="1646" height="626" loading="lazy">
+        <figcaption>התנהלות עובר ושב</figcaption>
+      </figure>
+      <figure class="shot-card">
+        <img src="screenshots/goals.png" alt="מסך יעדים פיננסיים" width="1614" height="863" loading="lazy">
+        <figcaption>יעדים פיננסיים</figcaption>
+      </figure>
+      <figure class="shot-card">
+        <img src="screenshots/loans.png" alt="מסך מחשבון הלוואות עם לוח סילוקין" width="1636" height="892" loading="lazy">
+        <figcaption>מחשבון הלוואות ולוח סילוקין</figcaption>
+      </figure>
     </div>
   </div>
 </section>
