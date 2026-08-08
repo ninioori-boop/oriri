@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="מאזניים מאוזנים, בצד אחד מטבעות שמסמלים את העתיד ובצד השני מזוודה שמסמלת את החיים היום">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F4"/>
+      <stop offset="1" stop-color="#F1EBDD"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DCBD62"/>
+      <stop offset="1" stop-color="#C9A33F"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <circle cx="600" cy="360" r="300" fill="#C9A33F" opacity="0.07"/>
+  <ellipse cx="600" cy="694" rx="250" ry="18" fill="#111111" opacity="0.06"/>
+
+  <!-- עמוד ובסיס -->
+  <rect x="495" y="644" width="210" height="26" rx="13" fill="#111111"/>
+  <path d="M600,258 L668,650 H532 Z" fill="#111111"/>
+  <circle cx="600" cy="266" r="14" fill="url(#gold)"/>
+
+  <!-- קורה -->
+  <rect x="240" y="250" width="720" height="22" rx="11" fill="#111111"/>
+  <circle cx="330" cy="272" r="9" fill="url(#gold)"/>
+  <circle cx="870" cy="272" r="9" fill="url(#gold)"/>
+
+  <!-- כפות המאזניים -->
+  <g stroke="#111111" stroke-width="4" stroke-linecap="round">
+    <line x1="330" y1="272" x2="238" y2="428"/>
+    <line x1="330" y1="272" x2="422" y2="428"/>
+    <line x1="870" y1="272" x2="778" y2="428"/>
+    <line x1="870" y1="272" x2="962" y2="428"/>
+  </g>
+  <path d="M225,430 H435 L403,472 H257 Z" fill="#1c1c1c"/>
+  <path d="M765,430 H975 L943,472 H797 Z" fill="#1c1c1c"/>
+
+  <!-- מטבעות: העתיד -->
+  <g>
+    <ellipse cx="330" cy="428" rx="52" ry="13" fill="#A98429"/>
+    <rect x="278" y="408" width="104" height="20" fill="#B08E30"/>
+    <ellipse cx="330" cy="408" rx="52" ry="13" fill="url(#gold)"/>
+    <ellipse cx="330" cy="400" rx="52" ry="13" fill="#A98429"/>
+    <rect x="278" y="380" width="104" height="20" fill="#B08E30"/>
+    <ellipse cx="330" cy="380" rx="52" ry="13" fill="url(#gold)"/>
+    <ellipse cx="330" cy="372" rx="52" ry="13" fill="#A98429"/>
+    <rect x="278" y="352" width="104" height="20" fill="#B08E30"/>
+    <ellipse cx="330" cy="352" rx="52" ry="13" fill="url(#gold)"/>
+  </g>
+
+  <!-- מזוודה: היום -->
+  <g>
+    <path d="M846,346 V334 Q846,318 870,318 Q894,318 894,334 V346" fill="none" stroke="#111111" stroke-width="7" stroke-linecap="round"/>
+    <rect x="798" y="344" width="144" height="86" rx="12" fill="url(#gold)" stroke="#A98429" stroke-width="3"/>
+    <rect x="798" y="376" width="144" height="12" fill="#A98429" opacity="0.5"/>
+    <rect x="858" y="370" width="24" height="24" rx="5" fill="#111111"/>
+  </g>
+
+  <!-- תוויות -->
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="330" y="552" font-size="40" font-weight="700" fill="#1a1a1a">העתיד</text>
+    <text x="330" y="594" font-size="24" fill="#6f6a60">חיסכון והשקעות</text>
+    <text x="870" y="552" font-size="40" font-weight="700" fill="#1a1a1a">היום</text>
+    <text x="870" y="594" font-size="24" fill="#6f6a60">חוויות, לימודים, חיים</text>
+  </g>
+</svg>

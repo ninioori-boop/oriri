@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="גרף שמשווה בין תעשייה שכולם מדברים עליה שהמחיר שלה כבר עלה, לבין תעשייה שאף אחד לא צפה שמזנקת בסוף">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F4"/>
+      <stop offset="1" stop-color="#F1EBDD"/>
+    </linearGradient>
+    <linearGradient id="goldline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#DCBD62"/>
+      <stop offset="1" stop-color="#C9A33F"/>
+    </linearGradient>
+    <filter id="soft2" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#111111" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bg2)"/>
+
+  <!-- רשת -->
+  <g stroke="#E4DDCD" stroke-width="2" stroke-dasharray="8 11">
+    <line x1="120" y1="530" x2="1080" y2="530"/>
+    <line x1="120" y1="400" x2="1080" y2="400"/>
+    <line x1="120" y1="270" x2="1080" y2="270"/>
+  </g>
+  <line x1="110" y1="642" x2="1090" y2="642" stroke="#DBD3C0" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- הקו של מה שכולם מדברים עליו -->
+  <path d="M150,585 C280,575 360,500 460,410 C560,320 700,300 860,297 C950,295 1000,297 1050,300"
+        fill="none" stroke="url(#goldline)" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- הקו של התעשייה השקטה -->
+  <path d="M150,618 C330,610 500,600 670,585 C790,574 865,505 940,360 C985,272 1018,215 1050,175"
+        fill="none" stroke="#1f1f1f" stroke-width="10" stroke-linecap="round"/>
+
+  <circle cx="1050" cy="300" r="13" fill="#C9A33F" stroke="#FBF9F4" stroke-width="5"/>
+  <circle cx="1050" cy="175" r="13" fill="#1f1f1f" stroke="#FBF9F4" stroke-width="5"/>
+
+  <!-- בועת הכותרות -->
+  <g filter="url(#soft2)">
+    <rect x="306" y="136" width="348" height="150" rx="18" fill="#FFFFFF"/>
+    <polygon points="468,280 514,280 474,338" fill="#FFFFFF"/>
+  </g>
+
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="480" y="210" font-size="58" font-weight="800" fill="#C9A33F" letter-spacing="2">AI</text>
+    <text x="480" y="254" font-size="25" fill="#7a746a">כולם מדברים על זה</text>
+  </g>
+
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="end" font-size="28" font-weight="600">
+    <text x="1026" y="130" fill="#1f1f1f">מה שאף אחד לא צפה</text>
+    <text x="1026" y="356" fill="#A98429">מה שכולם מדברים עליו</text>
+  </g>
+</svg>
