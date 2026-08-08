@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>הכלכלן של הבית — פיילוט עיצוב v3</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="description" content="פיילוט עיצוב חדש עם רקע shader אנימטיבי - הכלכלן של הבית">
+  <meta name="description" content="פיילוט עיצוב חדש עם רקע גרדיאנט - הכלכלן של הבית">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -309,7 +309,8 @@
     .wa-float svg { width: 30px; height: 30px; fill: #fff; }
 
     /* ============================================
-       HERO with WebGL shader background
+       HERO with gradient background
+       "background rowds shop v1" — 21st.dev Gradient Builder
        ============================================ */
     .hero {
       position: relative;
@@ -317,15 +318,31 @@
       height: 100vh;
       min-height: 720px;
       overflow: hidden;
-      background: #000;
+      background: #16130E;
     }
-    .hero canvas {
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .hero-bg__base {
+      position: absolute;
+      inset: 0;
+      background-color: #16130E;
+      background-image:
+        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.130'/></svg>"),
+        linear-gradient(170deg, #16130E 0%, #372F20 32%, #9C8D63 100%);
+      background-size: 120px 120px, auto;
+      background-blend-mode: overlay, normal;
+    }
+    .hero-bg__grain {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-      display: block;
-      touch-action: none;
+      opacity: 0.130;
+      mix-blend-mode: overlay;
     }
     /* darken bottom for text readability + smooth blend into next section */
     .hero::after {
@@ -333,8 +350,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 70% 50% at 50% 30%, transparent 0%, rgba(8,8,10,0.35) 70%),
-        linear-gradient(180deg, rgba(8,8,10,0.0) 50%, rgba(8,8,10,0.85) 92%, var(--bg) 100%);
+        radial-gradient(ellipse 70% 50% at 50% 30%, transparent 0%, rgba(8,8,10,0.18) 75%),
+        linear-gradient(180deg, rgba(8,8,10,0.0) 76%, rgba(8,8,10,0.45) 92%, var(--bg) 100%);
       pointer-events: none;
       z-index: 1;
     }
@@ -825,10 +842,19 @@
   </a>
 
   <!-- ============================================
-       HERO with WebGL animated shader
+       HERO with gradient background
        ============================================ -->
   <section class="hero">
-    <canvas id="shader-canvas" aria-hidden="true"></canvas>
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg__base"></div>
+      <svg class="hero-bg__grain" aria-hidden="true">
+        <filter id="grain-10bf6028">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+          <feColorMatrix type="saturate" values="0"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#grain-10bf6028)"/>
+      </svg>
+    </div>
     <div class="hero-content">
       <div class="welcome-header">
         <img src="ori-welcome.jpeg" alt="אורי ניניו" class="welcome-photo">
@@ -961,174 +987,5 @@
     })();
   </script>
 
-  <!-- ============================================
-       WebGL Shader (cosmic clouds with light streaks)
-       Adapted from Matthias Hurrle (@atzedent) — gold tinted
-       ============================================ -->
-  <script>
-  (function() {
-    const canvas = document.getElementById('shader-canvas');
-    const gl = canvas.getContext('webgl2');
-    if (!gl) {
-      // Fallback: simple gradient if WebGL2 unavailable
-      canvas.style.background = 'radial-gradient(ellipse at 50% 40%, #4a3a14 0%, #1a1208 50%, #000 100%)';
-      return;
-    }
-
-    const vertexSrc = `#version 300 es
-precision highp float;
-in vec4 position;
-void main(){gl_Position=position;}`;
-
-    /* Gold-tinted version of the cosmic clouds shader.
-       Original concept: Matthias Hurrle (@atzedent). */
-    const fragmentSrc = `#version 300 es
-precision highp float;
-out vec4 O;
-uniform vec2 resolution;
-uniform float time;
-#define FC gl_FragCoord.xy
-#define T time
-#define R resolution
-#define MN min(R.x,R.y)
-float rnd(vec2 p){
-  p=fract(p*vec2(12.9898,78.233));
-  p+=dot(p,p+34.56);
-  return fract(p.x*p.y);
-}
-float noise(in vec2 p){
-  vec2 i=floor(p), f=fract(p), u=f*f*(3.-2.*f);
-  float a=rnd(i), b=rnd(i+vec2(1,0)), c=rnd(i+vec2(0,1)), d=rnd(i+1.);
-  return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);
-}
-float fbm(vec2 p){
-  float t=.0, a=1.; mat2 m=mat2(1.,-.5,.2,1.2);
-  for (int i=0;i<5;i++){ t+=a*noise(p); p*=2.*m; a*=.5; }
-  return t;
-}
-float clouds(vec2 p){
-  float d=1., t=.0;
-  for (float i=.0;i<3.;i++){
-    float a=d*fbm(i*10.+p.x*.2+.2*(1.+i)*p.y+d+i*i+p);
-    t=mix(t,d,a); d=a; p*=2./(i+1.);
-  }
-  return t;
-}
-void main(void){
-  vec2 uv=(FC-.5*R)/MN, st=uv*vec2(2,1);
-  vec3 col=vec3(0);
-  float bg=clouds(vec2(st.x+T*.4,-st.y));
-  uv*=1.-.3*(sin(T*.2)*.5+.5);
-  for (float i=1.;i<12.;i++){
-    uv+=.1*cos(i*vec2(.1+.01*i,.8)+i*i+T*.5+.1*uv.x);
-    vec2 p=uv;
-    float d=length(p);
-    /* gold-tinted streaks */
-    col+=.0014/d*(cos(sin(i)*vec3(2.4,1.6,0.6))+1.);
-    float b=noise(i+p+bg*1.731);
-    col+=.0024*b/length(max(p,vec2(b*p.x*.02,p.y)));
-    /* gold cloud body */
-    col=mix(col,vec3(bg*.32, bg*.22, bg*.06), d);
-  }
-  O=vec4(col,1);
-}`;
-
-    function compile(type, src) {
-      const s = gl.createShader(type);
-      gl.shaderSource(s, src);
-      gl.compileShader(s);
-      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
-        console.error(gl.getShaderInfoLog(s));
-      }
-      return s;
-    }
-
-    const vs = compile(gl.VERTEX_SHADER, vertexSrc);
-    const fs = compile(gl.FRAGMENT_SHADER, fragmentSrc);
-    const program = gl.createProgram();
-    gl.attachShader(program, vs);
-    gl.attachShader(program, fs);
-    gl.linkProgram(program);
-    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-      console.error(gl.getProgramInfoLog(program));
-      return;
-    }
-
-    const buffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,1,-1,-1,1,1,1,-1]), gl.STATIC_DRAW);
-    const posLoc = gl.getAttribLocation(program, 'position');
-    gl.enableVertexAttribArray(posLoc);
-    gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
-
-    const uRes = gl.getUniformLocation(program, 'resolution');
-    const uTime = gl.getUniformLocation(program, 'time');
-
-    const isPhone = window.matchMedia('(max-width: 600px)').matches;
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function resize() {
-      // Lower DPR on phones for performance (less battery + smoother)
-      const dprBase = isPhone ? 0.4 : 0.5;
-      const dpr = Math.max(1, dprBase * window.devicePixelRatio);
-      const heroEl = canvas.parentElement;
-      const w = heroEl.clientWidth;
-      const h = heroEl.clientHeight;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      gl.viewport(0, 0, canvas.width, canvas.height);
-    }
-
-    let raf = null;
-    let isVisible = true;
-    let lastTime = 0;
-    function renderOnce(now) {
-      gl.clearColor(0,0,0,1);
-      gl.clear(gl.COLOR_BUFFER_BIT);
-      gl.useProgram(program);
-      gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-      gl.uniform2f(uRes, canvas.width, canvas.height);
-      gl.uniform1f(uTime, now * 1e-3);
-      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    }
-    function loop(now) {
-      lastTime = now;
-      renderOnce(now);
-      raf = requestAnimationFrame(loop);
-    }
-    function startLoop() {
-      if (raf == null && isVisible && !document.hidden) {
-        raf = requestAnimationFrame(loop);
-      }
-    }
-    function stopLoop() {
-      if (raf != null) { cancelAnimationFrame(raf); raf = null; }
-    }
-
-    window.addEventListener('resize', resize);
-    resize();
-
-    if (reducedMotion) {
-      // Render a single static frame instead of animating
-      renderOnce(0);
-    } else {
-      // Pause when hero is offscreen (saves battery on mobile)
-      const heroObs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          isVisible = e.isIntersecting;
-          if (isVisible) startLoop(); else stopLoop();
-        });
-      }, { threshold: 0 });
-      heroObs.observe(canvas.parentElement);
-
-      // Pause when tab is hidden
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) stopLoop(); else startLoop();
-      });
-
-      startLoop();
-    }
-  })();
-  </script>
 </body>
 </html>
