@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="שתי חוגות, אחת עם סימן שאלה שמסמלת את התשואה שאיש לא יודע לחזות, והשנייה בזהב עם מחוג שמוסט אל הקצה הנמוך שמסמלת את דמי הניהול שנמצאים בשליטה שלנו">
+  <defs>
+    <linearGradient id="bgf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F4"/>
+      <stop offset="1" stop-color="#F1EBDD"/>
+    </linearGradient>
+    <linearGradient id="goldf" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#DCBD62"/>
+      <stop offset="1" stop-color="#C9A33F"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bgf)"/>
+  <circle cx="340" cy="300" r="215" fill="#C9A33F" opacity="0.07"/>
+
+  <!-- מה שלא בשליטתנו: התשואה -->
+  <path d="M730.1,225 A150,150 0 1 1 989.9,225" fill="none" stroke="#E2DACA" stroke-width="28" stroke-linecap="round" stroke-dasharray="4 34"/>
+  <text x="860" y="360" text-anchor="middle" font-family="Assistant, 'Segoe UI', Arial, sans-serif" font-size="165" font-weight="800" fill="#CFC6B1">?</text>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="860" y="560" font-size="46" font-weight="700" fill="#8d8677">מה השוק יעשה</text>
+    <text x="860" y="606" font-size="28" fill="#9d9687">אף אחד לא באמת יודע</text>
+  </g>
+
+  <!-- מה שכן בשליטתנו: דמי הניהול -->
+  <path d="M210.1,225 A150,150 0 1 1 469.9,225" fill="none" stroke="#E9E1D0" stroke-width="28" stroke-linecap="round"/>
+  <path d="M210.1,225 A150,150 0 0 1 247.7,181.8" fill="none" stroke="url(#goldf)" stroke-width="28" stroke-linecap="round"/>
+  <line x1="340" y1="300" x2="267.4" y2="207" stroke="#111111" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="340" cy="300" r="24" fill="#111111"/>
+  <circle cx="340" cy="300" r="9" fill="url(#goldf)"/>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle" font-size="27" font-weight="600">
+    <text x="168" y="292" fill="#A98429">נמוך</text>
+    <text x="512" y="292" fill="#B5AE9E">גבוה</text>
+  </g>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="340" y="560" font-size="46" font-weight="700" fill="#1a1a1a">דמי הניהול</text>
+    <text x="340" y="606" font-size="28" fill="#7a746a">זה כן בידיים שלנו</text>
+  </g>
+
+  <!-- שורת הסיכום -->
+  <text x="600" y="700" text-anchor="middle" font-family="Assistant, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#A98429">0.1% בשנה שווה עשרות אלפי שקלים בפנסיה</text>
+</svg>

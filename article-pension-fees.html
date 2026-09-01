@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>האם דמי ניהול בפנסיה זה "מיתוס"? | הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="סוכנות פנסיה גדולה מפרסמת שדמי ניהול הם מיתוס ושצריך לבחור לפי ביצועים. למה זה לא נכון: מה אומרים מחקרי SPIVA, כמה עולה 0.1% לאורך שלושים שנה, ומה באמת בשליטה שלנו.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1.5rem;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      color: var(--gray-medium);
+      margin-bottom: 2.5rem;
+      line-height: 1.85;
+      border-right: 4px solid var(--gold);
+      padding-right: 1.2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .quote-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-right: 4px solid var(--gold);
+    }
+
+    .quote-box p {
+      margin-bottom: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    .quote-box .attribution {
+      display: block;
+      margin-top: 0.8rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--gray-text);
+    }
+
+    .fee-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .fee-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.8rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--gold);
+    }
+
+    .fee-card .fee-gap {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray-medium);
+      margin-bottom: 0.4rem;
+    }
+
+    .fee-card .fee-amount {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.2;
+    }
+
+    .fee-card .fee-note {
+      font-size: 0.98rem;
+      color: var(--gray-text);
+      margin-top: 0.3rem;
+    }
+
+    @media (min-width: 640px) {
+      .fee-cards { grid-template-columns: 1fr 1fr; }
+    }
+
+    .tip-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .tip-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .tip-header h3 {
+      font-size: 1.3rem;
+      color: var(--black);
+      margin: 0;
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      color: var(--gray-medium);
+    }
+
+    .tip-box .read-more {
+      display: inline-block;
+      margin-top: 0.9rem;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .tip-box .read-more:hover {
+      border-bottom-color: var(--gold);
+    }
+
+    .note-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 2.5rem 0;
+      border-right: 4px solid var(--gold);
+    }
+
+    .note-box p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .disclaimer {
+      font-size: 0.88rem;
+      color: var(--gray-text);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    footer {
+      background: var(--gray-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 600px) {
+      .tip-header h3 { font-size: 1.15rem; }
+      .quote-box p { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>האם דמי ניהול בפנסיה זה "מיתוס" כל כך מעצבן?</h1>
+
+    <p class="intro">לאחרונה, כשאני גולל בפיד, כל הזמן קופצת לי פרסומת של סוכנות גדולה שמתעסקת בפנסיה ומדברת על "המיתוס" שנקרא דמי ניהול. מדבר שם המנכ"ל של הסוכנות, דמות מוכרת, ומתחיל לדבר בחוכמה על כמה שדמי ניהול זה מיתוס וכמה צריך לבחור חברת פנסיה לפי ביצועים. אני מאמין שרובכם ראיתם את הפרסומת, אז אני כאן כדי לכתוב למה דמי ניהול הם לא מיתוס.</p>
+
+    <h2>זה הדבר היחיד שאנחנו באמת שולטים עליו</h2>
+
+    <p>ג'ון בוגל אמר את זה הרבה לפניי. אנחנו לא יודעים מה השוק יעשה בשנה הבאה, אף אחד לא יודע. אבל אנחנו כן יודעים בדיוק כמה ייגבו מאיתנו.</p>
+
+    <div class="quote-box">
+      <p>התשואה היא הבטחה שאף אחד לא יכול לתת לנו. דמי הניהול הם ההבטחה היחידה שכן ניתנת מראש, ובכיוון ההפוך.</p>
+    </div>
+
+    <p>ולכן, מבין כל המשתנים שמרכיבים את הפנסיה שלנו, דמי הניהול הם היחיד שנמצא בשליטה שלנו. אנחנו לא יכולים להזיז את השוק, אבל את המספר הזה כן אפשר להוריד בשיחת טלפון אחת.</p>
+
+    <h2>המספר נראה קטן, וזו בדיוק הבעיה</h2>
+
+    <p>0.1%. מי בכלל שם לב לזה. זה נשמע כמו טעות עיגול, לא כמו החלטה כלכלית.</p>
+
+    <p>אבל בואו נפתח מחשבון ונריץ שלושים שנה של הפקדות. ניקח מישהו שמפקיד 2,000 שקל בחודש לפנסיה, עם תשואה ברוטו של 6% בשנה, ונשווה בין דמי ניהול מהצבירה של 0.2% לבין 0.3%. אותם 0.1% בדיוק.</p>
+
+    <div class="fee-cards">
+      <div class="fee-card">
+        <div class="fee-gap">0.2% מול 0.3%</div>
+        <div class="fee-amount">36,000 ₪</div>
+        <div class="fee-note">ההפרש אחרי שלושים שנה</div>
+      </div>
+      <div class="fee-card">
+        <div class="fee-gap">0.1% מול 0.5%</div>
+        <div class="fee-amount">144,000 ₪</div>
+        <div class="fee-note">והפער הזה הוא לגמרי ריאלי</div>
+      </div>
+    </div>
+
+    <p>הכרטיס השני הוא לא תרגיל תיאורטי. 0.5% מהצבירה זה בסביבות המקסימום שמותר לגבות, ו-0.1% זה מה שאפשר להשיג בהסדר טוב. אותו אדם, אותה הפקדה, אותה תשואה, והפרש של כמעט 150 אלף שקל רק בגלל השורה הזאת בדוח.</p>
+
+    <p>וכל זה עוד לפני שדיברנו על דמי ניהול מההפקדה, שהם רכיב נפרד שנגבה מכל שקל שנכנס.</p>
+
+    <h2>"אבל בשביל ביצועים שווה לשלם"</h2>
+
+    <p>זו הטענה המרכזית בפרסומת, אז בואו ניקח אותה ברצינות. לפי מחקרי SPIVA, שבודקים את הנושא הזה שוב ושוב על פני שווקים ותקופות, יותר מ-90% ממנהלי ההשקעות לא מצליחים להכות את מדד הייחוס שלהם לאורך זמן.</p>
+
+    <p>וזה לא בגלל שהם לא חכמים. הם אנשים חכמים מאוד עם מערכות יקרות מאוד. פשוט קשה לנצח את השוק, ומה שכן מצליחים לייצר נאכל בדרך על ידי העמלות.</p>
+
+    <h2>ומי שהיה בפסגה, בדרך כלל לא נשאר שם</h2>
+
+    <p>ומה שיותר מעניין, אם ננסה לבחור את מי שהצליח בחמש השנים האחרונות, סטטיסטית הסיכוי שלו להישאר בפסגה דווקא נמוך יותר.</p>
+
+    <p>לא צריך להאמין לי בעניין הזה. אפשר פשוט לפתוח את טבלאות התשואות של גופי הפנסיה לפי שנים ולראות לבד איך המובילים מתחלפים כל הזמן. הגוף שכולם המליצו עליו בשנה שעברה נמצא באמצע הטבלה השנה, ולהיפך.</p>
+
+    <div class="note-box">
+      <p>אז מה יוצא לנו מזה: הביצועים שמוכרים לנו הם הבטחה על סמך העבר, שהסטטיסטיקה אומרת שכנראה לא תחזור. דמי הניהול, לעומת זאת, נגבים בוודאות מלאה בכל שנה, בלי קשר לשאלה אם השנה הייתה טובה או רעה.</p>
+    </div>
+
+    <h2>וזה בדיוק למה התעשייה הפיננסית כל כך עשירה</h2>
+
+    <p>היא מרוויחה מזה שאנחנו לא יודעים מה האלטרנטיבה. אנחנו משלמים יותר על מוצר שברוב המקרים יביא לנו פחות, ואפילו לא מודעים לזה שהייתה אפשרות אחרת.</p>
+
+    <p>אז לא, דמי ניהול הם לא מיתוס. הם השורה היחידה בפנסיה שאנחנו יכולים לשלוט בה, והיא נגבית כל חודש בין אם שמנו לב אליה ובין אם לא.</p>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <h3>רוצים לדעת איפה בדיוק לבדוק את דמי הניהול שלכם?</h3>
+      </div>
+      <p>כתבתי סדרה שלמה על קרן הפנסיה: מה יש בה, איך קוראים את הדוח, מה חשוב לבדוק ומה לעשות לפני שעוזבים עבודה.</p>
+      <a href="article-pension.html" class="read-more">קרן הפנסיה זה הכסף שלנו אז חשוב שנשים לב אליה ←</a>
+    </div>
+
+    <div class="cta-box">
+      <h3>לא בטוחים כמה אתם משלמים היום?</h3>
+      <p>בואו נעבור יחד על הפנסיה שלכם ונראה מה אפשר לשפר</p>
+      <a href="program.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+
+    <p class="disclaimer">הכתוב אינו מהווה ייעוץ פנסיוני או ייעוץ השקעות ואינו תחליף לייעוץ אישי. שיתוף ידע ודעה בלבד. החישובים בכתבה הם הדגמה בהנחות קבועות ואינם תחזית. תשואות עבר אינן מעידות על תשואות עתיד.</p>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+
+  <script src="cookie-consent.js" defer></script>
+</body>
+</html>
