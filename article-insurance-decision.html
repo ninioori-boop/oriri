@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>למה אנשים כל כך מתעצבנים מהפרק האחרון של "מתחת לבלטות"? | הכלכלן של הבית</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="הפרק על הביטוחים עורר סערה, ולדעתי הוא היה מעולה. על ביטוח נגד קטסטרופות, החפיפה בין קופות החולים לביטוח הפרטי, ולמה ביטוח צריך להיות החלטה רציונלית ולא החלטה מתוך פחד.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gold: #C9A33F;
+      --gold-light: #D4B054;
+      --gray-dark: #2a2a2a;
+      --gray-medium: #4a4a4a;
+      --gray-light: #f5f5f5;
+      --gray-text: #666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .back-link {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 63, 0.4);
+    }
+
+    article {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1.5rem;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      color: var(--gray-medium);
+      margin-bottom: 2.5rem;
+      line-height: 1.85;
+      border-right: 4px solid var(--gold);
+      padding-right: 1.2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .tip-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .tip-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .tip-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 50%;
+      margin-left: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .tip-header h3 {
+      font-size: 1.3rem;
+      color: var(--black);
+      margin: 0;
+    }
+
+    .tip-box p {
+      margin-bottom: 0;
+      color: var(--gray-medium);
+    }
+
+    .tip-box .read-more {
+      display: inline-block;
+      margin-top: 0.9rem;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .tip-box .read-more:hover {
+      border-bottom-color: var(--gold);
+    }
+
+    .quote-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-right: 4px solid var(--gold);
+    }
+
+    .quote-box p {
+      margin-bottom: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    .split-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .split-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.8rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--gold);
+    }
+
+    .split-card.muted {
+      border-top-color: #cfc9ba;
+    }
+
+    .split-card h4 {
+      font-size: 1.25rem;
+      margin-bottom: 0.6rem;
+      color: var(--black);
+    }
+
+    .split-card p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+      color: var(--gray-medium);
+    }
+
+    @media (min-width: 640px) {
+      .split-cards { grid-template-columns: 1fr 1fr; }
+    }
+
+    .note-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 2.5rem 0;
+      border-right: 4px solid var(--gold);
+    }
+
+    .note-box p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(201, 163, 63, 0.3);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+
+    .cta-box p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .disclaimer {
+      font-size: 0.88rem;
+      color: var(--gray-text);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    footer {
+      background: var(--gray-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 600px) {
+      .tip-header h3 { font-size: 1.15rem; }
+      .quote-box p { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">הכלכלן של הבית</div>
+      <a href="blog.html" class="back-link">← חזרה לבלוג</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>למה אנשים כל כך מתעצבנים מהפרק האחרון של "מתחת לבלטות"?</h1>
+
+    <p class="intro">מאז ששודר הפרק על הביטוחים אי אפשר להתעלם מהסערה סביבו. אז לפני שאני אומר מה אני חושב, יש לי כמה שאלות פשוטות למי שכועס.</p>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">1</span>
+        <h3>מה לא נכון בזה שביטוח כדאי לעשות נגד קטסטרופות?</h3>
+      </div>
+      <p>ושכל השאר זה כבר עניין של החלטה.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">2</span>
+        <h3>מה לא נכון בזה שיש חפיפה בין קופות החולים לחברות הפרטיות?</h3>
+      </div>
+      <p>ושרוב האזרחים פשוט לא מודעים לזה.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <span class="tip-number">3</span>
+        <h3>מה לא נכון בזה שהתעשייה הפיננסית בישראל מנצלת את חוסר הידע של הציבור?</h3>
+      </div>
+      <p>מפחידה אותו, וגורמת לו לקנות מוצרים שהוא לא צריך או שלא בהכרח יעילים עבורו.</p>
+    </div>
+
+    <p>הפרק הזה, לדעתי, היה פשוט מעולה.</p>
+
+    <h2>ביטוח זה עניין של החלטה</h2>
+
+    <p>המסר שהכי אהבתי בפרק הוא שביטוח הוא החלטה. יש דברים שחייבים לבטח, וזה כל מה שיגרום לנו לקטסטרופה כלכלית. וכל השאר, זה כבר עניין של החלטה.</p>
+
+    <div class="split-cards">
+      <div class="split-card">
+        <h4>מה שיהרוס אותנו כלכלית</h4>
+        <p>כאן מבטחים. זה לא מקום להתלבטות, כי אלה התרחישים שאין לנו דרך לספוג אותם לבד.</p>
+      </div>
+      <div class="split-card muted">
+        <h4>כל השאר</h4>
+        <p>כאן מחליטים. אפשר לשלם על השקט, ואפשר לקחת את אותו כסף ולהשתמש בו אחרת.</p>
+      </div>
+    </div>
+
+    <p>תחליטו אתם אם אתם רוצים להגן על סיכון מסוים בחיים שלכם ולשלם עליו כל חודש, או לקחת את הכסף הזה, לנצל את החיים כאן ועכשיו ולהשקיע אותו בכל דרך אחרת.</p>
+
+    <div class="quote-box">
+      <p>זו באמת החלטה, וההחלטה הזאת צריכה להיות רציונלית ולא מפחידה.</p>
+    </div>
+
+    <p>אני אישית באמת מאמין שלא כל דבר צריך לבטח. צריך גם לחיות, וזה סיכון שאני מוכן לקחת. זו הבחירה שלי, ולכם מותר לגמרי לבחור אחרת. מה שחשוב הוא שזו תהיה בחירה ולא משהו שנחתם כי מישהו הצליח להלחיץ אותנו בשיחת טלפון.</p>
+
+    <h2>והחפיפה שאף אחד לא סיפר לנו עליה</h2>
+
+    <p>הנקודה השנייה בפרק היא זו שהכי מקוממת. אנשים משלמים שנים על כיסויים שהם כבר מכוסים בהם דרך קופת החולים, בלי לדעת את זה. לא בגלל שהם התרשלו, אלא בגלל שאף אחד לא ישב איתם לעבור על מה שכבר יש להם לפני שמכרו להם עוד שכבה.</p>
+
+    <p>וזה בדיוק המקום שבו חוסר הידע הופך לכסף. כשאנחנו לא יודעים מה כבר יש לנו, כל מוצר נוסף נשמע הגיוני.</p>
+
+    <div class="note-box">
+      <p>הדרך היחידה לצאת מזה היא לשבת פעם אחת מול המסמכים, לראות מה יש לנו היום, ולשאול על כל שורה אם היא מגנה עלינו מקטסטרופה או פשוט עולה לנו כסף כל חודש.</p>
+    </div>
+
+    <h2>וזה בדיוק מה שהפרק עשה</h2>
+
+    <p>בשורה התחתונה, אני מאוד אהבתי את הפרק, ואני חושב שזו הייתה עונה מעולה של מתחת לבלטות. היא גרמה להמון אנשים לפתוח רגע את המסמכים הפיננסיים שלהם, פשוט לבדוק, ולהיות קצת יותר מודעים.</p>
+
+    <p>אם תוכנית טלוויזיה אחת הצליחה לעשות את זה, קשה לי להתעצבן עליה.</p>
+
+    <div class="tip-box">
+      <div class="tip-header">
+        <h3>רוצים לעבור על הביטוחים שלכם לבד?</h3>
+      </div>
+      <p>כתבתי על התרחישים שבאמת יכולים להרוס אותנו כלכלית, ועל שלושת ביטוחי הבריאות שחשוב להכיר לפני שמחליטים על כל השאר.</p>
+      <a href="article-insurance.html" class="read-more">חשבתם פעם האם אתם מוכנים לכל תרחיש פיננסי שיכול לקרות? ←</a>
+    </div>
+
+    <div class="cta-box">
+      <h3>לא בטוחים מה מכוסה ומה כפול אצלכם?</h3>
+      <p>בואו נעבור יחד על מה שיש לכם היום ונחליט מה באמת צריך להישאר</p>
+      <a href="program.html#contact" class="btn">דברו איתי עכשיו</a>
+    </div>
+
+    <p class="disclaimer">הכתוב אינו מהווה ייעוץ ביטוחי, ייעוץ פנסיוני או ייעוץ השקעות ואינו תחליף לייעוץ אישי. שיתוף ידע ודעה בלבד. כל החלטה על כיסוי ביטוחי תלויה בנסיבות האישיות ובתנאי הפוליסה הספציפית.</p>
+  </article>
+
+  <footer>
+    <p>© הכלכלן של הבית</p>
+  </footer>
+
+  <script src="cookie-consent.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="מטרייה זהובה שחוסמת טיפות גדולות שמסמלות סיכון שעלול להרוס אותנו כלכלית, ולצידה טיפות קטנות שנופלות בלי מטרייה ומסמלות את כל השאר שהוא כבר עניין של החלטה">
+  <defs>
+    <linearGradient id="bgu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F4"/>
+      <stop offset="1" stop-color="#F1EBDD"/>
+    </linearGradient>
+    <linearGradient id="goldu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DCBD62"/>
+      <stop offset="1" stop-color="#C9A33F"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bgu)"/>
+  <circle cx="830" cy="320" r="270" fill="#C9A33F" opacity="0.07"/>
+
+  <!-- קו ההפרדה בין מה שמבטחים לבין מה שמחליטים עליו -->
+  <line x1="600" y1="100" x2="600" y2="572" stroke="#DBD3C0" stroke-width="3" stroke-dasharray="10 13" stroke-linecap="round"/>
+
+  <!-- הטיפות הגדולות: מה שעלול להרוס אותנו -->
+  <g fill="#1f1f1f">
+    <path d="M0,-26 C 9,-9 20,3 20,16 A 20,20 0 1 1 -20,16 C -20,3 -9,-9 0,-26" transform="translate(704,96)"/>
+    <path d="M0,-26 C 9,-9 20,3 20,16 A 20,20 0 1 1 -20,16 C -20,3 -9,-9 0,-26" transform="translate(836,62)"/>
+    <path d="M0,-26 C 9,-9 20,3 20,16 A 20,20 0 1 1 -20,16 C -20,3 -9,-9 0,-26" transform="translate(962,104)"/>
+  </g>
+
+  <!-- המטרייה -->
+  <line x1="830" y1="168" x2="830" y2="512" stroke="#111111" stroke-width="12" stroke-linecap="round"/>
+  <path d="M830,512 Q830,556 790,556 Q752,556 752,520" fill="none" stroke="#111111" stroke-width="12" stroke-linecap="round"/>
+  <path d="M650,340 A180,180 0 0 1 1010,340 Q950,380 890,340 Q830,380 770,340 Q710,380 650,340 Z"
+        fill="url(#goldu)" stroke="#A98429" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M830,160 V340" stroke="#A98429" stroke-width="3" opacity="0.55"/>
+  <path d="M710,344 A180,180 0 0 1 745,222" fill="none" stroke="#A98429" stroke-width="3" opacity="0.45"/>
+  <path d="M950,344 A180,180 0 0 0 915,222" fill="none" stroke="#A98429" stroke-width="3" opacity="0.45"/>
+  <circle cx="830" cy="156" r="12" fill="#111111"/>
+
+  <!-- הטיפות הקטנות: כל השאר, נופלות בלי מטרייה -->
+  <g fill="#C2BAA8">
+    <path d="M0,-26 C 9,-9 20,3 20,16 A 20,20 0 1 1 -20,16 C -20,3 -9,-9 0,-26" transform="translate(246,168) scale(0.55)"/>
+    <path d="M0,-26 C 9,-9 20,3 20,16 A 20,20 0 1 1 -20,16 C -20,3 -9,-9 0,-26" transform="translate(372,112) scale(0.55)"/>
+    <path d="M0,-26 C 9,-9 20,3 20,16 A 20,20 0 1 1 -20,16 C -20,3 -9,-9 0,-26" transform="translate(486,196) scale(0.55)"/>
+    <path d="M0,-26 C 9,-9 20,3 20,16 A 20,20 0 1 1 -20,16 C -20,3 -9,-9 0,-26" transform="translate(310,308) scale(0.55)"/>
+    <path d="M0,-26 C 9,-9 20,3 20,16 A 20,20 0 1 1 -20,16 C -20,3 -9,-9 0,-26" transform="translate(452,372) scale(0.55)"/>
+    <path d="M0,-26 C 9,-9 20,3 20,16 A 20,20 0 1 1 -20,16 C -20,3 -9,-9 0,-26" transform="translate(214,428) scale(0.55)"/>
+    <path d="M0,-26 C 9,-9 20,3 20,16 A 20,20 0 1 1 -20,16 C -20,3 -9,-9 0,-26" transform="translate(370,500) scale(0.55)"/>
+  </g>
+
+  <!-- תוויות -->
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="850" y="646" font-size="44" font-weight="700" fill="#1a1a1a">מה שיהרוס אותנו כלכלית</text>
+    <text x="850" y="692" font-size="28" fill="#7a746a">כאן מבטחים, בלי להתווכח</text>
+    <text x="330" y="646" font-size="44" font-weight="700" fill="#8d8677">כל השאר</text>
+    <text x="330" y="692" font-size="28" fill="#9d9687">זו כבר החלטה שלכם</text>
+  </g>
+</svg>
