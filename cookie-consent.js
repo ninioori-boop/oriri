@@ -24,6 +24,7 @@
     '#hkb-cookie-banner .hkb-reject{background:transparent;color:#fff;border:1px solid #888}' +
     '#hkb-cookie-banner button:hover{transform:translateY(-1px)}' +
     '@media(max-width:600px){#hkb-cookie-banner{flex-direction:column;align-items:stretch;text-align:right}' +
+    '#hkb-cookie-banner p{flex-basis:auto}' +
     '#hkb-cookie-banner .hkb-actions{justify-content:flex-end}}';
   document.head.appendChild(style);
 

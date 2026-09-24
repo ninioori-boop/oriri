@@ -2,6 +2,9 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta name="facebook-domain-verification" content="glpttpj9zp9usor2v2jv27kxjbr2bh">
   <title>הכלכלן של הבית | אורי ניניו</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -15,16 +18,16 @@
   <meta property="og:url" content="https://or-ni.com/">
   <meta property="og:title" content="הכלכלן של הבית | אורי ניניו">
   <meta property="og:description" content="להיות הכתובת לכל שאלה כלכלית במשפחה. בלוג, כלים ותוכנית ליווי אישית של אורי ניניו, שיעזרו לכם לעשות סדר אמיתי בכסף.">
-  <meta property="og:image" content="https://or-ni.com/logo.png">
-  <meta property="og:image:width" content="1024">
-  <meta property="og:image:height" content="1024">
-  <meta property="og:image:alt" content="הכלכלן של הבית">
+  <meta property="og:image" content="https://or-ni.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="מפסיקים להיות פראיירים של הבנקים. הכלכלן של הבית, אורי ניניו">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="הכלכלן של הבית | אורי ניניו">
   <meta name="twitter:description" content="להיות הכתובת לכל שאלה כלכלית במשפחה. בלוג, כלים ותוכנית ליווי אישית של אורי ניניו, שיעזרו לכם לעשות סדר אמיתי בכסף.">
-  <meta name="twitter:image" content="https://or-ni.com/logo.png">
+  <meta name="twitter:image" content="https://or-ni.com/og-image.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -447,6 +450,40 @@
       max-width: 600px;
       animation: fadeUp 0.9s var(--ease) 0.65s both;
     }
+    .welcome-text .subtitle { max-width: 600px; font-weight: 500; color: rgba(246, 245, 242, 0.9); }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+      animation: fadeUp 0.9s var(--ease) 0.65s both;
+    }
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease);
+    }
+    .hero-btn svg { width: 22px; height: 22px; fill: currentColor; flex-shrink: 0; }
+    .hero-btn-primary {
+      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
+      color: #15120a;
+      box-shadow: 0 14px 40px rgba(212, 175, 55, 0.35);
+    }
+    .hero-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(212, 175, 55, 0.45); }
+    .hero-btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border: 1px solid rgba(246, 245, 242, 0.28);
+      backdrop-filter: blur(10px);
+    }
+    .hero-btn-secondary:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-3px); border-color: var(--gold); }
 
     /* ============================================
        SHELL (rest of the page)
@@ -584,6 +621,46 @@
     }
     .cta-card .arrow-btn .a { transition: transform 0.3s var(--ease); }
     .cta-card:hover .arrow-btn .a { transform: translateX(-8px); }
+
+    /* ============================================
+       SYSTEM (what runs between meetings)
+       ============================================ */
+    .system { margin-bottom: 72px; }
+    .system-head { margin-bottom: 32px; }
+    .system-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .system-shot {
+      margin: 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: linear-gradient(165deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      transition: transform 0.4s var(--ease), border-color 0.4s var(--ease);
+    }
+    .system-shot:hover { transform: translateY(-5px); border-color: var(--border-strong); }
+    .system-shot img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid var(--border);
+    }
+    .system-shot figcaption {
+      padding: 16px 18px 18px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .system-shot figcaption strong {
+      display: block;
+      font-family: 'Heebo', sans-serif;
+      color: var(--text);
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+    }
 
     /* ============================================
        STORY — image shown in full (object-contain feel)
@@ -758,6 +835,9 @@
       .welcome-text .description { margin: 0 auto; max-width: 540px; }
 
       .cta-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 56px; }
+      .system-grid { grid-template-columns: 1fr; gap: 16px; }
+      .system-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .hero-actions { justify-content: center; }
       .story {
         grid-template-columns: 1fr;
         padding: 28px 22px;
@@ -781,6 +861,8 @@
       .welcome-text h1 { font-size: 2.4rem; }
       .welcome-text .subtitle { font-size: 1rem; margin-top: 12px; margin-bottom: 12px; }
       .welcome-text .description { font-size: 0.95rem; line-height: 1.65; }
+      .hero-btn { width: 100%; justify-content: center; padding: 14px 20px; font-size: 1rem; }
+      .system { margin-bottom: 48px; }
 
       .topnav {
         top: 10px;
@@ -848,16 +930,16 @@
       <a href="advisors.html" class="nav-pro">ליועצים<span class="nav-badge">חדש</span></a>
       <a href="#story">עליי</a>
     </nav>
-    <a href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank" rel="noopener" class="menu-cta">
+    <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="menu-cta">
       <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>
       צרו קשר בוואטסאפ
     </a>
-    <div class="menu-foot">© 2025 הכלכלן של הבית</div>
+    <div class="menu-foot">© 2026 הכלכלן של הבית</div>
   </aside>
   <div class="menu-backdrop" aria-hidden="true"></div>
 
   <!-- WhatsApp float -->
-  <a href="https://wa.me/972544240213?text=היי%20אורי%2C%20ראיתי%20את%20האתר%20שלך%2C%20אשמח%20לשיחת%20היכרות%20קצרה%20👋" target="_blank" class="wa-float" aria-label="וואטסאפ">
+  <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" class="wa-float" aria-label="וואטסאפ">
     <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>
   </a>
 
@@ -880,11 +962,17 @@
         <img src="ori-welcome.jpeg" alt="אורי ניניו" class="welcome-photo">
         <div class="welcome-text">
           <h1>
-            <span class="grad-1">הכלכלן</span>
-            <span class="grad-2">של הבית</span>
+            <span class="grad-1">מפסיקים להיות</span>
+            <span class="grad-2">פראיירים של הבנקים</span>
           </h1>
-          <h2 class="subtitle">הדרך להיות הכתובת לכל שאלה כלכלית במשפחה</h2>
-          <p class="description">ברוכים הבאים לאתר הכלכלן של הבית. כאן אתם מקבלים הצצה לדרך שלי בעולם הפיננסים, יחד עם כלים שיעזרו לכם להיות הכלכלן או הכלכלנית של הבית שלכם. המטרה פשוטה: שתהיו הכתובת לכל מה שקשור לכסף במשפחה, בלי להרגיש תלויים באף גורם אחר. אתם מוזמנים להיכנס לבלוג, לקרוא, ללמוד וליישם. ואם תרגישו שאתם צריכים ליווי והכוונה, ושזה הזמן לעשות סדר אמיתי במצב הכלכלי שלכם, אתם מוזמנים להצטרף לתוכנית הליווי</p>
+          <h2 class="subtitle">ליווי פיננסי לחיילים משוחררים ומשפחות צעירות, עם מערכת שעובדת אצלכם גם בין הפגישות</h2>
+          <div class="hero-actions">
+            <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="hero-btn hero-btn-primary">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>
+              בדיקה חינם בוואטסאפ
+            </a>
+            <a href="program.html#how" class="hero-btn hero-btn-secondary">איך הליווי עובד</a>
+          </div>
         </div>
       </div>
     </div>
@@ -939,6 +1027,31 @@
 
     </section>
 
+    <!-- Section: The system between meetings -->
+    <section class="system reveal" id="system">
+      <div class="section-head system-head">
+        <div>
+          <span class="label">המערכת</span>
+          <h2>מה עובד אצלכם בין הפגישות</h2>
+        </div>
+        <p class="desc">הליווי לא נגמר כשהפגישה נגמרת. המערכת שבניתי נשארת פתוחה אצלכם, וזה מה שרואים בה.</p>
+      </div>
+      <div class="system-grid">
+        <figure class="system-shot">
+          <img src="screenshots/cashflow.png" alt="מסך תזרים חודשי במערכת: הכנסות מול הוצאות והנטו שנשאר" width="1693" height="844" loading="lazy">
+          <figcaption><strong>תזרים חודשי</strong>כמה נכנס, כמה יצא, ומה נשאר. מתעדכן כל חודש בלי לפתוח אקסל.</figcaption>
+        </figure>
+        <figure class="system-shot">
+          <img src="screenshots/monthly-budget.png" alt="מסך תקציב חודשי במערכת: תכנון מול ביצוע בפועל" width="1671" height="844" loading="lazy">
+          <figcaption><strong>תקציב חודשי</strong>תכנון מול ביצוע, חודש אחרי חודש. רואים איפה זה בורח.</figcaption>
+        </figure>
+        <figure class="system-shot">
+          <img src="screenshots/goals.png" alt="מסך יעדים פיננסיים במערכת: כמה לשים בצד כל חודש לכל יעד" width="1614" height="863" loading="lazy">
+          <figcaption><strong>יעדים</strong>טיסה, רכב, דירה. המערכת מחשבת כמה לשים בצד כל חודש כדי להגיע.</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <!-- Section: Story (image displayed in full) -->
     <section class="story reveal" id="story">
       <div class="story-img">
@@ -953,13 +1066,14 @@
         <p>מאז בניתי תיק השקעות לטווח ארוך בשוק ההון, עזרתי לעשרות אנשים ועשיתי קורס ייעוץ לכלכלת המשפחה. היום אני בדרך לרישיון פנסיוני ולרישיון ייעוץ השקעות.</p>
         <p>הקמתי את הכלכלן של הבית כדי לתת לצעירים ולמשפחות צעירות ביטחון והבנה מלאה בפעולות הפיננסיות שלהם, המטרה שתהיו הכתובת לכל שאלה פיננסית במשפחה.</p>
         <p>הידע זמין בחינם לכל מי שמוכן ללמוד לבד (אתם מוזמנים להיכנס לבלוג שלי). מי שמעדיף קיצור דרך וליווי מסודר מוזמן לפנות אלי לליווי האישי.</p>
+        <p>ובדרך למדתי עוד משהו: הבעיה לא נפתרת בפגישה. בין פגישה לפגישה הכסף ממשיך לזוז והשאלות חוזרות. ולכן בניתי מערכת.</p>
       </div>
     </section>
 
   </main>
 
   <footer>
-    © 2025 הכלכלן של הבית · ניניו אור, עוסק פטור 322312588 · כל הזכויות שמורות · <a href="privacy.html">מדיניות פרטיות</a>
+    © 2026 הכלכלן של הבית · ניניו אור, עוסק פטור 322312588 · כל הזכויות שמורות · <a href="privacy.html">מדיניות פרטיות</a>
   </footer>
 
   <!-- ============================================
@@ -1007,5 +1121,7 @@
     })();
   </script>
 
+  <script src="cookie-consent.js" defer></script>
+  <script src="site-analytics.js" defer></script>
 </body>
 </html>

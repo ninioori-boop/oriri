@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /index-old.html
+Disallow: /thank-you.html
+
+Sitemap: https://or-ni.com/sitemap.xml
