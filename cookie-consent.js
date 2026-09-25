@@ -48,13 +48,23 @@
     '<button type="button" class="hkb-accept" id="hkb-accept">אישור</button>' +
     '</div>';
 
+  // keep floating buttons above the banner while it is open
+  function syncHeight() {
+    var h = banner && banner.parentNode ? banner.offsetHeight : 0;
+    document.documentElement.style.setProperty('--cookie-h', h + 'px');
+  }
+
   function close(value) {
     try { localStorage.setItem(STORAGE_KEY, value + '|' + new Date().toISOString()); } catch (e) {}
     if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
+    window.removeEventListener('resize', syncHeight);
+    syncHeight();
   }
 
   function attach() {
     document.body.appendChild(banner);
+    syncHeight();
+    window.addEventListener('resize', syncHeight);
     document.getElementById('hkb-accept').addEventListener('click', function () { close('accepted'); });
     document.getElementById('hkb-reject').addEventListener('click', function () { close('essential'); });
   }
