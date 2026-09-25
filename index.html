@@ -28,9 +28,6 @@
   <meta name="twitter:title" content="הכלכלן של הבית | אורי ניניו">
   <meta name="twitter:description" content="להיות הכתובת לכל שאלה כלכלית במשפחה. בלוג, כלים ותוכנית ליווי אישית של אורי ניניו, שיעזרו לכם לעשות סדר אמיתי בכסף.">
   <meta name="twitter:image" content="https://or-ni.com/og-image.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #08080a;
@@ -67,269 +64,6 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
-
-    /* ============================================
-       TOP NAV (floating glass)
-       ============================================ */
-    .topnav {
-      position: fixed;
-      top: 22px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: fit-content;
-      max-width: 96%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 10px 12px;
-      background: rgba(15, 15, 18, 0.55);
-      backdrop-filter: blur(22px) saturate(180%);
-      -webkit-backdrop-filter: blur(22px) saturate(180%);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      z-index: 80;
-      box-shadow: 0 14px 50px rgba(0, 0, 0, 0.45);
-    }
-    .topnav .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text);
-      text-decoration: none;
-      padding: 0 8px;
-    }
-    .topnav .brand img {
-      width: 44px;
-      height: 44px;
-      display: block;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1.5px solid var(--gold);
-      background: #fff;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-      flex-shrink: 0;
-    }
-    .topnav .brand-name {
-      font-family: 'Heebo', sans-serif;
-      font-size: 1.02rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      white-space: nowrap;
-    }
-    .topnav-links { display: flex; gap: 2px; align-items: center; }
-    .topnav-links a {
-      position: relative;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.94rem;
-      font-weight: 500;
-      padding: 9px 16px;
-      border-radius: 999px;
-      white-space: nowrap;
-      transition: color 0.25s var(--ease), background 0.25s var(--ease);
-    }
-    .topnav-links a:hover { color: var(--text); background: var(--bg-elev); }
-    .topnav-links a.active {
-      color: var(--gold-bright);
-      background: rgba(212, 175, 55, 0.10);
-    }
-    .topnav-links a.active::before {
-      content: '';
-      position: absolute;
-      bottom: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 14px; height: 2px;
-      background: var(--gold);
-      border-radius: 2px;
-    }
-    .topnav-links a.nav-pro {
-      color: var(--gold-bright);
-      background: linear-gradient(135deg, rgba(212,175,55,0.16), rgba(212,175,55,0.05));
-      border: 1px solid rgba(212,175,55,0.35);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-    }
-    .topnav-links a.nav-pro:hover {
-      color: #fff;
-      background: linear-gradient(135deg, rgba(212,175,55,0.28), rgba(212,175,55,0.10));
-    }
-    .nav-badge {
-      font-size: 0.62rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      padding: 2px 7px;
-      border-radius: 999px;
-      background: var(--gold);
-      color: #1a1306;
-      text-transform: uppercase;
-    }
-    .mobile-menu nav a.nav-pro {
-      background: linear-gradient(135deg, rgba(212,175,55,0.14), rgba(212,175,55,0.04));
-      border-color: rgba(212,175,55,0.32);
-      color: var(--gold-bright);
-    }
-    .mobile-menu nav a.nav-pro .nav-badge {
-      margin-right: auto;
-      margin-left: 8px;
-    }
-
-    /* Hamburger toggle (mobile only) */
-    .menu-toggle {
-      display: none;
-      width: 44px; height: 44px;
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      cursor: pointer;
-      padding: 0;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
-    }
-    .menu-toggle:hover { border-color: var(--gold); background: var(--bg-elev); }
-    .menu-toggle .bars {
-      position: relative;
-      width: 18px; height: 12px;
-    }
-    .menu-toggle .bars span {
-      position: absolute;
-      left: 0; right: 0;
-      height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-      transition: transform 0.3s var(--ease), opacity 0.2s var(--ease), top 0.3s var(--ease);
-    }
-    .menu-toggle .bars span:nth-child(1) { top: 0; }
-    .menu-toggle .bars span:nth-child(2) { top: 5px; }
-    .menu-toggle .bars span:nth-child(3) { top: 10px; }
-    body.menu-open .menu-toggle .bars span:nth-child(1) { top: 5px; transform: rotate(45deg); background: var(--gold); }
-    body.menu-open .menu-toggle .bars span:nth-child(2) { opacity: 0; }
-    body.menu-open .menu-toggle .bars span:nth-child(3) { top: 5px; transform: rotate(-45deg); background: var(--gold); }
-
-    /* Mobile slide-in menu */
-    .mobile-menu {
-      position: fixed;
-      top: 0; right: -340px;
-      width: 320px;
-      max-width: 86vw;
-      height: 100vh;
-      height: 100dvh;
-      background: linear-gradient(180deg, #14141a 0%, #0c0c0e 100%);
-      border-left: 1px solid var(--border);
-      box-shadow: -20px 0 60px rgba(0,0,0,0.6);
-      z-index: 95;
-      padding: 90px 28px 32px;
-      transition: right 0.4s var(--ease);
-      display: flex;
-      flex-direction: column;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    body.menu-open .mobile-menu { right: 0; }
-    .mobile-menu nav {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .mobile-menu nav a {
-      position: relative;
-      padding: 16px 18px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 14px;
-      border: 1px solid transparent;
-      transition: all 0.25s var(--ease);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .mobile-menu nav a::after {
-      content: '←';
-      color: var(--text-faint);
-      font-size: 1.2rem;
-      transition: transform 0.25s var(--ease), color 0.25s var(--ease);
-    }
-    .mobile-menu nav a:hover,
-    .mobile-menu nav a:active {
-      background: var(--bg-elev);
-      border-color: var(--border-strong);
-    }
-    .mobile-menu nav a:hover::after,
-    .mobile-menu nav a:active::after { color: var(--gold); transform: translateX(-4px); }
-    .mobile-menu nav a.active {
-      background: rgba(212, 175, 55, 0.10);
-      border-color: rgba(212, 175, 55, 0.28);
-      color: var(--gold-bright);
-    }
-    .mobile-menu nav a.active::after { color: var(--gold); }
-    .mobile-menu .menu-cta {
-      margin-top: 22px;
-      padding: 16px 20px;
-      background: #25D366;
-      color: #fff;
-      border-radius: 14px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.35);
-      transition: transform 0.25s var(--ease);
-    }
-    .mobile-menu .menu-cta:active { transform: scale(0.98); }
-    .mobile-menu .menu-cta svg { width: 22px; height: 22px; fill: #fff; }
-    .mobile-menu .menu-foot {
-      margin-top: auto;
-      padding-top: 28px;
-      color: var(--text-faint);
-      font-size: 0.82rem;
-      text-align: center;
-    }
-
-    /* Backdrop overlay */
-    .menu-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      z-index: 90;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.35s var(--ease);
-    }
-    body.menu-open .menu-backdrop { opacity: 1; pointer-events: auto; }
-    body.menu-open { overflow: hidden; }
-
-    /* WhatsApp float */
-    .wa-float {
-      position: fixed;
-      bottom: 26px;
-      left: 26px;
-      width: 58px; height: 58px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      z-index: 70;
-      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45);
-      transition: transform 0.3s var(--ease);
-    }
-    .wa-float:hover { transform: scale(1.08); }
-    .wa-float svg { width: 30px; height: 30px; fill: #fff; }
 
     /* ============================================
        HERO with gradient background
@@ -781,19 +515,6 @@
     }
 
     /* ============================================
-       FOOTER
-       ============================================ */
-    footer {
-      text-align: center;
-      padding: 36px 32px 56px;
-      color: var(--text-faint);
-      font-size: 0.92rem;
-      border-top: 1px solid var(--border);
-      margin-top: 30px;
-    }
-    footer a { color: var(--gold); text-decoration: none; }
-
-    /* ============================================
        Animations
        ============================================ */
     @keyframes fadeUp {
@@ -819,13 +540,6 @@
        Tablet
        ============================================ */
     @media (max-width: 900px) {
-      .topnav-links { display: none; }
-      .menu-toggle { display: flex; }
-      .topnav { top: 14px; padding: 6px; max-width: 92%; }
-      .topnav .brand img { width: 40px; height: 40px; }
-      .topnav .brand-name { font-size: 0.95rem; }
-      .topnav .brand { padding: 0 6px; gap: 10px; }
-
       .welcome-header {
         flex-direction: column;
         gap: 24px;
@@ -864,16 +578,6 @@
       .hero-btn { width: 100%; justify-content: center; padding: 14px 20px; font-size: 1rem; }
       .system { margin-bottom: 48px; }
 
-      .topnav {
-        top: 10px;
-        max-width: 94%;
-        padding: 5px;
-      }
-      .topnav .brand img { width: 36px; height: 36px; }
-      .topnav .brand-name { font-size: 0.92rem; }
-      .topnav .brand { padding: 0 4px; gap: 9px; }
-      .menu-toggle { width: 40px; height: 40px; }
-
       .shell { padding: 40px 14px 32px; }
       .cta-card { padding: 24px 22px; min-height: 0; }
       .cta-card h3 { font-size: 1.4rem; }
@@ -889,59 +593,48 @@
       .story-content h2 { font-size: 1.5rem; margin-bottom: 14px; }
       .story-content p { font-size: 0.95rem; line-height: 1.65; }
 
-      .wa-float {
-        width: 50px; height: 50px;
-        bottom: 16px; left: 16px;
-      }
-      .wa-float svg { width: 26px; height: 26px; }
-
-      footer { padding: 24px 18px 32px; font-size: 0.85rem; }
     }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600&family=Heebo:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body class="page-home page-dark">
 
   <!-- ============================================
        TOP NAV
        ============================================ -->
-  <header class="topnav">
-    <a href="index.html" class="brand" aria-label="הכלכלן של הבית">
+  <!-- Site header (shared) -->
+  <div class="site-nav" role="banner">
+    <a href="index.html" class="site-brand" aria-label="הכלכלן של הבית">
       <img src="logo.png" alt="">
-      <span class="brand-name">הכלכלן של הבית</span>
+      <span class="site-brand-name">הכלכלן של הבית</span>
     </a>
-    <nav class="topnav-links">
-      <a href="index.html" class="active">דף הבית</a>
+    <nav class="site-links" aria-label="ניווט ראשי">
+      <a href="index.html" class="active" aria-current="page">דף הבית</a>
       <a href="blog.html">בלוג</a>
       <a href="program.html">תוכנית הליווי</a>
-      <a href="advisors.html" class="nav-pro">ליועצים<span class="nav-badge">חדש</span></a>
+      <a href="advisors.html" class="site-nav-pro">ליועצים<span class="site-nav-badge">חדש</span></a>
       <a href="#story">עליי</a>
     </nav>
-    <button class="menu-toggle" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="mobile-menu">
+    <button class="site-menu-toggle" type="button" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="site-menu">
       <span class="bars"><span></span><span></span><span></span></span>
     </button>
-  </header>
-
-  <!-- Mobile slide-in menu -->
-  <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <nav>
-      <a href="index.html" class="active">דף הבית</a>
+  </div>
+  <aside class="site-menu" id="site-menu" aria-hidden="true">
+    <nav aria-label="ניווט ראשי">
+      <a href="index.html" class="active" aria-current="page">דף הבית</a>
       <a href="blog.html">בלוג</a>
       <a href="program.html">תוכנית הליווי</a>
-      <a href="advisors.html" class="nav-pro">ליועצים<span class="nav-badge">חדש</span></a>
+      <a href="advisors.html" class="site-nav-pro">ליועצים<span class="site-nav-badge">חדש</span></a>
       <a href="#story">עליי</a>
     </nav>
-    <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="menu-cta">
-      <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>
-      צרו קשר בוואטסאפ
-    </a>
-    <div class="menu-foot">© 2026 הכלכלן של הבית</div>
+    <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="site-btn-primary"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>בדיקה חינם בוואטסאפ</a>
+    <div class="site-menu-foot">© 2026 הכלכלן של הבית</div>
   </aside>
-  <div class="menu-backdrop" aria-hidden="true"></div>
-
-  <!-- WhatsApp float -->
-  <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" class="wa-float" aria-label="וואטסאפ">
-    <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>
-  </a>
+  <div class="site-backdrop" aria-hidden="true"></div>
+  <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="site-wa-float" aria-label="בדיקה חינם בוואטסאפ"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg></a>
 
   <!-- ============================================
        HERO with gradient background
@@ -1072,9 +765,38 @@
 
   </main>
 
-  <footer>
-    © 2026 הכלכלן של הבית · ניניו אור, עוסק פטור 322312588 · כל הזכויות שמורות · <a href="privacy.html">מדיניות פרטיות</a>
-  </footer>
+  <!-- Site footer (shared) -->
+  <div class="site-footer" role="contentinfo">
+    <div class="site-footer-inner">
+      <div>
+        <a href="index.html" class="site-footer-brand"><img src="logo.png" alt="" loading="lazy"><span>הכלכלן של הבית</span></a>
+        <p>ייעוץ כלכלי אישי שעוזר לכם לקחת שליטה על הכסף שלכם ולבנות עתיד פיננסי בטוח.</p>
+        <p class="site-footer-legal">ניניו אור · עוסק פטור 322312588</p>
+        <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="site-btn-primary"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>בדיקה חינם בוואטסאפ</a>
+      </div>
+      <div>
+        <h4>צור קשר</h4>
+        <div class="site-footer-list">
+          <a href="mailto:ninioori@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>ninioori@gmail.com</span></a>
+          <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>וואטסאפ</span></a>
+          <a href="https://www.instagram.com/ori__ninio/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>אינסטגרם</span></a>
+          <a href="https://www.facebook.com/wrynynyw?locale=he_IL" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg><span>פייסבוק</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>באתר</h4>
+        <div class="site-footer-list">
+          <a href="index.html">דף הבית</a>
+          <a href="blog.html">בלוג</a>
+          <a href="program.html">תוכנית הליווי</a>
+          <a href="advisors.html">ליועצים</a>
+          <a href="index.html#story">עליי</a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer-bottom">© 2026 הכלכלן של הבית · <a href="privacy.html">מדיניות פרטיות</a></div>
+  </div>
+
 
   <!-- ============================================
        SCRIPTS
@@ -1091,36 +813,9 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    /* Mobile menu toggle */
-    (function() {
-      const toggle = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.mobile-menu');
-      const backdrop = document.querySelector('.menu-backdrop');
-      const links = menu.querySelectorAll('a');
-
-      function open() {
-        document.body.classList.add('menu-open');
-        toggle.setAttribute('aria-expanded', 'true');
-        toggle.setAttribute('aria-label', 'סגירת תפריט');
-        menu.setAttribute('aria-hidden', 'false');
-      }
-      function close() {
-        document.body.classList.remove('menu-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'פתיחת תפריט');
-        menu.setAttribute('aria-hidden', 'true');
-      }
-      toggle.addEventListener('click', () => {
-        document.body.classList.contains('menu-open') ? close() : open();
-      });
-      backdrop.addEventListener('click', close);
-      links.forEach(a => a.addEventListener('click', close));
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && document.body.classList.contains('menu-open')) close();
-      });
-    })();
   </script>
 
+  <script src="assets/site.js" defer></script>
   <script src="cookie-consent.js" defer></script>
   <script src="site-analytics.js" defer></script>
 </body>
