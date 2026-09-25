@@ -23,9 +23,14 @@
     '#hkb-cookie-banner .hkb-accept{background:linear-gradient(135deg,#B8860B,#DAA520);color:#1a1a1a}' +
     '#hkb-cookie-banner .hkb-reject{background:transparent;color:#fff;border:1px solid #888}' +
     '#hkb-cookie-banner button:hover{transform:translateY(-1px)}' +
-    '@media(max-width:600px){#hkb-cookie-banner{flex-direction:column;align-items:stretch;text-align:right}' +
-    '#hkb-cookie-banner p{flex-basis:auto}' +
-    '#hkb-cookie-banner .hkb-actions{justify-content:flex-end}}';
+    '#hkb-cookie-banner .hkb-short{display:none}' +
+    '@media(max-width:600px){' +
+    '#hkb-cookie-banner{flex-wrap:nowrap;padding:.55rem .75rem;gap:.6rem;align-items:center}' +
+    '#hkb-cookie-banner p{flex:1 1 auto;font-size:.8rem;line-height:1.4}' +
+    '#hkb-cookie-banner .hkb-long{display:none}' +
+    '#hkb-cookie-banner .hkb-short{display:inline}' +
+    '#hkb-cookie-banner .hkb-actions{flex-wrap:nowrap;gap:.35rem;flex-shrink:0}' +
+    '#hkb-cookie-banner button{padding:.45rem .8rem;font-size:.8rem;white-space:nowrap}}';
   document.head.appendChild(style);
 
   var banner = document.createElement('div');
@@ -34,9 +39,10 @@
   banner.setAttribute('aria-live', 'polite');
   banner.setAttribute('aria-label', 'הודעת עוגיות');
   banner.innerHTML =
-    '<p>אנו משתמשים בעוגיות (Cookies) הכרחיות להפעלת האתר, ובעוגיות סטטיסטיקה המסייעות לנו לשפר את חוויית הגלישה. ' +
+    '<p><span class="hkb-long">אנו משתמשים בעוגיות (Cookies) הכרחיות להפעלת האתר, ובעוגיות סטטיסטיקה המסייעות לנו לשפר את חוויית הגלישה. ' +
     'בלחיצה על "אישור" אתם מאשרים את השימוש בעוגיות לא הכרחיות. לפרטים מלאים ראו ' +
-    '<a href="privacy.html">מדיניות הפרטיות</a>.</p>' +
+    '<a href="privacy.html">מדיניות הפרטיות</a>.</span>' +
+    '<span class="hkb-short">עוגיות סטטיסטיקה לשיפור האתר, רק באישורכם. <a href="privacy.html">פרטים</a></span></p>' +
     '<div class="hkb-actions">' +
     '<button type="button" class="hkb-reject" id="hkb-reject">רק הכרחיות</button>' +
     '<button type="button" class="hkb-accept" id="hkb-accept">אישור</button>' +
