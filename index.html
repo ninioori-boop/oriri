@@ -460,6 +460,41 @@
       max-width: 620px;
       line-height: 1.7;
     }
+    /* story as a full section: numbered chapters instead of a wall of text */
+    .story { align-items: start; grid-template-columns: 380px 1fr; }
+    .story-content .label { display: block; }
+    .story-content h2 { font-size: clamp(2rem, 3.4vw, 2.8rem); margin-bottom: 22px; }
+    .story-steps { display: grid; gap: 14px; margin-bottom: 30px; }
+    .story-step {
+      position: relative;
+      padding: 20px 64px 20px 24px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid var(--border);
+      transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+    }
+    .story-step:hover { border-color: var(--border-strong); background: rgba(212, 175, 55, 0.05); }
+    .story-step .num {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--gold);
+    }
+    .story-content .story-step p {
+      margin: 0;
+      max-width: none;
+      font-size: 1.04rem;
+      line-height: 1.75;
+      color: rgba(246, 245, 242, 0.86);
+    }
+    .story-step-me { border-color: rgba(212, 175, 55, 0.30); background: rgba(212, 175, 55, 0.07); }
+    .story-content .story-step-me p { color: var(--text); font-weight: 600; }
+    .story-cta { display: inline-flex; }
+
     .story-content .quote {
       margin-top: 28px;
       padding: 20px 26px;
@@ -592,6 +627,10 @@
       }
       .story-content h2 { font-size: 1.5rem; margin-bottom: 14px; }
       .story-content p { font-size: 0.95rem; line-height: 1.65; }
+      .story-content h2 { font-size: 1.8rem; }
+      .story-step { padding: 16px 50px 16px 16px; }
+      .story-step .num { top: 16px; right: 16px; font-size: 0.98rem; }
+      .story-content .story-step p { font-size: 0.98rem; line-height: 1.7; }
 
     }
   </style>
@@ -751,15 +790,30 @@
         <img src="ori-story.jpg" alt="אורי ניניו" loading="lazy">
       </div>
       <div class="story-content">
-        <h2>הסיפור שלי</h2>
-        <p>אני אורי, בן 25 מתל אביב, יועץ פיננסי ולוחם מילואים פעיל בגדוד לוחם. אני אדם שאוהב פשטות ושקט אבל לא מוותר אף פעם על מה שחשוב לו ואת זה אני מנסה להעביר בעמוד הזה.</p>
-        <p>כבר בתיכון הבנתי שלא מלמדים אותנו שום דבר אמיתי על כסף.</p>
-        <p>בסוף השירות התחלתי לחפש מידע בכל מקום אפשרי. למדתי את החשיבות של להשקיע ובעיקר של השקעה ארוכת טווח בשוק ההון, ויצרתי את הגישה הפיננסית האישית שלי.</p>
-        <p>בדרך הבנתי שלגופי הפיננסים יש אינטרסים משלהם ושחוסר הידע של הציבור פשוט משרת אותם.</p>
-        <p>מאז בניתי תיק השקעות לטווח ארוך בשוק ההון, עזרתי לעשרות אנשים ועשיתי קורס ייעוץ לכלכלת המשפחה. היום אני בדרך לרישיון פנסיוני ולרישיון ייעוץ השקעות.</p>
-        <p>הקמתי את הכלכלן של הבית כדי לתת לצעירים ולמשפחות צעירות ביטחון והבנה מלאה בפעולות הפיננסיות שלהם, המטרה שתהיו הכתובת לכל שאלה פיננסית במשפחה.</p>
-        <p>הידע זמין בחינם לכל מי שמוכן ללמוד לבד (אתם מוזמנים להיכנס לבלוג שלי). מי שמעדיף קיצור דרך וליווי מסודר מוזמן לפנות אלי לליווי האישי.</p>
-        <p>ובדרך למדתי עוד משהו: הבעיה לא נפתרת בפגישה. בין פגישה לפגישה הכסף ממשיך לזוז והשאלות חוזרות. ולכן בניתי מערכת.</p>
+        <span class="label">הסיפור שלי</span>
+        <h2>נעים להכיר</h2>
+        <div class="story-steps">
+          <div class="story-step">
+            <span class="num" aria-hidden="true">01</span>
+            <p>באחת הנסיעות הארוכות בצבא קניתי ספר על פיננסים. קראתי אותו מההתחלה עד הסוף, ויצאתי מהנסיעה הזאת עם דחף מטורף להבין עוד. דיברתי על כסף עם המשפחה, עם חברים מהצבא, אחר כך גם עם חברים מהעבודה, ולאט לאט הרגשתי שאני באמת עוזר לאנשים. שנה וחצי אחרי השחרור עשיתי קורס לייעוץ פיננסי.</p>
+          </div>
+          <div class="story-step">
+            <span class="num" aria-hidden="true">02</span>
+            <p>משם נולד "הכלכלן של הבית". בעיניי, האנשים שצריכים להבין הכי טוב את הכסף של הבית הם האנשים שחיים בו. לא להיות תלויים במישהו שיגיד לכם מה לעשות. להבין את התמונה, לנהל את התקציב ולקבל החלטות שאתם מבינים.</p>
+          </div>
+          <div class="story-step">
+            <span class="num" aria-hidden="true">03</span>
+            <p>תוך כדי עבודה הבנתי שפגישה טובה היא רק ההתחלה. החיים קורים בין הפגישות, וצריך דרך פשוטה לראות את ההוצאות, לבדוק מה משתנה ולא לאבד שליטה אחרי שחוזרים הביתה. אז בניתי מערכת: תיעוד הוצאות, מחשבונים, בוט בוואטסאפ. היא עובדת אצלכם גם בין הפגישות.</p>
+          </div>
+          <div class="story-step story-step-me">
+            <span class="num" aria-hidden="true">04</span>
+            <p>אני אורי ניניו, יועץ פיננסי. בין פגישה לפגישה תמצאו אותי באיגרוף תאילנדי, באוכל טוב או בחופשה.</p>
+          </div>
+        </div>
+        <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="hero-btn hero-btn-primary story-cta">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>
+          בדיקה חינם בוואטסאפ
+        </a>
       </div>
     </section>
 
