@@ -1933,6 +1933,67 @@
       .about-text .story-step p { font-size: 0.98rem; line-height: 1.7; }
       .about-text .story-cta { display: flex; width: 100%; }
     }
+    /* Pricing */
+    .price-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .price-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border: 1px solid #EDEAE2;
+      border-top: 4px solid var(--gold);
+      border-radius: 20px;
+      padding: 2rem 1.75rem 1.75rem;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+      text-align: right;
+    }
+    .price-card h3 {
+      font-family: 'Heebo', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--black);
+      margin: 0 0 0.35rem;
+    }
+    .price-card .price-sub { margin: 0; color: #5A5A5A; font-size: 1rem; line-height: 1.6; min-height: 1.6em; }
+    .price-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 0.45rem;
+      margin: 1.4rem 0 1.1rem;
+      padding: 1.1rem 0;
+      border-top: 1px solid #F0ECE2;
+      border-bottom: 1px solid #F0ECE2;
+    }
+    .price-num {
+      font-family: 'Heebo', sans-serif;
+      font-weight: 800;
+      font-size: 3rem;
+      line-height: 1;
+      color: #A8862A;
+      letter-spacing: -0.02em;
+    }
+    .price-cur { font-family: 'Heebo', sans-serif; font-weight: 700; font-size: 1.25rem; color: #A8862A; }
+    .price-card .price-line { margin: 0; font-size: 1.05rem; line-height: 1.6; color: var(--black); font-weight: 600; }
+    .price-card .price-note { margin: auto 0 0; padding-top: 1rem; font-size: 0.92rem; color: #5A5A5A; }
+    .price-cta {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.9rem;
+      text-align: center;
+    }
+    .price-cta p { margin: 0; font-size: 1.1rem; font-weight: 600; color: var(--black); text-align: center; }
+    @media (max-width: 768px) {
+      .price-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+      .price-card { padding: 1.6rem 1.35rem 1.4rem; }
+      .price-num { font-size: 2.6rem; }
+      .price-cta .site-btn-primary { width: 100%; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2078,6 +2139,32 @@
             </div>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section price-section" id="price">
+      <div class="card">
+        <h2>כמה זה עולה?</h2>
+        <div class="price-grid">
+          <article class="price-card">
+            <h3>ליווי פיננסי אישי</h3>
+            <p class="price-sub">4 פגישות: מיפוי, תקציב, בקרה, תוכנית</p>
+            <div class="price-amount"><span class="price-num">2,000</span><span class="price-cur">ש"ח</span></div>
+            <p class="price-line">כולל גישה מלאה למערכת ולבוט הוואטסאפ</p>
+            <p class="price-note">מעקב נוסף: 500 ש"ח לפגישה</p>
+          </article>
+          <article class="price-card">
+            <h3>לימוד השקעות</h3>
+            <p class="price-sub">5 מפגשים</p>
+            <div class="price-amount"><span class="price-num">2,500</span><span class="price-cur">ש"ח</span></div>
+            <p class="price-line">לימוד והבנה בלבד, ללא המלצות וללא מוצרים</p>
+          </article>
+        </div>
+        <div class="price-cta">
+          <p>מתחילים בבדיקה חינם בוואטסאפ, בלי התחייבות</p>
+          <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="site-btn-primary"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>בדיקה חינם בוואטסאפ</a>
+        </div>
       </div>
     </section>
 
