@@ -2015,6 +2015,140 @@
       .price-num { font-size: 2.6rem; }
       .price-cta .site-btn-primary { width: 100%; }
     }
+    /* ==========================================================
+       Design round: hero with app shot, quiet motion, big figures
+       ========================================================== */
+    /* old side-slide entrances off; one quiet reveal below */
+    .fade-in, .fade-in-left, .fade-in-up, .section, .hero, .about-section, .contact-section,
+    .intro-content, .about-text h2, .about-text p, .about-image-wrapper, .promise-text,
+    .process-section .card, .meetings-slide-in, .meetings-slide-in .process-step {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .rv { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .rv.rv-in { opacity: 1; transform: none; }
+
+    /* hero: text + one app screenshot */
+    .hero.hero-split { padding: 8rem 2rem 5rem; }
+    .hero.hero-split .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .hero.hero-split .hero-content { max-width: none; margin: 0; text-align: right; }
+    .hero.hero-split .hero-content h1 { font-size: clamp(2.3rem, 4.2vw, 3.6rem); line-height: 1.12; margin-bottom: 1rem; }
+    .hero-sub {
+      margin: 0 0 1.1rem;
+      font-family: 'Heebo', 'Assistant', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+      color: #F4D77A;
+    }
+    .hero.hero-split .hero-tagline { margin: 0 0 2rem; max-width: 34rem; font-size: 1.12rem; }
+    .hero.hero-split .hero-buttons { justify-content: flex-start; }
+    .hero-shot { margin: 0; }
+    .hero-shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(255, 255, 255, 0.03);
+    }
+
+    /* app section */
+    .system-section { background: linear-gradient(180deg, #FBFAF7 0%, #FFFFFF 100%); }
+    .section-kicker { display: block; font-size: 0.85rem; letter-spacing: 0.3em; color: #A8862A; font-weight: 700; margin-bottom: 0.4rem; text-align: right; }
+    .system-section .card h2 { margin-top: 0; }
+    .innovation-line {
+      margin: 0 0 1.2rem;
+      padding: 0.2rem 1.1rem 0.2rem 0;
+      border-right: 4px solid #D4AF37;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.7;
+      color: #1c1c1c;
+    }
+    .system-lead { margin-bottom: 1.5rem; color: #5A5A5A; }
+
+    /* dark sections: soft gradient instead of flat black */
+    .about-section {
+      background:
+        radial-gradient(ellipse 70% 60% at 85% 0%, rgba(212, 175, 55, 0.10) 0%, transparent 60%),
+        linear-gradient(165deg, #121110 0%, #1c1913 55%, #0e0e0f 100%);
+    }
+
+    /* text links for everything that is not the main action */
+    .text-link {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-weight: 700;
+      color: #A8862A;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(168, 134, 42, 0.35);
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .text-link:hover { color: #7d6320; border-color: #7d6320; }
+    .about-section .text-link { color: #F4D77A; border-color: rgba(244, 215, 122, 0.4); font-size: 1.05rem; }
+    .about-section .text-link:hover { color: #fff; border-color: #fff; }
+    .how-lead { margin-bottom: 1rem; }
+
+    /* big price figures */
+    .price-figures {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 1rem 0 1.4rem;
+      padding: 1.2rem 0;
+      border-top: 1px solid #F0ECE2;
+      border-bottom: 1px solid #F0ECE2;
+    }
+    .fig { display: flex; align-items: baseline; gap: 0.4rem; }
+    .fig-num {
+      font-family: 'Heebo', sans-serif;
+      font-weight: 800;
+      font-size: 4rem;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: #A8862A;
+      font-variant-numeric: tabular-nums;
+    }
+    .fig-cur { font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 2rem; color: #A8862A; }
+    .fig-num-sm { font-size: 3rem; color: #1c1c1c; }
+    .fig-label { font-size: 1rem; font-weight: 600; color: #5A5A5A; }
+    .fig:not(.fig-main) { flex-direction: column; align-items: center; gap: 0.35rem; text-align: center; }
+    .fig:not(.fig-main) .fig-label { font-size: 0.92rem; white-space: nowrap; }
+
+    /* hover: small lift, soft shadow */
+    .price-card, .how-step, .system-shot, .story-step {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .price-card:hover, .how-step:hover, .system-shot:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12); }
+    .story-step:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35); }
+
+    @media (max-width: 900px) {
+      .hero.hero-split { padding: 6.5rem 1.2rem 3.5rem; }
+      .hero.hero-split .hero-container { grid-template-columns: 1fr; gap: 2.2rem; }
+      .hero.hero-split .hero-content { text-align: center; }
+      .hero.hero-split .hero-tagline { margin-left: auto; margin-right: auto; }
+      .hero.hero-split .hero-buttons { justify-content: center; }
+    }
+    @media (max-width: 768px) {
+      .fig-num { font-size: 3.2rem; }
+      .fig-num-sm { font-size: 2.4rem; }
+      .fig-cur { font-size: 1.6rem; }
+      .innovation-line { font-size: 1.05rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rv { opacity: 1; transform: none; transition: none; }
+      .price-card, .how-step, .system-shot, .story-step { transition: none; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2053,85 +2187,53 @@
   <div class="site-backdrop" aria-hidden="true"></div>
   <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="site-wa-float" aria-label="בדיקה חינם בוואטסאפ"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg></a>
 
-  <section class="hero">
+  <section class="hero hero-split">
     <div class="hero-container">
       <div class="hero-content">
         <span class="hero-eyebrow">תוכנית הליווי · הכלכלן של הבית</span>
         <h1>
-          <span class="hero-line-1">לא לימדו אותנו כסף.</span>
-          <span class="hero-line-2">פה משלימים את זה.</span>
+          <span class="hero-line-1">ליווי פיננסי אישי +</span>
+          <span class="hero-line-2">אפליקציה שמנהלת לך את הכסף</span>
         </h1>
-        <p class="hero-tagline">ליווי אישי לחיילים משוחררים ומשפחות צעירות. בודקים יחד איפה הכסף בורח, בונים תקציב ותוכנית, והמערכת נשארת אצלכם גם בין הפגישות.</p>
+        <p class="hero-sub">כמעט אין כזאת בארץ</p>
+        <p class="hero-tagline">לא לימדו אותנו כסף, ומוכרים לנו מוצרים שאנחנו לא באמת מבינים. בליווי אישי עושים סדר יחד, והאפליקציה ממשיכה לעבוד אצלכם גם בין הפגישות.</p>
         <div class="hero-buttons">
           <a class="hero-btn hero-btn-primary" href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener">
             <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>
             בדיקה חינם בוואטסאפ
           </a>
-          <a class="hero-btn hero-btn-secondary" href="#how">איך הליווי עובד</a>
         </div>
       </div>
+      <figure class="hero-shot">
+        <img src="screenshots/cashflow.png" alt="מסך תזרים חודשי באפליקציה: הכנסות מול הוצאות והנטו שנשאר" width="1693" height="844">
+      </figure>
     </div>
   </section>
 
   <main>
-    <!-- Intro Section -->
-    <section class="intro-section">
-      <div class="intro-content">
-        <p>רוב האנשים שאני מלווה הם סטודנטים, חיילים משוחררים ומשפחות צעירות, ומוכרים להם מוצרים פיננסיים שהם לא באמת מבינים. מנהלים להם חסכונות בלי שהם יודעים מה קורה בהם, והם מפסידים כסף רק בגלל חוסר ידע. הכל נראה להם מסובך מדי, אבל בפועל זה הרבה יותר פשוט ממה שמספרים להם.</p>
-        
-        <p>לגופים הפיננסיים יש אינטרס שזה ייראה מורכב כדי שלא תשאלו שאלות, וזה גורם לאנשים להירתע, לא להתמודד, ולתת למערכת להחליט בשבילם. ויש לזה מחיר.</p>
-        
-        <p>חוסר הבנה פיננסית גורם לאנשים להפסיד כסף בעמלות מיותרות, לקנות מוצרים שלא באמת מתאימים להם ולהפסיד המון הזדמנויות. <strong style="color: #C9A33F;">אם את או אתה מרגישים שאין לכם באמת מושג</strong> מה קורה עם הכסף מאחורי הקלעים, שאין לכם שליטה עליו, שהוא לא עובד בשבילכם ונעלם בלי שאתם שמים לב, אתם מוזמנים להיכנס לבלוג ולהתחיל להבין את הדברים בצורה פשוטה.</p>
-        
-        <p><strong style="color: #C9A33F;">אם אתם צריכים ליווי אישי,</strong> אתם מוזמנים להצטרף לתוכנית הליווי שבה נשב יחד, יד ביד, נעבור על כל העניינים הפיננסיים שלכם, נעשה בהם סדר אמיתי ונצא יחד לדרך חדשה של שליטה, הבנה פיננסית וצמיחה לעתיד טוב יותר.</p>
-        
-        <div class="intro-cta">
-          <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="site-btn-primary"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>בדיקה חינם בוואטסאפ</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="section price-section" id="price">
+    <section class="section system-section" id="system">
       <div class="card">
-        <h2>כמה זה עולה?</h2>
-        <p class="price-intro">כל הפגישות בשני המסלולים הן אישיות, אחד על אחד. רק אתם ואני, על הכסף שלכם.</p>
-        <div class="price-grid">
-          <article class="price-card">
-            <h3>ליווי פיננסי אישי</h3>
-            <p class="price-sub">4 פגישות אישיות, אחד על אחד</p>
-            <div class="price-amount"><span class="price-num">2,000</span><span class="price-cur">ש"ח</span></div>
-            <ul class="price-list">
-              <li><strong>מיפוי.</strong> תמונת מצב מלאה של הכסף שלכם, איפה אתם עומדים היום.</li>
-              <li><strong>תקציב.</strong> תקציב שמתאים לאורח החיים שלכם ומראה לאן הכסף הולך ולמה.</li>
-              <li><strong>בקרה.</strong> בודקים מה עובד בתקציב, איפה אפשר לשפר, ומדייקים.</li>
-              <li><strong>תוכנית.</strong> תוכנית כלכלית למטרות שלכם: חיסכון, השקעות וביטחון.</li>
-            </ul>
-            <p class="price-line">כולל גישה מלאה למערכת ולבוט הוואטסאפ</p>
-            <p class="price-note">מעקב נוסף: 500 ש"ח לפגישה</p>
-          </article>
-          <article class="price-card">
-            <h3>לימוד השקעות</h3>
-            <p class="price-sub">5 מפגשים אישיים, אחד על אחד</p>
-            <div class="price-amount"><span class="price-num">2,500</span><span class="price-cur">ש"ח</span></div>
-            <ul class="price-list">
-              <li><strong>הבסיס.</strong> מה ההבדל בין השקעה לבין מסחר, ולמה זה משנה.</li>
-              <li><strong>מדדים רחבים.</strong> איך הם עובדים ולמה הם מתאימים לטווח ארוך.</li>
-              <li><strong>סיכון ועלויות.</strong> פיזור, סיכון ודמי ניהול, בלי מילים גבוהות.</li>
-              <li><strong>החלטות לבד.</strong> איך לקרוא את התיק שלכם ולהחליט בעצמכם.</li>
-              <li><strong>בסוף.</strong> יוצאים עם תיק השקעות שבניתם בעצמכם.</li>
-            </ul>
-            <p class="price-line">לימוד והבנה בלבד, ללא המלצות וללא מוצרים</p>
-          </article>
-        </div>
-        <div class="price-cta">
-          <p>מתחילים בבדיקה חינם בוואטסאפ, בלי התחייבות</p>
-          <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="site-btn-primary"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>בדיקה חינם בוואטסאפ</a>
+        <span class="section-kicker">האפליקציה</span>
+        <h2>מה עובד אצלכם בין הפגישות</h2>
+        <p class="innovation-line">שירות חדשני שמתעדכן כל הזמן עם החידושים בשוק ובעולם. פעם שירות כזה היה שמור לפאמילי אופיס. היום הוא של כולם.</p>
+        <p class="system-lead">הליווי לא נגמר כשהפגישה נגמרת. האפליקציה נשארת פתוחה אצלכם, וזה מה שרואים בה:</p>
+        <div class="system-grid">
+          <figure class="system-shot">
+            <img src="screenshots/expense-log.png" alt="מסך תיעוד הוצאות באפליקציה: רושמים הוצאה ומשייכים אותה לקטגוריה" width="1646" height="895" loading="lazy">
+            <figcaption><strong>תיעוד הוצאות</strong>רושמים הוצאה ברגע שהיא קורית, והיא נכנסת לקטגוריה הנכונה.</figcaption>
+          </figure>
+          <figure class="system-shot">
+            <img src="screenshots/monthly-budget.png" alt="מסך תקציב חודשי באפליקציה: תכנון מול ביצוע בפועל" width="1671" height="844" loading="lazy">
+            <figcaption><strong>תקציב חודשי</strong>תכנון מול ביצוע, חודש אחרי חודש. רואים איפה זה בורח.</figcaption>
+          </figure>
+          <figure class="system-shot">
+            <img src="screenshots/goals.png" alt="מסך יעדים פיננסיים באפליקציה: כמה לשים בצד כל חודש לכל יעד" width="1614" height="863" loading="lazy">
+            <figcaption><strong>יעדים</strong>טיסה, רכב, דירה. האפליקציה מחשבת כמה לשים בצד כל חודש כדי להגיע.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- About Me Section -->
     <section id="about" class="about-section">
       <div class="about-grid">
         <div class="about-text">
@@ -2155,7 +2257,7 @@
               <p>אני אורי ניניו, יועץ פיננסי. בין פגישה לפגישה תמצאו אותי באיגרוף תאילנדי, באוכל טוב או בחופשה.</p>
             </div>
           </div>
-          <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="site-btn-primary story-cta"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>בדיקה חינם בוואטסאפ</a>
+          <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="text-link">לבדיקה חינם בוואטסאפ ←</a>
         </div>
         <div class="about-image-wrapper">
           <img src="ori-photo.jpeg" alt="אורי ניניו" class="about-image" loading="lazy">
@@ -2163,237 +2265,85 @@
       </div>
     </section>
 
-    <!-- How the accompaniment works -->
     <section class="section how-section" id="how">
       <div class="card">
         <h2>איך הליווי עובד</h2>
-        <p style="margin-bottom: 1rem;">ארבעה שלבים. עד השלב האחרון אין התחייבות ואין תשלום.</p>
+        <p class="how-lead">ארבעה שלבים. עד השלב האחרון אין התחייבות ואין תשלום.</p>
         <ol class="how-steps">
           <li class="how-step">
             <span class="how-num">1</span>
             <div>
               <h4>בדיקה חינם בוואטסאפ</h4>
               <p>שולחים הודעה קצרה. אני שואל כמה שאלות ואומר בכנות אם יש לי מה לתרום לכם.</p>
-              <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="btn-small">בדיקה חינם בוואטסאפ</a>
+              <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="text-link">שולחים הודעה ←</a>
             </div>
           </li>
           <li class="how-step">
             <span class="how-num">2</span>
             <div>
-              <h4>כניסה למערכת</h4>
-              <p>פותחים חשבון במערכת ומזינים את הנתונים הבסיסיים: הכנסות, הוצאות קבועות, הלוואות וחסכונות.</p>
+              <h4>כניסה לאפליקציה</h4>
+              <p>פותחים חשבון ומזינים את הנתונים הבסיסיים: הכנסות, הוצאות קבועות, הלוואות וחסכונות.</p>
             </div>
           </li>
           <li class="how-step">
             <span class="how-num">3</span>
             <div>
               <h4>שיחה של 20 דקות</h4>
-              <p>עוברים יחד על מה שהמערכת מראה, ומבינים איפה הכסף בורח ומה הצעד הראשון.</p>
+              <p>עוברים יחד על מה שהאפליקציה מראה, ומבינים איפה הכסף בורח ומה הצעד הראשון.</p>
             </div>
           </li>
           <li class="how-step">
             <span class="how-num">4</span>
             <div>
               <h4>ליווי בתשלום</h4>
-              <p>אם זה מתאים לשני הצדדים, ממשיכים לליווי מלא. הפגישות מפורטות למטה, והמערכת נשארת אצלכם לאורך כל הדרך.</p>
-              <p class="how-price" data-price-placeholder hidden></p>
+              <p>ארבע פגישות אישיות, אחד על אחד: מיפוי, תקציב, בקרה ותוכנית כלכלית. האפליקציה נשארת אצלכם לאורך כל הדרך, ובסוף התהליך אני לא נעלם. כל שאלה או דיוק, אני זמין.</p>
+              <a href="#price" class="text-link">למחירים ←</a>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="section process-section">
+    <section class="section price-section" id="price">
       <div class="card">
-        <h2>מה יוצא לכם מהתהליך איתי</h2>
-        
-        <p style="margin-bottom: 1rem;">בתהליך הליווי נעבור יחד כמה שלבים ברורים, כדי שתדעו בדיוק מה מחכה לכם ומתי:</p>
-        
-        <div class="meetings-slide-in">
-        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">רגע, מה קורה בפגישות?</h3>
-        
-        <div class="process-steps">
-          <div class="process-step">
-            <h4>פגישת מיפוי</h4>
-            <p>כאן אנחנו מבינים סוף סוף את המצב הכלכלי שלכם ויוצרים תמונת מצב מלאה — ממש כמו צילום רנטגן שמראה איפה אתם עומדים היום.</p>
-          </div>
-          <div class="process-step">
-            <h4>תקציב תואם</h4>
-            <p>לאחר מכן נייצר תקציב שתואם לאורך החיים שלכם — תקציב שייצר מודעות מוחלטת להתנהלות הכלכלית שלכם, ויעזור לכם לדעת בדיוק לאן הכסף הולך ולמה.</p>
-          </div>
-          <div class="process-step">
-            <h4>פגישת תיאום ובקרה</h4>
-            <p>נבין איפה התקציב עובד יותר ואיפה אפשר לשפר — נעמיק, נדייק ונוודא שהכל מסתדר עם אורח החיים והמטרות שלכם.</p>
-          </div>
-          <div class="process-step">
-            <h4>פגישת תוכנית כלכלית</h4>
-            <p>בפגישה הזו נייצר תוכנית כלכלית שתאפשר לכם לעמוד בכל המטרות שהצבתם לעצמכם — חיסכון, השקעות, ביטחון פיננסי ועוד.</p>
-          </div>
-          <div class="process-step">
-            <h4>זמינות מלאה</h4>
-            <p>כל התהליך מתבצע עם זמינות מלאה מצידי — וגם לאחר מכן תמיד אהיה זמין לכל שאלה, לדייק, להבין או לקבל הכוונה נוספת.</p>
-          </div>
-        </div>
-        </div>
-        
-        <!-- Before/After Visual -->
-        <div class="before-after-container">
-          <div class="before-box">
-            <h3>לפני</h3>
-            <ul class="status-list">
-              <li>הכסף נעלם ולא יודע לאן</li>
-              <li>חוסר שליטה על ההוצאות</li>
-              <li>לחץ כלכלי מתמיד</li>
-              <li>פחד מהעתיד</li>
-              <li>אין תוכנית ברורה</li>
+        <h2>כמה זה עולה?</h2>
+        <p class="price-intro">כל הפגישות בשני המסלולים הן אישיות, אחד על אחד. רק אתם ואני, על הכסף שלכם.</p>
+        <div class="price-grid">
+          <article class="price-card">
+            <h3>ליווי פיננסי אישי</h3>
+            <div class="price-figures">
+              <div class="fig fig-main"><span class="fig-num" data-count="2000">2,000</span><span class="fig-cur">₪</span></div>
+              <div class="fig"><span class="fig-num fig-num-sm" data-count="4">4</span><span class="fig-label">פגישות אישיות</span></div>
+            </div>
+            <ul class="price-list">
+              <li><strong>מיפוי.</strong> תמונת מצב מלאה של הכסף שלכם, איפה אתם עומדים היום.</li>
+              <li><strong>תקציב.</strong> תקציב שמתאים לאורח החיים שלכם ומראה לאן הכסף הולך ולמה.</li>
+              <li><strong>בקרה.</strong> בודקים מה עובד בתקציב, איפה אפשר לשפר, ומדייקים.</li>
+              <li><strong>תוכנית.</strong> תוכנית כלכלית למטרות שלכם: חיסכון, השקעות וביטחון.</li>
             </ul>
-          </div>
-          
-          <div class="arrow-divider">
-            <div class="arrow">→</div>
-          </div>
-          
-          <div class="after-box">
-            <h3>אחרי</h3>
-            <ul class="status-list">
-              <li>שליטה מלאה על הכסף</li>
-              <li>תוכנית ברורה לעתיד</li>
-              <li>ראש שקט וביטחון</li>
-              <li>חסכונות צומחים</li>
-              <li>החלטות כלכליות נכונות</li>
+            <p class="price-line">כולל גישה מלאה לאפליקציה ולבוט הוואטסאפ</p>
+            <p class="price-note">מעקב נוסף: 500₪ לפגישה</p>
+          </article>
+          <article class="price-card">
+            <h3>לימוד השקעות</h3>
+            <div class="price-figures">
+              <div class="fig fig-main"><span class="fig-num" data-count="2500">2,500</span><span class="fig-cur">₪</span></div>
+              <div class="fig"><span class="fig-num fig-num-sm" data-count="5">5</span><span class="fig-label">מפגשים אישיים</span></div>
+            </div>
+            <ul class="price-list">
+              <li><strong>הבסיס.</strong> מה ההבדל בין השקעה לבין מסחר, ולמה זה משנה.</li>
+              <li><strong>מדדים רחבים.</strong> איך הם עובדים ולמה הם מתאימים לטווח ארוך.</li>
+              <li><strong>סיכון ועלויות.</strong> פיזור, סיכון ודמי ניהול, בלי מילים גבוהות.</li>
+              <li><strong>החלטות לבד.</strong> איך לקרוא את התיק שלכם ולהחליט בעצמכם.</li>
+              <li><strong>בסוף.</strong> יוצאים עם תיק השקעות שבניתם בעצמכם.</li>
             </ul>
-          </div>
+            <p class="price-line">לימוד והבנה בלבד, ללא המלצות וללא מוצרים</p>
+          </article>
         </div>
-        
-        <h3>למה דווקא עכשיו</h3>
-        <p>הכסף שלכם לא עומד במקום. הוא נשחק בשקט כשהמחירים עולים. עליית המחירים לא תמיד מסתדרת עם עליית המשכורת, וזה מה שפוגע ברמת החיים. כל תקופה שאתם לא פועלים, אתם מוותרים על זמן, וזה המשאב הכי יקר בעולם הפיננסי.</p>
-        <p>שינוי קטן עכשיו יכול ליצור הבדל גדול בעתיד. יותר שקט, יותר ביטחון ויותר חופש לבחור איך לחיות. זה הזמן להתחיל לבנות את הבסיס הכלכלי שלכם בצעדים הנכונים.</p>
-        
-        <h3 style="margin-top: 3rem;">מה תקבל ממני בפועל</h3>
-        
-        <div class="what-you-get-grid">
-          <div class="get-box">
-            <div class="get-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="get-content">
-              <h4>נבין איפה אתם עומדים</h4>
-              <p>תמונת מצב מלאה של המצב הכלכלי שלך היום</p>
-            </div>
-          </div>
-          
-          <div class="get-box">
-            <div class="get-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M7 16l4-6 3 3 5-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="get-content">
-              <h4>נעשה סדר בהוצאות</h4>
-              <p>נזהה לאן הכסף הולך ונבנה תקציב שעובד בשבילך</p>
-            </div>
-          </div>
-          
-          <div class="get-box">
-            <div class="get-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="get-content">
-              <h4>נבנה כרית ביטחון</h4>
-              <p>תהיו מוכנים לכל צרה לא צפויה בלי ללוות כסף</p>
-            </div>
-          </div>
-          
-          <div class="get-box">
-            <div class="get-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" stroke="currentColor" stroke-width="2"/>
-                <path d="M7 10h4m-4 4h10m-10 4h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="get-content">
-              <h4>נבנה תוכנית חיסכון</h4>
-              <p>הכסף שלכם לא ישחק ויתחיל לעבוד בשבילכם</p>
-            </div>
-          </div>
-          
-          <div class="get-box">
-            <div class="get-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="2"/>
-                <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <div class="get-content">
-              <h4>נעשה סדר בקרן הפנסיה וההשתלמות</h4>
-              <p>נוודא שהכסף שלכם מושקע נכון לטווח הארוך</p>
-            </div>
-          </div>
-          
-          <div class="get-box">
-            <div class="get-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="get-content">
-              <h4>נתחיל לבנות תיק השקעות רווחי ויעיל</h4>
-              <p>השקעות חכמות שיצמיחו את הכסף שלכם לאורך זמן</p>
-            </div>
-          </div>
-          
-          <div class="get-box">
-            <div class="get-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/>
-                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="get-content">
-              <h4>נהיה על הדברים ביחד</h4>
-              <p>עד שתרגישו מוכנים לצאת לדרך בעצמכם בביטחון מלא</p>
-            </div>
-          </div>
+        <div class="price-cta">
+          <p>מתחילים בבדיקה חינם בוואטסאפ, בלי התחייבות</p>
+          <a href="https://wa.me/972544240213?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%A7%D7%A6%D7%A8%D7%94" target="_blank" rel="noopener" class="site-btn-primary"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>בדיקה חינם בוואטסאפ</a>
         </div>
-        
-        <p style="margin-top: 2rem; font-size: 1.35rem; line-height: 1.9; font-weight: 500;">אפשר ללמוד המון לבד מספרים, סרטונים ופודקאסטים. <strong style="color: #C9A33F;">ואם אתם מרגישים שזה גדול עליכם לבד ורוצים קיצור דרך וליווי אישי, כאן אני נכנס לתמונה.</strong></p>
-      </div>
-    </section>
-
-    <!-- Promise Section -->
-    <!-- The system between meetings -->
-    <section class="section system-section" id="system">
-      <div class="card">
-        <h2>מה עובד אצלכם בין הפגישות</h2>
-        <p style="margin-bottom: 1.5rem;">הליווי לא נגמר כשהפגישה נגמרת. המערכת שבניתי נשארת פתוחה אצלכם, וזה מה שרואים בה:</p>
-        <div class="system-grid">
-          <figure class="system-shot">
-            <img src="screenshots/cashflow.png" alt="מסך תזרים חודשי במערכת: הכנסות מול הוצאות והנטו שנשאר" width="1693" height="844" loading="lazy">
-            <figcaption><strong>תזרים חודשי</strong>כמה נכנס, כמה יצא, ומה נשאר. מתעדכן כל חודש בלי לפתוח אקסל.</figcaption>
-          </figure>
-          <figure class="system-shot">
-            <img src="screenshots/monthly-budget.png" alt="מסך תקציב חודשי במערכת: תכנון מול ביצוע בפועל" width="1671" height="844" loading="lazy">
-            <figcaption><strong>תקציב חודשי</strong>תכנון מול ביצוע, חודש אחרי חודש. רואים איפה זה בורח.</figcaption>
-          </figure>
-          <figure class="system-shot">
-            <img src="screenshots/goals.png" alt="מסך יעדים פיננסיים במערכת: כמה לשים בצד כל חודש לכל יעד" width="1614" height="863" loading="lazy">
-            <figcaption><strong>יעדים</strong>טיסה, רכב, דירה. המערכת מחשבת כמה לשים בצד כל חודש כדי להגיע.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="promise-section">
-      <div class="promise-text">
-        <p>אני יכול להבטיח לכם שאחרי התהליך תרגישו הרבה יותר שליטה והבנה לגבי איך לנהל את הכסף שלכם. לא תרגישו יותר אבודים מול המערכות הפיננסיות, ותוכלו סוף סוף לאפשר לכסף שלכם לעבוד גם בזמן שאתם לא עושים כלום. המטרה שלי היא לעזור לכם, ללוות אתכם ולהביא אתכם לשלווה ורוגע מבחינה פיננסית באמצעות פעולות פשוטות וברורות שאפשר ליישם מיד.</p>
-        <p>בסוף התהליך אני לא נעלם. כל דבר שתרצו לדייק, להבין יותר טוב או לקבל עליו הכוונה נוספת, אני תמיד זמין בשבילכם.</p>
       </div>
     </section>
 
@@ -2498,92 +2448,44 @@
 
 
   <script>
-    // אנימציה בגלילה - כניסה מצד ימין
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: '0px 0px -80px 0px'
-    };
+    // One quiet entrance per section (fade + short slide, once) and a short count-up on the price figures.
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) return; // content stays fully visible
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+      var sections = document.querySelectorAll('.hero .hero-container, main > section');
+      Array.prototype.forEach.call(sections, function (el) { el.classList.add('rv'); });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('rv-in');
+          io.unobserve(e.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      Array.prototype.forEach.call(sections, function (el) { io.observe(el); });
+
+      function countUp(el) {
+        var end = parseInt(el.getAttribute('data-count'), 10);
+        if (!end) return;
+        var t0 = null, dur = end > 99 ? 900 : 500;
+        function step(t) {
+          if (t0 === null) t0 = t;
+          var k = Math.min(1, (t - t0) / dur);
+          var eased = 1 - Math.pow(1 - k, 3);
+          el.textContent = Math.round(end * eased).toLocaleString('en-US');
+          if (k < 1) requestAnimationFrame(step);
         }
-      });
-    }, observerOptions);
-
-    // הוספת האנימציה לכל האלמנטים
-    document.addEventListener('DOMContentLoaded', () => {
-      // סקשן הסיפור - אנימציה מהצד
-      const aboutSection = document.querySelector('.about-section');
-      if (aboutSection) {
-        observer.observe(aboutSection);
+        requestAnimationFrame(step);
       }
-      
-      // סקשן ההבטחה - אנימציה מהצד
-      const promiseSection = document.querySelector('.promise-section');
-      if (promiseSection) {
-        observer.observe(promiseSection);
-      }
-      
-      // כל הסקשנים - אנימציה מהצד
-      const allSections = document.querySelectorAll('.section, .hero, .intro-section, .about-section, .promise-section, .process-section');
-      allSections.forEach((section) => {
-        observer.observe(section);
-      });
-      
-      // כל התיבות והקלפים
-      const allCards = document.querySelectorAll('.card, .value-box, .get-box, .contact-card');
-      allCards.forEach((card) => {
-        card.classList.add('fade-in');
-        observer.observe(card);
-      });
-      
-      // כל הכותרות והפסקאות בתוך sections
-      const allContent = document.querySelectorAll('.section h2, .section h3, .section p, .hero-content, .intro-content');
-      allContent.forEach((element) => {
-        if (!element.closest('.card')) { // אל תוסיף אם כבר בתוך card
-          element.classList.add('fade-in');
-          observer.observe(element);
-        }
-      });
-      
-      // מה קורה בפגישות - כניסה מהצד
-      const meetingsSlide = document.querySelector('.meetings-slide-in');
-      if (meetingsSlide) {
-        observer.observe(meetingsSlide);
-      }
-      
-      // ויזואל לפני/אחרי - מלמטה למעלה
-      const beforeAfter = document.querySelector('.before-after-container');
-      if (beforeAfter) {
-        beforeAfter.classList.add('fade-in-up');
-        observer.observe(beforeAfter);
-      }
-      
-      // תמונה - מצד שמאל
-      const aboutPhoto = document.querySelector('.about-photo');
-      if (aboutPhoto) {
-        aboutPhoto.classList.add('fade-in-left');
-        observer.observe(aboutPhoto);
-      }
-    });
-
-    // כפתור קבוע בתחתית - מופיע אחרי גלילה
-    const stickyBtn = document.querySelector('.sticky-cta');
-    const heroSection = document.querySelector('.hero');
-    
-    if (stickyBtn) window.addEventListener('scroll', () => {
-      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-      const scrollPosition = window.scrollY;
-      
-      if (scrollPosition > heroBottom) {
-        stickyBtn.classList.add('show');
-      } else {
-        stickyBtn.classList.remove('show');
-      }
-    });
-    
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          Array.prototype.forEach.call(e.target.querySelectorAll('[data-count]'), countUp);
+          cio.unobserve(e.target);
+        });
+      }, { threshold: 0.6 });
+      Array.prototype.forEach.call(document.querySelectorAll('.price-figures'), function (el) { cio.observe(el); });
+    })();
   </script>
   <script src="assets/site.js" defer></script>
   <script src="cookie-consent.js" defer></script>
