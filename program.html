@@ -2145,6 +2145,15 @@
       .fig-cur { font-size: 1.6rem; }
       .innovation-line { font-size: 1.05rem; }
     }
+    /* tighter hand-off from pricing to the contact form */
+    .price-section { margin-bottom: 0; padding-bottom: 3rem; }
+    .price-section .card { margin-bottom: 0; }
+    .contact-section { margin-top: 0; padding-top: 4rem !important; }
+    @media (max-width: 768px) {
+      .price-section { padding-bottom: 2rem; }
+      .contact-section { padding-top: 2.5rem !important; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .rv { opacity: 1; transform: none; transition: none; }
       .price-card, .how-step, .system-shot, .story-step { transition: none; }
