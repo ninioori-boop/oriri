@@ -594,6 +594,31 @@
       .story-content p { font-size: 0.95rem; line-height: 1.65; }
 
     }
+    /* hero: new structure, text + one app screenshot (same language as the program page) */
+    .welcome-header.hero-split-home {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+      gap: 3.5rem;
+      align-items: center;
+      max-width: 1200px;
+    }
+    .hero-shot { margin: 0; animation: fadeUp 0.9s var(--ease) 0.3s both; }
+    .hero-shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(255, 255, 255, 0.03);
+    }
+    .story-media { position: relative; z-index: 1; display: grid; gap: 18px; }
+    .story { align-items: start; }
+    .story-content { padding-top: 8px; }
+    @media (max-width: 900px) {
+      .welcome-header.hero-split-home { grid-template-columns: 1fr; gap: 2.2rem; text-align: center; }
+      .hero-split-home .hero-actions { justify-content: center; }
+    }
+    @media (prefers-reduced-motion: reduce) { .hero-shot { animation: none; } }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -651,8 +676,7 @@
       </svg>
     </div>
     <div class="hero-content">
-      <div class="welcome-header">
-        <img src="ori-welcome.jpeg" alt="אורי ניניו" class="welcome-photo">
+      <div class="welcome-header hero-split-home">
         <div class="welcome-text">
           <h1>
             <span class="grad-1">מפסיקים להיות</span>
@@ -664,9 +688,11 @@
               <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM21.305 18.694c-0.372-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.186-0.837 0.186s-0.961 1.208-1.179 1.456c-0.217 0.248-0.434 0.279-0.806 0.093s-1.571-0.579-2.991-1.845c-1.107-0.986-1.854-2.204-2.071-2.576s-0.023-0.573 0.163-0.759c0.167-0.166 0.372-0.434 0.558-0.651s0.248-0.372 0.372-0.62c0.124-0.248 0.062-0.465-0.031-0.651s-0.837-2.010-1.147-2.752c-0.303-0.724-0.611-0.625-0.837-0.637-0.217-0.011-0.465-0.013-0.713-0.013s-0.651 0.093-0.992 0.465c-0.341 0.372-1.301 1.271-1.301 3.101s1.332 3.596 1.518 3.844c0.186 0.248 2.625 4.006 6.359 5.617 0.888 0.383 1.581 0.612 2.122 0.783 0.892 0.283 1.704 0.243 2.347 0.147 0.716-0.107 2.197-0.898 2.507-1.766s0.31-1.611 0.217-1.766c-0.093-0.155-0.341-0.248-0.713-0.434z"/></svg>
               בדיקה חינם בוואטסאפ
             </a>
-            <a href="program.html#how" class="hero-btn hero-btn-secondary">איך הליווי עובד</a>
           </div>
         </div>
+        <figure class="hero-shot">
+          <img src="screenshots/cashflow.png" alt="מסך תזרים חודשי באפליקציה: הכנסות מול הוצאות והנטו שנשאר" width="1693" height="844">
+        </figure>
       </div>
     </div>
   </section>
@@ -747,8 +773,13 @@
 
     <!-- Section: Story (image displayed in full) -->
     <section class="story reveal" id="story">
-      <div class="story-img">
-        <img src="ori-story.jpg" alt="אורי ניניו" loading="lazy">
+      <div class="story-media">
+        <div class="story-img">
+          <img src="ori-story.jpg" width="1200" height="1600" alt="אורי ניניו" loading="lazy">
+        </div>
+        <div class="story-img">
+          <img src="ori-welcome.jpeg" width="738" height="615" alt="אורי ניניו מעביר הרצאה על הדרך להפוך לכלכלנים של הבית" loading="lazy">
+        </div>
       </div>
       <div class="story-content">
         <h2>הסיפור שלי</h2>
