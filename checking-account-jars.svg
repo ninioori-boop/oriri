@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="צנצנת של העו״ש עם מטבעות אפורים עד קו המינימום, ומטבעות שעוברים ממנה בחץ לצנצנת זהובה של חיסכון שנובט ממנה עלה">
+  <defs>
+    <linearGradient id="bgo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F4"/>
+      <stop offset="1" stop-color="#F1EBDD"/>
+    </linearGradient>
+    <linearGradient id="goldo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DCBD62"/>
+      <stop offset="1" stop-color="#C9A33F"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bgo)"/>
+  <circle cx="330" cy="330" r="250" fill="#C9A33F" opacity="0.07"/>
+
+  <path d="M777.0,150 V180 Q755.0,200 755.0,240 V536 Q755.0,560 779.0,560 H961.0 Q985.0,560 985.0,536 V240 Q985.0,200 963.0,180 V150" fill="#ffffff" fill-opacity="0.75" stroke="#8d8677" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="763.0" y="124" width="214" height="30" rx="8" fill="#8d8677"/>
+  <path d="M795.0,528 V540 A75.0,18 0 0 0 945.0,540 V528 Z" fill="#B3AB99"/>
+  <ellipse cx="870" cy="528" rx="75.0" ry="18" fill="#D9D3C5" stroke="#B3AB99" stroke-width="3"/>
+  <path d="M795.0,506 V518 A75.0,18 0 0 0 945.0,518 V506 Z" fill="#B3AB99"/>
+  <ellipse cx="870" cy="506" rx="75.0" ry="18" fill="#D9D3C5" stroke="#B3AB99" stroke-width="3"/>
+  <path d="M795.0,484 V496 A75.0,18 0 0 0 945.0,496 V484 Z" fill="#B3AB99"/>
+  <ellipse cx="870" cy="484" rx="75.0" ry="18" fill="#D9D3C5" stroke="#B3AB99" stroke-width="3"/>
+  <path d="M795.0,462 V474 A75.0,18 0 0 0 945.0,474 V462 Z" fill="#B3AB99"/>
+  <ellipse cx="870" cy="462" rx="75.0" ry="18" fill="#D9D3C5" stroke="#B3AB99" stroke-width="3"/>
+  <line x1="770" y1="438" x2="970" y2="438" stroke="#A98429" stroke-width="4" stroke-dasharray="12 10" stroke-linecap="round"/>
+  <text x="970" y="420" font-family="Assistant, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#A98429" text-anchor="end">המינימום</text>
+  <path d="M237.0,150 V180 Q215.0,200 215.0,240 V536 Q215.0,560 239.0,560 H421.0 Q445.0,560 445.0,536 V240 Q445.0,200 423.0,180 V150" fill="#ffffff" fill-opacity="0.75" stroke="#A98429" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="223.0" y="124" width="214" height="30" rx="8" fill="#A98429"/>
+  <path d="M255.0,528 V540 A75.0,18 0 0 0 405.0,540 V528 Z" fill="#A98429"/>
+  <ellipse cx="330" cy="528" rx="75.0" ry="18" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/>
+  <path d="M255.0,506 V518 A75.0,18 0 0 0 405.0,518 V506 Z" fill="#A98429"/>
+  <ellipse cx="330" cy="506" rx="75.0" ry="18" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/>
+  <path d="M255.0,484 V496 A75.0,18 0 0 0 405.0,496 V484 Z" fill="#A98429"/>
+  <ellipse cx="330" cy="484" rx="75.0" ry="18" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/>
+  <path d="M255.0,462 V474 A75.0,18 0 0 0 405.0,474 V462 Z" fill="#A98429"/>
+  <ellipse cx="330" cy="462" rx="75.0" ry="18" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/>
+  <path d="M255.0,440 V452 A75.0,18 0 0 0 405.0,452 V440 Z" fill="#A98429"/>
+  <ellipse cx="330" cy="440" rx="75.0" ry="18" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/>
+  <path d="M255.0,418 V430 A75.0,18 0 0 0 405.0,430 V418 Z" fill="#A98429"/>
+  <ellipse cx="330" cy="418" rx="75.0" ry="18" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/>
+  <path d="M255.0,396 V408 A75.0,18 0 0 0 405.0,408 V396 Z" fill="#A98429"/>
+  <ellipse cx="330" cy="396" rx="75.0" ry="18" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/>
+  <path d="M255.0,374 V386 A75.0,18 0 0 0 405.0,386 V374 Z" fill="#A98429"/>
+  <ellipse cx="330" cy="374" rx="75.0" ry="18" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/>
+  <path d="M255.0,352 V364 A75.0,18 0 0 0 405.0,364 V352 Z" fill="#A98429"/>
+  <ellipse cx="330" cy="352" rx="75.0" ry="18" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/>
+  <path d="M330,336 C326,302 334,272 330,248" fill="none" stroke="#6f8f4e" stroke-width="6" stroke-linecap="round"/>
+  <path d="M330,266 C346,238 384,232 402,246 C386,272 350,276 330,266 Z" fill="#8bab63"/>
+  <path d="M330,290 C316,264 282,258 266,270 C282,294 312,298 330,290 Z" fill="#9dbb74"/>
+  <path d="M745,300 C 680,210 540,200 475,265" fill="none" stroke="#C2BAA8" stroke-width="6" stroke-dasharray="4 16" stroke-linecap="round"/>
+  <path d="M470,240 L468,276 L503,268" fill="none" stroke="#C2BAA8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g opacity="0.55"><circle cx="700" cy="238" r="24" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/><circle cx="700" cy="238" r="14.9" fill="none" stroke="#A98429" stroke-width="2.5" opacity="0.55"/></g>
+  <g opacity="0.8"><circle cx="610" cy="208" r="28" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/><circle cx="610" cy="208" r="17.4" fill="none" stroke="#A98429" stroke-width="2.5" opacity="0.55"/></g>
+  <g opacity="1"><circle cx="525" cy="222" r="30" fill="url(#goldo)" stroke="#A98429" stroke-width="3"/><circle cx="525" cy="222" r="18.6" fill="none" stroke="#A98429" stroke-width="2.5" opacity="0.55"/></g>
+
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="870" y="646" font-size="44" font-weight="700" fill="#8d8677">עו״ש</text>
+    <text x="870" y="692" font-size="28" fill="#9d9687">רק מה שצריך לחודש</text>
+    <text x="330" y="646" font-size="44" font-weight="700" fill="#1a1a1a">חיסכון</text>
+    <text x="330" y="692" font-size="28" fill="#7a746a">כל השאר עובד בשבילכם</text>
+  </g>
+</svg>
