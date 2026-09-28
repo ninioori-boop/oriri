@@ -802,7 +802,7 @@
       font-weight: 400;
     }
     
-    .form-group input:focus,כ
+    .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
       box-shadow: 0 2px 8px rgba(100, 116, 139, 0.12),
@@ -2283,6 +2283,86 @@
       .worth-section .cta-card h3 { font-size: 1.25rem; }
       .worth-section .cta-card p { font-size: 0.97rem; }
     }
+
+    /* ==========================================================
+       Whole page in the home palette (index.html): #08080a, light
+       text, #A8A8A8 secondary, gold, glass cards with a gold wash
+       ========================================================== */
+    body.page-program {
+      --black: #f6f5f2;                      /* this page used --black for text */
+      --text-main: #f6f5f2;
+      --gray-dark: rgba(246, 245, 242, 0.86);
+      --gray-medium: rgba(246, 245, 242, 0.78);
+      --gray-text: #A8A8A8;
+      --gray-light: #08080a;
+      --border-light: rgba(255, 255, 255, 0.10);
+      background: #08080a;
+      color: #f6f5f2;
+    }
+    body.page-program::before { display: none; }
+    body.page-program main p { color: rgba(246, 245, 242, 0.86); }
+
+    /* the index card: .cta-card look */
+    .how-step, .price-card, .system-shot, .contact-card {
+      background: linear-gradient(165deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.015) 70%);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 20px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.38);
+    }
+    .how-step:hover, .price-card:hover, .system-shot:hover {
+      border-color: rgba(212, 175, 55, 0.30);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+    }
+    /* pricing cards use the index "system" card variant */
+    .price-card {
+      background: linear-gradient(165deg, rgba(212, 175, 55, 0.14) 0%, rgba(212, 175, 55, 0.03) 70%);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+    }
+
+    /* app section */
+    .system-section { background: transparent; }
+    .section-kicker { color: #D4AF37; }
+    .innovation-line { color: #f6f5f2; }
+    body.page-program .system-lead { color: #A8A8A8; }
+    .system-shot img { border-bottom: 1px solid rgba(255, 255, 255, 0.10); }
+    body.page-program .system-shot figcaption { color: #A8A8A8; }
+    .system-shot figcaption strong { color: #f6f5f2; }
+
+    /* how it works */
+    .how-num { color: #15120a; }
+    body.page-program .how-step p { color: #A8A8A8; }
+
+    /* pricing */
+    body.page-program .price-intro,
+    body.page-program .price-card .price-note { color: #A8A8A8; }
+    .price-figures { border-top-color: rgba(255, 255, 255, 0.10); border-bottom-color: rgba(255, 255, 255, 0.10); }
+    .fig-num, .fig-cur { color: #E5C870; }
+    .fig-num-sm { color: #f6f5f2; }
+    .fig-label { color: #A8A8A8; }
+    .price-card .price-list li { color: rgba(246, 245, 242, 0.86); }
+
+    /* text links on dark */
+    .text-link { color: #F4D77A; border-bottom-color: rgba(244, 215, 122, 0.4); }
+    .text-link:hover { color: #fff; border-color: #fff; }
+
+    /* dark story panel framed like the index .story card */
+    .about-section { border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.10); }
+
+    /* contact form on dark (fields, focus, submit) */
+    .contact-section { background: transparent; }
+    .form-group input,
+    .form-group textarea {
+      background: rgba(255, 255, 255, 0.05);
+      color: #f6f5f2;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #A8A8A8; }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: rgba(212, 175, 55, 0.6); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15); }
+    .btn-submit { color: #15120a; }
+    .btn-submit:hover { color: #15120a; }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2515,7 +2595,7 @@
     <section class="section contact-section" id="contact">
       <div class="contact-card">
         <h2>בואו נתחיל</h2>
-        <p style="font-size: 1rem; color: #666; margin-bottom: 2rem; text-align: center;">השאירו פרטים ונחזור אליכם תוך 24 שעות</p>
+        <p style="font-size: 1rem; color: var(--gray-text); margin-bottom: 2rem; text-align: center;">השאירו פרטים ונחזור אליכם תוך 24 שעות</p>
         <form action="https://formspree.io/f/mdklkenp" method="POST" id="lead-form">
           <input type="hidden" name="_subject" value="ליד חדש מהאתר - הכלכלן של הבית">
           <input type="hidden" name="_next" id="lead-next" value="https://or-ni.com/thank-you.html">
