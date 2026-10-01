@@ -2363,6 +2363,32 @@
     .form-group textarea:focus { border-color: rgba(212, 175, 55, 0.6); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15); }
     .btn-submit { color: #15120a; }
     .btn-submit:hover { color: #15120a; }
+    /* "חבר פיננסי בוואטסאפ": chat screenshots, one per row so the text stays readable */
+    .bot-block { margin-top: 3rem; }
+    .bot-title {
+      font-family: 'Heebo', 'Assistant', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #f6f5f2;
+      margin: 0 0 0.5rem;
+      text-align: right;
+    }
+    .bot-lead { margin: 0 0 1.5rem; color: #A8A8A8; line-height: 1.7; max-width: 60ch; text-align: right; }
+    .bot-list { display: grid; gap: 18px; }
+    .system-shot.bot-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+      align-items: center;
+      margin: 0;
+    }
+    .bot-img { display: block; line-height: 0; }
+    .system-shot.bot-item img { width: 100%; height: auto; display: block; border-bottom: 0; border-left: 1px solid rgba(255, 255, 255, 0.10); }
+    .system-shot.bot-item figcaption { padding: 18px 22px; }
+    @media (max-width: 760px) {
+      .system-shot.bot-item { grid-template-columns: 1fr; }
+      .system-shot.bot-item img { border-left: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.10); }
+      .bot-title { font-size: 1.35rem; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2444,6 +2470,36 @@
             <img src="screenshots/goals.png" alt="מסך יעדים פיננסיים באפליקציה: כמה לשים בצד כל חודש לכל יעד" width="1614" height="863" loading="lazy">
             <figcaption><strong>יעדים</strong>טיסה, רכב, דירה. האפליקציה מחשבת כמה לשים בצד כל חודש כדי להגיע.</figcaption>
           </figure>
+        </div>
+        <div class="bot-block">
+          <h3 class="bot-title">חבר פיננסי בוואטסאפ</h3>
+          <p class="bot-lead">בוט בוואטסאפ שמכיר את הנתונים שלכם. כותבים, מקליטים הודעה קולית או מצלמים קבלה, והוא מתעד, עונה כמה נשאר, מעדכן את האפליקציה ונותן עצה. כלול בליווי.</p>
+          <div class="bot-list">
+          <figure class="system-shot bot-item">
+            <a class="bot-img" href="screenshots/bot-log.jpg" target="_blank" rel="noopener" aria-label="הגדלת הצילום: מתעדים הוצאה בהודעה">
+              <img src="screenshots/bot-log.jpg" width="1003" height="453" alt="שיחה עם הבוט: רושמים קפה 18, ואחר כך סופר ודלק בהודעה אחת, והבוט מסווג ואומר כמה נשאר בכל קטגוריה" loading="lazy">
+            </a>
+            <figcaption><strong>מתעדים הוצאה בהודעה</strong>כותבים "קפה 18", או כמה הוצאות בהודעה אחת. הבוט מסווג לקטגוריה ואומר כמה נשאר בתקציב.</figcaption>
+          </figure>
+          <figure class="system-shot bot-item">
+            <a class="bot-img" href="screenshots/bot-delete.jpg" target="_blank" rel="noopener" aria-label="הגדלת הצילום: מתקנים ושואלים">
+              <img src="screenshots/bot-delete.jpg" width="979" height="657" alt="שיחה עם הבוט: מחיקת הוצאה עם אישור, ותשובה לשאלה כמה נשאר באוכל החודש" loading="lazy">
+            </a>
+            <figcaption><strong>מתקנים ושואלים</strong>מוחקים הוצאה בהודעה, עם אישור לפני כל שינוי. ושאלה כמו "כמה נשאר לי באוכל?" מקבלת תשובה מיד.</figcaption>
+          </figure>
+          <figure class="system-shot bot-item">
+            <a class="bot-img" href="screenshots/bot-advice.jpg" target="_blank" rel="noopener" aria-label="הגדלת הצילום: חושבים יחד">
+              <img src="screenshots/bot-advice.jpg" width="969" height="464" alt="שיחה עם הבוט: שאלה על יתרת ההלוואה ועצה לחזק קודם את כרית הביטחון" loading="lazy">
+            </a>
+            <figcaption><strong>חושבים יחד</strong>שואלים על ההלוואה ומקבלים שיקול דעת: קודם כרית ביטחון, ורק אחר כך להקדים תשלומים.</figcaption>
+          </figure>
+          <figure class="system-shot bot-item">
+            <a class="bot-img" href="screenshots/bot-budget.jpg" target="_blank" rel="noopener" aria-label="הגדלת הצילום: מעדכנים תקציב ויעדים">
+              <img src="screenshots/bot-budget.jpg" width="976" height="665" alt="שיחה עם הבוט: עדכון תקציב הדלק ופתיחת יעד חופשה, עם אישור לפני כל פעולה" loading="lazy">
+            </a>
+            <figcaption><strong>מעדכנים תקציב ויעדים</strong>"שים לי על דלק 800" או "תפתח יעד חופשה". האפליקציה מתעדכנת אחרי אישור שלכם.</figcaption>
+          </figure>
+          </div>
         </div>
       </div>
     </section>
