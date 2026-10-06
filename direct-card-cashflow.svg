@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="מימין כרטיס דיירקט אפור, ומתחתיו קו יתרה שיורד עם כל קנייה עד מתחת לאפס. משמאל כרטיס אשראי רגיל זהוב, ומתחתיו קו יתרה יציב, כשהמשכורת והחיוב נפגשים ב-10 לחודש">
+  <defs>
+    <linearGradient id="bgd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F4"/>
+      <stop offset="1" stop-color="#F1EBDD"/>
+    </linearGradient>
+    <linearGradient id="goldd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E5C870"/>
+      <stop offset="1" stop-color="#C9A33F"/>
+    </linearGradient>
+    <linearGradient id="grayd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A39C8C"/>
+      <stop offset="1" stop-color="#7d7768"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bgd)"/>
+  <circle cx="320" cy="360" r="270" fill="#C9A33F" opacity="0.07"/>
+
+  <!-- panels -->
+  <rect x="640" y="90" width="490" height="570" rx="28" fill="#ffffff" fill-opacity="0.7" stroke="#E2DACA" stroke-width="2"/>
+  <rect x="70" y="90" width="490" height="570" rx="28" fill="#ffffff" fill-opacity="0.85" stroke="#DCC68A" stroke-width="2"/>
+
+  <!-- ===== right: direct (debit) card ===== -->
+  <rect x="725" y="140" width="320" height="196" rx="22" fill="url(#grayd)"/>
+  <rect x="757" y="196" width="58" height="44" rx="8" fill="#D9D3C5" opacity="0.85"/>
+  <line x1="757" y1="218" x2="815" y2="218" stroke="#B3AB99" stroke-width="2"/>
+  <line x1="786" y1="196" x2="786" y2="240" stroke="#B3AB99" stroke-width="2"/>
+  <text x="1015" y="190" text-anchor="end" font-family="Heebo, Arial, sans-serif" font-size="34" font-weight="800" fill="#ffffff">דיירקט</text>
+  <rect x="757" y="290" width="70" height="10" rx="5" fill="#ffffff" opacity="0.55"/>
+  <rect x="839" y="290" width="70" height="10" rx="5" fill="#ffffff" opacity="0.55"/>
+  <rect x="921" y="290" width="70" height="10" rx="5" fill="#ffffff" opacity="0.55"/>
+
+  <!-- zero line -->
+  <line x1="690" y1="530" x2="1080" y2="530" stroke="#C0504D" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="1094" y="539" font-family="Heebo, Arial, sans-serif" font-size="26" font-weight="700" fill="#C0504D">0</text>
+  <!-- the part below zero -->
+  <path d="M890,530 L890,540 L940,540 L940,566 L990,566 L990,590 L1030,590 L1030,530 Z" fill="#C0504D" opacity="0.16"/>
+  <!-- balance drops with every purchase -->
+  <path d="M690,430 H740 V454 H790 V478 H840 V506 H890 V540 H940 V566 H990 V590 H1030 V444 H1075" fill="none" stroke="#7d7768" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- purchases -->
+  <g fill="#7d7768">
+    <path d="M740,404 l-9,-14 h18 z"/>
+    <path d="M790,428 l-9,-14 h18 z"/>
+    <path d="M840,452 l-9,-14 h18 z"/>
+    <path d="M890,480 l-9,-14 h18 z"/>
+    <path d="M940,514 l-9,-14 h18 z" fill="#C0504D"/>
+    <path d="M990,540 l-9,-14 h18 z" fill="#C0504D"/>
+  </g>
+  <!-- salary arrives late -->
+  <path d="M1030,612 V470" stroke="#C9A33F" stroke-width="6" stroke-linecap="round"/>
+  <path d="M1030,452 l-14,22 h28 z" fill="#C9A33F"/>
+
+  <!-- ===== left: regular credit card ===== -->
+  <rect x="155" y="140" width="320" height="196" rx="22" fill="url(#goldd)"/>
+  <rect x="187" y="196" width="58" height="44" rx="8" fill="#F6E7B6"/>
+  <line x1="187" y1="218" x2="245" y2="218" stroke="#C9A33F" stroke-width="2"/>
+  <line x1="216" y1="196" x2="216" y2="240" stroke="#C9A33F" stroke-width="2"/>
+  <text x="445" y="190" text-anchor="end" font-family="Heebo, Arial, sans-serif" font-size="34" font-weight="800" fill="#2a2418">אשראי רגיל</text>
+  <rect x="187" y="290" width="70" height="10" rx="5" fill="#2a2418" opacity="0.25"/>
+  <rect x="269" y="290" width="70" height="10" rx="5" fill="#2a2418" opacity="0.25"/>
+  <rect x="351" y="290" width="70" height="10" rx="5" fill="#2a2418" opacity="0.25"/>
+
+  <!-- zero line -->
+  <line x1="120" y1="530" x2="510" y2="530" stroke="#B3AB99" stroke-width="3" stroke-dasharray="10 8"/>
+  <!-- balance stays steady -->
+  <path d="M120,470 H510" fill="none" stroke="#C9A33F" stroke-width="7" stroke-linecap="round"/>
+  <!-- the 10th: salary in, charge out, same day -->
+  <rect x="281" y="372" width="78" height="80" rx="12" fill="#ffffff" stroke="#C9A33F" stroke-width="4"/>
+  <rect x="281" y="372" width="78" height="24" rx="12" fill="#C9A33F"/>
+  <rect x="281" y="384" width="78" height="12" fill="#C9A33F"/>
+  <text x="320" y="440" text-anchor="middle" font-family="Heebo, Arial, sans-serif" font-size="34" font-weight="800" fill="#2a2418">10</text>
+  <path d="M250,560 V500" stroke="#C9A33F" stroke-width="6" stroke-linecap="round"/>
+  <path d="M250,486 l-13,20 h26 z" fill="#C9A33F"/>
+  <path d="M390,486 V546" stroke="#7d7768" stroke-width="6" stroke-linecap="round"/>
+  <path d="M390,560 l-13,-20 h26 z" fill="#7d7768"/>
+</svg>
