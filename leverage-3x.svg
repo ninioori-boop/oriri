@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="שני קווים: קו המדד הרגיל יורד מעט וחוזר, וקו הקרן הממונפת פי 3 נופל בחדות ונשאר רחוק למטה">
+  <defs>
+    <linearGradient id="bgl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F4"/>
+      <stop offset="1" stop-color="#F1EBDD"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgl)"/>
+  <circle cx="420" cy="360" r="260" fill="#C9A33F" opacity="0.07"/>
+  <rect x="120" y="110" width="960" height="540" rx="28" fill="#ffffff" fill-opacity="0.8" stroke="#E2DACA" stroke-width="2"/>
+  <line x1="180" y1="270" x2="1020" y2="270" stroke="#E2DACA" stroke-width="2" stroke-dasharray="8 8"/>
+  <!-- regular index -->
+  <path d="M180,270 L320,250 L440,300 L560,340 L680,315 L800,290 L920,265 L1020,250" fill="none" stroke="#8d8677" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 3x leveraged -->
+  <path d="M180,270 L320,210 L440,370 L560,560 L680,530 L800,515 L920,500 L1020,490" fill="none" stroke="#C9A33F" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M560,560 L560,600" stroke="#C0504D" stroke-width="4" stroke-linecap="round"/>
+  <text x="560" y="632" text-anchor="middle" font-family="Heebo, Arial, sans-serif" font-size="34" font-weight="800" fill="#C0504D">-80%</text>
+  <rect x="840" y="150" width="200" height="56" rx="28" fill="#C9A33F"/>
+  <text x="940" y="188" text-anchor="middle" font-family="Heebo, Arial, sans-serif" font-size="32" font-weight="800" fill="#ffffff">×3</text>
+  <rect x="620" y="150" width="200" height="56" rx="28" fill="#8d8677"/>
+  <text x="720" y="188" text-anchor="middle" font-family="Heebo, Arial, sans-serif" font-size="32" font-weight="800" fill="#ffffff">×1</text>
+</svg>
