@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="מאזניים: בצד אחד ארצות הברית ובצד השני העולם, ומתחת שני עשורים שבהם כל צד הוביל">
+  <defs>
+    <linearGradient id="bgu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F4"/>
+      <stop offset="1" stop-color="#F1EBDD"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgu)"/>
+  <circle cx="600" cy="330" r="270" fill="#C9A33F" opacity="0.07"/>
+
+  <!-- scale -->
+  <path d="M600,190 V560" stroke="#8d8677" stroke-width="10" stroke-linecap="round"/>
+  <path d="M520,575 H680" stroke="#8d8677" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="600" cy="185" r="16" fill="#C9A33F"/>
+  <path d="M330,215 H870" stroke="#C9A33F" stroke-width="9" stroke-linecap="round"/>
+  <path d="M330,215 L260,380 M330,215 L400,380" stroke="#8d8677" stroke-width="3"/>
+  <path d="M870,215 L800,380 M870,215 L940,380" stroke="#8d8677" stroke-width="3"/>
+  <path d="M240,380 H420 Q410,430 330,430 Q250,430 240,380 Z" fill="#ffffff" stroke="#C9A33F" stroke-width="5"/>
+  <path d="M780,380 H960 Q950,430 870,430 Q790,430 780,380 Z" fill="#ffffff" stroke="#C9A33F" stroke-width="5"/>
+
+  <!-- world: globe on the left pan -->
+  <circle cx="330" cy="320" r="56" fill="#ffffff" stroke="#C9A33F" stroke-width="6"/>
+  <ellipse cx="330" cy="320" rx="24" ry="56" fill="none" stroke="#C9A33F" stroke-width="4"/>
+  <path d="M274,320 H386 M284,292 H376 M284,348 H376" stroke="#C9A33F" stroke-width="4"/>
+
+  <!-- US: stars and stripes block on the right pan -->
+  <rect x="820" y="270" width="100" height="100" rx="10" fill="#ffffff" stroke="#8d8677" stroke-width="5"/>
+  <rect x="820" y="270" width="44" height="44" rx="6" fill="#8d8677"/>
+  <path d="M864,290 H920 M820,330 H920 M820,350 H920" stroke="#C9A33F" stroke-width="7"/>
+  <circle cx="842" cy="292" r="7" fill="#ffffff"/>
+
+  <!-- decades -->
+  <rect x="230" y="620" width="300" height="70" rx="35" fill="#ffffff" stroke="#E2DACA" stroke-width="2"/>
+  <text x="380" y="666" text-anchor="middle" font-family="Heebo, Arial, sans-serif" font-size="30" font-weight="800" fill="#A8862A">2000–2009</text>
+  <rect x="670" y="620" width="300" height="70" rx="35" fill="#ffffff" stroke="#E2DACA" stroke-width="2"/>
+  <text x="820" y="666" text-anchor="middle" font-family="Heebo, Arial, sans-serif" font-size="30" font-weight="800" fill="#8d8677">2010–2025</text>
+</svg>
