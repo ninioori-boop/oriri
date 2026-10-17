@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="מימין שתי קופות נפרדות ובור כהה באדמה ביניהן שהולך וגדל, ומשמאל קופה זהובה אחת משותפת שעומדת על קרקע יציבה עם לב מעליה">
+  <defs>
+    <linearGradient id="bgc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F4"/>
+      <stop offset="1" stop-color="#F1EBDD"/>
+    </linearGradient>
+    <linearGradient id="goldc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DCBD62"/>
+      <stop offset="1" stop-color="#C9A33F"/>
+    </linearGradient>
+    <radialGradient id="pitc" cx="0.5" cy="0.35" r="0.65">
+      <stop offset="0" stop-color="#1f1f1f"/>
+      <stop offset="1" stop-color="#4a4339"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bgc)"/>
+  <circle cx="320" cy="330" r="250" fill="#C9A33F" opacity="0.07"/>
+  <line x1="600" y1="110" x2="600" y2="560" stroke="#DBD3C0" stroke-width="3" stroke-dasharray="10 13" stroke-linecap="round"/>
+
+  <path d="M660,510 H1140" stroke="#B3AB99" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="900" cy="526" rx="92" ry="34" fill="url(#pitc)"/>
+  <rect x="675.0" y="358" width="120" height="150" rx="22" fill="#E3DDD0" stroke="#A39B88" stroke-width="5"/>
+  <rect x="708.6" y="384" width="52.8" height="12" rx="6" fill="#A39B88"/>
+  <circle cx="735" cy="448.0" r="19.2" fill="none" stroke="#A39B88" stroke-width="4" opacity="0.6"/>
+  <rect x="1005.0" y="358" width="120" height="150" rx="22" fill="#E3DDD0" stroke="#A39B88" stroke-width="5"/>
+  <rect x="1038.6" y="384" width="52.8" height="12" rx="6" fill="#A39B88"/>
+  <circle cx="1065" cy="448.0" r="19.2" fill="none" stroke="#A39B88" stroke-width="4" opacity="0.6"/>
+  <path d="M90,510 H550" stroke="#A98429" stroke-width="6" stroke-linecap="round"/>
+  <rect x="205.0" y="278" width="230" height="230" rx="22" fill="url(#goldc)" stroke="#A98429" stroke-width="5"/>
+  <rect x="269.4" y="304" width="101.2" height="12" rx="6" fill="#A98429"/>
+  <circle cx="320" cy="416.0" r="36.800000000000004" fill="none" stroke="#A98429" stroke-width="4" opacity="0.6"/>
+  <path d="M320,214 C320,192 290,176 272,194 C254,212 270,236 320,262 C370,236 386,212 368,194 C350,176 320,192 320,214 Z" fill="#C9A33F" stroke="#A98429" stroke-width="4"/>
+
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="900" y="646" font-size="44" font-weight="700" fill="#8d8677">כל אחד לעצמו</text>
+    <text x="900" y="692" font-size="28" fill="#9d9687">והבור רק גדל</text>
+    <text x="320" y="646" font-size="44" font-weight="700" fill="#1a1a1a">ביחד, עם תוכנית</text>
+    <text x="320" y="692" font-size="28" fill="#7a746a">כמו עסק משותף</text>
+  </g>
+</svg>
