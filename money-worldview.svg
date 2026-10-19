@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="שני חלונות שמראים את אותו שוק מנקודות מבט שונות: בימין קו שטוח למי שנולד ב-1950, ובשמאל קו זהוב שמטפס למי שנולד ב-1970">
+  <defs>
+    <linearGradient id="bgv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF9F4"/><stop offset="1" stop-color="#F1EBDD"/></linearGradient>
+    <linearGradient id="goldv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A33F" stop-opacity="0.35"/><stop offset="1" stop-color="#C9A33F" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgv)"/>
+  <circle cx="320" cy="330" r="250" fill="#C9A33F" opacity="0.07"/>
+  <rect x="680" y="130" width="400" height="400" rx="26" fill="#ffffff" stroke="#A39B88" stroke-width="6"/>
+  <line x1="720" y1="470" x2="1040" y2="470" stroke="#E4DDCD" stroke-width="3"/>
+  <line x1="720" y1="390" x2="1040" y2="390" stroke="#F0EBE0" stroke-width="2"/>
+  <line x1="720" y1="310" x2="1040" y2="310" stroke="#F0EBE0" stroke-width="2"/>
+  <line x1="720" y1="230" x2="1040" y2="230" stroke="#F0EBE0" stroke-width="2"/>
+  <path d="M720,400 L770,370 L820,410 L870,360 L920,420 L970,380 L1020,405 L1040,395" fill="none" stroke="#A39B88" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="120" y="130" width="400" height="400" rx="26" fill="#ffffff" stroke="#A98429" stroke-width="6"/>
+  <line x1="160" y1="470" x2="480" y2="470" stroke="#E4DDCD" stroke-width="3"/>
+  <line x1="160" y1="390" x2="480" y2="390" stroke="#F0EBE0" stroke-width="2"/>
+  <line x1="160" y1="310" x2="480" y2="310" stroke="#F0EBE0" stroke-width="2"/>
+  <line x1="160" y1="230" x2="480" y2="230" stroke="#F0EBE0" stroke-width="2"/>
+  <path d="M160,450 L210,430 L260,440 L310,390 L360,370 L410,300 L460,250 L480,200 L480,470 L160,470 Z" fill="url(#goldv)"/>
+  <path d="M160,450 L210,430 L260,440 L310,390 L360,370 L410,300 L460,250 L480,200" fill="none" stroke="#A98429" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="480" cy="200" r="10" fill="#A98429"/>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle" direction="rtl">
+    <text x="880" y="620" font-size="42" font-weight="700" fill="#8d8677">נולדתם ב-1950</text>
+    <text x="880" y="666" font-size="28" fill="#9d9687">השוק לא הלך לשום מקום</text>
+    <text x="320" y="620" font-size="42" font-weight="700" fill="#1a1a1a">נולדתם ב-1970</text>
+    <text x="320" y="666" font-size="28" fill="#7a746a">השוק עלה כמעט פי 10</text>
+  </g>
+</svg>
