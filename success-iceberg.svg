@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="קרחון: מעל המים רק קצה זהוב קטן שמסמל את התוצאה, ומתחת למים גוש גדול שמסמל את הדרך, התנאים והסיכון שמאחוריה">
+  <defs>
+    <linearGradient id="bgi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF9F4"/><stop offset="1" stop-color="#F4EFE4"/></linearGradient>
+    <linearGradient id="wateri" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9E3D6"/><stop offset="1" stop-color="#DDD5C3"/></linearGradient>
+    <linearGradient id="goldi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCBD62"/><stop offset="1" stop-color="#C9A33F"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgi)"/>
+  <rect x="0" y="300" width="1200" height="450" fill="url(#wateri)"/>
+  <path d="M0,300 Q75,288 150,300 T300,300 T450,300 T600,300 T750,300 T900,300 T1050,300 T1200,300" fill="none" stroke="#B3AB99" stroke-width="4"/>
+  <path d="M520,300 L575,190 L610,215 L650,140 L700,230 L730,212 L770,300 Z" fill="url(#goldi)" stroke="#A98429" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M520,306 L770,306 L860,380 L905,500 L850,610 L700,680 L540,670 L420,590 L380,470 L430,370 Z" fill="#C9C1AF" stroke="#A39B88" stroke-width="5" stroke-linejoin="round" opacity="0.9"/>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle" direction="rtl">
+    <text x="980" y="190" font-size="42" font-weight="700" fill="#1a1a1a">התוצאה</text>
+    <text x="980" y="234" font-size="28" fill="#7a746a">מה שכולם רואים</text>
+    <text x="645" y="470" font-size="40" font-weight="700" fill="#4a4339">הדרך, התנאים</text>
+    <text x="645" y="520" font-size="40" font-weight="700" fill="#4a4339">והסיכון</text>
+    <text x="645" y="566" font-size="28" fill="#6b6455">מה שמתחת לפני המים</text>
+  </g>
+  <path d="M880,200 Q820,190 790,215" fill="none" stroke="#A98429" stroke-width="4" stroke-linecap="round"/>
+</svg>
