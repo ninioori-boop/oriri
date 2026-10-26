@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="שני גרפים של הכנסה והוצאות: בימין ההוצאות עולות צמוד להכנסה ולא נשאר כלום, ובשמאל ההוצאות עולות לאט יותר והמרווח הזהוב ביניהן הוא החיסכון">
+  <defs>
+    <linearGradient id="bge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF9F4"/><stop offset="1" stop-color="#F1EBDD"/></linearGradient>
+    <linearGradient id="golde" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCBD62" stop-opacity="0.75"/><stop offset="1" stop-color="#C9A33F" stop-opacity="0.45"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bge)"/>
+  <circle cx="320" cy="330" r="250" fill="#C9A33F" opacity="0.07"/>
+  <rect x="680" y="130" width="400" height="400" rx="26" fill="#ffffff" stroke="#A39B88" stroke-width="6"/>
+  <line x1="720" y1="480" x2="1040" y2="480" stroke="#E4DDCD" stroke-width="3"/>
+  <path d="M720,444 H768 V384 H816 V324 H864 V264 H912 V204 H960" fill="none" stroke="#A39B88" stroke-width="6" stroke-linejoin="round" stroke-dasharray="2 0"/>
+  <path d="M720,430 H768 V370 H816 V310 H864 V250 H912 V190 H960" fill="none" stroke="#6b6455" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="120" y="130" width="400" height="400" rx="26" fill="#ffffff" stroke="#A98429" stroke-width="6"/>
+  <line x1="160" y1="480" x2="480" y2="480" stroke="#E4DDCD" stroke-width="3"/>
+  <polygon points="160,430 208,430 208,370 256,370 256,310 304,310 304,250 352,250 352,190 400,190 400,322 352,322 352,350 304,350 304,380 256,380 256,410 208,410 208,444 160,444" fill="url(#golde)"/>
+  <path d="M160,444 H208 V410 H256 V380 H304 V350 H352 V322 H400" fill="none" stroke="#A39B88" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M160,430 H208 V370 H256 V310 H304 V250 H352 V190 H400" fill="none" stroke="#A98429" stroke-width="6" stroke-linejoin="round"/>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" direction="rtl">
+    <text x="505" y="198" font-size="24" font-weight="700" fill="#A98429" text-anchor="start">הכנסה</text>
+    <text x="505" y="330" font-size="24" font-weight="700" fill="#8d8677" text-anchor="start">הוצאות</text>
+    <text x="505" y="266" font-size="24" font-weight="700" fill="#A98429" text-anchor="start">חיסכון</text>
+    <text x="1065" y="190" font-size="24" font-weight="700" fill="#6b6455" text-anchor="start">הכנסה</text>
+    <text x="1065" y="238" font-size="24" font-weight="700" fill="#8d8677" text-anchor="start">הוצאות</text>
+  </g>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle" direction="rtl">
+    <text x="880" y="620" font-size="42" font-weight="700" fill="#8d8677">כל העלאה נבלעת</text>
+    <text x="880" y="666" font-size="28" fill="#9d9687">ושוב מחכים למשכורת</text>
+    <text x="320" y="620" font-size="42" font-weight="700" fill="#1a1a1a">משלמים לעצמכם קודם</text>
+    <text x="320" y="666" font-size="28" fill="#7a746a">דרגה מתחת למה שמרוויחים</text>
+  </g>
+</svg>
