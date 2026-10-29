@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="שתי ערימות מטבעות שחוטפות מכה: בימין ערימה בלי כרית שנופלת ומטבעות עפים ממנה, ובשמאל ערימה זהובה שעומדת על כרית ביטחון עבה ונשארת יציבה">
+  <defs>
+    <linearGradient id="bgs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF9F4"/><stop offset="1" stop-color="#F1EBDD"/></linearGradient>
+    <linearGradient id="golds" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCBD62"/><stop offset="1" stop-color="#C9A33F"/></linearGradient>
+    <linearGradient id="cush" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3E6C2"/><stop offset="1" stop-color="#E5D19A"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgs)"/>
+  <circle cx="320" cy="340" r="250" fill="#C9A33F" opacity="0.07"/>
+  <line x1="600" y1="110" x2="600" y2="560" stroke="#DBD3C0" stroke-width="3" stroke-dasharray="10 13" stroke-linecap="round"/>
+  <line x1="110" y1="530" x2="530" y2="530" stroke="#A98429" stroke-width="6" stroke-linecap="round"/>
+  <rect x="170" y="452" width="300" height="76" rx="38" fill="url(#cush)" stroke="#C9A33F" stroke-width="4"/>
+  <path d="M220,490 h200" stroke="#C9A33F" stroke-width="3" stroke-dasharray="6 10" stroke-linecap="round" opacity="0.7"/>
+  <path d="M250.0,436 V448 A70.0,16 0 0 0 390.0,448 V436 Z" fill="#A98429"/>
+  <ellipse cx="320" cy="436" rx="70.0" ry="16" fill="url(#golds)" stroke="#A98429" stroke-width="3"/>
+  <path d="M250.0,416 V428 A70.0,16 0 0 0 390.0,428 V416 Z" fill="#A98429"/>
+  <ellipse cx="320" cy="416" rx="70.0" ry="16" fill="url(#golds)" stroke="#A98429" stroke-width="3"/>
+  <path d="M250.0,396 V408 A70.0,16 0 0 0 390.0,408 V396 Z" fill="#A98429"/>
+  <ellipse cx="320" cy="396" rx="70.0" ry="16" fill="url(#golds)" stroke="#A98429" stroke-width="3"/>
+  <path d="M250.0,376 V388 A70.0,16 0 0 0 390.0,388 V376 Z" fill="#A98429"/>
+  <ellipse cx="320" cy="376" rx="70.0" ry="16" fill="url(#golds)" stroke="#A98429" stroke-width="3"/>
+  <path d="M250.0,356 V368 A70.0,16 0 0 0 390.0,368 V356 Z" fill="#A98429"/>
+  <ellipse cx="320" cy="356" rx="70.0" ry="16" fill="url(#golds)" stroke="#A98429" stroke-width="3"/>
+  <path d="M250.0,336 V348 A70.0,16 0 0 0 390.0,348 V336 Z" fill="#A98429"/>
+  <ellipse cx="320" cy="336" rx="70.0" ry="16" fill="url(#golds)" stroke="#A98429" stroke-width="3"/>
+  <path d="M250.0,316 V328 A70.0,16 0 0 0 390.0,328 V316 Z" fill="#A98429"/>
+  <ellipse cx="320" cy="316" rx="70.0" ry="16" fill="url(#golds)" stroke="#A98429" stroke-width="3"/>
+  <path d="M250.0,296 V308 A70.0,16 0 0 0 390.0,308 V296 Z" fill="#A98429"/>
+  <ellipse cx="320" cy="296" rx="70.0" ry="16" fill="url(#golds)" stroke="#A98429" stroke-width="3"/>
+  <path d="M250.0,276 V288 A70.0,16 0 0 0 390.0,288 V276 Z" fill="#A98429"/>
+  <ellipse cx="320" cy="276" rx="70.0" ry="16" fill="url(#golds)" stroke="#A98429" stroke-width="3"/>
+  <line x1="500" y1="300" x2="455" y2="312" stroke="#C2BAA8" stroke-width="5" stroke-linecap="round"/>
+  <line x1="505" y1="336" x2="458" y2="340" stroke="#C2BAA8" stroke-width="5" stroke-linecap="round"/>
+  <line x1="498" y1="372" x2="455" y2="366" stroke="#C2BAA8" stroke-width="5" stroke-linecap="round"/>
+  <line x1="670" y1="530" x2="1090" y2="530" stroke="#B3AB99" stroke-width="6" stroke-linecap="round"/>
+  <g transform="translate(0,-14) rotate(-14 880 520)">
+  <path d="M810.0,506 V518 A70.0,16 0 0 0 950.0,518 V506 Z" fill="#A39B88"/>
+  <ellipse cx="880" cy="506" rx="70.0" ry="16" fill="#D9D3C5" stroke="#A39B88" stroke-width="3"/>
+  <path d="M810.0,486 V498 A70.0,16 0 0 0 950.0,498 V486 Z" fill="#A39B88"/>
+  <ellipse cx="880" cy="486" rx="70.0" ry="16" fill="#D9D3C5" stroke="#A39B88" stroke-width="3"/>
+  <path d="M810.0,466 V478 A70.0,16 0 0 0 950.0,478 V466 Z" fill="#A39B88"/>
+  <ellipse cx="880" cy="466" rx="70.0" ry="16" fill="#D9D3C5" stroke="#A39B88" stroke-width="3"/>
+  <path d="M810.0,446 V458 A70.0,16 0 0 0 950.0,458 V446 Z" fill="#A39B88"/>
+  <ellipse cx="880" cy="446" rx="70.0" ry="16" fill="#D9D3C5" stroke="#A39B88" stroke-width="3"/>
+  </g>
+  <g opacity="1"><circle cx="800" cy="300" r="26" fill="#D9D3C5" stroke="#A39B88" stroke-width="3"/><circle cx="800" cy="300" r="16.1" fill="none" stroke="#A39B88" stroke-width="2.5" opacity="0.6"/></g>
+  <g opacity="0.75"><circle cx="720" cy="220" r="22" fill="#D9D3C5" stroke="#A39B88" stroke-width="3"/><circle cx="720" cy="220" r="13.6" fill="none" stroke="#A39B88" stroke-width="2.5" opacity="0.6"/></g>
+  <g opacity="0.6"><circle cx="900" cy="200" r="20" fill="#D9D3C5" stroke="#A39B88" stroke-width="3"/><circle cx="900" cy="200" r="12.4" fill="none" stroke="#A39B88" stroke-width="2.5" opacity="0.6"/></g>
+  <g opacity="0.85"><circle cx="980" cy="300" r="24" fill="#D9D3C5" stroke="#A39B88" stroke-width="3"/><circle cx="980" cy="300" r="14.9" fill="none" stroke="#A39B88" stroke-width="2.5" opacity="0.6"/></g>
+  <g opacity="0.5"><circle cx="760" cy="380" r="18" fill="#D9D3C5" stroke="#A39B88" stroke-width="3"/><circle cx="760" cy="380" r="11.2" fill="none" stroke="#A39B88" stroke-width="2.5" opacity="0.6"/></g>
+  <line x1="1080" y1="380" x2="1020" y2="395" stroke="#C2BAA8" stroke-width="5" stroke-linecap="round"/>
+  <line x1="1086" y1="420" x2="1024" y2="424" stroke="#C2BAA8" stroke-width="5" stroke-linecap="round"/>
+  <line x1="1078" y1="460" x2="1020" y2="452" stroke="#C2BAA8" stroke-width="5" stroke-linecap="round"/>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle" direction="rtl">
+    <text x="880" y="620" font-size="42" font-weight="700" fill="#8d8677">בלי מרווח ביטחון</text>
+    <text x="880" y="666" font-size="28" fill="#9d9687">סיבוב אחד רע ונופלים</text>
+    <text x="320" y="620" font-size="42" font-weight="700" fill="#1a1a1a">עם כרית ביטחון</text>
+    <text x="320" y="666" font-size="28" fill="#7a746a">סופגים את המכה ונשארים במשחק</text>
+  </g>
+</svg>
