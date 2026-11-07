@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="שני מטבעות של תוספת שכר: בימין המטבע כמעט כולו נאכל על ידי דירה, רכב, אוכל בחוץ ומנויים, ובשמאל חצי מהמטבע נשאר זהוב כי משלמים לעצמכם קודם">
+  <defs>
+    <linearGradient id="bgl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF9F4"/><stop offset="1" stop-color="#F1EBDD"/></linearGradient>
+    <linearGradient id="goldl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCBD62"/><stop offset="1" stop-color="#C9A33F"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgl)"/>
+  <circle cx="320" cy="320" r="250" fill="#C9A33F" opacity="0.07"/>
+  <line x1="600" y1="110" x2="600" y2="560" stroke="#DBD3C0" stroke-width="3" stroke-dasharray="10 13" stroke-linecap="round"/>
+  <path d="M880,320 L880.0,150.0 A170,170 0 0 1 1039.7,378.1 Z" fill="#C2BAA8" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M880,320 L1039.7,378.1 A170,170 0 0 1 821.9,479.7 Z" fill="#CFC8B8" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M880,320 L821.9,479.7 A170,170 0 0 1 710.6,305.2 Z" fill="#D9D3C5" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M880,320 L710.6,305.2 A170,170 0 0 1 821.9,160.3 Z" fill="#E3DDD0" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M880,320 L821.9,160.3 A170,170 0 0 1 880.0,150.0 Z" fill="url(#goldl)" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="880" cy="320" r="170" fill="none" stroke="#A39B88" stroke-width="5"/>
+  <path d="M320,320 L320.0,150.0 A170,170 0 0 1 320.0,490.0 Z" fill="url(#goldl)" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M320,320 L320.0,490.0 A170,170 0 0 1 320.0,150.0 Z" fill="#D9D3C5" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="320" cy="320" r="170" fill="none" stroke="#A98429" stroke-width="5"/>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle" direction="rtl">
+    <text x="957" y="275" font-size="24" font-weight="700" fill="#5e574b">דירה</text>
+    <text x="920" y="414" font-size="24" font-weight="700" fill="#5e574b">רכב</text>
+    <text x="801" y="379" font-size="24" font-weight="700" fill="#5e574b">אוכל בחוץ</text>
+    <text x="806" y="272" font-size="24" font-weight="700" fill="#5e574b">מנויים</text>
+    <text x="405" y="330" font-size="30" font-weight="700" fill="#5a4612">לכם</text>
+    <text x="235" y="330" font-size="28" font-weight="700" fill="#5e574b">הוצאות</text>
+    <text x="880" y="590" font-size="42" font-weight="700" fill="#8d8677">התוספת נבלעת</text>
+    <text x="880" y="636" font-size="28" fill="#9d9687">ברמת החיים החדשה</text>
+    <text x="320" y="590" font-size="42" font-weight="700" fill="#1a1a1a">רמת חיים אחת מתחת</text>
+    <text x="320" y="636" font-size="28" fill="#7a746a">חלק מההעלאה נשאר לכם</text>
+  </g>
+</svg>
