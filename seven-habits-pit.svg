@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="שבעה כדורים ממוספרים שמתגלגלים במדרון אל בור כהה, ובצד השני של הבור סולם זהוב שמוביל החוצה">
+  <defs>
+    <linearGradient id="bgh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF9F4"/><stop offset="1" stop-color="#F1EBDD"/></linearGradient>
+    <linearGradient id="pith" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4339"/><stop offset="1" stop-color="#1f1f1f"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgh)"/>
+  <circle cx="330" cy="330" r="240" fill="#C9A33F" opacity="0.07"/>
+  <path d="M80,430 H560 V560 H860 L1120,240" fill="none" stroke="#B3AB99" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M560,430 V560 H860 V430 Z" fill="url(#pith)"/>
+  <path d="M80,430 H560" stroke="#A98429" stroke-width="6" stroke-linecap="round"/>
+  <g stroke="#A98429" stroke-width="7" stroke-linecap="round">
+    <line x1="590" y1="560" x2="560" y2="380"/><line x1="640" y1="560" x2="610" y2="380"/>
+    <line x1="587" y1="540" x2="637" y2="540"/>
+    <line x1="581" y1="504" x2="631" y2="504"/>
+    <line x1="575" y1="468" x2="625" y2="468"/>
+    <line x1="569" y1="432" x2="619" y2="432"/>
+    <line x1="563" y1="396" x2="613" y2="396"/>
+  </g>
+  <circle cx="1090" cy="247" r="22" fill="#8d8677"/>
+  <text x="1090" y="256" font-family="Assistant, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">7</text>
+  <circle cx="1054" cy="291" r="22" fill="#958e7f"/>
+  <text x="1054" y="300" font-family="Assistant, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+  <circle cx="1018" cy="335" r="22" fill="#9d9687"/>
+  <text x="1018" y="344" font-family="Assistant, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+  <circle cx="982" cy="379" r="22" fill="#A39B88"/>
+  <text x="982" y="388" font-family="Assistant, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+  <circle cx="947" cy="423" r="22" fill="#ABA392"/>
+  <text x="947" y="432" font-family="Assistant, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+  <circle cx="911" cy="467" r="22" fill="#B3AB99"/>
+  <text x="911" y="476" font-family="Assistant, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+  <circle cx="875" cy="512" r="22" fill="#BBB4A3"/>
+  <text x="875" y="521" font-family="Assistant, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle" direction="rtl">
+    <text x="960" y="640" font-size="40" font-weight="700" fill="#8d8677">הרגלים קטנים</text>
+    <text x="960" y="684" font-size="28" fill="#9d9687">שחוזרים כל חודש</text>
+    <text x="320" y="340" font-size="44" font-weight="700" fill="#1a1a1a">שינוי אחד</text>
+    <text x="320" y="386" font-size="28" fill="#7a746a">מספיק כדי להתחיל לצאת</text>
+  </g>
+</svg>
