@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="גרף של שתי דרכים להשקיע סכום גדול: קו זהוב שנכנס בבת אחת ומטפס לאורך עשר שנים, וקו אפור שנכנס במדרגות לאורך שנה ומסיים נמוך יותר">
+  <defs>
+    <linearGradient id="bgd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF9F4"/><stop offset="1" stop-color="#F1EBDD"/></linearGradient>
+    <linearGradient id="aread" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A33F" stop-opacity="0.22"/><stop offset="1" stop-color="#C9A33F" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgd)"/>
+  <rect x="140" y="70" width="920" height="470" rx="26" fill="#ffffff" stroke="#E4DDCD" stroke-width="3"/>
+  <g transform="translate(200 0) scale(0.9 1) translate(-200 0)">
+  <line x1="200" y1="385" x2="960" y2="385" stroke="#F0EBE0" stroke-width="2"/>
+  <line x1="200" y1="290" x2="960" y2="290" stroke="#F0EBE0" stroke-width="2"/>
+  <line x1="200" y1="195" x2="960" y2="195" stroke="#F0EBE0" stroke-width="2"/>
+  <line x1="200" y1="480" x2="960" y2="480" stroke="#D9D3C5" stroke-width="3"/>
+  <path d="M200,330 L280,315 L330,322 L400,290 L460,300 L540,255 L600,268 L680,225 L740,236 L820,190 L880,198 L960,150 L960,480 L200,480 Z" fill="url(#aread)"/>
+  <path d="M200,330 L280,315 L330,322 L400,290 L460,300 L540,255 L600,268 L680,225 L740,236 L820,190 L880,198 L960,150" fill="none" stroke="#A98429" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="960" cy="150" r="10" fill="#A98429"/>
+  <path d="M200,465 H211 V454 H222 V443 H233 V432 H244 V421 H255 V410 H266 V399 H277 V388 H288 V377 H299 V366 H310 V355 H321 V344 H332 V333 L400,320 L460,330 L540,285 L600,298 L680,255 L740,266 L820,222 L880,230 L960,186" fill="none" stroke="#A39B88" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="960" cy="186" r="9" fill="#A39B88"/>
+  </g>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" direction="rtl" text-anchor="start">
+    <text x="1040" y="160" font-size="28" font-weight="700" fill="#A98429">בבת אחת</text>
+    <text x="1040" y="226" font-size="28" font-weight="700" fill="#8d8677">בפעימות</text>
+  </g>
+  <g font-family="Assistant, 'Segoe UI', Arial, sans-serif" text-anchor="middle" direction="rtl">
+    <text x="600" y="620" font-size="42" font-weight="700" fill="#1a1a1a">ב-75% מהתקופות, בבת אחת סיימה עם יותר</text>
+    <text x="600" y="666" font-size="28" fill="#7a746a">תקופות של עשר שנים בשוק האמריקאי מאז 1950</text>
+  </g>
+</svg>
